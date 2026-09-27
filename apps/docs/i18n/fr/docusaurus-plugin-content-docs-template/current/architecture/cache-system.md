@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## Modules associés
 
 - [Bibliothèque de contenu](/template/architecture/content-library) -- Consommateur principal des balises de cache et des valeurs TTL
-- [Config Manager System](./config-manager-system) -- Utilise `CACHE_TAGS.CONFIG` pour la mise en cache de la configuration du site
+- [Config Manager System](./config-manager-system.md) -- Utilise `CACHE_TAGS.CONFIG` pour la mise en cache de la configuration du site

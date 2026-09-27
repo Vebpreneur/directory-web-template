@@ -513,19 +513,19 @@ psql $DATABASE_URL < backup-YYYYMMDD.sql
 
 بعد النشر الناجح:
 
-- [المراقبة والتحليلات](./monitoring) – تكوين مراقبة شاملة
-- [متغيرات البيئة](./environment-variables) – إدارة أسرار الإنتاج
-- [نشر Docker](./docker) – حاوية التطبيق
-- [الدعم](../advanced-guide/support) – الحصول على المساعدة عند الحاجة
+- [المراقبة والتحليلات](./monitoring.md) – تكوين مراقبة شاملة
+- [متغيرات البيئة](./environment-variables.md) – إدارة أسرار الإنتاج
+- [نشر Docker](./docker.md) – حاوية التطبيق
+- [الدعم](../advanced-guide/support.md) – الحصول على المساعدة عند الحاجة
 
 ## الموارد
 
 ### الوثائق الداخلية
 
-- [نظرة عامة على البنية](../architecture/overview)
-- [مكدس التقنيات](../architecture/tech-stack)
-- [وثائق API](../development/api-documentation)
-- [المراقبة](./monitoring)
+- [نظرة عامة على البنية](../architecture/overview.md)
+- [مكدس التقنيات](../architecture/tech-stack.md)
+- [وثائق API](../development/api-documentation.md)
+- [المراقبة](./monitoring.md)
 
 ### الموارد الخارجية
 

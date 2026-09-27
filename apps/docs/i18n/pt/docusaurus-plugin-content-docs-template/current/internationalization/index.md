@@ -114,7 +114,7 @@ export function MyComponent() {
 
 ## Próximos Passos
 
-- [Guia de Tradução →](./translation-guide) – Aprenda a adicionar e gerenciar traduções
+- [Guia de Tradução →](./translation-guide.md) – Aprenda a adicionar e gerenciar traduções
 - [Primeiros Passos](/getting-started) – Configure seu projeto
 - [Personalização](/guides/customization) – Personalize seu site
 

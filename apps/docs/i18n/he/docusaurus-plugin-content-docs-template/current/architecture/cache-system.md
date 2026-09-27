@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## מודולים קשורים
 
 - [ספריית תוכן](/template/architecture/content-library) -- צרכן ראשי של תגי מטמון וערכי TTL
-- [מערכת Config Manager](./config-manager-system) -- משתמש ב-`CACHE_TAGS.CONFIG` לשמירה במטמון של תצורת האתר
+- [מערכת Config Manager](./config-manager-system.md) -- משתמש ב-`CACHE_TAGS.CONFIG` לשמירה במטמון של תצורת האתר

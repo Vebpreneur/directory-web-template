@@ -182,4 +182,4 @@ function SettingsLink() {
 ## 相关模块
 
 - [API 客户端层](/template/architecture/api-client-layer) -- 使查询函数使用 API 调用
-- [Guards System](./guards-system-deep-dive) -- 可能依赖于订阅数据的基于计划的访问控制
+- [Guards System](./guards-system-deep-dive.md) -- 可能依赖于订阅数据的基于计划的访问控制

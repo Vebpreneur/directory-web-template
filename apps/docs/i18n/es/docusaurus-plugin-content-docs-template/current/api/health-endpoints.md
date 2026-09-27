@@ -69,5 +69,5 @@ No se aplica limitación de velocidad explícita. Este punto final es ligero y a
 
 ## Puntos Finales Relacionados
 
-- [Puntos Finales de Configuración de Características](./config-feature-endpoints) -- Indicadores de disponibilidad de características (también depende de la base de datos)
-- [Puntos Finales de Sincronización de Versión](./version-sync-endpoints) -- Versión del sistema y estado de sincronización
+- [Puntos Finales de Configuración de Características](./config-feature-endpoints.md) -- Indicadores de disponibilidad de características (también depende de la base de datos)
+- [Puntos Finales de Sincronización de Versión](./version-sync-endpoints.md) -- Versión del sistema y estado de sincronización

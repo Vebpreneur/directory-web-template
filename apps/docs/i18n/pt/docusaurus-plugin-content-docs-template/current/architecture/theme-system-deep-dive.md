@@ -13,7 +13,7 @@ O Theme System fornece uma infraestrutura de temas abrangente e multicamadas que
 
 ## Arquitetura
 
-O sistema de tema é colocado em camadas sobre o [Gerador de cores](./color-generator-system) e consumido pelo `LayoutThemeContext`:
+O sistema de tema é colocado em camadas sobre o [Gerador de cores](./color-generator-system.md) e consumido pelo `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Módulos Relacionados
 
-- [Sistema Gerador de Cores](./color-generator-system) - Base matemática para geração de paleta
+- [Sistema Gerador de Cores](./color-generator-system.md) - Base matemática para geração de paleta
 - [Sistema de cores](/template/architecture/color-system) -- Visão geral do sistema de cores de nível superior

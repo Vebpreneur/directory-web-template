@@ -6,7 +6,7 @@ Ce guide vous accompagne à travers le déploiement de votre Ever Works en produ
 
 Avant de déployer, assurez-vous d'avoir :
 
-- [ ] Terminé la [configuration de l'environnement](./environment-setup)
+- [ ] Terminé la [configuration de l'environnement](./environment-setup.md)
 - [ ] Testé en local avec `pnpm run dev`
 - [ ] Configuré votre dépôt de données
 - [ ] Configuré au moins un fournisseur d'authentification

@@ -69,4 +69,4 @@ Las respuestas de error usan `Cache-Control: no-cache` para evitar el almacenami
 
 ## Puntos Finales Relacionados
 
-- [Puntos Finales de Salud](./health-endpoints) -- Verificación de conectividad de base de datos
+- [Puntos Finales de Salud](./health-endpoints.md) -- Verificación de conectividad de base de datos

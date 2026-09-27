@@ -223,4 +223,4 @@ if (hasActiveSubscription && currentSubscription) {
 
 ## נקודות קצה קשורות
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- בדוק את זמינות התכונה בהתבסס על תוכנית
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- בדוק את זמינות התכונה בהתבסס על תוכנית

@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Свързани модули
 
-- [Cache System](./cache-system) -- Използва `CACHE_TAGS.CONFIG` за кеширане на конфигурацията
-- [Система за охрана](./guards-system-deep-dive) -- Консумира конфигурация на план/функция
+- [Cache System](./cache-system.md) -- Използва `CACHE_TAGS.CONFIG` за кеширане на конфигурацията
+- [Система за охрана](./guards-system-deep-dive.md) -- Консумира конфигурация на план/функция
 - [Библиотека със съдържание](/template/architecture/content-library) -- Резолюция на пътя на съдържанието, използвана от ConfigManager

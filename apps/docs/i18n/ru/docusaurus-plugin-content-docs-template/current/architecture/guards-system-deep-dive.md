@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Связанные модули
 
-- [Система диспетчера конфигураций](./config-manager-system) — флаги функций для функций, зависящих от базы данных.
-- [Query Client System](./query-client-system) — получение данных о подписке, которые передаются в средства защиты плана.
+- [Система диспетчера конфигураций](./config-manager-system.md) — флаги функций для функций, зависящих от базы данных.
+- [Query Client System](./query-client-system.md) — получение данных о подписке, которые передаются в средства защиты плана.

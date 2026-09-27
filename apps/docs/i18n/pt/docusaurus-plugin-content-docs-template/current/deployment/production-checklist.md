@@ -513,19 +513,19 @@ Acompanhe estas métricas para garantir a saúde em produção:
 
 Após implantação bem-sucedida:
 
-- [Monitoramento & Analytics](./monitoring) – Configurar monitoramento abrangente
-- [Variáveis de Ambiente](./environment-variables) – Gerenciar segredos de produção
-- [Implantação Docker](./docker) – Containerizar sua aplicação
-- [Suporte](../advanced-guide/support) – Obter ajuda quando necessário
+- [Monitoramento & Analytics](./monitoring.md) – Configurar monitoramento abrangente
+- [Variáveis de Ambiente](./environment-variables.md) – Gerenciar segredos de produção
+- [Implantação Docker](./docker.md) – Containerizar sua aplicação
+- [Suporte](../advanced-guide/support.md) – Obter ajuda quando necessário
 
 ## Recursos
 
 ### Documentação Interna
 
-- [Visão Geral da Arquitetura](../architecture/overview)
-- [Tech Stack](../architecture/tech-stack)
-- [Documentação da API](../development/api-documentation)
-- [Monitoramento](./monitoring)
+- [Visão Geral da Arquitetura](../architecture/overview.md)
+- [Tech Stack](../architecture/tech-stack.md)
+- [Documentação da API](../development/api-documentation.md)
+- [Monitoramento](./monitoring.md)
 
 ### Recursos Externos
 

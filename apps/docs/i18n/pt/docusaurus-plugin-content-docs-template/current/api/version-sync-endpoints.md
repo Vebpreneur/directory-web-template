@@ -164,5 +164,5 @@ As respostas de erro incluem um corpo estruturado com os campos `error`, `code`,
 
 ## Endpoints Relacionados
 
-- [Endpoints de Saúde](./health-endpoints) — Verificação de conectividade do banco de dados
-- [Endpoints de Configuração de Recursos](./config-feature-endpoints) — Flags de disponibilidade de funcionalidades
+- [Endpoints de Saúde](./health-endpoints.md) — Verificação de conectividade do banco de dados
+- [Endpoints de Configuração de Recursos](./config-feature-endpoints.md) — Flags de disponibilidade de funcionalidades

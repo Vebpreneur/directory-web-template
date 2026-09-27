@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Gerelateerde modules
 
-- [Cachesysteem](./cache-system) -- Gebruikt `CACHE_TAGS.CONFIG` voor configuratiecaching
-- [Guards System](./guards-system-deep-dive) - Verbruikt plan-/functieconfiguratie
+- [Cachesysteem](./cache-system.md) -- Gebruikt `CACHE_TAGS.CONFIG` voor configuratiecaching
+- [Guards System](./guards-system-deep-dive.md) - Verbruikt plan-/functieconfiguratie
 - [Inhoudsbibliotheek](/template/architecture/content-library) -- Resolutie van inhoudspaden gebruikt door ConfigManager

@@ -18,7 +18,7 @@ sidebar_position: 1
 - [ ] قاعدة بيانات PostgreSQL (يُوصى بـ Neon أو Supabase)
 - [ ] مستودع GitHub يحتوي على بيانات المحتوى
 - [ ] حساب Vercel (الإصدار المجاني كافٍ للبداية)
-- [ ] متغيرات البيئة المكوّنة (راجع دليل [متغيرات البيئة](./environment-variables))
+- [ ] متغيرات البيئة المكوّنة (راجع دليل [متغيرات البيئة](./environment-variables.md))
 
 ### 2. الاتصال بـ Vercel
 
@@ -53,7 +53,7 @@ COOKIE_SECURE=true
 CRON_SECRET=<openssl rand -base64 32>
 ```
 
-للقائمة الكاملة للمتغيرات، راجع دليل [متغيرات البيئة](./environment-variables).
+للقائمة الكاملة للمتغيرات، راجع دليل [متغيرات البيئة](./environment-variables.md).
 
 ### 4. تهيئة قاعدة البيانات
 
@@ -147,11 +147,11 @@ pnpm start
 
 | الموضوع | التوثيق |
 |---------|---------|
-| إعداد متغيرات البيئة | [متغيرات البيئة](./environment-variables) |
-| إعداد قاعدة البيانات والترحيل | [إدارة قاعدة البيانات](./database-management) |
-| إعداد Cron Jobs | [Cron Jobs](./cron-jobs) |
-| التحقق من Cron Jobs | [التحقق من Cron](./cron-verification) |
-| المراقبة والتنبيهات | [المراقبة](./monitoring) |
+| إعداد متغيرات البيئة | [متغيرات البيئة](./environment-variables.md) |
+| إعداد قاعدة البيانات والترحيل | [إدارة قاعدة البيانات](./database-management.md) |
+| إعداد Cron Jobs | [Cron Jobs](./cron-jobs.md) |
+| التحقق من Cron Jobs | [التحقق من Cron](./cron-verification.md) |
+| المراقبة والتنبيهات | [المراقبة](./monitoring.md) |
 
 ## مرجع سريع
 

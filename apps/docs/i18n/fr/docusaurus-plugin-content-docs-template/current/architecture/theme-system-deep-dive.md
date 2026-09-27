@@ -13,7 +13,7 @@ Le système de thèmes fournit une infrastructure de thèmes complète et multic
 
 ## Architecture
 
-Le système de thèmes est superposé au [Color Generator](./color-generator-system) et consommé par le `LayoutThemeContext` :
+Le système de thèmes est superposé au [Color Generator](./color-generator-system.md) et consommé par le `LayoutThemeContext` :
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Modules associés
 
-- [Système générateur de couleurs](./color-generator-system) -- Base mathématique pour la génération de palettes
+- [Système générateur de couleurs](./color-generator-system.md) -- Base mathématique pour la génération de palettes
 - [Système de couleurs](/template/architecture/color-system) -- Présentation du système de couleurs de niveau supérieur

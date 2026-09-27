@@ -149,4 +149,4 @@ Non viene applicato alcun limite di frequenza esplicito a questi endpoint. Gli e
 
 ## Endpoint Correlati
 
-- [Endpoint di Geocodifica](./geocode-endpoints) -- Geocodifica diretta e inversa (solo amministratori)
+- [Endpoint di Geocodifica](./geocode-endpoints.md) -- Geocodifica diretta e inversa (solo amministratori)

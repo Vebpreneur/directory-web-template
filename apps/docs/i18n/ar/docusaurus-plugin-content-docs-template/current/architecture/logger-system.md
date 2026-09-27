@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## الوحدات ذات الصلة
 
 - [طبقة عميل API](/template/architecture/api-client-layer) - يستخدم المُسجل لتسجيل الطلب/الاستجابة
-- [نظام إدارة التكوين](./config-manager-system) - تسجل ConfigService نتائج التحقق من الصحة عند بدء التشغيل
+- [نظام إدارة التكوين](./config-manager-system.md) - تسجل ConfigService نتائج التحقق من الصحة عند بدء التشغيل

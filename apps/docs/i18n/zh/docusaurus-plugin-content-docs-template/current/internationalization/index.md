@@ -114,7 +114,7 @@ export function MyComponent() {
 
 ## 下一步
 
-- [翻译指南 →](./translation-guide) – 了解如何添加和管理翻译
+- [翻译指南 →](./translation-guide.md) – 了解如何添加和管理翻译
 - [开始使用](/getting-started) – 设置您的项目
 - [自定义](/guides/customization) – 个性化您的网站
 

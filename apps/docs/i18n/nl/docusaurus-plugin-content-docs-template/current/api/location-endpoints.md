@@ -148,4 +148,4 @@ Er wordt geen expliciete snelheidsbeperking toegepast op deze eindpunten. Extern
 
 ## Gerelateerde eindpunten
 
-- [Geocode Endpoints](./geocode-endpoints) -- Voorwaartse en omgekeerde geocodering (alleen beheerder)
+- [Geocode Endpoints](./geocode-endpoints.md) -- Voorwaartse en omgekeerde geocodering (alleen beheerder)

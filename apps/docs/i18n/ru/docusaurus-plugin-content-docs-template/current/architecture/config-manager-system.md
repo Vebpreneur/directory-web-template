@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Связанные модули
 
-- [Система кэширования](./cache-system) — использует `CACHE_TAGS.CONFIG` для кэширования конфигурации.
-- [Guards System](./guards-system-deep-dive) — использует конфигурацию плана/функции.
+- [Система кэширования](./cache-system.md) — использует `CACHE_TAGS.CONFIG` для кэширования конфигурации.
+- [Guards System](./guards-system-deep-dive.md) — использует конфигурацию плана/функции.
 - [Библиотека контента](/template/architecture/content-library) — разрешение пути к содержимому, используемое ConfigManager.

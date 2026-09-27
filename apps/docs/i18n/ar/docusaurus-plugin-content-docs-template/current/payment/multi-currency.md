@@ -140,5 +140,5 @@ NEXT_PUBLIC_STRIPE_STANDARD_MONTHLY_PRICE_ID_CAD=price_aaa
 
 للحصول على التكوين التفصيلي الخاص بالموفر، راجع:
 - [تكوين الشريط](./شريط)
-- [تكوين LemonSqueezy](./lemonsqueezy)
-- [التكوين القطبي](./polar)
+- [تكوين LemonSqueezy](./lemonsqueezy.md)
+- [التكوين القطبي](./polar.md)

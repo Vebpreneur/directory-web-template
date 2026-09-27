@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Свързани модули
 
-- [Config Manager System](./config-manager-system) -- Осигурява конфигурация за страниране по време на изпълнение (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) -- Осигурява конфигурация за страниране по време на изпълнение (`type`, `itemsPerPage`)
 - [Библиотека със съдържание](/template/architecture/content-library) -- Използва пагинация за страници със съдържание

@@ -149,4 +149,4 @@ No se aplica limitación de velocidad explícita a estos puntos finales. Los ele
 
 ## Puntos Finales Relacionados
 
-- [Puntos Finales de Geocodificación](./geocode-endpoints) -- Geocodificación directa e inversa (solo administrador)
+- [Puntos Finales de Geocodificación](./geocode-endpoints.md) -- Geocodificación directa e inversa (solo administrador)

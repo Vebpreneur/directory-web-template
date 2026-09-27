@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Modules associés
 
-- [Cache System](./cache-system) -- Utilise `CACHE_TAGS.CONFIG` pour la mise en cache de la configuration
-- [Guards System](./guards-system-deep-dive) -- Consomme la configuration du plan/des fonctionnalités
+- [Cache System](./cache-system.md) -- Utilise `CACHE_TAGS.CONFIG` pour la mise en cache de la configuration
+- [Guards System](./guards-system-deep-dive.md) -- Consomme la configuration du plan/des fonctionnalités
 - [Content Library](/template/architecture/content-library) -- Résolution du chemin de contenu utilisée par ConfigManager

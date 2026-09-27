@@ -114,7 +114,7 @@ export function MyComponent() {
 
 ## Volgende Stappen
 
-- [Vertaalgids →](./translation-guide) – Leer hoe u vertalingen toevoegt en beheert
+- [Vertaalgids →](./translation-guide.md) – Leer hoe u vertalingen toevoegt en beheert
 - [Aan de slag](/getting-started) – Stel uw project in
 - [Aanpassing](/guides/customization) – Pas uw site aan
 

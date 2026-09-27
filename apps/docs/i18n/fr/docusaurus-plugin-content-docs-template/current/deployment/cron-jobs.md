@@ -118,4 +118,4 @@ Vercel envoie automatiquement ce secret dans l'en-tête `Authorization: Bearer <
 
 ## Vérification des Cron Jobs sur Vercel
 
-Consultez le guide [Vérification des Cron Jobs](./cron-verification) pour les instructions étape par étape.
+Consultez le guide [Vérification des Cron Jobs](./cron-verification.md) pour les instructions étape par étape.

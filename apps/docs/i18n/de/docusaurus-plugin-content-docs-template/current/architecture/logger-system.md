@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Verwandte Module
 
 - [API-Client-Schicht](/template/architecture/api-client-layer) – Verwendet den Logger für die Anforderungs-/Antwortprotokollierung
-- [Config Manager System](./config-manager-system) – ConfigService protokolliert Validierungsergebnisse beim Start
+- [Config Manager System](./config-manager-system.md) – ConfigService protokolliert Validierungsergebnisse beim Start

@@ -69,4 +69,4 @@ Le risposte di errore utilizzano `Cache-Control: no-cache` per evitare la memori
 
 ## Endpoint correlati
 
-- [Endpoint di salute](./health-endpoints) -- Controllo della connettività del database
+- [Endpoint di salute](./health-endpoints.md) -- Controllo della connettività del database

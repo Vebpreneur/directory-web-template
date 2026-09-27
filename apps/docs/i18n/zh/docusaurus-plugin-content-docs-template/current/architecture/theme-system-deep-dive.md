@@ -13,7 +13,7 @@ sidebar_position: 46
 
 ## 建筑
 
-主题系统位于 [Color Generator](./color-generator-system) 之上，并由 `LayoutThemeContext` 使用：
+主题系统位于 [Color Generator](./color-generator-system.md) 之上，并由 `LayoutThemeContext` 使用：
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## 相关模块
 
-- [Color Generator System](./color-generator-system) -- 调色板生成的数学基础
+- [Color Generator System](./color-generator-system.md) -- 调色板生成的数学基础
 - [Color System](/template/architecture/color-system) -- 更高级别的颜色系统概述

@@ -513,19 +513,19 @@ psql $DATABASE_URL < backup-YYYYMMDD.sql
 
 לאחר פריסה מוצלחת:
 
-- [ניטור ואנליטיקה](./monitoring) – הגדרת ניטור מקיף
-- [משתני סביבה](./environment-variables) – ניהול סודות ייצור
-- [פריסת Docker](./docker) – הכנסת האפליקציה למיכל
-- [תמיכה](../advanced-guide/support) – קבלת עזרה בעת הצורך
+- [ניטור ואנליטיקה](./monitoring.md) – הגדרת ניטור מקיף
+- [משתני סביבה](./environment-variables.md) – ניהול סודות ייצור
+- [פריסת Docker](./docker.md) – הכנסת האפליקציה למיכל
+- [תמיכה](../advanced-guide/support.md) – קבלת עזרה בעת הצורך
 
 ## משאבים
 
 ### תיעוד פנימי
 
-- [סקירת ארכיטקטורה](../architecture/overview)
-- [ערימת טכנולוגיות](../architecture/tech-stack)
-- [תיעוד API](../development/api-documentation)
-- [ניטור](./monitoring)
+- [סקירת ארכיטקטורה](../architecture/overview.md)
+- [ערימת טכנולוגיות](../architecture/tech-stack.md)
+- [תיעוד API](../development/api-documentation.md)
+- [ניטור](./monitoring.md)
 
 ### משאבים חיצוניים
 

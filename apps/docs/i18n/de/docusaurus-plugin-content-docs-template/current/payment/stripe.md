@@ -276,7 +276,7 @@ Erforderliche Pakete (bereits in Ever Works enthalten):
 
 ## Nächste Schritte
 
-- [LemonSqueezy-Konfiguration](./lemonsqueezy) – Alternativer Zahlungsanbieter
+- [LemonSqueezy-Konfiguration](./lemonsqueezy.md) – Alternativer Zahlungsanbieter
 - [Umgebungsvariablen](/deployment/environment-variables) – Umgebungseinrichtung abschließen
 - [Bereitstellung](/deployment) – Stellen Sie Ihre Zahlungsintegration bereit
 

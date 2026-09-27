@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Moduli correlati
 
 - [API Client Layer](/template/architecture/api-client-layer): utilizza il logger per la registrazione di richieste/risposte
-- [Config Manager System](./config-manager-system): ConfigService registra i risultati della convalida all'avvio
+- [Config Manager System](./config-manager-system.md): ConfigService registra i risultati della convalida all'avvio

@@ -167,5 +167,5 @@ const rgb = hexToRgb('#3b82f6');
 
 ## Verwandte Module
 
-- [Theme System Deep Dive](./theme-system-deep-dive) – Verbraucht die Palettengenerierung für dynamisches Theme
+- [Theme System Deep Dive](./theme-system-deep-dive.md) – Verbraucht die Palettengenerierung für dynamisches Theme
 - [Farbsystem](/template/architecture/color-system) – Dokumentation des Farbsystems auf höherer Ebene

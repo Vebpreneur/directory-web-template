@@ -116,7 +116,7 @@ Beim Start der Anwendung (über `instrumentation.ts`) führt die Vorlage automat
 1. **Führt Migrationen aus**: Die Funktion `migrate()` von Drizzle wendet alle ausstehenden Migrationen an (idempotent – bereits angewendete Migrationen werden übersprungen)
 2. **Seeds von Daten**: Wenn die Datenbank nicht geseedet wurde, wird das Seed-Skript mit beratendem Sperrschutz ausgeführt, um Race Conditions in Multiprozessbereitstellungen zu verhindern
 
-Dies wird von `lib/db/initialize.ts` erledigt. Weitere Informationen finden Sie im [Migrationsleitfaden](./migrations-guide) und im [Datenbank-Seeding](./seeding).
+Dies wird von `lib/db/initialize.ts` erledigt. Weitere Informationen finden Sie im [Migrationsleitfaden](./migrations-guide.md) und im [Datenbank-Seeding](./seeding.md).
 
 ## Schlüsselbefehle
 

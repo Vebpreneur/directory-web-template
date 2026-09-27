@@ -1,6 +1,6 @@
 # Démarrage rapide
 
-Mettez votre site d'annuaire en ligne en moins de 10 minutes ! Ce guide suppose que vous avez déjà effectué l'[installation](./installation).
+Mettez votre site d'annuaire en ligne en moins de 10 minutes ! Ce guide suppose que vous avez déjà effectué l'[installation](./installation.md).
 
 ## Étape 1 : Configuration de base
 

@@ -135,6 +135,6 @@ Il sistema multivaluta funziona perfettamente con tutti i fornitori di pagamenti
 - **Polar**: supporta multivaluta attraverso la configurazione del prodotto
 
 Per la configurazione dettagliata specifica del provider, vedere:
-- [Configurazione strisce](./stripe)
-- [Configurazione LemonSqueezy](./lemonsqueezy)
+- [Configurazione strisce](./stripe.md)
+- [Configurazione LemonSqueezy](./lemonsqueezy.md)
 - [Configurazione polare](./polare)

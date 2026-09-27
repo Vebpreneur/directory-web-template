@@ -520,8 +520,8 @@ Ever Works 开箱即用地支持 **13 种以上语言**：
 
 ## 下一步
 
-- [架构概述](./overview) - 了解系统架构
-- [平台功能](./features) - 探索所有平台功能
+- [架构概述](./overview.md) - 了解系统架构
+- [平台功能](./features.md) - 探索所有平台功能
 - [开发设置](/development/local-setup) - 设置您的环境
 
 ## 资源

@@ -114,7 +114,7 @@ export function MyComponent() {
 
 ## Nächste Schritte
 
-- [Übersetzungsanleitung →](./translation-guide) – Erfahren Sie, wie Sie Übersetzungen hinzufügen und verwalten
+- [Übersetzungsanleitung →](./translation-guide.md) – Erfahren Sie, wie Sie Übersetzungen hinzufügen und verwalten
 - [Erste Schritte](/getting-started) – Richten Sie Ihr Projekt ein
 - [Anpassung](/guides/customization) – Passen Sie Ihre Seite an
 

@@ -538,10 +538,10 @@ convertNumberToDate(1640995200);
 
 ## השלבים הבאים
 
-- [תצורת Stripe](./stripe) -- הגדרת Stripe השלם
-- [תצורת LemonSqueezy](./lemonsqueezy) -- הגדרת LemonSqueezy
-- [תצורת Polar](./polar) -- הגדרת Polar
+- [תצורת Stripe](./stripe.md) -- הגדרת Stripe השלם
+- [תצורת LemonSqueezy](./lemonsqueezy.md) -- הגדרת LemonSqueezy
+- [תצורת Polar](./polar.md) -- הגדרת Polar
 - [שילוב ריבוי מטבעות](./מולטי-מטבעות) -- תמיכה במטבעות
-- [Payment Architecture](./payment-architecture) -- צלילה עמוקה לתוך הארכיטקטורה
-- [Webhooks](./webhooks) -- פרטי טיפול ב-Webhook
-- [מדריך תצורה](./configuration) -- כל משתני הסביבה והאפשרויות
+- [Payment Architecture](./payment-architecture.md) -- צלילה עמוקה לתוך הארכיטקטורה
+- [Webhooks](./webhooks.md) -- פרטי טיפול ב-Webhook
+- [מדריך תצורה](./configuration.md) -- כל משתני הסביבה והאפשרויות

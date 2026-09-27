@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## الوحدات ذات الصلة
 
 - [مكتبة المحتوى](/template/architecture/content-library) -- المستهلك الأساسي لعلامات ذاكرة التخزين المؤقت وقيم TTL
-- [نظام إدارة التكوين](./config-manager-system) - يستخدم `CACHE_TAGS.CONFIG` للتخزين المؤقت لتكوين الموقع
+- [نظام إدارة التكوين](./config-manager-system.md) - يستخدم `CACHE_TAGS.CONFIG` للتخزين المؤقت لتكوين الموقع

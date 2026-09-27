@@ -347,4 +347,4 @@ Aucune limitation de débit explicite. Les URL de redirection dans les points de
 
 ## Points de terminaison associés
 
-- [Points de terminaison de paiement utilisateur](./user-payment-endpoints) -- Historique des paiements et gestion des abonnements utilisateur
+- [Points de terminaison de paiement utilisateur](./user-payment-endpoints.md) -- Historique des paiements et gestion des abonnements utilisateur

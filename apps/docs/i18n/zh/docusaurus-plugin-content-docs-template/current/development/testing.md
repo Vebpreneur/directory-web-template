@@ -266,8 +266,8 @@ import Image from 'next/image';
 
 ## 下一步
 
-- [本地设置](./local-setup) - 配置开发环境
-- [API 文档](./api-documentation) - 了解 API 文档
+- [本地设置](./local-setup.md) - 配置开发环境
+- [API 文档](./api-documentation.md) - 了解 API 文档
 - [部署](/docs/deployment) - 部署应用程序
 
 ## 资源

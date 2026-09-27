@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## Связанные модули
 
 - [Библиотека контента](/template/architecture/content-library) — основной потребитель тегов кэша и значений TTL.
-- [Система диспетчера конфигураций](./config-manager-system) — использует `CACHE_TAGS.CONFIG` для кэширования конфигурации сайта.
+- [Система диспетчера конфигураций](./config-manager-system.md) — использует `CACHE_TAGS.CONFIG` для кэширования конфигурации сайта.

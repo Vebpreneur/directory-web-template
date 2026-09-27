@@ -140,6 +140,6 @@ Das Multi-Währung-System funktioniert nahtlos mit allen Zahlungsanbietern:
 - **Polar**: Unterstützt Multi-Währung durch Produktkonfiguration
 
 Für detaillierte anbieterspezifische Konfiguration, siehe:
-- [Stripe-Konfiguration](./stripe)
-- [LemonSqueezy-Konfiguration](./lemonsqueezy)
-- [Polar-Konfiguration](./polar)
+- [Stripe-Konfiguration](./stripe.md)
+- [LemonSqueezy-Konfiguration](./lemonsqueezy.md)
+- [Polar-Konfiguration](./polar.md)

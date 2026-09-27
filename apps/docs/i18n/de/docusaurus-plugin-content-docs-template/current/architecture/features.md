@@ -699,8 +699,8 @@ Richtlinien und Best Practices für geräteübergreifende Tests.
 
 ## Nächste Schritte
 
-- [Tech Stack](./tech-stack) – Entdecken Sie den Technologie-Stack
-- [Architekturübersicht](./overview) – Verstehen Sie die Architektur
+- [Tech Stack](./tech-stack.md) – Entdecken Sie den Technologie-Stack
+- [Architekturübersicht](./overview.md) – Verstehen Sie die Architektur
 
 ## Ressourcen
 

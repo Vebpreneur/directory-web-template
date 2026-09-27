@@ -62,21 +62,21 @@ graph TD
 
 |Directory / Bestand|Beschrijving|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + Sentry-analyse singleton ([docs](./analytics-module))|
-|`lib/api/`|HTTP-clients voor browser en server ([docs](./api-client-module))|
-|`lib/auth/`|Authenticatie met NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|Taakplanning met Trigger.dev / local / no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|Cache-TTL en tagdefinities ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|Cache-invalidatiefuncties ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|PostHog + Sentry-analyse singleton ([docs](./analytics-module.md))|
+|`lib/api/`|HTTP-clients voor browser en server ([docs](./api-client-module.md))|
+|`lib/auth/`|Authenticatie met NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|Taakplanning met Trigger.dev / local / no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|Cache-TTL en tagdefinities ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|Cache-invalidatiefuncties ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|Gecentraliseerde configuratieservice met Zod-schema's|
 |`lib/config.ts`|Siteconfiguratie (`siteConfig`)|
 |`lib/config-manager.ts`|Runtime-configuratiemanager|
-|`lib/constants.ts`|Toepassingsconstanten vat ([docs](./constants-reference-module))|
+|`lib/constants.ts`|Toepassingsconstanten vat ([docs](./constants-reference-module.md))|
 |`lib/constants/`|Domeinspecifieke constanten (betaling, analyse)|
 |`lib/content.ts`|Git-gebaseerd CMS-inhoud laden en caching|
-|`lib/db/`|Databaseverbinding, migraties, seeden, queries ([docs](./db-utilities-module))|
-|`lib/editor/`|Componenten en hulpprogramma's voor de Rich Text Editor van TipTap ([docs](./editor-utilities-module))|
-|`lib/guards/`|Plangebaseerde functietoegangscontrole ([docs](./guards-module))|
+|`lib/db/`|Databaseverbinding, migraties, seeden, queries ([docs](./db-utilities-module.md))|
+|`lib/editor/`|Componenten en hulpprogramma's voor de Rich Text Editor van TipTap ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|Plangebaseerde functietoegangscontrole ([docs](./guards-module.md))|
 |`lib/helpers.ts`|Taalcode naar landcode mapping|
 |`lib/lib.ts`|Resolutie van inhoudspaden, hulpprogramma's voor bestandssysteem|
 |`lib/logger.ts`|Gestructureerd logboekprogramma|

@@ -347,4 +347,4 @@ window.location.href = data.checkoutUrl;
 
 ## נקודות קצה קשורות
 
-- [User Payment Endpoints](./user-payment-endpoints) -- היסטוריית תשלומי משתמש וניהול מנויים
+- [User Payment Endpoints](./user-payment-endpoints.md) -- היסטוריית תשלומי משתמש וניהול מנויים

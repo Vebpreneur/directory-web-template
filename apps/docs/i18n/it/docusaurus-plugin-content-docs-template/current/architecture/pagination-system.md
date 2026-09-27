@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Moduli correlati
 
-- [Config Manager System](./config-manager-system) -- Fornisce la configurazione dell'impaginazione runtime (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) -- Fornisce la configurazione dell'impaginazione runtime (`type`, `itemsPerPage`)
 - [Libreria contenuti](/template/architecture/content-library) -- Utilizza l'impaginazione per le pagine di elenco dei contenuti

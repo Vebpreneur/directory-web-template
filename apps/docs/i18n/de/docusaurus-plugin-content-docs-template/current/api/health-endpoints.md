@@ -68,5 +68,5 @@ Keine explizite Ratenbegrenzung angewendet. Dieser Endpunkt ist leichtgewichtig 
 
 ## Verwandte Endpunkte
 
-- [Konfigurations-Feature-Endpunkte](./config-feature-endpoints) – Feature-Verfügbarkeits-Flags (hängt ebenfalls von der Datenbank ab)
-- [Version-Sync-Endpunkte](./version-sync-endpoints) – Systemversion und Synchronisierungsstatus
+- [Konfigurations-Feature-Endpunkte](./config-feature-endpoints.md) – Feature-Verfügbarkeits-Flags (hängt ebenfalls von der Datenbank ab)
+- [Version-Sync-Endpunkte](./version-sync-endpoints.md) – Systemversion und Synchronisierungsstatus

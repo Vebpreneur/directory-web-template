@@ -212,4 +212,4 @@ Nessuna limitazione delle richieste esplicita. L'endpoint di rilevamento della v
 
 ## Endpoint Correlati
 
-- [Endpoint Configurazione Funzionalità](./config-feature-endpoints) -- Verifica la disponibilità delle funzionalità in base al piano
+- [Endpoint Configurazione Funzionalità](./config-feature-endpoints.md) -- Verifica la disponibilità delle funzionalità in base al piano
