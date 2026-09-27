@@ -1,5 +1,6 @@
 import type { Config, Plugin } from '@docusaurus/types';
 import fs from 'fs';
+import { createRequire } from 'module';
 import path from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 
@@ -28,6 +29,24 @@ const HAS_DOCS_URL = DOCS_URL !== '';
 // Docusaurus requires a `url` even when there is no canonical origin. This one is reserved
 // (RFC 2606 .invalid) so it can never resolve, and nothing that reaches a crawler names it.
 const PLACEHOLDER_URL = 'https://docs.example.invalid';
+
+// src/theme/SiteMetadata is ejected from @docusaurus/theme-classic 3.9 (and leans on
+// @docusaurus/theme-common/internal), while package.json allows ^3.9.2. An upgrade to another
+// minor would keep rendering the ejected 3.9 copy with nothing to say it diverged from upstream,
+// so the build stops instead: re-diff the ejected component against the new upstream, then
+// update EJECTED_THEME_CLASSIC. theme-classic is not a direct dependency; it is resolved the way
+// preset-classic resolves it.
+const EJECTED_THEME_CLASSIC = '3.9';
+const THEME_CLASSIC_VERSION: string = createRequire(require.resolve('@docusaurus/preset-classic'))(
+	'@docusaurus/theme-classic/package.json'
+).version;
+if (!THEME_CLASSIC_VERSION.startsWith(`${EJECTED_THEME_CLASSIC}.`)) {
+	throw new Error(
+		`@docusaurus/theme-classic is ${THEME_CLASSIC_VERSION}, but src/theme/SiteMetadata is ejected from ` +
+			`${EJECTED_THEME_CLASSIC}.x: re-diff it against the new upstream, then update EJECTED_THEME_CLASSIC ` +
+			'in apps/docs/docusaurus.config.ts.'
+	);
+}
 
 // Locales this build really renders. The image builds English only (`build:en`, see
 // apps/docs/Dockerfile), yet Docusaurus announces EVERY configured locale as an alternate
