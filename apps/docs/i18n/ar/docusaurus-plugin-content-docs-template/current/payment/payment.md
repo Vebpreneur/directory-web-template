@@ -542,6 +542,6 @@ convertNumberToDate(1640995200);
 - [تكوين LemonSqueezy](./lemonsqueezy.md) - إعداد LemonSqueezy
 - [التكوين القطبي](./polar.md)--الإعداد القطبي
 - [تكامل العملات المتعددة](./multi-currency.md) -- دعم العملات
-- [بنية الدفع](./Payment-architecture.md) -- الغوص العميق في الهندسة المعمارية
+- [بنية الدفع](./payment-architecture.md) -- الغوص العميق في الهندسة المعمارية
 - [Webhooks](./webhooks.md) - تفاصيل التعامل مع Webhooks
 - [دليل التكوين](./configuration.md)--جميع متغيرات وخيارات البيئة
