@@ -119,7 +119,7 @@ Includes validation for password strength requirements and confirmation matching
 
 ## Billing Settings Components
 
-The billing subdirectory contains all settings page billing components. See the [Billing & Payment Components](./billing-components) page for complete documentation of these components, including:
+The billing subdirectory contains all settings page billing components. See the [Billing & Payment Components](./billing-components.md) page for complete documentation of these components, including:
 
 - `SubscriptionCard` - Active subscription display with auto-renewal toggle
 - `PaymentCard` - Individual payment transaction display

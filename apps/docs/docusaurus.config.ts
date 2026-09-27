@@ -32,6 +32,18 @@ const BUILT_LOCALES = (process.env.DOCS_LOCALES || '')
 	.map((locale) => locale.trim())
 	.filter((locale) => ALL_LOCALES.includes(locale));
 
+// The page the site root is canonicalized to. The docs ingress in front of the canonical host
+// (k8s-gitops apps/docs-demo-ever-works-prod, annotation nginx.ingress.kubernetes.io/app-root)
+// answers https://docs.demo.ever.works/ with a 302 to /getting-started/, so a canonical,
+// og:url, hreflang or sitemap URL naming the root points crawlers at a redirect. The page
+// rendered at the root therefore names this path instead (src/theme/SiteMetadata), and the
+// root is left out of the sitemap. DOCS_HOME_CANONICAL_PATH overrides it; set it to "/" for a
+// deployment that serves the root itself, which restores the self-canonical root page.
+const HOME_CANONICAL_SEGMENTS = (process.env.DOCS_HOME_CANONICAL_PATH || '/getting-started/')
+	.trim()
+	.replace(/^\/+|\/+$/g, '');
+const DOCS_HOME_CANONICAL_PATH = HOME_CANONICAL_SEGMENTS ? `/${HOME_CANONICAL_SEGMENTS}/` : '/';
+
 // robots.txt, written from the SAME `url` as the canonicals so it can never name another host.
 // Without it the origin had no robots.txt and nothing pointed crawlers at the sitemap.
 function robotsTxtPlugin(): Plugin {
@@ -117,6 +129,11 @@ const config: Config = {
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
 	baseUrl: '/',
+	// Every route is emitted as a directory (foo/index.html) and served at /foo/. Without this,
+	// canonicals, og:url, hreflang and sitemap <loc> used the slash-less /foo, which the nginx
+	// behind the host answers with a 301 to /foo/ - so almost every URL handed to crawlers was
+	// a redirect instead of the page.
+	trailingSlash: true,
 
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
@@ -149,6 +166,11 @@ const config: Config = {
 			{
 				blog: false,
 				docs: false,
+				// The site root redirects on the canonical host (see DOCS_HOME_CANONICAL_PATH), so it
+				// is not a sitemap URL; the page it redirects to is listed in its own right.
+				sitemap: {
+					ignorePatterns: DOCS_HOME_CANONICAL_PATH === '/' ? [] : ['/']
+				},
 				theme: {
 					customCss: './src/css/custom.css'
 				}
@@ -290,6 +312,8 @@ const config: Config = {
 			}
 		},
 	customFields: {
+		// Read by src/theme/SiteMetadata: the canonical path of the page rendered at the site root.
+		homeCanonicalPath: DOCS_HOME_CANONICAL_PATH,
 		EVER_WORKS_WEBSITE_TEMPLATE_API_URL: process.env.EVER_WORKS_WEBSITE_TEMPLATE_API_URL,
 		footerData: {
 			description: 'Ever Works is an open-source modern directory website solution.',

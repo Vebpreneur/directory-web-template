@@ -283,5 +283,5 @@ Solution: Update OAuth app settings with correct URLs
 
 Once your environment is configured:
 
-1. [Deploy your first version](./first-deployment)
-2. [Set up monitoring](../deployment/monitoring)
+1. [Deploy your first version](./first-deployment.md)
+2. [Set up monitoring](../deployment/monitoring.md)

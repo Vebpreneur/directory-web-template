@@ -275,7 +275,7 @@ Required packages (already included in Ever Works):
 
 ## Next Steps
 
-- [Stripe Configuration](./stripe) - Alternative payment provider
+- [Stripe Configuration](./stripe.md) - Alternative payment provider
 - [Payment Overview](/payment) - Compare payment providers
 - [Environment Variables](/deployment/environment-variables) - Complete environment setup
 - [Deployment](/deployment/overview) - Deploy your payment integration

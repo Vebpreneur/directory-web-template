@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Related Modules
 
-- [Config Manager System](./config-manager-system) -- Provides runtime pagination configuration (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) -- Provides runtime pagination configuration (`type`, `itemsPerPage`)
 - [Content Library](/template/architecture/content-library) -- Uses pagination for content listing pages

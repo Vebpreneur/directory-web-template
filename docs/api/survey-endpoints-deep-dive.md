@@ -321,4 +321,4 @@ No explicit rate limiting. Response submissions capture IP address and user agen
 
 ## Related Endpoints
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- Check if the surveys feature is enabled
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Check if the surveys feature is enabled

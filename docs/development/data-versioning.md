@@ -358,8 +358,8 @@ export function CustomVersion() {
 
 ## Next Steps
 
-- [Testing](./testing) - Test your implementation
-- [API Documentation](./api-documentation) - Learn about API docs
+- [Testing](./testing.md) - Test your implementation
+- [API Documentation](./api-documentation.md) - Learn about API docs
 - [Deployment](/docs/deployment) - Deploy with version tracking
 
 ## Resources

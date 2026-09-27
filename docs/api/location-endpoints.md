@@ -149,4 +149,4 @@ No explicit rate limiting is applied to these endpoints. Remote/virtual items ar
 
 ## Related Endpoints
 
-- [Geocode Endpoints](./geocode-endpoints) -- Forward and reverse geocoding (admin only)
+- [Geocode Endpoints](./geocode-endpoints.md) -- Forward and reverse geocoding (admin only)

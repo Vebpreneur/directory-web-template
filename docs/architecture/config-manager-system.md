@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Related Modules
 
-- [Cache System](./cache-system) -- Uses `CACHE_TAGS.CONFIG` for configuration caching
-- [Guards System](./guards-system-deep-dive) -- Consumes plan/feature configuration
+- [Cache System](./cache-system.md) -- Uses `CACHE_TAGS.CONFIG` for configuration caching
+- [Guards System](./guards-system-deep-dive.md) -- Consumes plan/feature configuration
 - [Content Library](/template/architecture/content-library) -- Content path resolution used by ConfigManager

@@ -13,7 +13,7 @@ The Theme System provides a comprehensive, multi-layered theming infrastructure 
 
 ## Architecture
 
-The theme system is layered on top of the [Color Generator](./color-generator-system) and consumed by the `LayoutThemeContext`:
+The theme system is layered on top of the [Color Generator](./color-generator-system.md) and consumed by the `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Related Modules
 
-- [Color Generator System](./color-generator-system) -- Mathematical foundation for palette generation
+- [Color Generator System](./color-generator-system.md) -- Mathematical foundation for palette generation
 - [Color System](/template/architecture/color-system) -- Higher-level color system overview
