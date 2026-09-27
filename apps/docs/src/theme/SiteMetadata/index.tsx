@@ -9,12 +9,15 @@
  * Ejected from @docusaurus/theme-classic 3.9.2 (theme/SiteMetadata). Re-diff it against the
  * upstream component on every Docusaurus upgrade.
  *
- * The one behavioral change: the site root is never emitted as a canonical, og:url or
- * alternate-language URL. On the canonical host the docs ingress answers the root with a 302
- * (nginx.ingress.kubernetes.io/app-root -> /getting-started/), so wherever upstream would emit
- * the default locale's root URL, this component emits the served page named by
- * `customFields.homeCanonicalPath` (DOCS_HOME_CANONICAL_PATH in docusaurus.config.ts) instead.
- * With homeCanonicalPath "/" it renders exactly what upstream renders.
+ * The behavioral changes, both driven by src/utils/servedUrl:
+ * - When the deployment redirects its site root (the docs.demo.ever.works ingress answers it with
+ *   a 302 to /getting-started/, nginx.ingress.kubernetes.io/app-root), the root is never emitted
+ *   as a canonical, og:url or alternate-language URL: wherever upstream would emit the default
+ *   locale's root URL, this component emits the served page named by
+ *   `customFields.homeCanonicalPath` (DOCS_HOME_CANONICAL_PATH in docusaurus.config.ts) instead.
+ * - A build with no canonical origin (`customFields.hasCanonicalOrigin` false: no DOCS_URL, so the
+ *   build is noindex) emits no canonical, og:url or alternate-language link at all.
+ * With homeCanonicalPath "/" and a canonical origin it renders exactly what upstream renders.
  *
  * The canonical URL is built with useAlternatePageUtils for the current locale: the same site url
  * + locale baseUrl + trailing-slash-normalized pathname that upstream builds, without importing
@@ -29,20 +32,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { PageMetadata, useThemeConfig } from '@docusaurus/theme-common';
 import { DEFAULT_SEARCH_TAG, useAlternatePageUtils, keyboardFocusedClassName } from '@docusaurus/theme-common/internal';
 import SearchMetadata from '@theme/SearchMetadata';
-
-// Maps the default locale's root URL to the served home page URL; every other URL passes through.
-function useServedUrl(): (url: string) => string {
-	const {
-		siteConfig: { customFields },
-		i18n: { defaultLocale, localeConfigs }
-	} = useDocusaurusContext();
-	const homeCanonicalPath =
-		typeof customFields?.homeCanonicalPath === 'string' ? customFields.homeCanonicalPath : '/';
-	const { url, baseUrl } = localeConfigs[defaultLocale]!;
-	const rootUrl = `${url}${baseUrl}`;
-	const homeUrl = `${rootUrl}${homeCanonicalPath.replace(/^\/+/, '')}`;
-	return (candidate) => (candidate === rootUrl ? homeUrl : candidate);
-}
+import { useHasCanonicalOrigin, useServedUrl } from '../../utils/servedUrl';
 
 // TODO move to SiteMetadataDefaults or theme-common ?
 // Useful for i18n/SEO
@@ -54,6 +44,7 @@ function AlternateLangHeaders(): ReactNode {
 	} = useDocusaurusContext();
 	const alternatePageUtils = useAlternatePageUtils();
 	const servedUrl = useServedUrl();
+	const hasCanonicalOrigin = useHasCanonicalOrigin();
 	const currentHtmlLang = localeConfigs[currentLocale]!.htmlLang;
 
 	// HTML lang is a BCP 47 tag, but the Open Graph protocol requires
@@ -66,19 +57,22 @@ function AlternateLangHeaders(): ReactNode {
 	// See https://www.searchviu.com/en/multiple-hreflang-tags-one-url/
 	return (
 		<Head>
-			{Object.entries(localeConfigs).map(([locale, { htmlLang }]) => (
+			{hasCanonicalOrigin &&
+				Object.entries(localeConfigs).map(([locale, { htmlLang }]) => (
+					<link
+						key={locale}
+						rel="alternate"
+						href={servedUrl(alternatePageUtils.createUrl({ locale, fullyQualified: true }))}
+						hrefLang={htmlLang}
+					/>
+				))}
+			{hasCanonicalOrigin && (
 				<link
-					key={locale}
 					rel="alternate"
-					href={servedUrl(alternatePageUtils.createUrl({ locale, fullyQualified: true }))}
-					hrefLang={htmlLang}
+					href={servedUrl(alternatePageUtils.createUrl({ locale: defaultLocale, fullyQualified: true }))}
+					hrefLang="x-default"
 				/>
-			))}
-			<link
-				rel="alternate"
-				href={servedUrl(alternatePageUtils.createUrl({ locale: defaultLocale, fullyQualified: true }))}
-				hrefLang="x-default"
-			/>
+			)}
 
 			<meta property="og:locale" content={bcp47ToOpenGraphLocale(currentHtmlLang)} />
 			{Object.values(localeConfigs)
@@ -119,6 +113,7 @@ export default function SiteMetadata(): ReactNode {
 	// TODO maybe move these 2 themeConfig to siteConfig?
 	// These seems useful for other themes as well
 	const { metadata, image: defaultImage } = useThemeConfig();
+	const hasCanonicalOrigin = useHasCanonicalOrigin();
 
 	return (
 		<>
@@ -131,7 +126,7 @@ export default function SiteMetadata(): ReactNode {
 
 			{defaultImage && <PageMetadata image={defaultImage} />}
 
-			<CanonicalUrlHeaders />
+			{hasCanonicalOrigin && <CanonicalUrlHeaders />}
 
 			<AlternateLangHeaders />
 

@@ -62,8 +62,18 @@ jobs:
           # cache. The Dockerfile already accepts this build-arg and falls back to
           # public npm when it is empty (forks, GitHub-hosted builds), so this is
           # additive. Integrity hashes are still verified by pnpm.
+          #
+          # DOCS_URL / DOCS_HOME_CANONICAL_PATH: the docs image's canonical origin and the page
+          # its site root redirects to (apps/docs/docusaurus.config.ts). They belong to the
+          # REPOSITORY, so they come from its variables; a Work repo without DOCS_URL builds a
+          # noindex docs image that names no host. The literal fallbacks apply to the template
+          # repository itself only (its docs.demo.ever.works ingress redirects / to
+          # /getting-started/) and evaluate to '' in every repo generated from it. The root
+          # Dockerfile declares neither arg and ignores them.
           build-args: |
             VERDACCIO_REGISTRY=${{ vars.VERDACCIO_REGISTRY }}
+            DOCS_URL=${{ vars.DOCS_URL || (github.repository == 'ever-works/directory-web-template' && 'https://docs.demo.ever.works' || '') }}
+            DOCS_HOME_CANONICAL_PATH=${{ vars.DOCS_HOME_CANONICAL_PATH || (github.repository == 'ever-works/directory-web-template' && '/getting-started/' || '') }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}${{ matrix.suffix }}:${{ steps.t.outputs.tag }}
             ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}${{ matrix.suffix }}:sha-${{ github.sha }}

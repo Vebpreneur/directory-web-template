@@ -11,14 +11,23 @@ const HAS_ALGOLIA_CREDENTIALS = ALGOLIA_APP_ID && ALGOLIA_API_KEY && ALGOLIA_IND
 require('dotenv').config();
 
 // Canonical origin of THIS docs build. Docusaurus derives every rel="canonical", og:url,
-// alternate-language link and sitemap <loc> from `url`, so it must be the primary host this
-// build is served on. The image serves docs.demo.ever.works (primary) and the aliases
-// docs-demo.ever.works, docs-demo-dev.ever.works and directory-web-template.ever.works, and
-// all of them must name the primary. It used to say https://docs.ever.works - a DIFFERENT
-// site (the Ever Works platform docs) - so every page here declared itself a duplicate of a
-// page on another site. DOCS_URL overrides it at build time, e.g. for a repository generated
-// from this template that serves its docs on a host of its own.
-const DOCS_URL = (process.env.DOCS_URL || 'https://docs.demo.ever.works').replace(/\/+$/, '');
+// alternate-language link, breadcrumb URL and sitemap <loc> from `url`, so it must be the
+// primary host this build is served on. That host belongs to the REPOSITORY, not to this file:
+// the Ever Works platform force-syncs this template verbatim into every Work repo, so a host
+// written here would be claimed by every one of them - each instance's pages declaring
+// themselves duplicates of the template's docs (the bug that pointing this at
+// https://docs.ever.works, a different site, already caused once). So DOCS_URL comes from the
+// build environment: .github/workflows/k8s-build.yml passes the repository variable DOCS_URL
+// into apps/docs/Dockerfile (and, for ever-works/directory-web-template only, falls back to
+// https://docs.demo.ever.works). A build without DOCS_URL still works, but it is noindex and
+// names no host at all: no canonical, og:url, hreflang, og:image, breadcrumb structured data or
+// sitemap, and a robots.txt with no Sitemap line. A deployment that has not said where its
+// docs live must not point crawlers anywhere.
+const DOCS_URL = (process.env.DOCS_URL || '').trim().replace(/\/+$/, '');
+const HAS_DOCS_URL = DOCS_URL !== '';
+// Docusaurus requires a `url` even when there is no canonical origin. This one is reserved
+// (RFC 2606 .invalid) so it can never resolve, and nothing that reaches a crawler names it.
+const PLACEHOLDER_URL = 'https://docs.example.invalid';
 
 // Locales this build really renders. The image builds English only (`build:en`, see
 // apps/docs/Dockerfile), yet Docusaurus announces EVERY configured locale as an alternate
@@ -32,27 +41,32 @@ const BUILT_LOCALES = (process.env.DOCS_LOCALES || '')
 	.map((locale) => locale.trim())
 	.filter((locale) => ALL_LOCALES.includes(locale));
 
-// The page the site root is canonicalized to. The docs ingress in front of the canonical host
-// (k8s-gitops apps/docs-demo-ever-works-prod, annotation nginx.ingress.kubernetes.io/app-root)
-// answers https://docs.demo.ever.works/ with a 302 to /getting-started/, so a canonical,
-// og:url, hreflang or sitemap URL naming the root points crawlers at a redirect. The page
-// rendered at the root therefore names this path instead (src/theme/SiteMetadata), and the
-// root is left out of the sitemap. DOCS_HOME_CANONICAL_PATH overrides it; set it to "/" for a
-// deployment that serves the root itself, which restores the self-canonical root page.
-const HOME_CANONICAL_SEGMENTS = (process.env.DOCS_HOME_CANONICAL_PATH || '/getting-started/')
-	.trim()
-	.replace(/^\/+|\/+$/g, '');
+// The page the site root is canonicalized to, for a deployment whose site root is a redirect.
+// The ingress in front of docs.demo.ever.works (k8s-gitops apps/docs-demo-ever-works-prod,
+// annotation nginx.ingress.kubernetes.io/app-root) answers the root with a 302 to
+// /getting-started/, and a canonical, og:url, hreflang, breadcrumb or sitemap URL naming a
+// redirect points crawlers at the redirect instead of a page. DOCS_HOME_CANONICAL_PATH names
+// the page such a deployment sends its root to: the page rendered at the root then names that
+// path (src/theme/SiteMetadata, src/theme/DocBreadcrumbs/StructuredData) and the root is left
+// out of the sitemap. Like DOCS_URL it describes one deployment, so it comes from the build
+// environment (k8s-build.yml: repository variable DOCS_HOME_CANONICAL_PATH, falling back to
+// /getting-started/ for ever-works/directory-web-template only). Unset, or "/", means the root
+// serves itself: the root page is self-canonical and listed in the sitemap.
+const HOME_CANONICAL_SEGMENTS = (process.env.DOCS_HOME_CANONICAL_PATH || '/').trim().replace(/^\/+|\/+$/g, '');
 const DOCS_HOME_CANONICAL_PATH = HOME_CANONICAL_SEGMENTS ? `/${HOME_CANONICAL_SEGMENTS}/` : '/';
 
 // robots.txt, written from the SAME `url` as the canonicals so it can never name another host.
-// Without it the origin had no robots.txt and nothing pointed crawlers at the sitemap.
+// Without it the origin had no robots.txt and nothing pointed crawlers at the sitemap. A build
+// with no DOCS_URL has no sitemap (noindex), so its robots.txt names none.
 function robotsTxtPlugin(): Plugin {
 	return {
 		name: 'docs-robots-txt',
 		async postBuild({ siteConfig, outDir }) {
-			const sitemap = `${siteConfig.url}${siteConfig.baseUrl}sitemap.xml`;
-			const body = ['User-agent: *', 'Allow: /', '', `Sitemap: ${sitemap}`, ''].join('\n');
-			await fs.promises.writeFile(path.join(outDir, 'robots.txt'), body);
+			const lines = ['User-agent: *', 'Allow: /', ''];
+			if (HAS_DOCS_URL) {
+				lines.push(`Sitemap: ${siteConfig.url}${siteConfig.baseUrl}sitemap.xml`, '');
+			}
+			await fs.promises.writeFile(path.join(outDir, 'robots.txt'), lines.join('\n'));
 		}
 	};
 }
@@ -125,7 +139,9 @@ const config: Config = {
 	tagline: 'Modern Directory Website Solution',
 	favicon: 'img/favicon.ico',
 	// Set the production Url of your site here
-	url: DOCS_URL, // Your website URL (see DOCS_URL above)
+	url: HAS_DOCS_URL ? DOCS_URL : PLACEHOLDER_URL, // Your website URL (see DOCS_URL above)
+	// Without a canonical origin every page is noindex and the sitemap is not written.
+	noIndex: !HAS_DOCS_URL,
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
 	baseUrl: '/',
@@ -166,8 +182,8 @@ const config: Config = {
 			{
 				blog: false,
 				docs: false,
-				// The site root redirects on the canonical host (see DOCS_HOME_CANONICAL_PATH), so it
-				// is not a sitemap URL; the page it redirects to is listed in its own right.
+				// When the deployment redirects its site root (DOCS_HOME_CANONICAL_PATH is not "/"), the
+				// root is not a sitemap URL; the page it redirects to is listed in its own right.
 				sitemap: {
 					ignorePatterns: DOCS_HOME_CANONICAL_PATH === '/' ? [] : ['/']
 				},
@@ -180,8 +196,9 @@ const config: Config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		{
-			// Replace with your project's social card
-			image: '/overview.png',
+			// Replace with your project's social card. og:image must be an absolute URL, so a build
+			// without a canonical origin (no DOCS_URL) has none rather than one on the placeholder host.
+			image: HAS_DOCS_URL ? '/overview.png' : undefined,
 
 			colorMode: {
 				defaultMode: 'dark'
@@ -312,7 +329,9 @@ const config: Config = {
 			}
 		},
 	customFields: {
-		// Read by src/theme/SiteMetadata: the canonical path of the page rendered at the site root.
+		// Read by src/utils/servedUrl (SiteMetadata, DocBreadcrumbs/StructuredData): whether this
+		// build has a canonical origin at all, and the canonical path of the page at the site root.
+		hasCanonicalOrigin: HAS_DOCS_URL,
 		homeCanonicalPath: DOCS_HOME_CANONICAL_PATH,
 		EVER_WORKS_WEBSITE_TEMPLATE_API_URL: process.env.EVER_WORKS_WEBSITE_TEMPLATE_API_URL,
 		footerData: {

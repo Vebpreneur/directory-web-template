@@ -55,8 +55,17 @@ COPY docs/ ./docs/
 # DOCS_LOCALES must name exactly the locales this build renders: it stops the pages
 # announcing the 12 unbuilt locales as alternate languages that all point back at the
 # English URL. Drop it (or list every locale) together with `build:en` when the full-locale
-# build comes back. The canonical host is the DOCS_URL default in docusaurus.config.ts.
+# build comes back.
 ENV DOCS_LOCALES=en
+# The canonical origin of THIS repository's docs and the page its site root redirects to (see
+# DOCS_URL and DOCS_HOME_CANONICAL_PATH in docusaurus.config.ts). They describe the deployment,
+# not the template, so they are build args: k8s-build.yml passes the repository variables of
+# the same names. Empty DOCS_URL => a noindex build that names no host (no canonical, hreflang,
+# og:image, breadcrumb structured data or sitemap); empty DOCS_HOME_CANONICAL_PATH => "/".
+ARG DOCS_URL=""
+ARG DOCS_HOME_CANONICAL_PATH=""
+ENV DOCS_URL=${DOCS_URL} \
+    DOCS_HOME_CANONICAL_PATH=${DOCS_HOME_CANONICAL_PATH}
 RUN pnpm --filter @ever-works/docs build:en
 
 # ---- runtime: nginx serving the static build ------------------------------
