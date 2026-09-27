@@ -1,4 +1,5 @@
-import type { Config } from '@docusaurus/types';
+import type { Config, Plugin } from '@docusaurus/types';
+import fs from 'fs';
 import path from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 
@@ -8,6 +9,42 @@ const ALGOLIA_API_KEY = process.env.ALGOLIA_API_KEY || null;
 const ALGOLIA_INDEX_NAME = process.env.ALGOLIA_INDEX_NAME || null;
 const HAS_ALGOLIA_CREDENTIALS = ALGOLIA_APP_ID && ALGOLIA_API_KEY && ALGOLIA_INDEX_NAME;
 require('dotenv').config();
+
+// Canonical origin of THIS docs build. Docusaurus derives every rel="canonical", og:url,
+// alternate-language link and sitemap <loc> from `url`, so it must be the primary host this
+// build is served on. The image serves docs.demo.ever.works (primary) and the aliases
+// docs-demo.ever.works, docs-demo-dev.ever.works and directory-web-template.ever.works, and
+// all of them must name the primary. It used to say https://docs.ever.works - a DIFFERENT
+// site (the Ever Works platform docs) - so every page here declared itself a duplicate of a
+// page on another site. DOCS_URL overrides it at build time, e.g. for a repository generated
+// from this template that serves its docs on a host of its own.
+const DOCS_URL = (process.env.DOCS_URL || 'https://docs.demo.ever.works').replace(/\/+$/, '');
+
+// Locales this build really renders. The image builds English only (`build:en`, see
+// apps/docs/Dockerfile), yet Docusaurus announces EVERY configured locale as an alternate
+// language of each page, and in an English-only build all of those links point back at the
+// English URL - an invalid annotation (and a locale menu full of 404s). DOCS_LOCALES, a
+// comma-separated subset such as "en", narrows the list to what is actually built; leaving
+// it unset keeps every locale for a full multi-locale build.
+const ALL_LOCALES = ['en', 'fr', 'ar', 'bg', 'zh', 'nl', 'de', 'he', 'it', 'pl', 'pt', 'ru', 'es'];
+const BUILT_LOCALES = (process.env.DOCS_LOCALES || '')
+	.split(',')
+	.map((locale) => locale.trim())
+	.filter((locale) => ALL_LOCALES.includes(locale));
+
+// robots.txt, written from the SAME `url` as the canonicals so it can never name another host.
+// Without it the origin had no robots.txt and nothing pointed crawlers at the sitemap.
+function robotsTxtPlugin(): Plugin {
+	return {
+		name: 'docs-robots-txt',
+		async postBuild({ siteConfig, outDir }) {
+			const sitemap = `${siteConfig.url}${siteConfig.baseUrl}sitemap.xml`;
+			const body = ['User-agent: *', 'Allow: /', '', `Sitemap: ${sitemap}`, ''].join('\n');
+			await fs.promises.writeFile(path.join(outDir, 'robots.txt'), body);
+		}
+	};
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config: Config = {
 	themes: [
@@ -27,6 +64,7 @@ const config: Config = {
 		'@docusaurus/theme-mermaid'
 	],
 	plugins: [
+		robotsTxtPlugin,
 		SENTRY_DNS &&
 			process.env.NODE_ENV === 'production' && [
 				'docusaurus-plugin-sentry',
@@ -75,7 +113,7 @@ const config: Config = {
 	tagline: 'Modern Directory Website Solution',
 	favicon: 'img/favicon.ico',
 	// Set the production Url of your site here
-	url: 'https://docs.ever.works', // Your website URL
+	url: DOCS_URL, // Your website URL (see DOCS_URL above)
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
 	baseUrl: '/',
@@ -101,7 +139,8 @@ const config: Config = {
 	i18n: {
 		path: 'i18n',
 		defaultLocale: 'en',
-		locales: ['en', 'fr', 'ar', 'bg', 'zh', 'nl', 'de', 'he', 'it', 'pl', 'pt', 'ru', 'es']
+		// The default locale must always stay in the list, or Docusaurus refuses the config.
+		locales: BUILT_LOCALES.length > 0 ? Array.from(new Set(['en', ...BUILT_LOCALES])) : ALL_LOCALES
 	},
 	presets: [
 		[

@@ -52,6 +52,11 @@ COPY docs/ ./docs/
 # of the large API docs, which on the ARC RAM-disk runner runs for ~2h and then dies with
 # ENOSPC. `build:en` (docusaurus build --locale en) is a fraction of the size/time and fits.
 # TODO: re-enable full-locale once the docs image builds on a disk-backed runner.
+# DOCS_LOCALES must name exactly the locales this build renders: it stops the pages
+# announcing the 12 unbuilt locales as alternate languages that all point back at the
+# English URL. Drop it (or list every locale) together with `build:en` when the full-locale
+# build comes back. The canonical host is the DOCS_URL default in docusaurus.config.ts.
+ENV DOCS_LOCALES=en
 RUN pnpm --filter @ever-works/docs build:en
 
 # ---- runtime: nginx serving the static build ------------------------------
