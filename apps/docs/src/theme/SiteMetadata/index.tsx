@@ -16,8 +16,10 @@
  *   locale's root URL, this component emits the served page named by
  *   `customFields.homeCanonicalPath` (DOCS_HOME_CANONICAL_PATH in docusaurus.config.ts) instead.
  * - A build with no canonical origin (`customFields.hasCanonicalOrigin` false: no DOCS_URL, so the
- *   build is noindex) emits no canonical, og:url or alternate-language link at all.
- * With homeCanonicalPath "/" and a canonical origin it renders exactly what upstream renders.
+ *   build is noindex) emits no canonical, og:url or alternate-language link at all, and neither
+ *   does the 404 page (upstream names /404.html/ there, which answers 404).
+ * With homeCanonicalPath "/" and a canonical origin it renders exactly what upstream renders on
+ * every page but 404.html.
  *
  * The canonical URL is built with useAlternatePageUtils for the current locale: the same site url
  * + locale baseUrl + trailing-slash-normalized pathname that upstream builds, without importing
@@ -32,7 +34,14 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { PageMetadata, useThemeConfig } from '@docusaurus/theme-common';
 import { DEFAULT_SEARCH_TAG, useAlternatePageUtils, keyboardFocusedClassName } from '@docusaurus/theme-common/internal';
 import SearchMetadata from '@theme/SearchMetadata';
-import { useHasCanonicalOrigin, useServedUrl } from '../../utils/servedUrl';
+import { useHasCanonicalOrigin, useIsNotFoundPage, useServedUrl } from '../../utils/servedUrl';
+
+// Canonical, og:url and hreflang are emitted only with a canonical origin, and never on 404.html.
+function useEmitsPageUrls(): boolean {
+	const hasCanonicalOrigin = useHasCanonicalOrigin();
+	const isNotFoundPage = useIsNotFoundPage();
+	return hasCanonicalOrigin && !isNotFoundPage;
+}
 
 // TODO move to SiteMetadataDefaults or theme-common ?
 // Useful for i18n/SEO
@@ -44,7 +53,7 @@ function AlternateLangHeaders(): ReactNode {
 	} = useDocusaurusContext();
 	const alternatePageUtils = useAlternatePageUtils();
 	const servedUrl = useServedUrl();
-	const hasCanonicalOrigin = useHasCanonicalOrigin();
+	const emitsPageUrls = useEmitsPageUrls();
 	const currentHtmlLang = localeConfigs[currentLocale]!.htmlLang;
 
 	// HTML lang is a BCP 47 tag, but the Open Graph protocol requires
@@ -57,7 +66,7 @@ function AlternateLangHeaders(): ReactNode {
 	// See https://www.searchviu.com/en/multiple-hreflang-tags-one-url/
 	return (
 		<Head>
-			{hasCanonicalOrigin &&
+			{emitsPageUrls &&
 				Object.entries(localeConfigs).map(([locale, { htmlLang }]) => (
 					<link
 						key={locale}
@@ -66,7 +75,7 @@ function AlternateLangHeaders(): ReactNode {
 						hrefLang={htmlLang}
 					/>
 				))}
-			{hasCanonicalOrigin && (
+			{emitsPageUrls && (
 				<link
 					rel="alternate"
 					href={servedUrl(alternatePageUtils.createUrl({ locale: defaultLocale, fullyQualified: true }))}
@@ -113,7 +122,7 @@ export default function SiteMetadata(): ReactNode {
 	// TODO maybe move these 2 themeConfig to siteConfig?
 	// These seems useful for other themes as well
 	const { metadata, image: defaultImage } = useThemeConfig();
-	const hasCanonicalOrigin = useHasCanonicalOrigin();
+	const emitsPageUrls = useEmitsPageUrls();
 
 	return (
 		<>
@@ -126,7 +135,7 @@ export default function SiteMetadata(): ReactNode {
 
 			{defaultImage && <PageMetadata image={defaultImage} />}
 
-			{hasCanonicalOrigin && <CanonicalUrlHeaders />}
+			{emitsPageUrls && <CanonicalUrlHeaders />}
 
 			<AlternateLangHeaders />
 

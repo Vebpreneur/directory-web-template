@@ -8,8 +8,13 @@
  *   not name any host, so these components emit no canonical, hreflang or breadcrumb URLs at all.
  * - homeCanonicalPath: the page a deployment redirects its site root to (DOCS_HOME_CANONICAL_PATH),
  *   "/" when the root serves itself. The default locale's root is mapped to that page.
+ *
+ * The 404 page is not a page crawlers should be pointed at either: it is only ever served as the
+ * body of a 404 response (nginx marks /404.html internal), and with trailingSlash its upstream
+ * canonical, og:url and hreflang named /404.html/, which answers 404. It emits none of them.
  */
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useLocation } from '@docusaurus/router';
 
 type CustomFields = Record<string, unknown> | undefined;
 
@@ -23,6 +28,15 @@ export function useHasCanonicalOrigin(): boolean {
 		siteConfig: { customFields }
 	} = useDocusaurusContext();
 	return customFields?.hasCanonicalOrigin !== false;
+}
+
+// True while rendering the 404 page (404.html under the current locale's baseUrl).
+export function useIsNotFoundPage(): boolean {
+	const {
+		siteConfig: { baseUrl }
+	} = useDocusaurusContext();
+	const { pathname } = useLocation();
+	return pathname.replace(/\/+$/, '') === `${baseUrl}404.html`;
 }
 
 // Maps the default locale's root URL (fully qualified) to the served home page URL; every other
