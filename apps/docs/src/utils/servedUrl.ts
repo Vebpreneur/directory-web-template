@@ -39,6 +39,29 @@ export function useIsNotFoundPage(): boolean {
 	return pathname.replace(/\/+$/, '') === `${baseUrl}404.html`;
 }
 
+// True while rendering one of the pages docusaurus.config.ts lists as not documentation
+// (customFields.noIndexPaths, paths relative to the current locale's baseUrl).
+export function useIsNoIndexPage(): boolean {
+	const {
+		siteConfig: { baseUrl, customFields }
+	} = useDocusaurusContext();
+	const { pathname } = useLocation();
+	const noIndexPaths = Array.isArray(customFields?.noIndexPaths) ? (customFields.noIndexPaths as unknown[]) : [];
+	const current = `${pathname.replace(/\/+$/, '')}/`;
+	return noIndexPaths.some(
+		(noIndexPath) => typeof noIndexPath === 'string' && current === `${baseUrl}${noIndexPath.replace(/^\/+/, '')}`
+	);
+}
+
+// The site-relative path of the home page as the deployment serves it: the current locale's
+// root, or - when the deployment redirects its root - the page it redirects to.
+export function useHomePath(): string {
+	const {
+		siteConfig: { baseUrl, customFields }
+	} = useDocusaurusContext();
+	return `${baseUrl}${homeCanonicalPathOf(customFields).replace(/^\/+/, '')}`;
+}
+
 // Maps the default locale's root URL (fully qualified) to the served home page URL; every other
 // URL passes through unchanged.
 export function useServedUrl(): (url: string) => string {

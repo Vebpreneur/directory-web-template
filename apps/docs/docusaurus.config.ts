@@ -18,33 +18,59 @@ require('dotenv').config();
 // written here would be claimed by every one of them - each instance's pages declaring
 // themselves duplicates of the template's docs (the bug that pointing this at
 // https://docs.ever.works, a different site, already caused once). So DOCS_URL comes from the
-// build environment: .github/workflows/k8s-build.yml passes the repository variable DOCS_URL
-// into apps/docs/Dockerfile (and, for ever-works/directory-web-template only, falls back to
-// https://docs.demo.ever.works). A build without DOCS_URL still works, but it is noindex and
-// names no host at all: no canonical, og:url, hreflang, og:image, breadcrumb structured data or
-// sitemap, and a robots.txt with no Sitemap line. A deployment that has not said where its
-// docs live must not point crawlers anywhere.
-const DOCS_URL = (process.env.DOCS_URL || '').trim().replace(/\/+$/, '');
+// build environment: .github/workflows/k8s-build.yml passes the repository's own Actions
+// variable DOCS_URL into apps/docs/Dockerfile, for the production image only. A build without
+// DOCS_URL still works, but it is noindex and names no host at all: no canonical, og:url,
+// hreflang, og:image, breadcrumb structured data or sitemap, and a robots.txt with no Sitemap
+// line. A deployment that has not said where its docs live must not point crawlers anywhere.
+// A value that is not a bare http(s) origin stops the build: every URL above is built from it.
+function readDocsUrl(): string {
+	const raw = (process.env.DOCS_URL || '').trim();
+	if (raw === '') {
+		return '';
+	}
+	let parsed: URL | undefined;
+	try {
+		parsed = new URL(raw);
+	} catch {
+		parsed = undefined;
+	}
+	if (
+		!parsed ||
+		!/^https?:$/.test(parsed.protocol) ||
+		parsed.pathname.replace(/\/+$/, '') !== '' ||
+		parsed.search !== '' ||
+		parsed.hash !== '' ||
+		parsed.username !== '' ||
+		parsed.password !== ''
+	) {
+		throw new Error(`DOCS_URL must be a bare origin such as https://docs.example.com, got ${JSON.stringify(raw)}.`);
+	}
+	return parsed.origin;
+}
+const DOCS_URL = readDocsUrl();
 const HAS_DOCS_URL = DOCS_URL !== '';
 // Docusaurus requires a `url` even when there is no canonical origin. This one is reserved
 // (RFC 2606 .invalid) so it can never resolve, and nothing that reaches a crawler names it.
 const PLACEHOLDER_URL = 'https://docs.example.invalid';
 
-// src/theme/SiteMetadata is ejected from @docusaurus/theme-classic 3.9 (and leans on
-// @docusaurus/theme-common/internal), while package.json allows ^3.9.2. An upgrade to another
-// minor would keep rendering the ejected 3.9 copy with nothing to say it diverged from upstream,
-// so the build stops instead: re-diff the ejected component against the new upstream, then
-// update EJECTED_THEME_CLASSIC. theme-classic is not a direct dependency; it is resolved the way
-// preset-classic resolves it.
+// src/theme/SiteMetadata and src/theme/DocBreadcrumbs/Items/Home are ejected from
+// @docusaurus/theme-classic 3.9 (SiteMetadata leans on @docusaurus/theme-common/internal), while
+// package.json allows ^3.9.2. An upgrade to another minor would keep rendering the ejected 3.9
+// copies with nothing to say they diverged from upstream, so the build stops instead: re-diff
+// the ejected components against the new upstream, then update EJECTED_THEME_CLASSIC.
+// theme-classic is not a direct dependency; it is resolved the way preset-classic resolves it.
+// Whoever merges the next Docusaurus minor bump (a Dependabot 3.10 PR, say) will see the Docs CI
+// build and the -docs image build fail here until that re-diff is done: that is deliberate.
 const EJECTED_THEME_CLASSIC = '3.9';
 const THEME_CLASSIC_VERSION: string = createRequire(require.resolve('@docusaurus/preset-classic'))(
 	'@docusaurus/theme-classic/package.json'
 ).version;
 if (!THEME_CLASSIC_VERSION.startsWith(`${EJECTED_THEME_CLASSIC}.`)) {
 	throw new Error(
-		`@docusaurus/theme-classic is ${THEME_CLASSIC_VERSION}, but src/theme/SiteMetadata is ejected from ` +
-			`${EJECTED_THEME_CLASSIC}.x: re-diff it against the new upstream, then update EJECTED_THEME_CLASSIC ` +
-			'in apps/docs/docusaurus.config.ts.'
+		`@docusaurus/theme-classic is ${THEME_CLASSIC_VERSION}, but src/theme/SiteMetadata and ` +
+			`src/theme/DocBreadcrumbs/Items/Home are ejected from ${EJECTED_THEME_CLASSIC}.x: re-diff them against ` +
+			'the new upstream, then update EJECTED_THEME_CLASSIC in apps/docs/docusaurus.config.ts.'
 	);
 }
 
@@ -67,20 +93,47 @@ const BUILT_LOCALES = (process.env.DOCS_LOCALES || '')
 // redirect points crawlers at the redirect instead of a page. DOCS_HOME_CANONICAL_PATH names
 // the page such a deployment sends its root to: the page rendered at the root then names that
 // path (src/theme/SiteMetadata, src/theme/DocBreadcrumbs/StructuredData) and the root is left
-// out of the sitemap. Like DOCS_URL it describes one deployment, so it comes from the build
-// environment (k8s-build.yml: repository variable DOCS_HOME_CANONICAL_PATH, falling back to
-// /getting-started/ for ever-works/directory-web-template only). Unset, or "/", means the root
-// serves itself: the root page is self-canonical and listed in the sitemap.
-const HOME_CANONICAL_SEGMENTS = (process.env.DOCS_HOME_CANONICAL_PATH || '/').trim().replace(/^\/+|\/+$/g, '');
-const DOCS_HOME_CANONICAL_PATH = HOME_CANONICAL_SEGMENTS ? `/${HOME_CANONICAL_SEGMENTS}/` : '/';
+// out of the sitemap. The site's own links to the root (navbar logo, footer "Home", the
+// breadcrumb home icon) point at that page too, so no page links the redirect. Like DOCS_URL it
+// describes one deployment, so it comes from the build environment (k8s-build.yml: the
+// repository's Actions variable DOCS_HOME_CANONICAL_PATH, production image only). Unset, or
+// "/", means the root serves itself: the root page is self-canonical and listed in the sitemap.
+// It must be a plain site path; anything else stops the build (a Git Bash shell, for one,
+// rewrites a leading "/" into "C:/Program Files/Git/..." unless MSYS_NO_PATHCONV=1 is set), and
+// the build also stops if no page is rendered at that path.
+function readHomeCanonicalPath(): string {
+	const raw = (process.env.DOCS_HOME_CANONICAL_PATH || '').trim();
+	if (raw === '' || raw === '/') {
+		return '/';
+	}
+	if (!/^\/[A-Za-z0-9._~/-]*$/.test(raw) || raw.includes('//') || /(^|\/)\.{1,2}(\/|$)/.test(raw)) {
+		throw new Error(
+			`DOCS_HOME_CANONICAL_PATH must be a site path such as /getting-started/, got ${JSON.stringify(raw)}. ` +
+				'(From Git Bash, set MSYS_NO_PATHCONV=1: it rewrites a leading "/" into a Windows path.)'
+		);
+	}
+	return `/${raw.replace(/^\/+|\/+$/g, '')}/`;
+}
+const DOCS_HOME_CANONICAL_PATH = readHomeCanonicalPath();
+
+// Pages that are not documentation: the search page, the Docusaurus scaffold page and the
+// placeholder "Who is Using This?" page. They stay built and linked, but render
+// <meta name="robots" content="noindex, follow"> (src/theme/SiteMetadata) and are left out of the
+// sitemap. Paths are relative to baseUrl, with the trailing slash every page is served with.
+const NOINDEX_PATHS = ['/search/', '/markdown-page/', '/users/'];
 
 // robots.txt, written from the SAME `url` as the canonicals so it can never name another host.
 // Without it the origin had no robots.txt and nothing pointed crawlers at the sitemap. A build
-// with no DOCS_URL has no sitemap (noindex), so its robots.txt names none.
+// with no DOCS_URL has no sitemap (noindex), so its robots.txt names none. The same post-build
+// step refuses a DOCS_HOME_CANONICAL_PATH that names no rendered page: every page's links and
+// the root's canonical would point at a 404.
 function robotsTxtPlugin(): Plugin {
 	return {
 		name: 'docs-robots-txt',
 		async postBuild({ siteConfig, outDir }) {
+			if (DOCS_HOME_CANONICAL_PATH !== '/' && !fs.existsSync(path.join(outDir, DOCS_HOME_CANONICAL_PATH, 'index.html'))) {
+				throw new Error(`DOCS_HOME_CANONICAL_PATH is ${DOCS_HOME_CANONICAL_PATH}, but this build renders no page there.`);
+			}
 			const lines = ['User-agent: *', 'Allow: /', ''];
 			if (HAS_DOCS_URL) {
 				lines.push(`Sitemap: ${siteConfig.url}${siteConfig.baseUrl}sitemap.xml`, '');
@@ -89,6 +142,16 @@ function robotsTxtPlugin(): Plugin {
 		}
 	};
 }
+
+// A doc's meta description is, unless its front matter sets one, the first line of its body -
+// and in this repository hundreds of pages open with "# Title" then "## Overview", so 123 pages
+// were described as just "Overview". Headings are not descriptions: for a page with no
+// `description` front matter, the description is the excerpt Docusaurus would take with the
+// headings left out, i.e. the first paragraph. A page whose front matter sets a description, or
+// whose body opens with a paragraph, is described exactly as before.
+const { createExcerpt } = createRequire(require.resolve('@docusaurus/core/package.json'))('@docusaurus/utils') as {
+	createExcerpt: (content: string) => string | undefined;
+};
 
 /** @type {import('@docusaurus/types').Config} */
 const config: Config = {
@@ -182,6 +245,17 @@ const config: Config = {
 		mermaid: true,
 		hooks: {
 			onBrokenMarkdownLinks: 'warn'
+		},
+		// The meta description of a page without `description` front matter (see createExcerpt above).
+		parseFrontMatter: async (params) => {
+			const result = await params.defaultParseFrontMatter(params);
+			if (result.frontMatter.description === undefined) {
+				const description = createExcerpt(result.content.replace(/^ {0,3}#{1,6}(?:[ \t].*)?$/gm, ''));
+				if (description) {
+					result.frontMatter.description = description;
+				}
+			}
+			return result;
 		}
 	},
 	staticDirectories: ['../../docs/assets', 'static'],
@@ -202,9 +276,14 @@ const config: Config = {
 				blog: false,
 				docs: false,
 				// When the deployment redirects its site root (DOCS_HOME_CANONICAL_PATH is not "/"), the
-				// root is not a sitemap URL; the page it redirects to is listed in its own right.
+				// root is not a sitemap URL; the page it redirects to is listed in its own right. The
+				// non-documentation pages (NOINDEX_PATHS) are not sitemap URLs either. Route paths are
+				// matched with and without the trailing slash.
 				sitemap: {
-					ignorePatterns: DOCS_HOME_CANONICAL_PATH === '/' ? [] : ['/']
+					ignorePatterns: [
+						...(DOCS_HOME_CANONICAL_PATH === '/' ? [] : ['/']),
+						...NOINDEX_PATHS.flatMap((noIndexPath) => [noIndexPath, noIndexPath.replace(/\/$/, '')])
+					]
 				},
 				theme: {
 					customCss: './src/css/custom.css'
@@ -227,7 +306,9 @@ const config: Config = {
 				logo: {
 					alt: 'Ever® Works Logo',
 					srcDark: '/img/ever-works.svg',
-					src: 'img/ever-works-dark.svg'
+					src: 'img/ever-works-dark.svg',
+					// The site root, or the page a redirecting root is sent to (DOCS_HOME_CANONICAL_PATH).
+					href: DOCS_HOME_CANONICAL_PATH
 				},
 				items: [
 					{
@@ -263,7 +344,8 @@ const config: Config = {
 						items: [
 							{
 								label: 'Home',
-								to: '/'
+								// The site root, or the page a redirecting root is sent to (DOCS_HOME_CANONICAL_PATH).
+								to: DOCS_HOME_CANONICAL_PATH
 							},
 							{
 								label: 'Getting Started',
@@ -348,10 +430,12 @@ const config: Config = {
 			}
 		},
 	customFields: {
-		// Read by src/utils/servedUrl (SiteMetadata, DocBreadcrumbs/StructuredData): whether this
-		// build has a canonical origin at all, and the canonical path of the page at the site root.
+		// Read by src/utils/servedUrl (SiteMetadata, DocBreadcrumbs/StructuredData,
+		// DocBreadcrumbs/Items/Home): whether this build has a canonical origin at all, the
+		// canonical path of the page at the site root, and the pages rendered noindex.
 		hasCanonicalOrigin: HAS_DOCS_URL,
 		homeCanonicalPath: DOCS_HOME_CANONICAL_PATH,
+		noIndexPaths: NOINDEX_PATHS,
 		EVER_WORKS_WEBSITE_TEMPLATE_API_URL: process.env.EVER_WORKS_WEBSITE_TEMPLATE_API_URL,
 		footerData: {
 			description: 'Ever Works is an open-source modern directory website solution.',

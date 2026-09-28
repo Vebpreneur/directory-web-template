@@ -18,8 +18,11 @@
  * - A build with no canonical origin (`customFields.hasCanonicalOrigin` false: no DOCS_URL, so the
  *   build is noindex) emits no canonical, og:url or alternate-language link at all, and neither
  *   does the 404 page (upstream names /404.html/ there, which answers 404).
+ * - The pages docusaurus.config.ts lists as not documentation (`customFields.noIndexPaths`: the
+ *   search page, the scaffold markdown page, the placeholder users page) render
+ *   <meta name="robots" content="noindex, follow">, which also keeps them out of the sitemap.
  * With homeCanonicalPath "/" and a canonical origin it renders exactly what upstream renders on
- * every page but 404.html.
+ * every page but 404.html and the noindex pages.
  *
  * The canonical URL is built with useAlternatePageUtils for the current locale: the same site url
  * + locale baseUrl + trailing-slash-normalized pathname that upstream builds, without importing
@@ -34,7 +37,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { PageMetadata, useThemeConfig } from '@docusaurus/theme-common';
 import { DEFAULT_SEARCH_TAG, useAlternatePageUtils, keyboardFocusedClassName } from '@docusaurus/theme-common/internal';
 import SearchMetadata from '@theme/SearchMetadata';
-import { useHasCanonicalOrigin, useIsNotFoundPage, useServedUrl } from '../../utils/servedUrl';
+import { useHasCanonicalOrigin, useIsNoIndexPage, useIsNotFoundPage, useServedUrl } from '../../utils/servedUrl';
 
 // Canonical, og:url and hreflang are emitted only with a canonical origin, and never on 404.html.
 function useEmitsPageUrls(): boolean {
@@ -116,6 +119,7 @@ function CanonicalUrlHeaders(): ReactNode {
 
 export default function SiteMetadata(): ReactNode {
 	const {
+		siteConfig: { noIndex: siteIsNoIndex },
 		i18n: { currentLocale }
 	} = useDocusaurusContext();
 
@@ -123,6 +127,8 @@ export default function SiteMetadata(): ReactNode {
 	// These seems useful for other themes as well
 	const { metadata, image: defaultImage } = useThemeConfig();
 	const emitsPageUrls = useEmitsPageUrls();
+	// A noindex site (no DOCS_URL) already carries a site-wide robots meta; one per page is enough.
+	const isNoIndexPage = useIsNoIndexPage() && !siteIsNoIndex;
 
 	return (
 		<>
@@ -132,6 +138,12 @@ export default function SiteMetadata(): ReactNode {
 				are outlined when JS is disabled */}
 				<body className={keyboardFocusedClassName} />
 			</Head>
+
+			{isNoIndexPage && (
+				<Head>
+					<meta name="robots" content="noindex, follow" />
+				</Head>
+			)}
 
 			{defaultImage && <PageMetadata image={defaultImage} />}
 
