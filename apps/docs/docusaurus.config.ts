@@ -131,8 +131,13 @@ function robotsTxtPlugin(): Plugin {
 	return {
 		name: 'docs-robots-txt',
 		async postBuild({ siteConfig, outDir }) {
-			if (DOCS_HOME_CANONICAL_PATH !== '/' && !fs.existsSync(path.join(outDir, DOCS_HOME_CANONICAL_PATH, 'index.html'))) {
-				throw new Error(`DOCS_HOME_CANONICAL_PATH is ${DOCS_HOME_CANONICAL_PATH}, but this build renders no page there.`);
+			if (
+				DOCS_HOME_CANONICAL_PATH !== '/' &&
+				!fs.existsSync(path.join(outDir, DOCS_HOME_CANONICAL_PATH, 'index.html'))
+			) {
+				throw new Error(
+					`DOCS_HOME_CANONICAL_PATH is ${DOCS_HOME_CANONICAL_PATH}, but this build renders no page there.`
+				);
 			}
 			const lines = ['User-agent: *', 'Allow: /', ''];
 			if (HAS_DOCS_URL) {
