@@ -119,4 +119,4 @@ The page is wired into discovery the same way its siblings are:
 
 - [SEO Configuration](seo.md) — the `FAQPage` generator and the rest of the
   structured-data module.
-- [Spec 049](../spec/049-faq-page/spec.md) — the full feature specification.
+- [Spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md) — the full feature specification.

@@ -175,7 +175,7 @@ function ItemActions({ item }) {
 
 ## Related Hooks
 
-- [`useCurrentUser`](/template/hooks/use-current-user-reference) - Authentication state
-- [`useFeatureFlagsWithSimulation`](/template/hooks/use-feature-flags-reference) - Feature flag gating
-- [`useItemVote`](/template/hooks/use-voting-reference) - Item engagement (voting)
-- [`useComments`](/template/hooks/use-comments-reference) - Item engagement (comments)
+- [`useCurrentUser`](./use-current-user-reference.md) - Authentication state
+- [`useFeatureFlagsWithSimulation`](./use-feature-flags-reference.md) - Feature flag gating
+- [`useItemVote`](./use-voting-reference.md) - Item engagement (voting)
+- [`useComments`](./use-comments-reference.md) - Item engagement (comments)

@@ -254,9 +254,9 @@ function AuthErrorBanner() {
 
 ## Related Hooks
 
-- [`useSubscription`](/template/hooks/use-subscription-reference) - Subscription management (depends on user auth)
-- [`useFavorites`](/template/hooks/use-favorites-reference) - Gated by `user.id`
-- [`useItemVote`](/template/hooks/use-voting-reference) - Requires authenticated user for voting
-- [`useComments`](/template/hooks/use-comments-reference) - Requires authenticated user for commenting
-- [`useIsDevOrAdmin`](/template/hooks/auth-hooks) - Role-based access control
-- [`useRolePermissions`](/template/hooks/auth-hooks) - Permission checking
+- [`useSubscription`](./use-subscription-reference.md) - Subscription management (depends on user auth)
+- [`useFavorites`](./use-favorites-reference.md) - Gated by `user.id`
+- [`useItemVote`](./use-voting-reference.md) - Requires authenticated user for voting
+- [`useComments`](./use-comments-reference.md) - Requires authenticated user for commenting
+- [`useIsDevOrAdmin`](./auth-hooks.md) - Role-based access control
+- [`useRolePermissions`](./auth-hooks.md) - Permission checking

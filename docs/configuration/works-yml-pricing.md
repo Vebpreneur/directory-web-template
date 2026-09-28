@@ -64,7 +64,7 @@ console** (it is a client-side hook, so it does not appear in server logs)
 
 and nothing else happens. Which plan cards render is unchanged: that is still
 decided by the LIVE / DEMO logic of
-[Spec 044](../spec/044-public-payment-config/spec.md).
+[Spec 044](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/044-public-payment-config/spec.md).
 
 Surfaces that act on a subscription some gateway already created — auto-renewal,
 the billing portal, the built-in default plans — keep their pre-existing Stripe
@@ -223,4 +223,4 @@ the published example can never drift from the schema.
 - [Payment Configuration](./payment-config.md) — enums, provider setup, env vars.
 - [Payment System](../payment/payment.md) — end-to-end payment architecture.
 - [Content Management](../content-management/content-management.md) — the data repository layout.
-- [Spec 046](../spec/046-works-yml-pricing-config/spec.md) — why this block is validated.
+- [Spec 046](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/046-works-yml-pricing-config/spec.md) — why this block is validated.

@@ -251,7 +251,7 @@ function PolarCheckoutWithErrors({ productId, user, plan }) {
 
 ## Related Hooks
 
-- [`usePolarSubscription`](/template/hooks/use-polar-subscription-reference) -- Cancel and reactivate Polar subscriptions
-- [`useSelectedCheckoutProvider`](/template/hooks/use-selected-checkout-provider-reference) -- Determines which payment provider to use
-- [`useCreateCheckout`](/template/hooks/use-create-checkout-reference) -- Generic checkout creation across providers
-- [`useBillingData`](/template/hooks/use-billing-data-reference) -- Fetches subscription and payment history
+- [`usePolarSubscription`](./use-polar-subscription-reference.md) -- Cancel and reactivate Polar subscriptions
+- [`useSelectedCheckoutProvider`](./use-selected-checkout-provider-reference.md) -- Determines which payment provider to use
+- [`useCreateCheckout`](./use-create-checkout-reference.md) -- Generic checkout creation across providers
+- [`useBillingData`](./use-billing-data-reference.md) -- Fetches subscription and payment history

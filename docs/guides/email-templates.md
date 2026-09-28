@@ -314,8 +314,8 @@ image: "https://yourdomain.com/images/logo.png"
 ## Next Steps
 
 - [Customization](./customization.md) - General customization guide
-- [Deployment](/docs/deployment) - Deploy your application
-- [Environment Variables](/docs/deployment/environment-variables) - Configure email settings
+- [Deployment](../deployment/deployment.md) - Deploy your application
+- [Environment Variables](../deployment/environment-variables.md) - Configure email settings
 
 ## Resources
 

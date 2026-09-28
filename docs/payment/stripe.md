@@ -52,7 +52,7 @@ time the client fetches `GET /api/payment/public-config`, which returns the publ
 providers from the server's runtime environment — never `STRIPE_SECRET_KEY` or `STRIPE_WEBHOOK_SECRET`.
 Platform-deployed (k8s) directories rely on this because their image is built once without per-site env;
 builds that do inline `NEXT_PUBLIC_*` (Vercel, local) render from the inlined values on first paint and the
-fetch simply confirms them. See [Spec 044](../spec/044-public-payment-config/spec.md).
+fetch simply confirms them. See [Spec 044](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/044-public-payment-config/spec.md).
 :::
 
 ## Stripe Dashboard Configuration

@@ -168,6 +168,6 @@ Renders a `TopLoadingBar` component that displays a thin animated bar at the top
 
 ## Related Components
 
-- [Layout Settings](/template/components/layout-settings-components) - LayoutSwitcher consumed by NavigationControls.
-- [Language Switcher](/template/components/language-switcher-components) - Language dropdown consumed by NavigationControls.
-- [Header Components](/template/components/header-components) - Parent header that renders NavigationControls.
+- [Layout Settings](./layout-settings-components.md) - LayoutSwitcher consumed by NavigationControls.
+- [Language Switcher](./language-switcher-components.md) - Language dropdown consumed by NavigationControls.
+- [Header Components](./header-components.md) - Parent header that renders NavigationControls.

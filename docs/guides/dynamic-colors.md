@@ -319,7 +319,7 @@ applyCustomTheme({ primary: 'blue' });
 
 - [Theming](./theming.md) - Learn about the theme system
 - [Customization](./customization.md) - General customization guide
-- [Development](/docs/development/local-setup) - Set up your development environment
+- [Development](../development/local-setup.md) - Set up your development environment
 
 ## Resources
 

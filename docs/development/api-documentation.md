@@ -429,7 +429,7 @@ npx swagger-cli validate public/openapi.json
 
 - [Testing](./testing.md) - Test your API endpoints
 - [Local Setup](./local-setup.md) - Set up development environment
-- [Deployment](/docs/deployment) - Deploy your API
+- [Deployment](../deployment/deployment.md) - Deploy your API
 
 ## Resources
 

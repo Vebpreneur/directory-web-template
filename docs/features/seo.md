@@ -76,7 +76,7 @@ matches what a visitor reads:
 - Nothing is emitted when no question/answer pair can be extracted -- an
   `FAQPage` with an empty `mainEntity` is invalid structured data.
 
-See [Spec 046](../spec/049-faq-page/spec.md) for the full content contract.
+See [Spec 046](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md) for the full content contract.
 
 ### Other Schema Types
 
@@ -153,7 +153,7 @@ resolves each field **frontmatter → i18n fallback**:
 A Work whose data repository has no `pages/` directory keeps the template's
 translated title and description — the frontmatter is an override, never a
 requirement. `/terms-of-service` and `/privacy-policy` use this helper today
-(see [Spec 046](../spec/048-legal-pages-frontmatter-seo/spec.md)); the generic
+(see [Spec 046](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/048-legal-pages-frontmatter-seo/spec.md)); the generic
 `/pages/[slug]` route has always read the frontmatter directly.
 
 The data-repository file layout these pages read — the `pages/` directory, the
@@ -268,7 +268,7 @@ How it works:
 
 - `lib/seo/markdown-mirror.ts` exports renderers (`renderItemMarkdown`, `renderCategoryMarkdown`, etc.) that take normalized data and return a Markdown string. They are pure functions with no I/O.
 - `next.config.ts` contains `rewrites` that map every `/path.md` URL to an internal `/<locale>/path/md` route handler (one per page type, plus a catch-all under `/<locale>/static-md` for the static info pages). The unprefixed URLs (`/about.md`) rewrite to the default locale's handler explicitly, because `proxy.ts` — which is what adds the locale segment for normal pages — skips every path containing a dot.
-- The internal segment must not start with an underscore: the App Router treats `_foo` as a private folder and removes it from the route table entirely. See [Spec 047](../spec/047-md-mirror-route-reachability/spec.md).
+- The internal segment must not start with an underscore: the App Router treats `_foo` as a private folder and removes it from the route table entirely. See [Spec 047](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/047-md-mirror-route-reachability/spec.md).
 - The internal route handler reuses the same cached content layer (`getCachedItem`, `getCachedItems`, `getCachedComparisons`, `getCachedPageContent`) the HTML pages use, then delegates rendering to a helper from `lib/seo/markdown-mirror.ts`.
 - Responses set `Content-Type: text/markdown` and `X-Robots-Tag: noindex` so search engines index the canonical HTML, not the mirror — which is also what keeps the internal `/<locale>/…/md` URLs out of search results.
 - An unknown slug 404s, matching the HTML page it mirrors, rather than rendering an empty document.

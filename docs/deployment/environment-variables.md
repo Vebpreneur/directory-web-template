@@ -194,6 +194,6 @@ node scripts/validate-env.js
 
 ## Next Steps
 
-- [Docker Deployment](/docs/deployment/docker) - Deploy with Docker
-- [Vercel Deployment](/docs/deployment/vercel) - Deploy to Vercel
-- [Monitoring](/docs/deployment/monitoring) - Monitor your deployment
+- [Docker Deployment](./docker.md) - Deploy with Docker
+- [Vercel Deployment](./vercel.md) - Deploy to Vercel
+- [Monitoring](./monitoring.md) - Monitor your deployment

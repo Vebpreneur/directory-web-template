@@ -199,7 +199,7 @@ All form labels, button text, and status messages use `next-intl` with the `spon
 
 ## Related Documentation
 
-- [Sponsor Ads Feature](/template/features/sponsor-ads) -- Full sponsor system overview
-- [Billing Components](/template/components/billing-components) -- Payment processing
-- [Shared Card Components](/template/components/shared-card-components) -- Listing integration
-- [Admin Components](/template/components/admin-components) -- Sponsor approval management
+- [Sponsor Ads Feature](../features/sponsor-ads.md) -- Full sponsor system overview
+- [Billing Components](./billing-components.md) -- Payment processing
+- [Shared Card Components](./shared-card-components.md) -- Listing integration
+- [Admin Components](./admin-components.md) -- Sponsor approval management

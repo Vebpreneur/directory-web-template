@@ -216,7 +216,7 @@ Providers must be nested in a specific order in the root layout:
 
 ## Related Documentation
 
-- [Filter System](/template/components/filter-system) -- Filter context details
-- [Dark Mode](/template/features/dark-mode) -- Theme switching feature
-- [Layout Components](/template/components/layout-components) -- Layout variants
-- [Provider Components](/template/components/provider-components) -- Additional provider docs
+- [Filter System](./filter-system.md) -- Filter context details
+- [Dark Mode](../features/dark-mode.md) -- Theme switching feature
+- [Layout Components](./layout-components.md) -- Layout variants
+- [Provider Components](./provider-components.md) -- Additional provider docs

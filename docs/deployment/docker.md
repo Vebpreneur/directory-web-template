@@ -161,6 +161,6 @@ NEXTAUTH_URL=https://your-domain.com
 
 ## Next Steps
 
-- [Environment Variables](/docs/deployment/environment-variables) - Configure your deployment
-- [Monitoring](/docs/deployment/monitoring) - Monitor your application
-- [Support](/docs/advanced-guide/support) - Get deployment help
+- [Environment Variables](./environment-variables.md) - Configure your deployment
+- [Monitoring](./monitoring.md) - Monitor your application
+- [Support](../advanced-guide/support.md) - Get deployment help

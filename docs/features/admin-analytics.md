@@ -334,8 +334,8 @@ Plan-based feature access:
 
 ## Related Documentation
 
-- [Analytics Background](/docs/template/services/analytics-background) -- Background processing details
-- [PostHog Service](/docs/template/services/posthog-service) -- PostHog server-side API
-- [Export Service](/docs/template/services/export-service) -- Data export
-- [Activity Service](/docs/template/services/activity-service) -- User activity tracking
-- [Engagement Service](/docs/template/services/engagement-services) -- Popularity scoring
+- [Analytics Background](../services/analytics-background.md) -- Background processing details
+- [PostHog Service](../services/posthog-service.md) -- PostHog server-side API
+- [Export Service](../services/export-service.md) -- Data export
+- [Activity Service](../services/activity-service.md) -- User activity tracking
+- [Engagement Service](../services/engagement-services.md) -- Popularity scoring

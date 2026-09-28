@@ -399,6 +399,6 @@ Error occurs
 
 ## Related Resources
 
-- [Error Handling Guide](/docs/template/guides/error-handling) -- General error handling patterns
-- [Logging](/docs/template/guides/logging) -- Application logging system
-- [Instrumentation](/docs/template/guides/instrumentation) -- How startup errors are captured
+- [Error Handling Guide](./error-handling.md) -- General error handling patterns
+- [Logging](./logging.md) -- Application logging system
+- [Instrumentation](./instrumentation.md) -- How startup errors are captured

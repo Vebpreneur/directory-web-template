@@ -240,7 +240,7 @@ useEffect(() => {
 
 ## Related Hooks
 
-- [`useItemRating`](/template/hooks/use-voting-reference) - Aggregate item rating (refetched on comment mutations)
-- [`useCurrentUser`](/template/hooks/use-current-user-reference) - Authentication state
-- [`useFeatureFlagsWithSimulation`](/template/hooks/use-feature-flags-reference) - `features.comments` gate
-- [`useItemVote`](/template/hooks/use-voting-reference) - Item voting system
+- [`useItemRating`](./use-voting-reference.md) - Aggregate item rating (refetched on comment mutations)
+- [`useCurrentUser`](./use-current-user-reference.md) - Authentication state
+- [`useFeatureFlagsWithSimulation`](./use-feature-flags-reference.md) - `features.comments` gate
+- [`useItemVote`](./use-voting-reference.md) - Item voting system

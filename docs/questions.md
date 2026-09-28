@@ -9,7 +9,7 @@ sidebar_position: 98
 
 This page collects **open questions** raised by docs, specs, plans, or
 agent runs that need maintainer review. Per Article IV of the
-[constitution](../.specify/memory/constitution.md), agents must not
+[constitution](https://github.com/ever-works/directory-web-template/blob/develop/.specify/memory/constitution.md), agents must not
 block on unresolved questions — they should pick a sensible default,
 record it here, and keep moving. Maintainers come back later to
 confirm, override, or refine.
@@ -186,7 +186,7 @@ confirm, override, or refine.
 - **Context.** Surfaced while writing
   [`apps/web-e2e/tests/api/admin-roles-query.spec.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/tests/api/admin-roles-query.spec.ts)
   (per-source-file reference:
-  [`docs/plugins/admin-roles-query-spec.md`](plugins/admin-roles-query-spec.md)).
+  [`docs/plugins/admin-roles-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-roles-query-spec.md)).
   Every other admin-tree GET route covered by a sibling
   smoke spec calls `auth()` and short-circuits with 401
   / 403 before any repository call. The
@@ -532,7 +532,7 @@ confirm, override, or refine.
   suppresses the in-site checkout: `handleCheckout()` returns before any
   gateway branch and logs the reason. Which cards render is unchanged — still
   the LIVE / DEMO logic of
-  [spec 044](spec/044-public-payment-config/spec.md). That is safe but
+  [spec 044](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/044-public-payment-config/spec.md). That is safe but
   silent: a manual-checkout operator arguably wants a "Contact us" call to
   action on the paid cards rather than a button that does nothing.
 - **Options.**
@@ -767,7 +767,7 @@ confirm, override, or refine.
   deliberately checks alternate-href _resolution_ on `/help` and `/pricing`
   only — the two pages whose href is already origin-correct — so it neither
   duplicates nor collides with `md-alternate-link-absolute-url.spec.ts`.
-- **Outcome.** Answered by [spec 048](spec/048-legal-pages-frontmatter-seo/spec.md)
+- **Outcome.** Answered by [spec 048](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/048-legal-pages-frontmatter-seo/spec.md)
   (PR #1045), which fixed the doubling on `about`, `cookies`,
   `items/[slug]` and `pages/[slug]` alongside the two legal routes. Nothing
   is left for this spec to do here.

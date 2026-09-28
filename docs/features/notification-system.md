@@ -203,7 +203,7 @@ This flexible schema allows notification renderers to deep-link to relevant page
 
 ## Related Documentation
 
-- [Admin Components](/docs/template/components/admin-components) -- Admin notification UI
-- [Dashboard Components](/docs/template/components/dashboard-components) -- Notification stats
-- [Reports and Moderation](/docs/template/features/reports-moderation) -- Report-triggered notifications
-- [Voting & Comments](/docs/template/features/voting-comments) -- Comment-triggered notifications
+- [Admin Components](../components/admin-components.md) -- Admin notification UI
+- [Dashboard Components](../components/dashboard-components.md) -- Notification stats
+- [Reports and Moderation](./reports-moderation.md) -- Report-triggered notifications
+- [Voting & Comments](./voting-comments.md) -- Comment-triggered notifications

@@ -201,6 +201,6 @@ The code text is rendered in a `<code>` element with `font-mono font-bold tracki
 
 ## Related Documentation
 
-- [Promo Codes Feature](/template/features/promo-codes) -- Full promo code system documentation
-- [Item Detail Components](/template/components/item-detail-components) -- Where promo codes are displayed
-- [Shared Card Components](/template/components/shared-card-components) -- Compact variant in listings
+- [Promo Codes Feature](../features/promo-codes.md) -- Full promo code system documentation
+- [Item Detail Components](./item-detail-components.md) -- Where promo codes are displayed
+- [Shared Card Components](./shared-card-components.md) -- Compact variant in listings

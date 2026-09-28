@@ -250,6 +250,6 @@ The hook does not throw errors. If the analytics provider is not initialized or 
 
 ## Related Hooks
 
-- [`useGeoAnalytics`](/template/hooks/data-hooks) - Geolocation-specific analytics
-- [`useCurrentUser`](/template/hooks/use-current-user-reference) - User data for `identifyUser`
-- [`useFeatureFlag`](/template/hooks/use-feature-flags-reference) - Feature flags via analytics provider
+- [`useGeoAnalytics`](./data-hooks.md) - Geolocation-specific analytics
+- [`useCurrentUser`](./use-current-user-reference.md) - User data for `identifyUser`
+- [`useFeatureFlag`](./use-feature-flags-reference.md) - Feature flags via analytics provider

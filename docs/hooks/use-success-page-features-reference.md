@@ -174,5 +174,5 @@ function SuccessContent({ planType }: { planType: PaymentPlan }) {
 
 ## Related Hooks
 
-- [`usePricingFeatures`](/template/hooks/use-pricing-features-reference) -- Base hook providing feature text and plan config
-- [`usePricingSection`](/template/hooks/use-pricing-section-reference) -- Full pricing section logic including checkout
+- [`usePricingFeatures`](./use-pricing-features-reference.md) -- Base hook providing feature text and plan config
+- [`usePricingSection`](./use-pricing-section-reference.md) -- Full pricing section logic including checkout
