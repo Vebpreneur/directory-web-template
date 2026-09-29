@@ -216,7 +216,15 @@ const config: Config = {
 					'trigger-dev/**/*.{md,mdx}',
 					'types/**/*.{md,mdx}'
 				],
-				editUrl: 'https://github.com/ever-works/ever-works-docs/tree/main/'
+				// "Edit this page" on every doc. A string editUrl is joined with the content path relative
+				// to this app ('../../docs'), so the old '…/ever-works-docs/tree/main/' produced
+				// '…/tree/main/../../docs/<file>.md' - a 404 on every doc page, in a repository that does
+				// not exist publicly anyway. The docs are the template's own docs/ (the platform syncs
+				// them verbatim into every Work repo, where an edit would be overwritten by the next
+				// sync), so the link opens the file in this template's repository, on main: the branch the
+				// production docs are built from, so every page's file is there.
+				editUrl: ({ docPath }) =>
+					`https://github.com/ever-works/directory-web-template/blob/main/docs/${docPath}`
 			}
 		]
 	],
