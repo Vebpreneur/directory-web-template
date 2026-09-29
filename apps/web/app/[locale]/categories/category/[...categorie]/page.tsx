@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { getCachedItemsByCategory, getCachedItems } from "@/lib/content";
+import { notFound } from "next/navigation";
+import { getCachedItemsByCategory, getCachedItems, type Category } from "@/lib/content";
 import { paginateMeta, totalPages } from "@/lib/paginate";
 import { generateListingMetadata } from "@/lib/seo/listing-metadata";
 import { toTitleCase, slugify } from "@/lib/utils";
@@ -17,6 +18,15 @@ export const dynamic = 'force-dynamic';
 // Enable ISR with 10 minutes revalidation
 export const revalidate = 600;
 
+/** The category a URL segment names: by id, by slugified id, or by name. */
+function findCategory(categories: Category[], category: string): Category | undefined {
+  const slug = slugify(category);
+  return categories.find(
+    (c) => c.id === category || c.id === slug
+      || c.name.toLowerCase() === category.toLowerCase()
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -26,10 +36,17 @@ export async function generateMetadata({
   const [rawCategory, rawPage] = categoryMeta;
   const category = decodeURIComponent(rawCategory);
   const page = rawPage ? parseInt(rawPage) : 1;
-  const { total } = await getCachedItemsByCategory(category, { lang: locale });
+  const { total, categories } = await getCachedItemsByCategory(category, { lang: locale });
+  // An unknown category is a 404 (the page below does the same). Resolving it
+  // here also keeps its metadata from naming /categories/<unknown>, a 404, as
+  // the canonical.
+  const matchedCategory = findCategory(categories, category);
+  if (!matchedCategory) {
+    notFound();
+  }
   const formattedCategory = toTitleCase(category);
   const title = page > 1 ? `${formattedCategory} - Page ${page}` : formattedCategory;
-  const encodedCategory = encodeURIComponent(category);
+  const encodedCategory = encodeURIComponent(matchedCategory.id);
   // Page 1 is the same listing as /categories/<id> - the shape every internal
   // link and the sitemap use - so it canonicalises there instead of to itself.
   const path = page > 1 ? `/categories/category/${encodedCategory}/${page}` : `/categories/${encodedCategory}`;
@@ -89,10 +106,11 @@ export default async function CategoryListing({
 
   // Resolve to a known category ID (handles URL-encoded names with spaces, etc.)
   const slug = slugify(category);
-  const matchedCategory = categories.find(
-    (c) => c.id === category || c.id === slug
-      || c.name.toLowerCase() === category.toLowerCase()
-  );
+  const matchedCategory = findCategory(categories, category);
+  // Unknown category → a real 404, as on /categories/<id>, not an empty listing.
+  if (!matchedCategory) {
+    notFound();
+  }
   const resolvedCategory = matchedCategory?.id ?? slug;
 
   const tCommon = await getTranslations({ locale, namespace: "common" });
