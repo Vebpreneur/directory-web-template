@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getCachedItemsByTag, getCachedItems } from "@/lib/content";
 import { paginateMeta, totalPages } from "@/lib/paginate";
 import ListingTags from "../../listing-tags";
@@ -7,9 +8,37 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { getTranslations } from "next-intl/server";
 import { DEFAULT_LOCALE } from "@/lib/constants";
 import { toTitleCase } from "@/lib/utils";
+import { generateListingMetadata } from "@/lib/seo/listing-metadata";
 
+// Force dynamic — getCachedItemsByTag consults request-scoped APIs during
+// render, so an on-demand ISR render threw and every /tags/tag/<tag> URL
+// answered HTTP 500. Same fix as categories/category and tags/paging/[page].
+export const dynamic = 'force-dynamic';
 // Enable ISR with 10 minutes revalidation
 export const revalidate = 600;
+
+/**
+ * Own metadata instead of the [locale] layout's, which made every
+ * /tags/tag/<tag> URL declare the HOMEPAGE canonical. Every page of this route
+ * renders the same tag grid, and the tag's own page is /tags/<tag> — the URL
+ * the sitemap and every internal link use — so all of them canonicalise there.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ tags: string[]; locale: string }>;
+}): Promise<Metadata> {
+  const { tags: tagMeta, locale } = await params;
+  const [rawTag] = tagMeta;
+  const tag = decodeURI(rawTag);
+
+  return generateListingMetadata({
+    title: `${toTitleCase(tag)} Tag`,
+    path: `/tags/${rawTag}`,
+    locale,
+    keywords: [tag, "tag", "directory", "listings"],
+  });
+}
 
 // Allow non-English locales to be generated on-demand (ISR)
 export const dynamicParams = true;
@@ -54,7 +83,16 @@ export default async function TagListing({
   const { total, tags } = await getCachedItemsByTag(tag, {
     lang: locale,
   });
-  
+
+  // Unknown tag → a real 404, as on /tags/<tag>, not the full tag grid under
+  // any string (which would also canonicalise to a /tags/<tag> that 404s).
+  const knownTag = tags.some(
+    (t) => t.id === tag || t.name?.toLowerCase() === tag.toLowerCase()
+  );
+  if (!knownTag) {
+    notFound();
+  }
+
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const localePrefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
   const tagName = toTitleCase(tag);
@@ -65,7 +103,8 @@ export default async function TagListing({
   if (page > 1) {
     breadcrumbItems.push({
       name: tagName,
-      url: `${localePrefix}/tags/tag/${tag}`,
+      // The tag's canonical page (see generateMetadata above).
+      url: `${localePrefix}/tags/${tag}`,
     });
     breadcrumbItems.push({ name: `Page ${page}` });
   } else {

@@ -1,6 +1,24 @@
 import { getCachedItems } from "@/lib/content";
 import { paginateMeta, totalPages } from "@/lib/paginate";
 import ListingTags from "../../listing-tags";
+import type { Metadata } from "next";
+import { getLocalizedUrl } from "@/lib/seo/hreflang";
+import type { Locale } from "@/lib/constants";
+
+// Self-referencing canonical for each page of the listing (instead of the
+// [locale] layout's homepage canonical, which this route used to inherit).
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string; locale: string }>;
+}): Promise<Metadata> {
+  const { locale, page } = await params;
+  return {
+    alternates: {
+      canonical: getLocalizedUrl(`/tags/paging/${encodeURIComponent(page)}`, locale as Locale),
+    },
+  };
+}
 
 // Force dynamic — getCachedItems consults request-scoped APIs
 // during render. Static rendering throws DYNAMIC_SERVER_USAGE → 5xx
@@ -34,7 +52,10 @@ export default async function TagPagingPage({
   params: Promise<{ page: string; locale: string }>;
 }) {
   const { page: pageMeta, locale } = await params;
-  const rawPage = pageMeta[0] || "1";
+  // `page` is one segment (a string), not a catch-all array: `pageMeta[0]`
+  // took its first CHARACTER, so /tags/paging/10..19 all rendered page 1 while
+  // each declared itself canonical.
+  const rawPage = pageMeta || "1";
   const { start, page } = paginateMeta(rawPage, PER_PAGE);
   const { tags } = await getCachedItems({ lang: locale, sortTags: true });
 

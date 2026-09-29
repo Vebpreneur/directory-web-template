@@ -8,6 +8,12 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { getTranslations } from "next-intl/server";
 import { DEFAULT_LOCALE } from "@/lib/constants";
 
+// Force dynamic — getCachedItemsByCategory / Listing consult request-scoped
+// APIs during render, so an on-demand ISR render threw DYNAMIC_SERVER_USAGE
+// and every /categories/category/<id> URL answered HTTP 500 (on every
+// directory built from this template, e.g. all 125 categories of one Work;
+// reproduced locally). Same fix as tags/paging/[page].
+export const dynamic = 'force-dynamic';
 // Enable ISR with 10 minutes revalidation
 export const revalidate = 600;
 
@@ -24,7 +30,9 @@ export async function generateMetadata({
   const formattedCategory = toTitleCase(category);
   const title = page > 1 ? `${formattedCategory} - Page ${page}` : formattedCategory;
   const encodedCategory = encodeURIComponent(category);
-  const path = page > 1 ? `/categories/category/${encodedCategory}/${page}` : `/categories/category/${encodedCategory}`;
+  // Page 1 is the same listing as /categories/<id> - the shape every internal
+  // link and the sitemap use - so it canonicalises there instead of to itself.
+  const path = page > 1 ? `/categories/category/${encodedCategory}/${page}` : `/categories/${encodedCategory}`;
 
   return generateListingMetadata({
     title,
@@ -97,7 +105,8 @@ export default async function CategoryListing({
   if (page > 1) {
     breadcrumbItems.push({
       name: categoryName,
-      url: `${localePrefix}/categories/category/${resolvedCategory}`,
+      // The category's canonical page (see generateMetadata above).
+      url: `${localePrefix}/categories/${resolvedCategory}`,
     });
     breadcrumbItems.push({ name: `Page ${page}` });
   } else {

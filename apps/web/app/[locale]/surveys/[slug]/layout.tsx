@@ -4,6 +4,8 @@ import { Container } from '@/components/ui/container';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 import { cleanUrl } from '@/lib/utils/url-cleaner';
+import { getLocalizedUrl } from '@/lib/seo/hreflang';
+import type { Locale } from '@/lib/constants';
 
 interface SurveyLayoutProps {
 	params: Promise<{
@@ -16,12 +18,12 @@ const getSurvey = cache(async (slug: string) => {
 	return surveyService.getBySlug(slug);
 });
 
-const rawUrl = process.env.NEXT_PUBLIC_APP_URL?.trim() || 
+const rawUrl = process.env.NEXT_PUBLIC_CANONICAL_URL?.trim() || process.env.NEXT_PUBLIC_APP_URL?.trim() || 
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://demo.ever.works");
 const appUrl = cleanUrl(rawUrl);
 
 export async function generateMetadata({ params }: SurveyLayoutProps): Promise<Metadata> {
-	const { slug } = await params;
+	const { slug, locale } = await params;
 	const survey = await getSurvey(slug);
 
 	if (!survey) {
@@ -34,7 +36,11 @@ export async function generateMetadata({ params }: SurveyLayoutProps): Promise<M
 	return {
 		metadataBase: new URL(appUrl),
 		title: `${survey.title} | Surveys`,
-		description: survey.description || 'Complete this survey'
+		description: survey.description || 'Complete this survey',
+		// Own canonical instead of the [locale] layout's homepage canonical.
+		alternates: {
+			canonical: getLocalizedUrl(`/surveys/${slug}`, locale as Locale)
+		}
 	};
 }
 

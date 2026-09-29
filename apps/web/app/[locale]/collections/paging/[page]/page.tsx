@@ -1,6 +1,24 @@
 import { CollectionsList } from "@/components/collections";
 import { getCachedItems } from "@/lib/content";
 import { paginateMeta } from "@/lib/paginate";
+import type { Metadata } from "next";
+import { getLocalizedUrl } from "@/lib/seo/hreflang";
+import type { Locale } from "@/lib/constants";
+
+// Self-referencing canonical for each page of the listing (instead of the
+// [locale] layout's homepage canonical, which this route used to inherit).
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; page: string }>;
+}): Promise<Metadata> {
+  const { locale, page } = await params;
+  return {
+    alternates: {
+      canonical: getLocalizedUrl(`/collections/paging/${encodeURIComponent(page)}`, locale as Locale),
+    },
+  };
+}
 
 // Force dynamic — collectionRepository / getCachedItems consult
 // request-scoped APIs during render. Static rendering throws

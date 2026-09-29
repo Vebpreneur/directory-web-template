@@ -12,10 +12,12 @@ import { Logger } from '@/lib/logger';
 import { SurveyTypeEnum, SurveyStatusEnum } from '@/lib/types/survey';
 import { getSurveysEnabled } from '@/lib/utils/settings';
 import { cleanUrl } from '@/lib/utils/url-cleaner';
+import { getLocalizedUrl } from '@/lib/seo/hreflang';
+import type { Locale } from '@/lib/constants';
 
 const logger = Logger.create('SurveysPage');
 
-const rawUrl = process.env.NEXT_PUBLIC_APP_URL?.trim() || 
+const rawUrl = process.env.NEXT_PUBLIC_CANONICAL_URL?.trim() || process.env.NEXT_PUBLIC_APP_URL?.trim() || 
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://demo.ever.works");
 const appUrl = cleanUrl(rawUrl);
 
@@ -30,7 +32,13 @@ export async function generateMetadata({
     return {
         metadataBase: new URL(appUrl),
         title: t('PAGE_TITLE'),
-        description: t('PAGE_META_DESCRIPTION')
+        description: t('PAGE_META_DESCRIPTION'),
+        // Own canonical: without it this page inherited the [locale] layout's
+        // `alternates` and declared itself a duplicate of the homepage.
+        // Canonical only - survey content is not translated per locale.
+        alternates: {
+            canonical: getLocalizedUrl('/surveys', locale as Locale)
+        }
     };
 }
 

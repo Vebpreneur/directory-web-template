@@ -2,6 +2,21 @@ import { CollectionsList } from "@/components/collections";
 import { getCachedItems } from "@/lib/content";
 import { paginateMeta } from "@/lib/paginate";
 import { Collection } from "@/types/collection";
+import type { Metadata } from "next";
+import { getLocalizedUrl } from "@/lib/seo/hreflang";
+import type { Locale } from "@/lib/constants";
+
+// Page 1 of the paging route renders the same listing as /collections, so it
+// canonicalises there. Without this it inherited the [locale] layout's
+// canonical and declared itself a duplicate of the homepage.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: { canonical: getLocalizedUrl("/collections", locale as Locale) } };
+}
 
 // Enable ISR with 10 minutes revalidation
 export const revalidate = 600;
