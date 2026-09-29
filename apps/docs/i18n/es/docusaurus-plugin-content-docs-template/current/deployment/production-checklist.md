@@ -513,19 +513,19 @@ Haga seguimiento de estas métricas para garantizar la salud en producción:
 
 Después de una implementación exitosa:
 
-- [Monitoreo y Análisis](./monitoring) – Configurar monitoreo integral
-- [Variables de Entorno](./environment-variables) – Gestionar secretos de producción
-- [Implementación Docker](./docker) – Contenerizar su aplicación
-- [Soporte](../advanced-guide/support) – Obtener ayuda cuando sea necesario
+- [Monitoreo y Análisis](./monitoring.md) – Configurar monitoreo integral
+- [Variables de Entorno](./environment-variables.md) – Gestionar secretos de producción
+- [Implementación Docker](./docker.md) – Contenerizar su aplicación
+- [Soporte](../advanced-guide/support.md) – Obtener ayuda cuando sea necesario
 
 ## Recursos
 
 ### Documentación Interna
 
-- [Descripción General de la Arquitectura](../architecture/overview)
-- [Tech Stack](../architecture/tech-stack)
-- [Documentación de API](../development/api-documentation)
-- [Monitoreo](./monitoring)
+- [Descripción General de la Arquitectura](../architecture/overview.md)
+- [Tech Stack](../architecture/tech-stack.md)
+- [Documentación de API](../development/api-documentation.md)
+- [Monitoreo](./monitoring.md)
 
 ### Recursos Externos
 

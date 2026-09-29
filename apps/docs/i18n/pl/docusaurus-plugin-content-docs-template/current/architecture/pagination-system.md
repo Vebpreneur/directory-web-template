@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Powiązane moduły
 
-- [Config Manager System](./config-manager-system) - Zapewnia konfigurację stronicowania w czasie wykonywania (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) - Zapewnia konfigurację stronicowania w czasie wykonywania (`type`, `itemsPerPage`)
 - [Biblioteka treści](/template/architecture/content-library) — Używa podziału na strony w przypadku stron z listami treści

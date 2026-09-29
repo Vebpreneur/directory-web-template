@@ -144,7 +144,7 @@ getTagId({ id: 'design-tools', name: 'Design Tools' }); // => 'design-tools'
 
 ## Related Hooks
 
-- [`useFilters`](/template/hooks/use-filters-reference) -- General-purpose filtering logic for item lists
-- [`useInfiniteLoading`](/template/hooks/use-infinite-loading-reference) -- Infinite scroll loading as an alternative to pagination
-- [`usePaginatedQuery`](/template/hooks/use-paginated-query-reference) -- Server-side paginated data fetching
-- [`useClientItems`](/template/hooks/use-client-items-reference) -- Client-side item fetching and management
+- [`useFilters`](./use-filters-reference.md) -- General-purpose filtering logic for item lists
+- [`useInfiniteLoading`](./use-infinite-loading-reference.md) -- Infinite scroll loading as an alternative to pagination
+- [`usePaginatedQuery`](./use-paginated-query-reference.md) -- Server-side paginated data fetching
+- [`useClientItems`](./use-client-items-reference.md) -- Client-side item fetching and management

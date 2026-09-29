@@ -138,4 +138,4 @@ El sistema multidivisa funciona a la perfección con todos los proveedores de pa
 Para obtener una configuración detallada específica del proveedor, consulte:
 - [Configuración de franja] (./stripe)
 - [Configuración de LemonSqueezy] (./lemonsqueezy)
-- [Configuración polar](./polar)
+- [Configuración polar](./polar.md)

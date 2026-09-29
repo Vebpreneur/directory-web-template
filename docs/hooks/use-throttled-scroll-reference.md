@@ -158,6 +158,6 @@ This hook has no external dependencies beyond React (`useEffect`, `useRef`).
 
 ## Related Hooks
 
-- [`useScrollToTop`](/template/hooks/use-scroll-to-top-reference) -- Provides a scroll-to-top action (commonly used with scroll tracking)
-- [`useStickyState`](/template/hooks/use-sticky-state-reference) -- Persisted state that can be combined with scroll-driven UI
-- [`useDebouncedValue`](/template/hooks/use-debounced-value-reference) -- Debouncing alternative when you need delayed updates rather than frame-synced
+- [`useScrollToTop`](./use-scroll-to-top-reference.md) -- Provides a scroll-to-top action (commonly used with scroll tracking)
+- [`useStickyState`](./use-sticky-state-reference.md) -- Persisted state that can be combined with scroll-driven UI
+- [`useDebouncedValue`](./use-debounced-value-reference.md) -- Debouncing alternative when you need delayed updates rather than frame-synced

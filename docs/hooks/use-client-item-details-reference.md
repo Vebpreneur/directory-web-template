@@ -240,7 +240,7 @@ function ConditionalDetail({ itemId }: { itemId: string | null }) {
 
 ## Related Hooks
 
-- [`useClientItems`](/template/hooks/use-client-items-reference) -- List-level fetching and mutations (shares the same query key prefix)
-- [`useClientItemFilters`](/template/hooks/use-client-item-filters-reference) -- Filter state management for the items list
-- [`useDetailForm`](/template/hooks/use-detail-form-reference) -- Multi-step form state for editing item details
-- [`useDeletedClientItems`](/template/hooks/use-deleted-client-items-reference) -- Manages soft-deleted items with restore capability
+- [`useClientItems`](./use-client-items-reference.md) -- List-level fetching and mutations (shares the same query key prefix)
+- [`useClientItemFilters`](./use-client-item-filters-reference.md) -- Filter state management for the items list
+- [`useDetailForm`](./use-detail-form-reference.md) -- Multi-step form state for editing item details
+- [`useDeletedClientItems`](./use-deleted-client-items-reference.md) -- Manages soft-deleted items with restore capability

@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Gerelateerde modules
 
-- [Config Manager System](./config-manager-system) -- Biedt runtime pagineringsconfiguratie (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) -- Biedt runtime pagineringsconfiguratie (`type`, `itemsPerPage`)
 - [Inhoudsbibliotheek](/template/architecture/content-library) -- Gebruikt paginering voor pagina's met inhoudslijsten

@@ -204,7 +204,7 @@ The toast primitives follow a compound component pattern with `ToastProvider`, `
 
 ## Related Documentation
 
-- [Multi-Step Forms](/template/features/multi-step-forms) -- Full form workflow documentation
-- [Shared Card Components](/template/components/shared-card-components) -- Uses skeleton loaders
-- [Context Providers](/template/components/context-providers) -- Theme and layout context
-- [Auth Components](/template/components/auth-components) -- Uses button, input, modal primitives
+- [Multi-Step Forms](../features/multi-step-forms.md) -- Full form workflow documentation
+- [Shared Card Components](./shared-card-components.md) -- Uses skeleton loaders
+- [Context Providers](./context-providers.md) -- Theme and layout context
+- [Auth Components](./auth-components.md) -- Uses button, input, modal primitives

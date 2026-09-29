@@ -13,7 +13,7 @@ Il sistema di temi fornisce un'infrastruttura tematica completa e multilivello c
 
 ## Architettura
 
-Il sistema dei temi è sovrapposto al [Generatore di colori](./color-generator-system) e utilizzato da `LayoutThemeContext`:
+Il sistema dei temi è sovrapposto al [Generatore di colori](./color-generator-system.md) e utilizzato da `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Moduli correlati
 
-- [Color Generator System](./color-generator-system) -- Fondamenti matematici per la generazione della tavolozza
+- [Color Generator System](./color-generator-system.md) -- Fondamenti matematici per la generazione della tavolozza
 - [Sistema colore](/template/architecture/color-system) -- Panoramica del sistema colore di livello superiore

@@ -81,7 +81,7 @@ that also exposes an admin UI panel via `ui-slot`).
 
 For the **complete contract** of each interface — method signatures,
 single-vs-fan-out lookup style, and how the runtime resolves multiple
-providers — see the [Plugin Capabilities Reference](../plugins/capabilities.md).
+providers — see the [Plugin Capabilities Reference](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/capabilities.md).
 That page is the source of truth that pairs with
 [`packages/plugin-sdk/src/providers.ts`](https://github.com/ever-works/directory-web-template/tree/develop/packages/plugin-sdk/src/providers.ts);
 this table only summarises the canonical id list.
@@ -119,7 +119,7 @@ For the **per-slot contract** — where each slot renders, the
 component contract (`{ ctx }` props, accessibility expectations,
 server-vs-client implications), composition rules, and the checklist
 for adding a new slot id — see the
-[Plugin Slots Reference](../plugins/slots.md). That page is the source
+[Plugin Slots Reference](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/slots.md). That page is the source
 of truth that pairs with [`packages/plugin-sdk/src/slots.ts`](https://github.com/ever-works/directory-web-template/tree/develop/packages/plugin-sdk/src/slots.ts);
 this section only summarises the canonical id list.
 
@@ -189,6 +189,6 @@ End-to-end coverage of the plugin system itself lives under
 - [`docs/spec/002-plugin-architecture/spec.md`](https://github.com/ever-works/directory-web-template/tree/develop/docs/spec/002-plugin-architecture/spec.md)
 - [`docs/spec/002-plugin-architecture/plan.md`](https://github.com/ever-works/directory-web-template/tree/develop/docs/spec/002-plugin-architecture/plan.md)
 - [`docs/spec/002-plugin-architecture/tasks.md`](https://github.com/ever-works/directory-web-template/tree/develop/docs/spec/002-plugin-architecture/tasks.md)
-- [`/docs/plugins/authoring-a-plugin`](/plugins/authoring-a-plugin) — author’s guide.
-- [`/docs/plugins/lifecycle`](/plugins/lifecycle) — boot, validation, enable/disable.
+- [`/docs/plugins/authoring-a-plugin`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/authoring-a-plugin.md) — author’s guide.
+- [`/docs/plugins/lifecycle`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/lifecycle.md) — boot, validation, enable/disable.
 - [`.specify/memory/constitution.md`](https://github.com/ever-works/directory-web-template/tree/develop/.specify/memory/constitution.md) — Article I.

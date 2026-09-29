@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## 相关模块
 
 - [API 客户端层](/template/architecture/api-client-layer) -- 使用记录器进行请求/响应日志记录
-- [Config Manager System](./config-manager-system) -- ConfigService 在启动时记录验证结果
+- [Config Manager System](./config-manager-system.md) -- ConfigService 在启动时记录验证结果

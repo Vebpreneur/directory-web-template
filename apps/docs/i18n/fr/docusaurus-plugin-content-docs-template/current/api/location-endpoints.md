@@ -149,4 +149,4 @@ Aucune limitation de débit explicite n'est appliquée à ces points de terminai
 
 ## Points de terminaison associés
 
-- [Points de terminaison de géocodage](./geocode-endpoints) — Géocodage direct et inverse (administrateurs uniquement)
+- [Points de terminaison de géocodage](./geocode-endpoints.md) — Géocodage direct et inverse (administrateurs uniquement)

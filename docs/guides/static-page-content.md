@@ -11,7 +11,7 @@ The template's static information pages — **Terms of Service**, **Privacy
 Policy**, **About** and **Cookies** — do not hold their copy in the code. Each
 one renders a Markdown file that lives in the Work's **data repository** (the
 Git CMS repo pointed at by `DATA_REPOSITORY`, see
-[Spec 006](../spec/006-git-cms/spec.md)). Editing the legal text is therefore a
+[Spec 006](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/006-git-cms/spec.md)). Editing the legal text is therefore a
 content change in that repository, not a template change, and it does not
 require a redeploy of the site's code.
 

@@ -317,9 +317,9 @@ applyCustomTheme({ primary: 'blue' });
 
 ## Next Steps
 
-- [Theming](./theming) - Learn about the theme system
-- [Customization](./customization) - General customization guide
-- [Development](/docs/development/local-setup) - Set up your development environment
+- [Theming](./theming.md) - Learn about the theme system
+- [Customization](./customization.md) - General customization guide
+- [Development](../development/local-setup.md) - Set up your development environment
 
 ## Resources
 

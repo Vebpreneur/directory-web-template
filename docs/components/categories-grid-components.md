@@ -108,6 +108,6 @@ Each category card includes:
 
 ## Related Components
 
-- [Universal Pagination](/template/components/universal-pagination-components) - The pagination control rendered in standard mode.
-- [Layout Components](/template/components/layout-components) - `LayoutGrid` used for responsive grid rendering.
-- [Context Providers](/template/components/context-providers) - `LayoutThemeContext` for pagination type.
+- [Universal Pagination](./universal-pagination-components.md) - The pagination control rendered in standard mode.
+- [Layout Components](./layout-components.md) - `LayoutGrid` used for responsive grid rendering.
+- [Context Providers](./context-providers.md) - `LayoutThemeContext` for pagination type.

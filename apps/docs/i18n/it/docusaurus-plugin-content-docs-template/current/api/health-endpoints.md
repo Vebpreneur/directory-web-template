@@ -69,5 +69,5 @@ Non viene applicato alcun limite di frequenza esplicito. Questo endpoint è legg
 
 ## Endpoint Correlati
 
-- [Endpoint di Configurazione Funzionalità](./config-feature-endpoints) -- Flag di disponibilità delle funzionalità (dipende anch'esso dal database)
-- [Endpoint di Sincronizzazione Versione](./version-sync-endpoints) -- Versione del sistema e stato di sincronizzazione
+- [Endpoint di Configurazione Funzionalità](./config-feature-endpoints.md) -- Flag di disponibilità delle funzionalità (dipende anch'esso dal database)
+- [Endpoint di Sincronizzazione Versione](./version-sync-endpoints.md) -- Versione del sistema e stato di sincronizzazione

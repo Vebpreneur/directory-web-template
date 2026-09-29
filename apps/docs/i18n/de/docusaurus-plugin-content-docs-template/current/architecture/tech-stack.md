@@ -520,8 +520,8 @@ Ever Works unterstützt standardmäßig **13+ Sprachen**:
 
 ## Nächste Schritte
 
-- [Architekturübersicht](./overview) – Verstehen Sie die Systemarchitektur
-- [Plattformfunktionen](./features) – Entdecken Sie alle Plattformfunktionen
+- [Architekturübersicht](./overview.md) – Verstehen Sie die Systemarchitektur
+- [Plattformfunktionen](./features.md) – Entdecken Sie alle Plattformfunktionen
 - [Entwicklungssetup](/development/local-setup) – Richten Sie Ihre Umgebung ein
 
 ## Ressourcen

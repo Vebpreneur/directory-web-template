@@ -125,4 +125,4 @@ Der aktive Provider wird durch `EMAIL_PROVIDER` in der Umgebungskonfiguration be
 ## Verwandte Seiten
 
 - [E-Mail-Konfiguration](../configuration/email) – Provider-Setup und Vorlagen
-- [Benutzerprofile](./current-user-api-endpoints) – Newsletter-Einstellungen im Profil
+- [Benutzerprofile](./current-user-api-endpoints.md) – Newsletter-Einstellungen im Profil

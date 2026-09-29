@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Verwandte Module
 
-- [Config Manager System](./config-manager-system) – Funktionsflags für datenbankabhängige Funktionen
-- [Query Client System](./query-client-system) – Abruf von Abonnementdaten, die in Planwächter eingespeist werden
+- [Config Manager System](./config-manager-system.md) – Funktionsflags für datenbankabhängige Funktionen
+- [Query Client System](./query-client-system.md) – Abruf von Abonnementdaten, die in Planwächter eingespeist werden

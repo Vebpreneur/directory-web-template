@@ -68,5 +68,5 @@ Nie stosuje się żadnego ograniczania liczby żądań. Ten punkt końcowy jest 
 
 ## Powiązane punkty końcowe
 
-- [Punkty końcowe Config Feature](./config-feature-endpoints) -- Flagi dostępności funkcji (również zależy od bazy danych)
-- [Punkty końcowe Version Sync](./version-sync-endpoints) -- Wersja systemu i stan synchronizacji
+- [Punkty końcowe Config Feature](./config-feature-endpoints.md) -- Flagi dostępności funkcji (również zależy od bazy danych)
+- [Punkty końcowe Version Sync](./version-sync-endpoints.md) -- Wersja systemu i stan synchronizacji

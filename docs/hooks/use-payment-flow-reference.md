@@ -292,7 +292,7 @@ function ResetableFlow() {
 
 ## Related Hooks
 
-- [`useCheckoutButton`](/template/hooks/use-checkout-button-reference) -- Checkout button logic that consumes the flow selection
-- [`useMultiStepForm`](/template/hooks/use-multi-step-form-reference) -- Generic multi-step form state management
-- [`useDetailForm`](/template/hooks/use-detail-form-reference) -- Manages the details step of the submission wizard
-- [`useLocalStorage`](/template/hooks/use-local-storage-reference) -- Underlying storage hook used for persistence
+- [`useCheckoutButton`](./use-checkout-button-reference.md) -- Checkout button logic that consumes the flow selection
+- [`useMultiStepForm`](./use-multi-step-form-reference.md) -- Generic multi-step form state management
+- [`useDetailForm`](./use-detail-form-reference.md) -- Manages the details step of the submission wizard
+- [`useLocalStorage`](./use-local-storage-reference.md) -- Underlying storage hook used for persistence

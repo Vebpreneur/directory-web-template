@@ -278,7 +278,7 @@ function getISOWeekString(date: Date): string {
 
 ## Related Documentation
 
-- [Engagement Service](/template/services/engagement-services) -- Popularity scoring
-- [Analytics Background](/template/services/analytics-background) -- Background processing
-- [View Tracking Service](/template/services/view-tracking-service) -- View recording
-- [Admin Analytics](/template/features/admin-analytics) -- Dashboard UI
+- [Engagement Service](./engagement-services.md) -- Popularity scoring
+- [Analytics Background](./analytics-background.md) -- Background processing
+- [View Tracking Service](./view-tracking-service.md) -- View recording
+- [Admin Analytics](../features/admin-analytics.md) -- Dashboard UI

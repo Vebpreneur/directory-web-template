@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## Powiązane moduły
 
 - [Biblioteka treści](/template/architecture/content-library) — Główny odbiorca tagów pamięci podręcznej i wartości TTL
-- [Config Manager System](./config-manager-system) — Używa `CACHE_TAGS.CONFIG` do buforowania konfiguracji witryny
+- [Config Manager System](./config-manager-system.md) — Używa `CACHE_TAGS.CONFIG` do buforowania konfiguracji witryny

@@ -346,4 +346,4 @@ Geen expliciete snelheidsbeperking. Omleidings-URL's in afrekening- en verlengin
 
 ## Gerelateerde eindpunten
 
-- [Gebruikersbetaal-eindpunten](./user-payment-endpoints) — Gebruikersbetaalgeschiedenis en abonnementsbeheer
+- [Gebruikersbetaal-eindpunten](./user-payment-endpoints.md) — Gebruikersbetaalgeschiedenis en abonnementsbeheer

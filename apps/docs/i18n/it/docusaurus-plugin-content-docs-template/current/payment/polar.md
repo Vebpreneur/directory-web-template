@@ -337,8 +337,8 @@ Pacchetti richiesti (già inclusi in Ever Works):
 
 ## Passaggi successivi
 
-- [Configurazione Stripe](./stripe) - Fornitore di pagamenti alternativo
-- [Configurazione LemonSqueezy](./lemonsqueezy) - Fornitore di pagamenti alternativo
+- [Configurazione Stripe](./stripe.md) - Fornitore di pagamenti alternativo
+- [Configurazione LemonSqueezy](./lemonsqueezy.md) - Fornitore di pagamenti alternativo
 - [Panoramica pagamenti](/pagamento) - Confronta i fornitori di servizi di pagamento
 - [Variabili d'ambiente](/deployment/environment-variables) - Completa la configurazione dell'ambiente
 - [Distribuzione](/deployment) - Distribuisci la tua integrazione di pagamento

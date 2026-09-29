@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Modules associés
 
 - [API Client Layer](/template/architecture/api-client-layer) -- Utilise l'enregistreur pour la journalisation des demandes/réponses
-- [Config Manager System](./config-manager-system) -- ConfigService enregistre les résultats de validation au démarrage
+- [Config Manager System](./config-manager-system.md) -- ConfigService enregistre les résultats de validation au démarrage

@@ -513,19 +513,19 @@ Track these metrics to ensure production health:
 
 After successful deployment:
 
-- [Monitoring & Analytics](./monitoring) - Set up comprehensive monitoring
-- [Environment Variables](./environment-variables) - Manage production secrets
-- [Docker Deployment](./docker) - Containerize your application
-- [Support](../advanced-guide/support) - Get help when needed
+- [Monitoring & Analytics](./monitoring.md) - Set up comprehensive monitoring
+- [Environment Variables](./environment-variables.md) - Manage production secrets
+- [Docker Deployment](./docker.md) - Containerize your application
+- [Support](../advanced-guide/support.md) - Get help when needed
 
 ## Resources
 
 ### Internal Documentation
 
-- [Architecture Overview](../architecture/overview)
-- [Tech Stack](../architecture/tech-stack)
-- [API Documentation](../development/api-documentation)
-- [Monitoring](./monitoring)
+- [Architecture Overview](../architecture/overview.md)
+- [Tech Stack](../architecture/tech-stack.md)
+- [API Documentation](../development/api-documentation.md)
+- [Monitoring](./monitoring.md)
 
 ### External Resources
 

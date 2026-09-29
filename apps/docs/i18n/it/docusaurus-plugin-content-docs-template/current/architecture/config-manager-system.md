@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Moduli correlati
 
-- [Cache System](./cache-system) -- Utilizza `CACHE_TAGS.CONFIG` per la memorizzazione nella cache della configurazione
-- [Guards System](./guards-system-deep-dive) - Consuma la configurazione del piano/funzionalità
+- [Cache System](./cache-system.md) -- Utilizza `CACHE_TAGS.CONFIG` per la memorizzazione nella cache della configurazione
+- [Guards System](./guards-system-deep-dive.md) - Consuma la configurazione del piano/funzionalità
 - [Libreria contenuti](/template/architecture/content-library) -- Risoluzione del percorso del contenuto utilizzata da ConfigManager

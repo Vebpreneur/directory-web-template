@@ -513,19 +513,19 @@ Volg deze statistieken om de productiestatus te waarborgen:
 
 Na succesvolle implementatie:
 
-- [Monitoring & Analytics](./monitoring) – Uitgebreide monitoring instellen
-- [Omgevingsvariabelen](./environment-variables) – Productiegeheimen beheren
-- [Docker-implementatie](./docker) – Applicatie containeriseren
-- [Ondersteuning](../advanced-guide/support) – Hulp krijgen wanneer nodig
+- [Monitoring & Analytics](./monitoring.md) – Uitgebreide monitoring instellen
+- [Omgevingsvariabelen](./environment-variables.md) – Productiegeheimen beheren
+- [Docker-implementatie](./docker.md) – Applicatie containeriseren
+- [Ondersteuning](../advanced-guide/support.md) – Hulp krijgen wanneer nodig
 
 ## Bronnen
 
 ### Interne documentatie
 
-- [Architectuuroverzicht](../architecture/overview)
-- [Tech-stack](../architecture/tech-stack)
-- [API-documentatie](../development/api-documentation)
-- [Monitoring](./monitoring)
+- [Architectuuroverzicht](../architecture/overview.md)
+- [Tech-stack](../architecture/tech-stack.md)
+- [API-documentatie](../development/api-documentation.md)
+- [Monitoring](./monitoring.md)
 
 ### Externe bronnen
 

@@ -69,4 +69,4 @@ Error responses use `Cache-Control: no-cache` to prevent caching of degraded sta
 
 ## Related Endpoints
 
-- [Health Endpoints](./health-endpoints) -- Database connectivity health check
+- [Health Endpoints](./health-endpoints.md) -- Database connectivity health check

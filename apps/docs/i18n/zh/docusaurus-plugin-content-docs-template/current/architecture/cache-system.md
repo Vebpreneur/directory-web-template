@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## 相关模块
 
 - [Content Library](/template/architecture/content-library) -- 缓存标签和 TTL 值的主要消费者
-- [Config Manager System](./config-manager-system) -- 使用 `CACHE_TAGS.CONFIG` 进行站点配置缓存
+- [Config Manager System](./config-manager-system.md) -- 使用 `CACHE_TAGS.CONFIG` 进行站点配置缓存

@@ -520,8 +520,8 @@ Ever Works obsługuje **ponad 13 języków** od razu po wyjęciu z pudełka:
 
 ## Następne kroki
 
-- [Przegląd architektury](./overview) — poznaj architekturę systemu
-- [Funkcje platformy](./features) — poznaj wszystkie funkcje platformy
+- [Przegląd architektury](./overview.md) — poznaj architekturę systemu
+- [Funkcje platformy](./features.md) — poznaj wszystkie funkcje platformy
 - [Konfiguracja programistyczna](/development/local-setup) – Skonfiguruj swoje środowisko
 
 ## Zasoby

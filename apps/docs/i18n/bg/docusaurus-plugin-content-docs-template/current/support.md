@@ -19,8 +19,8 @@ sidebar_label: "Поддръжка"
 
 ## Документация
 
-- [Инсталация](./getting-started/installation)
-- [Бърз старт](./getting-started/quick-start)
+- [Инсталация](./getting-started/installation.md)
+- [Бърз старт](./getting-started/quick-start.md)
 - [Архитектура](./architecture)
 - [Внедряване](./deployment)
 

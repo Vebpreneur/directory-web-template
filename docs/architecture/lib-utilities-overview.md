@@ -62,21 +62,21 @@ graph TD
 
 | Directory / File | Description |
 |-----------------|-------------|
-| `lib/analytics/` | PostHog + Sentry analytics singleton ([docs](./analytics-module)) |
-| `lib/api/` | HTTP clients for browser and server ([docs](./api-client-module)) |
-| `lib/auth/` | Authentication with NextAuth.js + Supabase ([docs](./auth-utilities-module)) |
-| `lib/background-jobs/` | Job scheduling with Trigger.dev / local / no-op ([docs](./background-jobs-module)) |
-| `lib/cache-config.ts` | Cache TTL and tag definitions ([docs](./cache-invalidation-module)) |
-| `lib/cache-invalidation.ts` | Cache invalidation functions ([docs](./cache-invalidation-module)) |
+| `lib/analytics/` | PostHog + Sentry analytics singleton ([docs](./analytics-module.md)) |
+| `lib/api/` | HTTP clients for browser and server ([docs](./api-client-module.md)) |
+| `lib/auth/` | Authentication with NextAuth.js + Supabase ([docs](./auth-utilities-module.md)) |
+| `lib/background-jobs/` | Job scheduling with Trigger.dev / local / no-op ([docs](./background-jobs-module.md)) |
+| `lib/cache-config.ts` | Cache TTL and tag definitions ([docs](./cache-invalidation-module.md)) |
+| `lib/cache-invalidation.ts` | Cache invalidation functions ([docs](./cache-invalidation-module.md)) |
 | `lib/config/` | Centralized configuration service with Zod schemas |
 | `lib/config.ts` | Site configuration (`siteConfig`) |
 | `lib/config-manager.ts` | Runtime configuration manager |
-| `lib/constants.ts` | Application constants barrel ([docs](./constants-reference-module)) |
+| `lib/constants.ts` | Application constants barrel ([docs](./constants-reference-module.md)) |
 | `lib/constants/` | Domain-specific constants (payment, analytics) |
 | `lib/content.ts` | Git-based CMS content loading and caching |
-| `lib/db/` | Database connection, migrations, seeding, queries ([docs](./db-utilities-module)) |
-| `lib/editor/` | TipTap rich text editor components and utilities ([docs](./editor-utilities-module)) |
-| `lib/guards/` | Plan-based feature access control ([docs](./guards-module)) |
+| `lib/db/` | Database connection, migrations, seeding, queries ([docs](./db-utilities-module.md)) |
+| `lib/editor/` | TipTap rich text editor components and utilities ([docs](./editor-utilities-module.md)) |
+| `lib/guards/` | Plan-based feature access control ([docs](./guards-module.md)) |
 | `lib/helpers.ts` | Language code to country code mapping |
 | `lib/lib.ts` | Content path resolution, file system utilities |
 | `lib/logger.ts` | Structured logging utility |

@@ -264,6 +264,6 @@ All UI text uses `next-intl` translations under the `client.submissions` namespa
 
 ## Related Documentation
 
-- [Multi-Step Forms](/docs/template/features/multi-step-forms) -- Submission form implementation
-- [Admin Management](/docs/template/features/admin-management) -- Admin review workflow
-- [Voting & Comments](/docs/template/features/voting-comments) -- Engagement on submissions
+- [Multi-Step Forms](./multi-step-forms.md) -- Submission form implementation
+- [Admin Management](./admin-management.md) -- Admin review workflow
+- [Voting & Comments](./voting-comments.md) -- Engagement on submissions

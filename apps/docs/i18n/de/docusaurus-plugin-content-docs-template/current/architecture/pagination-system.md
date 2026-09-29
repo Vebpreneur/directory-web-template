@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Verwandte Module
 
-- [Config Manager System](./config-manager-system) – Bietet Laufzeit-Paginierungskonfiguration (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) – Bietet Laufzeit-Paginierungskonfiguration (`type`, `itemsPerPage`)
 - [Inhaltsbibliothek](/template/architecture/content-library) – Verwendet Paginierung für Seiten mit Inhaltslisten

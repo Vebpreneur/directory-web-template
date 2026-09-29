@@ -136,6 +136,6 @@ NEXT_PUBLIC_STRIPE_STANDARD_MONTHLY_PRICE_ID_CAD=price_aaa
 - **Polar**: поддержка мультивалютности посредством конфигурации продукта.
 
 Подробную настройку для конкретного поставщика см. в разделе:
-- [Конфигурация полосы](./stripe)
-- [Конфигурация LemonSqueezy](./lemonsqueezy)
+- [Конфигурация полосы](./stripe.md)
+- [Конфигурация LemonSqueezy](./lemonsqueezy.md)
 - [Полярная конфигурация](./полярный)

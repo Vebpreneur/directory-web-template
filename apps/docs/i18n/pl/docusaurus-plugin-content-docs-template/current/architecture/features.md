@@ -699,8 +699,8 @@ Wytyczne i najlepsze praktyki dotyczące testowania na różnych urządzeniach.
 
 ## Następne kroki
 
-- [Tech Stack](./tech-stack) — Poznaj stos technologii
-- [Przegląd architektury](./overview) — poznaj architekturę
+- [Tech Stack](./tech-stack.md) — Poznaj stos technologii
+- [Przegląd architektury](./overview.md) — poznaj architekturę
 
 ## Zasoby
 

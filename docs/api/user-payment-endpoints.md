@@ -223,4 +223,4 @@ No explicit rate limiting. The currency detection endpoint always returns `200 O
 
 ## Related Endpoints
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- Check feature availability based on plan
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Check feature availability based on plan

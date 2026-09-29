@@ -116,7 +116,7 @@ Au démarrage de l'application (via `instrumentation.ts`), le modèle automatiqu
 1. **Exécute les migrations** : la fonction `migrate()` de Drizzle applique toutes les migrations en attente (idempotente : les migrations déjà appliquées sont ignorées)
 2. **Données de départ** : si la base de données n'a pas été prédéfinie, le script de départ s'exécute avec une protection de verrouillage consultative pour éviter les conditions de concurrence dans les déploiements multi-processus.
 
-Ceci est géré par `lib/db/initialize.ts`. Consultez le [Guide des migrations](./migrations-guide) et [Amorçage de base de données](./seeding) pour plus de détails.
+Ceci est géré par `lib/db/initialize.ts`. Consultez le [Guide des migrations](./migrations-guide.md) et [Amorçage de base de données](./seeding.md) pour plus de détails.
 
 ## Commandes clés
 

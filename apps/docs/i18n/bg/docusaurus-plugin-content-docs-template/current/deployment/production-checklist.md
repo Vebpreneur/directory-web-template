@@ -513,19 +513,19 @@ psql $DATABASE_URL < backup-YYYYMMDD.sql
 
 След успешно внедряване:
 
-- [Мониторинг и Анализи](./monitoring) – Конфигуриране на цялостен мониторинг
-- [Променливи на Средата](./environment-variables) – Управление на производствени тайни
-- [Docker Внедряване](./docker) – Контейнеризиране на приложението
-- [Поддръжка](../advanced-guide/support) – Получаване на помощ при нужда
+- [Мониторинг и Анализи](./monitoring.md) – Конфигуриране на цялостен мониторинг
+- [Променливи на Средата](./environment-variables.md) – Управление на производствени тайни
+- [Docker Внедряване](./docker.md) – Контейнеризиране на приложението
+- [Поддръжка](../advanced-guide/support.md) – Получаване на помощ при нужда
 
 ## Ресурси
 
 ### Вътрешна Документация
 
-- [Преглед на Архитектурата](../architecture/overview)
-- [Tech Stack](../architecture/tech-stack)
-- [API Документация](../development/api-documentation)
-- [Мониторинг](./monitoring)
+- [Преглед на Архитектурата](../architecture/overview.md)
+- [Tech Stack](../architecture/tech-stack.md)
+- [API Документация](../development/api-documentation.md)
+- [Мониторинг](./monitoring.md)
 
 ### Външни Ресурси
 

@@ -167,5 +167,5 @@ const rgb = hexToRgb('#3b82f6');
 
 ## 相关模块
 
-- [主题系统深度潜水](./theme-system-deep-dive) -- 使用调色板生成来实现动态主题
+- [主题系统深度潜水](./theme-system-deep-dive.md) -- 使用调色板生成来实现动态主题
 - [Color System](/template/architecture/color-system) -- 更高级别的颜色系统文档

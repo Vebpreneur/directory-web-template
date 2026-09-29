@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## 相关模块
 
-- [Config Manager System](./config-manager-system) -- 提供运行时分页配置（`type`、`itemsPerPage`）
+- [Config Manager System](./config-manager-system.md) -- 提供运行时分页配置（`type`、`itemsPerPage`）
 - [Content Library](/template/architecture/content-library) -- 对内容列表页面使用分页

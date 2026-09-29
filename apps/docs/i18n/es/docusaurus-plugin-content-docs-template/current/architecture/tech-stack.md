@@ -521,7 +521,7 @@ Ever Works admite **más de 13 idiomas** desde el primer momento:
 ## Próximos pasos
 
 - [Descripción general de la arquitectura] (./overview): comprensión de la arquitectura del sistema
-- [Características de la plataforma](./features): explora todas las funciones de la plataforma
+- [Características de la plataforma](./features.md): explora todas las funciones de la plataforma
 - [Configuración de desarrollo](/development/local-setup) - Configure su entorno
 
 ## Recursos

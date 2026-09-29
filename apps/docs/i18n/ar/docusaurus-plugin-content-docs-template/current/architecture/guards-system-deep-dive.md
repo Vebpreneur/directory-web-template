@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## الوحدات ذات الصلة
 
-- [نظام إدارة التكوين](./config-manager-system) - علامات الميزات للميزات المعتمدة على قاعدة البيانات
-- [نظام عميل الاستعلام](./query-client-system) - جلب بيانات الاشتراك التي تغذي حراس الخطة
+- [نظام إدارة التكوين](./config-manager-system.md) - علامات الميزات للميزات المعتمدة على قاعدة البيانات
+- [نظام عميل الاستعلام](./query-client-system.md) - جلب بيانات الاشتراك التي تغذي حراس الخطة

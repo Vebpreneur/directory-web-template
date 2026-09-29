@@ -699,8 +699,8 @@ Richtlijnen voor testen op verschillende apparaten en best practices.
 
 ## Volgende stappen
 
-- [Tech Stack](./tech-stack) - Ontdek de technologiestapel
-- [Architectuuroverzicht](./overview) - Begrijp de architectuur
+- [Tech Stack](./tech-stack.md) - Ontdek de technologiestapel
+- [Architectuuroverzicht](./overview.md) - Begrijp de architectuur
 
 ## Hulpbronnen
 

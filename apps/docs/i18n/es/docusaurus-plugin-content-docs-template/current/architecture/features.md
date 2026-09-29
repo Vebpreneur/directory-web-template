@@ -699,7 +699,7 @@ Pautas y mejores prácticas de prueba entre dispositivos.
 
 ## Próximos pasos
 
-- [Tech Stack](./tech-stack): explora la pila de tecnología
+- [Tech Stack](./tech-stack.md): explora la pila de tecnología
 - [Descripción general de la arquitectura] (./overview): comprensión de la arquitectura
 
 ## Recursos

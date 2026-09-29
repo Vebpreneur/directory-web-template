@@ -164,5 +164,5 @@ if (status.syncInProgress) {
 
 ## Связанные конечные точки
 
-- [Health Endpoints](./health-endpoints) — проверка работоспособности подключения к базе данных.
-- [Конечные точки функции конфигурации](./config-feature-endpoints) – флаги доступности функции.
+- [Health Endpoints](./health-endpoints.md) — проверка работоспособности подключения к базе данных.
+- [Конечные точки функции конфигурации](./config-feature-endpoints.md) – флаги доступности функции.

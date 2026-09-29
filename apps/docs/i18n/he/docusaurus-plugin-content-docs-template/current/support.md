@@ -19,8 +19,8 @@ sidebar_label: "תמיכה"
 
 ## תיעוד
 
-- [התקנה](./getting-started/installation)
-- [התחלה מהירה](./getting-started/quick-start)
+- [התקנה](./getting-started/installation.md)
+- [התחלה מהירה](./getting-started/quick-start.md)
 - [ארכיטקטורה](./architecture)
 - [פריסה](./deployment)
 

@@ -305,9 +305,9 @@ Include metadata in your survey configuration:
 
 ## Next Steps
 
-- [Customization](./customization) - General customization guide
+- [Customization](./customization.md) - General customization guide
 - [Development](/development/local-setup) - Set up your development environment
-- [Admin Dashboard](./admin-dashboard) - Manage directory content
+- [Admin Dashboard](./admin-dashboard.md) - Manage directory content
 
 ## Resources
 

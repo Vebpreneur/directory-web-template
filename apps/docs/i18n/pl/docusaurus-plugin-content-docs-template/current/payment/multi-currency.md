@@ -137,5 +137,5 @@ System wielowalutowy współpracuje bezproblemowo ze wszystkimi dostawcami usłu
 
 Aby zapoznać się ze szczegółową konfiguracją specyficzną dla dostawcy, zobacz:
 - [Konfiguracja pasków](./pasek)
-- [Konfiguracja LemonSqueezy](./lemonsqueezy)
-- [Konfiguracja polarna](./polar)
+- [Konfiguracja LemonSqueezy](./lemonsqueezy.md)
+- [Konfiguracja polarna](./polar.md)

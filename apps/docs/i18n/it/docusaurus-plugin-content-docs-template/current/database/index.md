@@ -116,7 +116,7 @@ All'avvio dell'applicazione (tramite `instrumentation.ts`), il modello automatic
 1. **Esegue le migrazioni**: la funzione `migrate()` di Drizzle applica tutte le migrazioni in sospeso (idempotenti: le migrazioni già applicate vengono saltate)
 2. **Semina dati**: se il database non è stato sottoposto a seeding, lo script seed viene eseguito con la protezione del blocco consultivo per prevenire condizioni di competizione nelle distribuzioni multiprocesso
 
-Questo è gestito da `lib/db/initialize.ts`. Per i dettagli, consultare la [Guida alla migrazione](./migrations-guide) e il [Seeding del database](./seeding).
+Questo è gestito da `lib/db/initialize.ts`. Per i dettagli, consultare la [Guida alla migrazione](./migrations-guide.md) e il [Seeding del database](./seeding.md).
 
 ## Comandi chiave
 

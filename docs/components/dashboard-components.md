@@ -171,7 +171,7 @@ const ICON_CONTAINER_STYLES = "p-2 bg-theme-primary-100 dark:bg-theme-primary-90
 
 ## Related Documentation
 
-- [Admin Analytics](/template/features/admin-analytics) -- Admin-level analytics dashboard
-- [View Tracking](/template/features/view-tracking) -- How views are recorded
-- [Billing Components](/template/components/billing-components) -- Payment integration details
-- [Maps Components](/template/components/maps-components) -- Map rendering
+- [Admin Analytics](../features/admin-analytics.md) -- Admin-level analytics dashboard
+- [View Tracking](../features/view-tracking.md) -- How views are recorded
+- [Billing Components](./billing-components.md) -- Payment integration details
+- [Maps Components](./maps-components.md) -- Map rendering

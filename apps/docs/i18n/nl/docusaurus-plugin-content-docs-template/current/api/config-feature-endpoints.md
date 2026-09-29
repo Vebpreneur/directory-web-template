@@ -68,4 +68,4 @@ Foutantwoorden gebruiken `Cache-Control: no-cache` om het cachen van een gedegra
 
 ## Gerelateerde Eindpunten
 
-- [Gezondheids-eindpunten](./health-endpoints) -- Databaseverbindingsgezondheidscontrole
+- [Gezondheids-eindpunten](./health-endpoints.md) -- Databaseverbindingsgezondheidscontrole

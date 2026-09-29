@@ -137,5 +137,5 @@ NEXT_PUBLIC_STRIPE_STANDARD_MONTHLY_PRICE_ID_CAD=price_aaa
 
 לתצורה מפורטת ספציפית לספק, ראה:
 - [תצורת פס](./streep)
-- [תצורת LemonSqueezy](./lemonsqueezy)
-- [תצורה קוטבית](./polar)
+- [תצורת LemonSqueezy](./lemonsqueezy.md)
+- [תצורה קוטבית](./polar.md)

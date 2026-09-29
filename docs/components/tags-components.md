@@ -216,6 +216,6 @@ import { TagsModal } from "@/components/tags-modal";
 
 ## Related Components
 
-- [Filter System](/template/components/filter-system) - Parent filtering infrastructure that coordinates tag selection.
-- [Categories Grid](/template/components/categories-grid-components) - Similar card-based browsing for categories.
-- [Sort Menu](/template/components/sort-menu-components) - Standalone sort dropdown used alongside tag filters.
+- [Filter System](./filter-system.md) - Parent filtering infrastructure that coordinates tag selection.
+- [Categories Grid](./categories-grid-components.md) - Similar card-based browsing for categories.
+- [Sort Menu](./sort-menu-components.md) - Standalone sort dropdown used alongside tag filters.

@@ -112,4 +112,4 @@ No explicit rate limiting. The engagement endpoint caps batch size at 200 slugs 
 
 ## Related Endpoints
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- Check if ratings/favorites/comments features are enabled
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Check if ratings/favorites/comments features are enabled

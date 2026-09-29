@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Powiązane moduły
 
-- [System pamięci podręcznej](./cache-system) — Używa `CACHE_TAGS.CONFIG` do buforowania konfiguracji
-- [System Strażników](./guards-system-deep-dive) — Zużywa konfigurację planu/funkcji
+- [System pamięci podręcznej](./cache-system.md) — Używa `CACHE_TAGS.CONFIG` do buforowania konfiguracji
+- [System Strażników](./guards-system-deep-dive.md) — Zużywa konfigurację planu/funkcji
 - [Biblioteka treści](/template/architecture/content-library) — Rozpoznawanie ścieżki zawartości używane przez menedżera ConfigManager

@@ -266,8 +266,8 @@ import Image from 'next/image';
 
 ## الخطوات التالية
 
-- [الإعداد المحلي](./local-setup) - إعداد بيئة التطوير
-- [توثيق API](./api-documentation) - تعرَّف على توثيق API
+- [الإعداد المحلي](./local-setup.md) - إعداد بيئة التطوير
+- [توثيق API](./api-documentation.md) - تعرَّف على توثيق API
 - [النشر](/docs/deployment) - انشر تطبيقك
 
 ## الموارد

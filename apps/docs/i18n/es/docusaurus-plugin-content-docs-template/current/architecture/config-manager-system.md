@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Módulos relacionados
 
-- [Sistema de caché](./cache-system) -- Utiliza `CACHE_TAGS.CONFIG` para el almacenamiento en caché de la configuración
-- [Sistema de guardias](./guards-system-deep-dive) -- Consume la configuración del plan/funciones
+- [Sistema de caché](./cache-system.md) -- Utiliza `CACHE_TAGS.CONFIG` para el almacenamiento en caché de la configuración
+- [Sistema de guardias](./guards-system-deep-dive.md) -- Consume la configuración del plan/funciones
 - [Biblioteca de contenido](/template/architecture/content-library) -- Resolución de ruta de contenido utilizada por ConfigManager

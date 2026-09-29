@@ -17,7 +17,7 @@ their profile.
 > action a directory operator must take is set `AI_CHAT_API_KEY`. If
 > the key is missing, the launcher silently no-ops (a server-side
 > warning is logged once per process).
-> **Spec:** [`docs/spec/023-ai-chat/`](../spec/023-ai-chat/spec.md)
+> **Spec:** [`docs/spec/023-ai-chat/`](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/023-ai-chat/spec.md)
 > **Jira:** [EW-132](https://evertech.atlassian.net/browse/EW-132)
 
 ## What it does
@@ -309,8 +309,8 @@ Five PostHog events are tracked via the typed `AnalyticsEvent` enum
 
 ## Related
 
-- Plugin architecture: [Spec 002](../spec/002-plugin-architecture/spec.md)
-- Auth providers: [Spec 003](../spec/003-auth-providers/spec.md)
-- Internationalisation: [Spec 005](../spec/005-internationalisation/spec.md)
-- Typed analytics events: [Spec 016](../spec/016-typed-analytics-events/spec.md)
-- Performance budget: [Spec 018](../spec/018-performance-budget/spec.md)
+- Plugin architecture: [Spec 002](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/002-plugin-architecture/spec.md)
+- Auth providers: [Spec 003](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/003-auth-providers/spec.md)
+- Internationalisation: [Spec 005](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/005-internationalisation/spec.md)
+- Typed analytics events: [Spec 016](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/016-typed-analytics-events/spec.md)
+- Performance budget: [Spec 018](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/018-performance-budget/spec.md)

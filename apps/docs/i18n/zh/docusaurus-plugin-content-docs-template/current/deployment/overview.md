@@ -18,7 +18,7 @@ Ever Works 模板经过优化，可以部署到 **Vercel**，同时也支持任�
 - [ ] PostgreSQL 数据库（推荐 Neon 或 Supabase）
 - [ ] 包含内容数据的 GitHub 数据仓库
 - [ ] Vercel 账户（免费版即可开始）
-- [ ] 已配置的环境变量（参考 [环境变量](./environment-variables) 指南）
+- [ ] 已配置的环境变量（参考 [环境变量](./environment-variables.md) 指南）
 
 ### 2. 连接 Vercel
 
@@ -53,7 +53,7 @@ COOKIE_SECURE=true
 CRON_SECRET=<openssl rand -base64 32>
 ```
 
-完整变量列表请参见 [环境变量](./environment-variables) 指南。
+完整变量列表请参见 [环境变量](./environment-variables.md) 指南。
 
 ### 4. 数据库初始化
 
@@ -147,11 +147,11 @@ pnpm start
 
 | 主题 | 文档 |
 |------|------|
-| 环境变量设置 | [环境变量](./environment-variables) |
-| 数据库设置与迁移 | [数据库管理](./database-management) |
-| Cron Jobs 设置 | [Cron Jobs](./cron-jobs) |
-| Cron Jobs 验证 | [Cron 验证](./cron-verification) |
-| 监控与告警 | [监控](./monitoring) |
+| 环境变量设置 | [环境变量](./environment-variables.md) |
+| 数据库设置与迁移 | [数据库管理](./database-management.md) |
+| Cron Jobs 设置 | [Cron Jobs](./cron-jobs.md) |
+| Cron Jobs 验证 | [Cron 验证](./cron-verification.md) |
+| 监控与告警 | [监控](./monitoring.md) |
 
 ## 快速参考
 

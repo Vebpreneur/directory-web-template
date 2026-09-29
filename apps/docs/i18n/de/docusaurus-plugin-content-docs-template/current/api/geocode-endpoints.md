@@ -141,4 +141,4 @@ Ergebnisse werden 15 Minuten gecacht (TTL 900.000 ms) mit einer maximalen Cache
 
 ## Verwandte Endpunkte
 
-- [Standort-Endpunkte](./location-endpoints) – Standortsuche, Städte, Länder und Koordinaten
+- [Standort-Endpunkte](./location-endpoints.md) – Standortsuche, Städte, Länder und Koordinaten

@@ -149,4 +149,4 @@ const cityData = await cityResponse.json();
 
 ## נקודות קצה קשורות
 
-- [Geocode Endpoints](./geocode-endpoints) -- קידוד גיאוגרפי קדימה ואחורה (מנהל מערכת בלבד)
+- [Geocode Endpoints](./geocode-endpoints.md) -- קידוד גיאוגרפי קדימה ואחורה (מנהל מערכת בלבד)

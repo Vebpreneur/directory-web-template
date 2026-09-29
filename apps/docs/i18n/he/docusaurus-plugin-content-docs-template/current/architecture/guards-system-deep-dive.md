@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## מודולים קשורים
 
-- [Config Manager System](./config-manager-system) -- דגלי תכונות עבור תכונות תלויות מסד נתונים
-- [מערכת שאילתה לקוח](./query-client-system) -- שליפת נתוני מנוי המוזנים לשומרי התוכנית
+- [Config Manager System](./config-manager-system.md) -- דגלי תכונות עבור תכונות תלויות מסד נתונים
+- [מערכת שאילתה לקוח](./query-client-system.md) -- שליפת נתוני מנוי המוזנים לשומרי התוכנית

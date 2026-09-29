@@ -62,21 +62,21 @@ graph TD
 
 |الدليل / الملف|الوصف|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + Sentry تحليلات فردية ([docs](./analytics-module))|
-|`lib/api/`|عملاء HTTP للمتصفح والخادم ([docs](./api-client-module))|
-|`lib/auth/`|المصادقة باستخدام NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|جدولة الوظائف باستخدام Trigger.dev / local / no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|ذاكرة التخزين المؤقت TTL وتعريفات العلامات ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|وظائف إبطال ذاكرة التخزين المؤقت ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|PostHog + Sentry تحليلات فردية ([docs](./analytics-module.md))|
+|`lib/api/`|عملاء HTTP للمتصفح والخادم ([docs](./api-client-module.md))|
+|`lib/auth/`|المصادقة باستخدام NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|جدولة الوظائف باستخدام Trigger.dev / local / no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|ذاكرة التخزين المؤقت TTL وتعريفات العلامات ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|وظائف إبطال ذاكرة التخزين المؤقت ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|خدمة التكوين المركزية مع مخططات Zod|
 |`lib/config.ts`|تكوين الموقع (`siteConfig`)|
 |`lib/config-manager.ts`|مدير تكوين وقت التشغيل|
-|`lib/constants.ts`|برميل ثوابت التطبيق ([docs](./constants-reference-module))|
+|`lib/constants.ts`|برميل ثوابت التطبيق ([docs](./constants-reference-module.md))|
 |`lib/constants/`|الثوابت الخاصة بالمجال (الدفع، التحليلات)|
 |`lib/content.ts`|تحميل محتوى CMS القائم على Git وتخزينه مؤقتًا|
-|`lib/db/`|الاتصال بقاعدة البيانات، والترحيلات، والبذر، والاستعلامات ([docs](./db-utilities-module))|
-|`lib/editor/`|مكونات وأدوات محرر النص المنسق TipTap ([docs](./editor-utilities-module))|
-|`lib/guards/`|التحكم في الوصول إلى الميزات المستند إلى الخطة ([docs](./guards-module))|
+|`lib/db/`|الاتصال بقاعدة البيانات، والترحيلات، والبذر، والاستعلامات ([docs](./db-utilities-module.md))|
+|`lib/editor/`|مكونات وأدوات محرر النص المنسق TipTap ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|التحكم في الوصول إلى الميزات المستند إلى الخطة ([docs](./guards-module.md))|
 |`lib/helpers.ts`|رمز اللغة لرسم خرائط رمز البلد|
 |`lib/lib.ts`|دقة مسار المحتوى، والأدوات المساعدة لنظام الملفات|
 |`lib/logger.ts`|فائدة التسجيل المنظم|

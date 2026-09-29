@@ -247,8 +247,8 @@ function PaymentHistory() {
 
 ## Related Hooks
 
-- [`useBillingData`](/template/hooks/use-billing-data-reference) -- Stripe subscription and payment data
-- [`usePaymentMethods`](/template/hooks/use-payment-methods-reference) -- Saved payment methods management
-- [`useSubscription`](/template/hooks/use-subscription-reference) -- Generic subscription state
-- [`usePlanStatus`](/template/hooks/use-plan-status-reference) -- Current plan status information
-- [`useCurrency`](/template/hooks/use-currency-reference) -- Currency formatting utilities
+- [`useBillingData`](./use-billing-data-reference.md) -- Stripe subscription and payment data
+- [`usePaymentMethods`](./use-payment-methods-reference.md) -- Saved payment methods management
+- [`useSubscription`](./use-subscription-reference.md) -- Generic subscription state
+- [`usePlanStatus`](./use-plan-status-reference.md) -- Current plan status information
+- [`useCurrency`](./use-currency-reference.md) -- Currency formatting utilities

@@ -43,7 +43,7 @@ Stripe, LemonSqueezy, and Polar, all with subscription management support.
 
 ### How do I deploy the Template?
 
-The recommended deployment target is **Vercel** for zero-configuration Next.js hosting. Docker is also supported as an alternative. See the [Deployment Guide](/deployment/deployment-introduction) for detailed instructions.
+The recommended deployment target is **Vercel** for zero-configuration Next.js hosting. Docker is also supported as an alternative. See the [Deployment Guide](./deployment/deployment.md) for detailed instructions.
 
 ### What database should I use?
 

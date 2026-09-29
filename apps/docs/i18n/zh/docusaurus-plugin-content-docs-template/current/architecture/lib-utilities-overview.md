@@ -62,21 +62,21 @@ graph TD
 
 |目录/文件|描述|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + Sentry 分析单例（[文档](./analytics-module)）|
-|`lib/api/`|浏览器和服务器的 HTTP 客户端（[文档](./api-client-module)）|
-|`lib/auth/`|使用 NextAuth.js + Supabase 进行身份验证（[文档](./auth-utilities-module)）|
-|`lib/background-jobs/`|使用 Trigger.dev / local / no-op 进行作业调度（[文档](./background-jobs-module)）|
-|`lib/cache-config.ts`|缓存 TTL 和标记定义 ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|缓存失效函数（[文档](./cache-invalidation-module)）|
+|`lib/analytics/`|PostHog + Sentry 分析单例（[文档](./analytics-module.md)）|
+|`lib/api/`|浏览器和服务器的 HTTP 客户端（[文档](./api-client-module.md)）|
+|`lib/auth/`|使用 NextAuth.js + Supabase 进行身份验证（[文档](./auth-utilities-module.md)）|
+|`lib/background-jobs/`|使用 Trigger.dev / local / no-op 进行作业调度（[文档](./background-jobs-module.md)）|
+|`lib/cache-config.ts`|缓存 TTL 和标记定义 ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|缓存失效函数（[文档](./cache-invalidation-module.md)）|
 |`lib/config/`|使用 Zod 模式的集中配置服务|
 |`lib/config.ts`|站点配置 (`siteConfig`)|
 |`lib/config-manager.ts`|运行时配置管理器|
-|`lib/constants.ts`|应用程序常量桶（[文档](./constants-reference-module)）|
+|`lib/constants.ts`|应用程序常量桶（[文档](./constants-reference-module.md)）|
 |`lib/constants/`|特定领域的常量（支付、分析）|
 |`lib/content.ts`|基于Git的CMS内容加载和缓存|
-|`lib/db/`|数据库连接、迁移、播种、查询 ([docs](./db-utilities-module))|
-|`lib/editor/`|TipTap 富文本编辑器组件和实用程序 ([docs](./editor-utilities-module))|
-|`lib/guards/`|基于计划的功能访问控制（[文档](./guards-module)）|
+|`lib/db/`|数据库连接、迁移、播种、查询 ([docs](./db-utilities-module.md))|
+|`lib/editor/`|TipTap 富文本编辑器组件和实用程序 ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|基于计划的功能访问控制（[文档](./guards-module.md)）|
 |`lib/helpers.ts`|语言代码到国家/地区代码的映射|
 |`lib/lib.ts`|内容路径解析、文件系统实用程序|
 |`lib/logger.ts`|结构化日志记录实用程序|

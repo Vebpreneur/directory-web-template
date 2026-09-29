@@ -69,4 +69,4 @@ Les réponses d'erreur utilisent `Cache-Control: no-cache` pour éviter la mise 
 
 ## Points de terminaison associés
 
-- [Points de terminaison de santé](./health-endpoints) -- vérification de la connectivité de la base de données
+- [Points de terminaison de santé](./health-endpoints.md) -- vérification de la connectivité de la base de données

@@ -276,7 +276,7 @@ Vereiste pakketten (reeds inbegrepen in Ever Works):
 
 ## Volgende stappen
 
-- [LemonSqueezy-configuratie](./lemonsqueezy) - Alternatieve betalingsprovider
+- [LemonSqueezy-configuratie](./lemonsqueezy.md) - Alternatieve betalingsprovider
 - [Omgevingsvariabelen](/deployment/environment-variables) - Volledige omgevingsinstellingen
 - [Implementatie](/deployment) - Implementeer uw betalingsintegratie
 

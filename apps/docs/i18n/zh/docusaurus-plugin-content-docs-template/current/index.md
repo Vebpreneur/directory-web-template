@@ -32,8 +32,8 @@ pnpm run dev
 
 ## 下一步
 
-- [安装指南](./getting-started/installation)
-- [快速入门指南](./getting-started/quick-start)
+- [安装指南](./getting-started/installation.md)
+- [快速入门指南](./getting-started/quick-start.md)
 - [架构概述](./architecture)
 - [部署指南](./deployment)
 
@@ -48,7 +48,7 @@ pnpm run dev
 
 ## 需要帮助？
 
-- [文档](./index)
+- [文档](./index.md)
 - [Discord](https://discord.gg/ever)
 - [演示站点](https://demo.ever.works)
-- [支持](./support)
+- [支持](./support.md)

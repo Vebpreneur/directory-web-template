@@ -182,4 +182,4 @@ function SettingsLink() {
 ## Powiązane moduły
 
 - [Warstwa klienta API](/template/architecture/api-client-layer) — sprawia, że wywołania API są wykorzystywane przez funkcje zapytań
-- [Guards System](./guards-system-deep-dive) — Kontrola dostępu oparta na planie, która może zależeć od danych subskrypcji
+- [Guards System](./guards-system-deep-dive.md) — Kontrola dostępu oparta na planie, która może zależeć od danych subskrypcji

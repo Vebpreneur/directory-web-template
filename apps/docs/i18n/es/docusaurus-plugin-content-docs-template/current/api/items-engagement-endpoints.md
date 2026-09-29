@@ -112,4 +112,4 @@ Sin limitación de velocidad explícita. El punto final de engagement limita el 
 
 ## Puntos Finales Relacionados
 
-- [Puntos Finales de Configuración de Características](./config-feature-endpoints) -- Verificar si las características de calificaciones/favoritos/comentarios están habilitadas
+- [Puntos Finales de Configuración de Características](./config-feature-endpoints.md) -- Verificar si las características de calificaciones/favoritos/comentarios están habilitadas

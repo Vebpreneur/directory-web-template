@@ -182,4 +182,4 @@ function SettingsLink() {
 ## Связанные модули
 
 - [API Client Layer](/template/architecture/api-client-layer) — заставляет вызовы API использоваться функциями запроса.
-- [Guards System](./guards-system-deep-dive) — контроль доступа на основе плана, который может зависеть от данных подписки.
+- [Guards System](./guards-system-deep-dive.md) — контроль доступа на основе плана, который может зависеть от данных подписки.

@@ -179,5 +179,5 @@ const validId = ensureExternalId(user.id, "User");
 
 ## الوحدات ذات الصلة
 
-- [نظام إدارة التكوين](./config-manager-system) - تكوين التكامل عبر `configService.integrations`
+- [نظام إدارة التكوين](./config-manager-system.md) - تكوين التكامل عبر `configService.integrations`
 - [طبقة عميل API](/template/architecture/api-client-layer) - عميل HTTP الذي تستخدمه خدمات CRM

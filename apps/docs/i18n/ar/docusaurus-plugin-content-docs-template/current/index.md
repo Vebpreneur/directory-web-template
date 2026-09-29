@@ -32,8 +32,8 @@ pnpm run dev
 
 ## الخطوات التالية
 
-- [دليل التثبيت](./getting-started/installation)
-- [دليل البداية السريعة](./getting-started/quick-start)
+- [دليل التثبيت](./getting-started/installation.md)
+- [دليل البداية السريعة](./getting-started/quick-start.md)
 - [نظرة عامة على البنية](./architecture)
 - [دليل النشر](./deployment)
 
@@ -48,7 +48,7 @@ pnpm run dev
 
 ## هل تحتاج مساعدة؟
 
-- [التوثيق](./index)
+- [التوثيق](./index.md)
 - [Discord](https://discord.gg/ever)
 - [الموقع التجريبي](https://demo.ever.works)
-- [الدعم](./support)
+- [الدعم](./support.md)

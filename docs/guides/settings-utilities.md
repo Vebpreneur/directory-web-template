@@ -390,10 +390,10 @@ The defaults are chosen for backward compatibility -- if a setting is not config
 
 ## Related Resources
 
-- [Feature Configuration](/template/configuration/feature-config) -- High-level feature flag documentation
-- [Config System](/template/configuration/config-system) -- How the config manager works
-- [Map Configuration](/template/configuration/map-config) -- Detailed map provider setup
-- [Sponsorship System](/template/guides/sponsorship-system) -- Sponsor ad placement guide
+- [Feature Configuration](../configuration/feature-config.md) -- High-level feature flag documentation
+- [Config System](../configuration/config-system.md) -- How the config manager works
+- [Map Configuration](../configuration/map-config.md) -- Detailed map provider setup
+- [Sponsorship System](./sponsorship-system.md) -- Sponsor ad placement guide
 
 ## Site Identity (name / tagline / description for SEO metadata)
 
@@ -425,4 +425,4 @@ Explicit env vars always win, so template users who customised them see no
 change; directories deployed straight from a data repository get a per-site
 title/description with no extra configuration. Do not import this module from
 client components — it reads `.works/works.yml` from disk. See
-[spec 042](../spec/042-site-identity-metadata/spec.md).
+[spec 042](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/042-site-identity-metadata/spec.md).

@@ -315,8 +315,8 @@ This file exports two hooks:
 
 ## Related Hooks
 
-- [`usePolarCheckout`](/template/hooks/use-polar-checkout-reference) -- Create Polar checkout sessions
-- [`useSubscription`](/template/hooks/use-subscription-reference) -- Generic subscription management across providers
-- [`useLemonSqueezySubscription`](/template/hooks/use-lemonsqueezy-subscription-reference) -- LemonSqueezy equivalent of this hook
-- [`useBillingData`](/template/hooks/use-billing-data-reference) -- Fetches subscription and payment history
-- [`useAutoRenewal`](/template/hooks/use-auto-renewal-reference) -- Manages auto-renewal toggle state
+- [`usePolarCheckout`](./use-polar-checkout-reference.md) -- Create Polar checkout sessions
+- [`useSubscription`](./use-subscription-reference.md) -- Generic subscription management across providers
+- [`useLemonSqueezySubscription`](./use-lemonsqueezy-subscription-reference.md) -- LemonSqueezy equivalent of this hook
+- [`useBillingData`](./use-billing-data-reference.md) -- Fetches subscription and payment history
+- [`useAutoRenewal`](./use-auto-renewal-reference.md) -- Manages auto-renewal toggle state

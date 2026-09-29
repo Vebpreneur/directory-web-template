@@ -626,6 +626,6 @@ export default function MonitoringDashboard() {
 
 ## Next Steps
 
-- [Environment Variables](/docs/deployment/environment-variables) - Configure your deployment
-- [Docker Deployment](/docs/deployment/docker) - Deploy with Docker
-- [Support](/docs/advanced-guide/support) - Get help with monitoring
+- [Environment Variables](./environment-variables.md) - Configure your deployment
+- [Docker Deployment](./docker.md) - Deploy with Docker
+- [Support](../advanced-guide/support.md) - Get help with monitoring

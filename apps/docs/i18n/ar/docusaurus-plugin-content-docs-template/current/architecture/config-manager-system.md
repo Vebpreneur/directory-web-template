@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## الوحدات ذات الصلة
 
-- [نظام التخزين المؤقت](./cache-system) - يستخدم `CACHE_TAGS.CONFIG` للتخزين المؤقت للتكوين
-- [نظام الحراس](./guards-system-deep-dive) - يستهلك تكوين الخطة/الميزة
+- [نظام التخزين المؤقت](./cache-system.md) - يستخدم `CACHE_TAGS.CONFIG` للتخزين المؤقت للتكوين
+- [نظام الحراس](./guards-system-deep-dive.md) - يستهلك تكوين الخطة/الميزة
 - [مكتبة المحتوى](/template/architecture/content-library) - دقة مسار المحتوى المستخدمة بواسطة ConfigManager

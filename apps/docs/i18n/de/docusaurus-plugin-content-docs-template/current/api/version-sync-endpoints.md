@@ -163,5 +163,5 @@ Fehlerantworten enthalten einen strukturierten Körper mit den Feldern `error`, 
 
 ## Verwandte Endpunkte
 
-- [Health-Endpunkte](./health-endpoints) – Datenbankverbindungs-Zustandsprüfung
-- [Config-Feature-Endpunkte](./config-feature-endpoints) – Feature-Verfügbarkeits-Flags
+- [Health-Endpunkte](./health-endpoints.md) – Datenbankverbindungs-Zustandsprüfung
+- [Config-Feature-Endpunkte](./config-feature-endpoints.md) – Feature-Verfügbarkeits-Flags

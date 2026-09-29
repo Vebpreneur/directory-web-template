@@ -320,4 +320,4 @@ Geen expliciete snelheidsbeperking. Reactie-inzendingen leggen IP-adres en user 
 
 ## Gerelateerde eindpunten
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- Controleren of de enquêtefunctie is ingeschakeld
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Controleren of de enquêtefunctie is ingeschakeld

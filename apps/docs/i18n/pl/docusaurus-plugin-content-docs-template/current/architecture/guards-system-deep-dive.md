@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Powiązane moduły
 
-- [System menedżera konfiguracji](./config-manager-system) — Flagi funkcji dla funkcji zależnych od bazy danych
-- [Query Client System](./query-client-system) — Pobieranie danych subskrypcji, które trafiają do strażników planu
+- [System menedżera konfiguracji](./config-manager-system.md) — Flagi funkcji dla funkcji zależnych od bazy danych
+- [Query Client System](./query-client-system.md) — Pobieranie danych subskrypcji, które trafiają do strażników planu

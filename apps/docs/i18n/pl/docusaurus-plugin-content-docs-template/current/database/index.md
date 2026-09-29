@@ -116,7 +116,7 @@ Podczas uruchamiania aplikacji (przez `instrumentation.ts`) szablon automatyczni
 1. **Uruchamia migracje**: Funkcja `migrate()` Drizzle stosuje wszystkie oczekujące migracje (idempotent – już zastosowane migracje są pomijane)
 2. **Dane początkowe**: Jeśli baza danych nie została zaszczepiona, skrypt źródłowy działa z doradczą ochroną przed blokadą, aby zapobiec warunkom wyścigowym we wdrożeniach wieloprocesowych
 
-Zajmuje się tym `lib/db/initialize.ts`. Aby uzyskać szczegółowe informacje, zobacz [Przewodnik po migracji](./migrations-guide) i [Zakładanie bazy danych](./seeding).
+Zajmuje się tym `lib/db/initialize.ts`. Aby uzyskać szczegółowe informacje, zobacz [Przewodnik po migracji](./migrations-guide.md) i [Zakładanie bazy danych](./seeding.md).
 
 ## Kluczowe polecenia
 

@@ -103,5 +103,5 @@ Only locales present in the `LOCALES` constant from `@/lib/constants` are render
 
 ## Related Components
 
-- [Navigation Controls](/template/components/scroll-navigation-components) - Parent component that conditionally renders the LanguageSwitcher.
-- [Settings Modal](/template/components/settings-modal-components) - Alternative location where locale settings may appear.
+- [Navigation Controls](./scroll-navigation-components.md) - Parent component that conditionally renders the LanguageSwitcher.
+- [Settings Modal](./settings-modal-components.md) - Alternative location where locale settings may appear.

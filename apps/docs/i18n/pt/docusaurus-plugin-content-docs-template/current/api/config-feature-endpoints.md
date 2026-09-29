@@ -69,4 +69,4 @@ As respostas de erro usam `Cache-Control: no-cache` para evitar o cache do estad
 
 ## Endpoints relacionados
 
-- [Endpoints de Saúde](./health-endpoints) -- Verificação de conectividade do banco de dados
+- [Endpoints de Saúde](./health-endpoints.md) -- Verificação de conectividade do banco de dados

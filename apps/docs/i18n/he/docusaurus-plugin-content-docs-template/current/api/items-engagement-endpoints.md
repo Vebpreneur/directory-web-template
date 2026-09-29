@@ -112,4 +112,4 @@ const { items, totalItems } = await response.json();
 
 ## נקודות קצה קשורות
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- בדוק אם תכונות הדירוג/מועדפים/הערות מופעלות
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- בדוק אם תכונות הדירוג/מועדפים/הערות מופעלות

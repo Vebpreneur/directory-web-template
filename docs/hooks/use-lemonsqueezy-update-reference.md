@@ -196,7 +196,7 @@ function PauseResumeToggle({ subscriptionId, isPaused }: Props) {
 
 ## Related Hooks
 
-- [`useLemonSqueezySubscription`](/template/hooks/use-lemonsqueezy-subscription-reference) -- Fetches current LemonSqueezy subscription data
-- [`useSubscription`](/template/hooks/use-subscription-reference) -- Generic subscription management (Stripe-oriented)
-- [`useCheckout`](/template/hooks/use-checkout-reference) -- Checkout session creation
-- [`useCreateCheckout`](/template/hooks/use-create-checkout-reference) -- LemonSqueezy checkout creation
+- [`useLemonSqueezySubscription`](./use-lemonsqueezy-subscription-reference.md) -- Fetches current LemonSqueezy subscription data
+- [`useSubscription`](./use-subscription-reference.md) -- Generic subscription management (Stripe-oriented)
+- [`useCheckout`](./use-checkout-reference.md) -- Checkout session creation
+- [`useCreateCheckout`](./use-create-checkout-reference.md) -- LemonSqueezy checkout creation

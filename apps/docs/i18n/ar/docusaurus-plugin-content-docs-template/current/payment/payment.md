@@ -538,10 +538,10 @@ convertNumberToDate(1640995200);
 
 ## الخطوات التالية
 
-- [تكوين الشريط](./stripe) - إكمال إعداد الشريط
-- [تكوين LemonSqueezy](./lemonsqueezy) - إعداد LemonSqueezy
-- [التكوين القطبي](./polar)--الإعداد القطبي
-- [تكامل العملات المتعددة](./multi-currency) -- دعم العملات
-- [بنية الدفع](./Payment-architecture) -- الغوص العميق في الهندسة المعمارية
-- [Webhooks](./webhooks) - تفاصيل التعامل مع Webhooks
-- [دليل التكوين](./configuration)--جميع متغيرات وخيارات البيئة
+- [تكوين الشريط](./stripe.md) - إكمال إعداد الشريط
+- [تكوين LemonSqueezy](./lemonsqueezy.md) - إعداد LemonSqueezy
+- [التكوين القطبي](./polar.md)--الإعداد القطبي
+- [تكامل العملات المتعددة](./multi-currency.md) -- دعم العملات
+- [بنية الدفع](./payment-architecture.md) -- الغوص العميق في الهندسة المعمارية
+- [Webhooks](./webhooks.md) - تفاصيل التعامل مع Webhooks
+- [دليل التكوين](./configuration.md)--جميع متغيرات وخيارات البيئة

@@ -23,8 +23,8 @@ Ever Works Template 是一个功能完整的 Next.js 目录，组织在 Turborep
 
 按顺序遵循以下 5 个指南：
 
-1. [安装](./installation) – 克隆并设置依赖项
-2. [环境配置](./environment-setup) – 配置环境变量
-3. [快速入门](./quick-start) – 启动应用程序
-4. [首次部署](./first-deployment) – 发布到线上
-5. [快速参考](./quick-reference) – 有用的命令和文件
+1. [安装](./installation.md) – 克隆并设置依赖项
+2. [环境配置](./environment-setup.md) – 配置环境变量
+3. [快速入门](./quick-start.md) – 启动应用程序
+4. [首次部署](./first-deployment.md) – 发布到线上
+5. [快速参考](./quick-reference.md) – 有用的命令和文件

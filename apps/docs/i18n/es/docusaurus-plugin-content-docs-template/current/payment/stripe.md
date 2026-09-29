@@ -275,7 +275,7 @@ Paquetes requeridos (ya incluidos en Ever Works):
 
 ## Próximos pasos
 
-- [Configuración de LemonSqueezy](./lemonsqueezy) - Proveedor de pago alternativo
+- [Configuración de LemonSqueezy](./lemonsqueezy.md) - Proveedor de pago alternativo
 - [Variables de entorno](/deployment/environment-variables) - Configuración completa del entorno
 - [Implementación](/implementación) - Implemente su integración de pagos
 

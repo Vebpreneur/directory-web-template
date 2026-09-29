@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## מודולים קשורים
 
 - [שכבת לקוח API](/template/architecture/api-client-layer) -- משתמש ביומן לרישום בקשות/תגובות
-- [מערכת Config Manager](./config-manager-system) -- ConfigService רושם תוצאות אימות בעת ההפעלה
+- [מערכת Config Manager](./config-manager-system.md) -- ConfigService רושם תוצאות אימות בעת ההפעלה

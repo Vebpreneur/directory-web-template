@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## 相关模块
 
-- [Config Manager System](./config-manager-system) -- 数据库相关功能的功能标志
-- [Query Client System](./query-client-system) -- 获取订阅数据并将其馈送到计划防护中
+- [Config Manager System](./config-manager-system.md) -- 数据库相关功能的功能标志
+- [Query Client System](./query-client-system.md) -- 获取订阅数据并将其馈送到计划防护中

@@ -292,7 +292,7 @@ stripe trigger payment_intent.succeeded
 
 ## الخطوات التالية
 
-- [تكوين LemonSqueezy](./lemonsqueezy) - مزود الدفع البديل
+- [تكوين LemonSqueezy](./lemonsqueezy.md) - مزود الدفع البديل
 - [متغيرات البيئة](/deployment/environment-variables) - إعداد البيئة بالكامل
 - [النشر](/deployment) - انشر تكامل الدفع الخاص بك
 
