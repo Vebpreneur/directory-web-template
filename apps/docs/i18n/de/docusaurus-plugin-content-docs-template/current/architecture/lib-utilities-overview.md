@@ -62,21 +62,21 @@ graph TD
 
 |Verzeichnis / Datei|Beschreibung|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + Sentry Analytics Singleton ([docs](./analytics-module))|
-|`lib/api/`|HTTP-Clients für Browser und Server ([docs](./api-client-module))|
-|`lib/auth/`|Authentifizierung mit NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|Jobplanung mit Trigger.dev / local / no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|Cache-TTL- und Tag-Definitionen ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|Cache-Invalidierungsfunktionen ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|PostHog + Sentry Analytics Singleton ([docs](./analytics-module.md))|
+|`lib/api/`|HTTP-Clients für Browser und Server ([docs](./api-client-module.md))|
+|`lib/auth/`|Authentifizierung mit NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|Jobplanung mit Trigger.dev / local / no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|Cache-TTL- und Tag-Definitionen ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|Cache-Invalidierungsfunktionen ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|Zentralisierter Konfigurationsdienst mit Zod-Schemas|
 |`lib/config.ts`|Site-Konfiguration (`siteConfig`)|
 |`lib/config-manager.ts`|Laufzeitkonfigurationsmanager|
-|`lib/constants.ts`|Anwendungskonstanten-Fass ([docs](./constants-reference-module))|
+|`lib/constants.ts`|Anwendungskonstanten-Fass ([docs](./constants-reference-module.md))|
 |`lib/constants/`|Domänenspezifische Konstanten (Zahlung, Analyse)|
 |`lib/content.ts`|Git-basiertes Laden und Zwischenspeichern von CMS-Inhalten|
-|`lib/db/`|Datenbankanbindung, Migrationen, Seeding, Abfragen ([docs](./db-utilities-module))|
-|`lib/editor/`|Komponenten und Dienstprogramme des TipTap-Rich-Text-Editors ([docs](./editor-utilities-module))|
-|`lib/guards/`|Planbasierte Funktionszugriffskontrolle ([docs](./guards-module))|
+|`lib/db/`|Datenbankanbindung, Migrationen, Seeding, Abfragen ([docs](./db-utilities-module.md))|
+|`lib/editor/`|Komponenten und Dienstprogramme des TipTap-Rich-Text-Editors ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|Planbasierte Funktionszugriffskontrolle ([docs](./guards-module.md))|
 |`lib/helpers.ts`|Zuordnung von Sprachcode zu Ländercode|
 |`lib/lib.ts`|Inhaltspfadauflösung, Dateisystem-Dienstprogramme|
 |`lib/logger.ts`|Strukturiertes Protokollierungsdienstprogramm|

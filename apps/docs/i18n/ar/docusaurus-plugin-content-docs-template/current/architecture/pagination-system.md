@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## الوحدات ذات الصلة
 
-- [نظام إدارة التكوين](./config-manager-system) - يوفر تكوين ترقيم الصفحات في وقت التشغيل (`type`، `itemsPerPage`)
+- [نظام إدارة التكوين](./config-manager-system.md) - يوفر تكوين ترقيم الصفحات في وقت التشغيل (`type`، `itemsPerPage`)
 - [مكتبة المحتوى](/template/architecture/content-library) - يستخدم ترقيم الصفحات لصفحات قائمة المحتوى

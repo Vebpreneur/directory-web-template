@@ -198,7 +198,7 @@ function PaymentMethodIcons() {
 
 ## Related Hooks
 
-- [`usePricingSection`](/template/hooks/use-pricing-section-reference) -- Consumes this hook for provider-aware checkout
-- [`useCheckout`](/template/hooks/use-checkout-reference) -- Checkout session creation
-- [`usePaymentAvailability`](/template/hooks/use-payment-availability-reference) -- Determines if paid plans should be shown
-- [`usePaymentMethods`](/template/hooks/use-payment-methods-reference) -- Manages saved payment methods
+- [`usePricingSection`](./use-pricing-section-reference.md) -- Consumes this hook for provider-aware checkout
+- [`useCheckout`](./use-checkout-reference.md) -- Checkout session creation
+- [`usePaymentAvailability`](./use-payment-availability-reference.md) -- Determines if paid plans should be shown
+- [`usePaymentMethods`](./use-payment-methods-reference.md) -- Manages saved payment methods

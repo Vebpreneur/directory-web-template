@@ -175,8 +175,8 @@ pnpm install
 
 Now that you have the template installed:
 
-1. [Configure your environment](./environment-setup) properly
-2. Follow the [Quick Start Guide](./quick-start) to customize your site
+1. [Configure your environment](./environment-setup.md) properly
+2. Follow the [Quick Start Guide](./quick-start.md) to customize your site
 
 ## Getting Help
 

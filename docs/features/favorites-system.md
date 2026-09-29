@@ -194,7 +194,7 @@ Favorites are stored server-side in PostgreSQL, so they sync automatically acros
 
 ## Related Documentation
 
-- [Feature Flags](/docs/template/configuration/feature-config) -- Enabling/disabling the favorites feature
-- [Shared Card Components](/docs/template/components/shared-card-components) -- Card rendering in the favorites grid
-- [Context Providers](/docs/template/components/context-providers) -- Layout theme integration
-- [Dashboard Components](/docs/template/components/dashboard-components) -- Favorite counts in analytics
+- [Feature Flags](../configuration/feature-config.md) -- Enabling/disabling the favorites feature
+- [Shared Card Components](../components/shared-card-components.md) -- Card rendering in the favorites grid
+- [Context Providers](../components/context-providers.md) -- Layout theme integration
+- [Dashboard Components](../components/dashboard-components.md) -- Favorite counts in analytics

@@ -13,7 +13,7 @@ Theme System предоставя цялостна, многопластова �
 
 ## Архитектура
 
-Системата от теми е наслоена върху [Генератора на цветове](./color-generator-system) и се използва от `LayoutThemeContext`:
+Системата от теми е наслоена върху [Генератора на цветове](./color-generator-system.md) и се използва от `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Свързани модули
 
-- [Система за генериране на цветове](./color-generator-system) -- Математическа основа за генериране на палитри
+- [Система за генериране на цветове](./color-generator-system.md) -- Математическа основа за генериране на палитри
 - [Цветова система](/template/architecture/color-system) -- Преглед на цветовата система от по-високо ниво

@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Módulos Relacionados
 
-- [Config Manager System](./config-manager-system) – Sinalizadores de recursos para recursos dependentes de banco de dados
-- [Query Client System](./query-client-system) - Busca de dados de assinatura que alimenta os protetores do plano
+- [Config Manager System](./config-manager-system.md) – Sinalizadores de recursos para recursos dependentes de banco de dados
+- [Query Client System](./query-client-system.md) - Busca de dados de assinatura que alimenta os protetores do plano

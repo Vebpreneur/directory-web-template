@@ -167,4 +167,4 @@ I risultati vengono memorizzati nella cache per 15 minuti (TTL 900.000 ms) con u
 
 ## Endpoint Correlati
 
-- [Endpoint di Posizione](./location-endpoints) -- Ricerca per posizione, città, paesi e coordinate
+- [Endpoint di Posizione](./location-endpoints.md) -- Ricerca per posizione, città, paesi e coordinate

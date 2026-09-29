@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## Свързани модули
 
 - [Библиотека със съдържание](/template/architecture/content-library) -- Основен потребител на кеш тагове и TTL стойности
-- [Config Manager System](./config-manager-system) -- Използва `CACHE_TAGS.CONFIG` за кеширане на конфигурацията на сайта
+- [Config Manager System](./config-manager-system.md) -- Използва `CACHE_TAGS.CONFIG` за кеширане на конфигурацията на сайта

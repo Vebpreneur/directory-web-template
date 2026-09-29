@@ -342,8 +342,8 @@ Polar 提供无缝 GitHub 集成：
 
 ## 后续步骤
 
-- [Stripe 配置](./stripe) - 替代支付提供商
-- [LemonSqueezy 配置](./lemonsqueezy) - 替代支付提供商
+- [Stripe 配置](./stripe.md) - 替代支付提供商
+- [LemonSqueezy 配置](./lemonsqueezy.md) - 替代支付提供商
 - [付款概览](/付款) - 比较付款提供商
 - [环境变量](/deployment/environment-variables) - 完整的环境设置
 - [部署](/部署) - 部署您的支付集成

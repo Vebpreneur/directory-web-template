@@ -513,19 +513,19 @@ psql $DATABASE_URL < backup-YYYYMMDD.sql
 
 Po pomyślnym wdrożeniu:
 
-- [Monitorowanie i Analityka](./monitoring) – Konfiguracja kompleksowego monitorowania
-- [Zmienne Środowiskowe](./environment-variables) – Zarządzanie sekretami produkcji
-- [Wdrożenie Docker](./docker) – Konteneryzacja aplikacji
-- [Wsparcie](../advanced-guide/support) – Uzyskanie pomocy w razie potrzeby
+- [Monitorowanie i Analityka](./monitoring.md) – Konfiguracja kompleksowego monitorowania
+- [Zmienne Środowiskowe](./environment-variables.md) – Zarządzanie sekretami produkcji
+- [Wdrożenie Docker](./docker.md) – Konteneryzacja aplikacji
+- [Wsparcie](../advanced-guide/support.md) – Uzyskanie pomocy w razie potrzeby
 
 ## Zasoby
 
 ### Wewnętrzna Dokumentacja
 
-- [Przegląd Architektury](../architecture/overview)
-- [Tech Stack](../architecture/tech-stack)
-- [Dokumentacja API](../development/api-documentation)
-- [Monitorowanie](./monitoring)
+- [Przegląd Architektury](../architecture/overview.md)
+- [Tech Stack](../architecture/tech-stack.md)
+- [Dokumentacja API](../development/api-documentation.md)
+- [Monitorowanie](./monitoring.md)
 
 ### Zewnętrzne Zasoby
 

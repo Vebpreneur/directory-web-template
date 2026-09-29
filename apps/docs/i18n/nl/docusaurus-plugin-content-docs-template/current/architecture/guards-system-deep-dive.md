@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Gerelateerde modules
 
-- [Config Manager System](./config-manager-system) -- Functievlaggen voor database-afhankelijke functies
-- [Query Client System](./query-client-system) - Ophalen van abonnementsgegevens die worden ingevoerd in planbewakers
+- [Config Manager System](./config-manager-system.md) -- Functievlaggen voor database-afhankelijke functies
+- [Query Client System](./query-client-system.md) - Ophalen van abonnementsgegevens die worden ingevoerd in planbewakers

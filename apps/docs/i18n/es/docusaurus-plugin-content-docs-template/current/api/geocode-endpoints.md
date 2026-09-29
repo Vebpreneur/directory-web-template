@@ -167,4 +167,4 @@ Los resultados se almacenan en caché durante 15 minutos (TTL 900.000 ms) con un
 
 ## Puntos Finales Relacionados
 
-- [Puntos Finales de Ubicación](./location-endpoints) -- Búsqueda de ubicación, ciudades, países y coordenadas
+- [Puntos Finales de Ubicación](./location-endpoints.md) -- Búsqueda de ubicación, ciudades, países y coordenadas

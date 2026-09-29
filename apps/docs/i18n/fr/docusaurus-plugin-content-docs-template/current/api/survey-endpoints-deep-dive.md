@@ -321,4 +321,4 @@ Aucune limitation de débit explicite. Les soumissions de réponses capturent l'
 
 ## Points de terminaison associés
 
-- [Points de terminaison de fonctionnalités de configuration](./config-feature-endpoints) — Vérifier si la fonctionnalité de sondages est activée
+- [Points de terminaison de fonctionnalités de configuration](./config-feature-endpoints.md) — Vérifier si la fonctionnalité de sondages est activée

@@ -347,4 +347,4 @@ export class CustomContentSource implements ContentSource {
 
 ## 下一步
 
-- [详细探索技术堆栈](./tech-stack)
+- [详细探索技术堆栈](./tech-stack.md)

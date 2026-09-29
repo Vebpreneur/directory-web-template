@@ -6,7 +6,7 @@ This guide walks you through deploying your Ever Works to production for the fir
 
 Before deploying, ensure you have:
 
-- [ ] Completed [environment setup](./environment-setup)
+- [ ] Completed [environment setup](./environment-setup.md)
 - [ ] Tested locally with `npm run dev`
 - [ ] Set up your data repository
 - [ ] Configured at least one authentication provider
@@ -373,13 +373,13 @@ npm run check-env
 
 After successful deployment:
 
-1. [Set up monitoring](../deployment/monitoring)
-2. [Review deployment documentation](../deployment/overview)
+1. [Set up monitoring](../deployment/monitoring.md)
+2. [Review deployment documentation](../deployment/overview.md)
 
 ## Getting Help
 
 If you encounter deployment issues:
 
-- Review [deployment documentation](../deployment/overview)
+- Review [deployment documentation](../deployment/overview.md)
 - Join our [Discord community](https://discord.gg/ever)
 - Create an [issue on GitHub](https://github.com/ever-works/directory-web-template/issues)

@@ -228,5 +228,5 @@ These limits prevent buffer-related issues and ensure compatibility with SMTP se
 
 ## Related Resources
 
-- [Error Handling Patterns](/docs/template/guides/error-handler-patterns) -- Returning validation errors from APIs
-- [Request Utilities](/docs/template/guides/request-utilities) -- Parsing and validating request bodies
+- [Error Handling Patterns](./error-handler-patterns.md) -- Returning validation errors from APIs
+- [Request Utilities](./request-utilities.md) -- Parsing and validating request bodies

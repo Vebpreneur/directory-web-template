@@ -536,10 +536,10 @@ convertNumberToDate(1640995200);
 
 ## Następne kroki
 
-- [Konfiguracja pasków](./stripe) -- Zakończ konfigurację pasków
-- [Konfiguracja LemonSqueezy](./lemonsqueezy) -- Konfiguracja LemonSqueezy
-- [Konfiguracja polarna](./polar) -- Konfiguracja polarna
-- [Integracja wielu walut](./multi-currency) -- Obsługa walut
-- [Architektura płatności](./payment-architecture) -- Zagłęb się w architekturę
-- [Webhooks](./webhooks) -- Szczegóły obsługi webhooka
-- [Przewodnik po konfiguracji](./configuration) -- Wszystkie zmienne środowiskowe i opcje
+- [Konfiguracja pasków](./stripe.md) -- Zakończ konfigurację pasków
+- [Konfiguracja LemonSqueezy](./lemonsqueezy.md) -- Konfiguracja LemonSqueezy
+- [Konfiguracja polarna](./polar.md) -- Konfiguracja polarna
+- [Integracja wielu walut](./multi-currency.md) -- Obsługa walut
+- [Architektura płatności](./payment-architecture.md) -- Zagłęb się w architekturę
+- [Webhooks](./webhooks.md) -- Szczegóły obsługi webhooka
+- [Przewodnik po konfiguracji](./configuration.md) -- Wszystkie zmienne środowiskowe i opcje

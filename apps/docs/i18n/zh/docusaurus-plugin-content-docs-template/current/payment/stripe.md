@@ -292,7 +292,7 @@ stripe trigger payment_intent.succeeded
 
 ## 后续步骤
 
-- [LemonSqueezy 配置](./lemonsqueezy) - 替代支付提供商
+- [LemonSqueezy 配置](./lemonsqueezy.md) - 替代支付提供商
 - [环境变量](/deployment/environment-variables) - 完整的环境设置
 - [部署](/部署) - 部署您的支付集成
 

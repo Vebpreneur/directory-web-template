@@ -89,5 +89,5 @@ All text classes include `dark:` variants for seamless theme switching.
 
 ## Related Components
 
-- [Container](/template/components/ui-primitives) - Used internally to constrain content width.
-- [Home Page Components](/template/components/home-page-components) - Pages that consume the Hero component.
+- [Container](./ui-primitives.md) - Used internally to constrain content width.
+- [Home Page Components](./home-page-components.md) - Pages that consume the Hero component.

@@ -7,7 +7,7 @@ sidebar_position: 6
 
 # Map View for Listings
 
-> **Spec:** [`017-map-view`](../spec/017-map-view/spec.md)
+> **Spec:** [`017-map-view`](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/017-map-view/spec.md)
 >
 > **Underlying providers:** [Maps & Location Features](maps-location.md)
 > (Mapbox, Google Maps).
@@ -130,7 +130,7 @@ so CI environments without map credentials still pass.
 
 - [Maps & Location Features](maps-location.md) — provider abstraction,
   geocoding, item-detail map embed.
-- [Spec 011 — Maps Providers](../spec/011-maps-providers/spec.md) —
+- [Spec 011 — Maps Providers](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/011-maps-providers/spec.md) —
   the underlying provider plumbing.
-- [Spec 017 — Map View](../spec/017-map-view/spec.md) — the spec that
+- [Spec 017 — Map View](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/017-map-view/spec.md) — the spec that
   this page documents.

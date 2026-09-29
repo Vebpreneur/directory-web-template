@@ -245,6 +245,6 @@ Comments can be reported through the report system. When a comment is reported:
 
 ## Related Documentation
 
-- [Voting & Comments Feature](/template/features/voting-comments) -- UI components
-- [Report Service](/template/services/report-service) -- Content reporting
-- [Engagement Service](/template/services/engagement-services) -- Popularity scoring
+- [Voting & Comments Feature](../features/voting-comments.md) -- UI components
+- [Report Service](./report-service.md) -- Content reporting
+- [Engagement Service](./engagement-services.md) -- Popularity scoring

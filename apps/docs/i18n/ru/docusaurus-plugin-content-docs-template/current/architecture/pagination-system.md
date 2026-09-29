@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## Связанные модули
 
-- [Система диспетчера конфигураций](./config-manager-system) — обеспечивает конфигурацию нумерации страниц во время выполнения (`type`, `itemsPerPage`)
+- [Система диспетчера конфигураций](./config-manager-system.md) — обеспечивает конфигурацию нумерации страниц во время выполнения (`type`, `itemsPerPage`)
 - [Библиотека контента](/template/architecture/content-library) — использует нумерацию страниц для страниц со списком контента.

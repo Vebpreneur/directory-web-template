@@ -139,6 +139,6 @@ function TagsSidebar() {
 
 ## Related Hooks
 
-- [`useTagsEnabled`](/template/hooks/use-tags-enabled-reference) -- Checks whether the tags feature is enabled
-- [`useCategoriesExists`](/template/hooks/use-categories-exists-reference) -- Checks whether categories exist in the database
-- [`useCollectionsExists`](/template/hooks/use-collections-exists-reference) -- Checks whether collections exist in the database
+- [`useTagsEnabled`](./use-tags-enabled-reference.md) -- Checks whether the tags feature is enabled
+- [`useCategoriesExists`](./use-categories-exists-reference.md) -- Checks whether categories exist in the database
+- [`useCollectionsExists`](./use-collections-exists-reference.md) -- Checks whether collections exist in the database

@@ -69,5 +69,5 @@ No explicit rate limiting is applied. This endpoint is lightweight and suitable 
 
 ## Related Endpoints
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- Feature availability flags (also depends on database)
-- [Version Sync Endpoints](./version-sync-endpoints) -- System version and sync status
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Feature availability flags (also depends on database)
+- [Version Sync Endpoints](./version-sync-endpoints.md) -- System version and sync status

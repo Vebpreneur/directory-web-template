@@ -116,7 +116,7 @@ const users = await db.select().from(schema.users);
 1. ** تشغيل عمليات الترحيل **: تطبق وظيفة Drizzle `migrate()` أي عمليات ترحيل معلقة (يتم تخطي عمليات الترحيل المطبقة بالفعل)
 2. **بيانات البذور**: إذا لم يتم دمج قاعدة البيانات، فسيتم تشغيل البرنامج النصي الأولي مع حماية القفل الاستشارية لمنع حالات السباق في عمليات النشر متعددة العمليات
 
-يتم التعامل مع هذا بواسطة `lib/db/initialize.ts`. راجع [Migrations Guide](./migrations-guide) و[Database Seeding](./seeding) للحصول على التفاصيل.
+يتم التعامل مع هذا بواسطة `lib/db/initialize.ts`. راجع [Migrations Guide](./migrations-guide.md) و[Database Seeding](./seeding.md) للحصول على التفاصيل.
 
 ## الأوامر الرئيسية
 

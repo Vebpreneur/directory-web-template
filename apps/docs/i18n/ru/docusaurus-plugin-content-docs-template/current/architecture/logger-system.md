@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Связанные модули
 
 - [API Client Layer](/template/architecture/api-client-layer) — использует регистратор для регистрации запросов/ответов.
-- [Система диспетчера конфигураций](./config-manager-system) — ConfigService регистрирует результаты проверки при запуске.
+- [Система диспетчера конфигураций](./config-manager-system.md) — ConfigService регистрирует результаты проверки при запуске.

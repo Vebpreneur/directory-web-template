@@ -114,7 +114,7 @@ export function MyComponent() {
 
 ## الخطوات التالية
 
-- [دليل الترجمة ←](./translation-guide) – اعرف كيفية إضافة الترجمات وإدارتها
+- [دليل الترجمة ←](./translation-guide.md) – اعرف كيفية إضافة الترجمات وإدارتها
 - [البدء](/getting-started) – إعداد مشروعك
 - [التخصيص](/guides/customization) – تخصيص موقعك
 

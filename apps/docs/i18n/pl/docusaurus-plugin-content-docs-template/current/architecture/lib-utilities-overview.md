@@ -62,21 +62,21 @@ graph TD
 
 |Katalog/plik|Opis|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + pojedynczy moduł analityczny Sentry ([docs](./analytics-module))|
-|`lib/api/`|Klienci HTTP dla przeglądarki i serwera ([docs](./api-client-module))|
-|`lib/auth/`|Uwierzytelnianie za pomocą NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|Planowanie zadań za pomocą Trigger.dev / local / no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|TTL pamięci podręcznej i definicje tagów ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|Funkcje unieważniania pamięci podręcznej ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|PostHog + pojedynczy moduł analityczny Sentry ([docs](./analytics-module.md))|
+|`lib/api/`|Klienci HTTP dla przeglądarki i serwera ([docs](./api-client-module.md))|
+|`lib/auth/`|Uwierzytelnianie za pomocą NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|Planowanie zadań za pomocą Trigger.dev / local / no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|TTL pamięci podręcznej i definicje tagów ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|Funkcje unieważniania pamięci podręcznej ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|Scentralizowana usługa konfiguracji ze schematami Zod|
 |`lib/config.ts`|Konfiguracja witryny (`siteConfig`)|
 |`lib/config-manager.ts`|Menedżer konfiguracji środowiska wykonawczego|
-|`lib/constants.ts`|Baryłka stałych aplikacji ([docs](./constants-reference-module))|
+|`lib/constants.ts`|Baryłka stałych aplikacji ([docs](./constants-reference-module.md))|
 |`lib/constants/`|Stałe specyficzne dla domeny (płatność, analityka)|
 |`lib/content.ts`|Ładowanie i buforowanie treści CMS oparte na Git|
-|`lib/db/`|Połączenie z bazą danych, migracje, inicjowanie, zapytania ([docs](./db-utilities-module))|
-|`lib/editor/`|Komponenty i narzędzia edytora tekstu sformatowanego TipTap ([docs](./editor-utilities-module))|
-|`lib/guards/`|Kontrola dostępu do funkcji oparta na planie ([docs](./guards-module))|
+|`lib/db/`|Połączenie z bazą danych, migracje, inicjowanie, zapytania ([docs](./db-utilities-module.md))|
+|`lib/editor/`|Komponenty i narzędzia edytora tekstu sformatowanego TipTap ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|Kontrola dostępu do funkcji oparta na planie ([docs](./guards-module.md))|
 |`lib/helpers.ts`|Mapowanie kodu języka na kod kraju|
 |`lib/lib.ts`|Rozdzielczość ścieżki zawartości, narzędzia systemu plików|
 |`lib/logger.ts`|Narzędzie do rejestrowania strukturalnego|

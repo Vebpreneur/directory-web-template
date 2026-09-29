@@ -210,7 +210,7 @@ Para cambiar el proveedor de pago activo:
    PAYMENT_PROVIDER=polar  # antes: stripe
    ```
 
-2. **Agregar variables de entorno del nuevo proveedor** (ver [Endpoints de Pagos](./payment-endpoints) para todas las variables).
+2. **Agregar variables de entorno del nuevo proveedor** (ver [Endpoints de Pagos](./payment-endpoints.md) para todas las variables).
 
 3. **Reiniciar el servidor de desarrollo:**
    ```bash

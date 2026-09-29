@@ -182,4 +182,4 @@ function SettingsLink() {
 ## מודולים קשורים
 
 - [שכבת לקוח API](/template/architecture/api-client-layer) -- גורם לקריאות ה-API לצרוך על ידי פונקציות שאילתה
-- [מערכת Guards](./guards-system-deep-dive) -- בקרת גישה מבוססת תוכנית שעשויה להיות תלויה בנתוני מנוי
+- [מערכת Guards](./guards-system-deep-dive.md) -- בקרת גישה מבוססת תוכנית שעשויה להיות תלויה בנתוני מנוי

@@ -520,8 +520,8 @@ Ever Works oferece suporte a **mais de 13 idiomas** prontos para uso:
 
 ## Próximas etapas
 
-- [Visão geral da arquitetura](./overview) - Entenda a arquitetura do sistema
-- [Recursos da plataforma](./features) - Explore todos os recursos da plataforma
+- [Visão geral da arquitetura](./overview.md) - Entenda a arquitetura do sistema
+- [Recursos da plataforma](./features.md) - Explore todos os recursos da plataforma
 - [Configuração de desenvolvimento](/development/local-setup) – Configure seu ambiente
 
 ## Recursos

@@ -62,21 +62,21 @@ graph TD
 
 |ספרייה / קובץ|תיאור|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + Sentry analytics singleton ([docs](./analytics-module))|
-|`lib/api/`|לקוחות HTTP עבור דפדפן ושרת ([docs](./api-client-module))|
-|`lib/auth/`|אימות עם NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|תזמון עבודה עם Trigger.dev / local / no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|הגדרות מטמון TTL ותג ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|פונקציות אי תוקף מטמון ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|PostHog + Sentry analytics singleton ([docs](./analytics-module.md))|
+|`lib/api/`|לקוחות HTTP עבור דפדפן ושרת ([docs](./api-client-module.md))|
+|`lib/auth/`|אימות עם NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|תזמון עבודה עם Trigger.dev / local / no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|הגדרות מטמון TTL ותג ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|פונקציות אי תוקף מטמון ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|שירות תצורה מרכזי עם סכימות Zod|
 |`lib/config.ts`|תצורת האתר (`siteConfig`)|
 |`lib/config-manager.ts`|מנהל תצורת זמן ריצה|
-|`lib/constants.ts`|קנה קבוע של יישום ([docs](./constants-reference-module))|
+|`lib/constants.ts`|קנה קבוע של יישום ([docs](./constants-reference-module.md))|
 |`lib/constants/`|קבועים ספציפיים לתחום (תשלום, ניתוח)|
 |`lib/content.ts`|טעינת תוכן CMS מבוסס Git ואחסון במטמון|
-|`lib/db/`|חיבור למסד נתונים, העברות, זרימה, שאילתות ([docs](./db-utilities-module))|
-|`lib/editor/`|TipTap רכיבים וכלי שירות של עורך טקסט עשיר ([docs](./editor-utilities-module))|
-|`lib/guards/`|בקרת גישה לתכונה מבוססת תוכנית ([docs](./guards-module))|
+|`lib/db/`|חיבור למסד נתונים, העברות, זרימה, שאילתות ([docs](./db-utilities-module.md))|
+|`lib/editor/`|TipTap רכיבים וכלי שירות של עורך טקסט עשיר ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|בקרת גישה לתכונה מבוססת תוכנית ([docs](./guards-module.md))|
 |`lib/helpers.ts`|מיפוי קוד שפה לקוד מדינה|
 |`lib/lib.ts`|רזולוציית נתיב תוכן, כלי עזר למערכת קבצים|
 |`lib/logger.ts`|כלי רישום מובנה|

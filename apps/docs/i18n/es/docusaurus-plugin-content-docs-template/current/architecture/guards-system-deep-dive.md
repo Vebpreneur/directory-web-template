@@ -249,4 +249,4 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 ## Módulos relacionados
 
 - [Sistema de administrador de configuración] (./config-manager-system): indicadores de funciones para funciones dependientes de la base de datos
-- [Query Client System](./query-client-system) -- Obtención de datos de suscripción que alimentan los guardias del plan
+- [Query Client System](./query-client-system.md) -- Obtención de datos de suscripción que alimentan los guardias del plan

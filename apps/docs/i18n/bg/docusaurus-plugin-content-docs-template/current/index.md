@@ -32,8 +32,8 @@ pnpm run dev
 
 ## Следващи стъпки
 
-- [Ръководство за инсталация](./getting-started/installation)
-- [Ръководство за бърз старт](./getting-started/quick-start)
+- [Ръководство за инсталация](./getting-started/installation.md)
+- [Ръководство за бърз старт](./getting-started/quick-start.md)
 - [Преглед на архитектурата](./architecture)
 - [Ръководство за внедряване](./deployment)
 
@@ -48,7 +48,7 @@ pnpm run dev
 
 ## Нужна ли ви е помощ?
 
-- [Документация](./index)
+- [Документация](./index.md)
 - [Discord](https://discord.gg/ever)
 - [Демо сайт](https://demo.ever.works)
-- [Поддръжка](./support)
+- [Поддръжка](./support.md)

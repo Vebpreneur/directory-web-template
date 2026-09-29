@@ -284,10 +284,10 @@ function PricingPage() {
 
 ## Related Hooks
 
-- [`usePricingFeatures`](/template/hooks/use-pricing-features-reference) -- Plan feature lists consumed by this hook
-- [`useSuccessPageFeatures`](/template/hooks/use-success-page-features-reference) -- Success page feature display
-- [`useSelectedCheckoutProvider`](/template/hooks/use-selected-checkout-provider-reference) -- Provider selection used by this hook
-- [`useCheckout`](/template/hooks/use-checkout-reference) -- Lower-level checkout session management
-- [`usePaymentAvailability`](/template/hooks/use-payment-availability-reference) -- Determines if paid plans are available
-- [`useSubscription`](/template/hooks/use-subscription-reference) -- Subscription lifecycle management
-- [`useCurrency`](/template/hooks/use-currency-reference) -- Currency selection and formatting
+- [`usePricingFeatures`](./use-pricing-features-reference.md) -- Plan feature lists consumed by this hook
+- [`useSuccessPageFeatures`](./use-success-page-features-reference.md) -- Success page feature display
+- [`useSelectedCheckoutProvider`](./use-selected-checkout-provider-reference.md) -- Provider selection used by this hook
+- [`useCheckout`](./use-checkout-reference.md) -- Lower-level checkout session management
+- [`usePaymentAvailability`](./use-payment-availability-reference.md) -- Determines if paid plans are available
+- [`useSubscription`](./use-subscription-reference.md) -- Subscription lifecycle management
+- [`useCurrency`](./use-currency-reference.md) -- Currency selection and formatting

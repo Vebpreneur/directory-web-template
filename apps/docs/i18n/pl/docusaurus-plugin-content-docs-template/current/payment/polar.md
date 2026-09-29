@@ -337,8 +337,8 @@ Wymagane pakiety (już zawarte w Ever Works):
 
 ## Następne kroki
 
-- [Konfiguracja paska](./stripe) - Alternatywny dostawca płatności
-- [Konfiguracja LemonSqueezy](./lemonsqueezy) - Alternatywny dostawca płatności
+- [Konfiguracja paska](./stripe.md) - Alternatywny dostawca płatności
+- [Konfiguracja LemonSqueezy](./lemonsqueezy.md) - Alternatywny dostawca płatności
 - [Przegląd płatności](/payment) - Porównaj dostawców usług płatniczych
 - [Zmienne środowiskowe](/deployment/zmienne-środowiskowe) - Pełna konfiguracja środowiska
 - [Wdrożenie](/deployment) - Wdróż integrację z płatnościami

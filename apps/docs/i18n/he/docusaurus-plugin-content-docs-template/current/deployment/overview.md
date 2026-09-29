@@ -18,7 +18,7 @@ sidebar_position: 1
 - [ ] מסד נתונים PostgreSQL (מומלץ Neon או Supabase)
 - [ ] מאגר GitHub עם נתוני תוכן
 - [ ] חשבון Vercel (הגרסה החינמית מספיקה להתחלה)
-- [ ] משתני סביבה מוגדרים (ראה מדריך [משתני סביבה](./environment-variables))
+- [ ] משתני סביבה מוגדרים (ראה מדריך [משתני סביבה](./environment-variables.md))
 
 ### 2. חיבור ל-Vercel
 
@@ -53,7 +53,7 @@ COOKIE_SECURE=true
 CRON_SECRET=<openssl rand -base64 32>
 ```
 
-לרשימה המלאה של משתנים, ראה מדריך [משתני סביבה](./environment-variables).
+לרשימה המלאה של משתנים, ראה מדריך [משתני סביבה](./environment-variables.md).
 
 ### 4. אתחול מסד הנתונים
 
@@ -147,11 +147,11 @@ pnpm start
 
 | נושא | תיעוד |
 |------|-------|
-| הגדרת משתני סביבה | [משתני סביבה](./environment-variables) |
-| הגדרת מסד נתונים ומיגרציה | [ניהול מסד נתונים](./database-management) |
-| הגדרת Cron Jobs | [משימות Cron](./cron-jobs) |
-| אימות Cron Jobs | [אימות Cron](./cron-verification) |
-| ניטור והתראות | [ניטור](./monitoring) |
+| הגדרת משתני סביבה | [משתני סביבה](./environment-variables.md) |
+| הגדרת מסד נתונים ומיגרציה | [ניהול מסד נתונים](./database-management.md) |
+| הגדרת Cron Jobs | [משימות Cron](./cron-jobs.md) |
+| אימות Cron Jobs | [אימות Cron](./cron-verification.md) |
+| ניטור והתראות | [ניטור](./monitoring.md) |
 
 ## מדריך עזר מהיר
 

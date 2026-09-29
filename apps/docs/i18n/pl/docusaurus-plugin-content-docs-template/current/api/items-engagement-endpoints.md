@@ -111,4 +111,4 @@ Brak jawnego ograniczania liczby żądań. Punkt końcowy zaangażowania ogranic
 
 ## Powiązane punkty końcowe
 
-- [Punkty końcowe Config Feature](./config-feature-endpoints) -- Sprawdź, czy funkcje ocen/ulubionych/komentarzy są włączone
+- [Punkty końcowe Config Feature](./config-feature-endpoints.md) -- Sprawdź, czy funkcje ocen/ulubionych/komentarzy są włączone

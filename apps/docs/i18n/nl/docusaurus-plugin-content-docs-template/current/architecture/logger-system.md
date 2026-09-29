@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Gerelateerde modules
 
 - [API Client Layer](/template/architecture/api-client-layer) - Gebruikt de logger voor het loggen van verzoeken/antwoorden
-- [Config Manager System](./config-manager-system) -- ConfigService registreert validatieresultaten bij het opstarten
+- [Config Manager System](./config-manager-system.md) -- ConfigService registreert validatieresultaten bij het opstarten

@@ -116,7 +116,7 @@ Al iniciar la aplicación (a través de `instrumentation.ts`), la plantilla auto
 1. **Ejecuta migraciones**: la función `migrate()` de Drizzle aplica cualquier migraciones pendientes (idempotente: se omiten las migraciones ya aplicadas)
 2. **Datos de inicialización**: si la base de datos no se ha inicializado, el script de inicialización se ejecuta con protección de bloqueo de asesoramiento para evitar condiciones de carrera en implementaciones multiproceso.
 
-Esto lo maneja `lib/db/initialize.ts`. Consulte la [Guía de migraciones](./migrations-guide) y la [Semilla de base de datos](./seeding) para obtener más detalles.
+Esto lo maneja `lib/db/initialize.ts`. Consulte la [Guía de migraciones](./migrations-guide.md) y la [Semilla de base de datos](./seeding.md) para obtener más detalles.
 
 ## Comandos clave
 

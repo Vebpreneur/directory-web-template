@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # Inicio rápido
 
-¡Pon tu sitio web de directorio en funcionamiento en menos de 10 minutos! Esta guía asume que ya has completado la [instalación](./installation).
+¡Pon tu sitio web de directorio en funcionamiento en menos de 10 minutos! Esta guía asume que ya has completado la [instalación](./installation.md).
 
 ## Paso 1: Configuración básica
 

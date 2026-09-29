@@ -173,5 +173,5 @@ The hook must be used within a component tree that has the `LayoutThemeProvider`
 
 ## Related Hooks
 
-- [`useLayoutTheme`](/template/hooks/settings-hooks) - Lower-level context hook for theme and layout settings
-- [`useFeatureFlagsWithSimulation`](/template/hooks/use-feature-flags-reference) - Uses `LayoutThemeContext` for simulation mode
+- [`useLayoutTheme`](./settings-hooks.md) - Lower-level context hook for theme and layout settings
+- [`useFeatureFlagsWithSimulation`](./use-feature-flags-reference.md) - Uses `LayoutThemeContext` for simulation mode

@@ -347,4 +347,4 @@ Sin limitación de velocidad explícita. Las URL de redirección en los endpoint
 
 ## Endpoints Relacionados
 
-- [Endpoints de Pagos de Usuario](./user-payment-endpoints) -- Historial de pagos del usuario y gestión de suscripciones
+- [Endpoints de Pagos de Usuario](./user-payment-endpoints.md) -- Historial de pagos del usuario y gestión de suscripciones

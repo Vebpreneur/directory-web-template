@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Módulos Relacionados
 
 - [API Client Layer](/template/architecture/api-client-layer) – Usa o criador de logs para registro de solicitação/resposta
-- [Config Manager System](./config-manager-system) -- ConfigService registra resultados de validação na inicialização
+- [Config Manager System](./config-manager-system.md) -- ConfigService registra resultados de validação na inicialização

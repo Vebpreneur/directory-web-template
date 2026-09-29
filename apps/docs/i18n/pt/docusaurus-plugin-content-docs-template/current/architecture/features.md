@@ -699,8 +699,8 @@ Diretrizes e práticas recomendadas para testes entre dispositivos.
 
 ## Próximas etapas
 
-- [Tech Stack](./tech-stack) – Explore a pilha de tecnologia
-- [Visão geral da arquitetura](./overview) - Entenda a arquitetura
+- [Tech Stack](./tech-stack.md) – Explore a pilha de tecnologia
+- [Visão geral da arquitetura](./overview.md) - Entenda a arquitetura
 
 ## Recursos
 

@@ -223,4 +223,4 @@ if (hasActiveSubscription && currentSubscription) {
 
 ## نقاط النهاية ذات الصلة
 
-- [نقاط نهاية ميزة التكوين](./config-feature-endpoints) - تحقق من توفر الميزة بناءً على الخطة
+- [نقاط نهاية ميزة التكوين](./config-feature-endpoints.md) - تحقق من توفر الميزة بناءً على الخطة

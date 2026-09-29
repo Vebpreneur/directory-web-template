@@ -182,4 +182,4 @@ function SettingsLink() {
 ## Módulos relacionados
 
 - [Capa de cliente API](/template/architecture/api-client-layer): hace que las llamadas API sean consumidas por funciones de consulta
-- [Sistema de guardias](./guards-system-deep-dive) -- Control de acceso basado en planes que puede depender de los datos de suscripción
+- [Sistema de guardias](./guards-system-deep-dive.md) -- Control de acceso basado en planes que puede depender de los datos de suscripción

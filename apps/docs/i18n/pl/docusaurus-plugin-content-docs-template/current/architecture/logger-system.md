@@ -164,4 +164,4 @@ perfLogger.performance('fetchItems', duration);
 ## Powiązane moduły
 
 - [Warstwa klienta API](/template/architecture/api-client-layer) — Używa rejestratora do rejestrowania żądań/odpowiedzi
-- [Config Manager System](./config-manager-system) — ConfigService rejestruje wyniki sprawdzania poprawności przy uruchomieniu
+- [Config Manager System](./config-manager-system.md) — ConfigService rejestruje wyniki sprawdzania poprawności przy uruchomieniu

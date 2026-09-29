@@ -164,5 +164,5 @@ Error responses include a structured body with `error`, `code`, `timestamp`, and
 
 ## Related Endpoints
 
-- [Health Endpoints](./health-endpoints) -- Database connectivity health check
-- [Config Feature Endpoints](./config-feature-endpoints) -- Feature availability flags
+- [Health Endpoints](./health-endpoints.md) -- Database connectivity health check
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Feature availability flags

@@ -210,5 +210,5 @@ This hook has no external dependencies beyond React (`useState`, `useCallback`, 
 
 ## Related Hooks
 
-- [`usePaginatedQuery`](/template/hooks/use-paginated-query-reference) -- Paginated data fetching with built-in React Query retry
-- [`useInfiniteLoading`](/template/hooks/use-infinite-loading-reference) -- Infinite scroll with automatic retry on failure
+- [`usePaginatedQuery`](./use-paginated-query-reference.md) -- Paginated data fetching with built-in React Query retry
+- [`useInfiniteLoading`](./use-infinite-loading-reference.md) -- Infinite scroll with automatic retry on failure

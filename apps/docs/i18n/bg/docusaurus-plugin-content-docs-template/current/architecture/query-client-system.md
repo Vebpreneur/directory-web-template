@@ -182,4 +182,4 @@ function SettingsLink() {
 ## Свързани модули
 
 - [API клиентски слой](/template/architecture/api-client-layer) -- Прави извикванията на API да се използват от функциите за заявки
-- [Guards System](./guards-system-deep-dive) -- Контрол на достъпа, базиран на план, който може да зависи от данните за абонамента
+- [Guards System](./guards-system-deep-dive.md) -- Контрол на достъпа, базиран на план, който може да зависи от данните за абонамента

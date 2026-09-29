@@ -520,8 +520,8 @@ Ever Works supports **13+ languages** out of the box:
 
 ## Next Steps
 
-- [Architecture Overview](./overview) - Understand the system architecture
-- [Platform Features](./features) - Explore all platform features
+- [Architecture Overview](./overview.md) - Understand the system architecture
+- [Platform Features](./features.md) - Explore all platform features
 - [Development Setup](/development/local-setup) - Set up your environment
 
 ## Resources

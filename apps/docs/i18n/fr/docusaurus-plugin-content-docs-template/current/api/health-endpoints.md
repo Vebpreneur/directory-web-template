@@ -69,6 +69,6 @@ Aucune limitation de débit n'est appliquée. Ce point de terminaison est léger
 
 ## Points de terminaison associés
 
-- [Points de terminaison Config Feature](./config-feature-endpoints) — Indicateurs de disponibilité des fonctionnalités (dépend aussi de la base de données)
-- [Points de terminaison Version & Sync](./version-sync-endpoints) — Version du système et état de synchronisation
+- [Points de terminaison Config Feature](./config-feature-endpoints.md) — Indicateurs de disponibilité des fonctionnalités (dépend aussi de la base de données)
+- [Points de terminaison Version & Sync](./version-sync-endpoints.md) — Version du système et état de synchronisation
 

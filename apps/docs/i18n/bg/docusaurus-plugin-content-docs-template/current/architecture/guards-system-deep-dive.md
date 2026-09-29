@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Свързани модули
 
-- [Config Manager System](./config-manager-system) -- Флагове за функции за зависими от база данни функции
-- [Клиентска система за заявки](./query-client-system) - Извличане на данни за абонамент, които се подават в защитниците на плана
+- [Config Manager System](./config-manager-system.md) -- Флагове за функции за зависими от база данни функции
+- [Клиентска система за заявки](./query-client-system.md) - Извличане на данни за абонамент, които се подават в защитниците на плана

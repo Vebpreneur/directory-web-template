@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## Verwandte Module
 
-- [Cache-System](./cache-system) – Verwendet `CACHE_TAGS.CONFIG` für das Konfigurations-Caching
-- [Guards System](./guards-system-deep-dive) – Verbraucht die Plan-/Funktionskonfiguration
+- [Cache-System](./cache-system.md) – Verwendet `CACHE_TAGS.CONFIG` für das Konfigurations-Caching
+- [Guards System](./guards-system-deep-dive.md) – Verbraucht die Plan-/Funktionskonfiguration
 - [Inhaltsbibliothek](/template/architecture/content-library) – Von ConfigManager verwendete Inhaltspfadauflösung

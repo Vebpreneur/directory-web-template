@@ -32,8 +32,8 @@ pnpm run dev
 
 ## השלבים הבאים
 
-- [מדריך התקנה](./getting-started/installation)
-- [מדריך התחלה מהירה](./getting-started/quick-start)
+- [מדריך התקנה](./getting-started/installation.md)
+- [מדריך התחלה מהירה](./getting-started/quick-start.md)
 - [סקירת ארכיטקטורה](./architecture)
 - [מדריך פריסה](./deployment)
 
@@ -48,7 +48,7 @@ pnpm run dev
 
 ## צריך עזרה?
 
-- [תיעוד](./index)
+- [תיעוד](./index.md)
 - [Discord](https://discord.gg/ever)
 - [אתר הדגמה](https://demo.ever.works)
-- [תמיכה](./support)
+- [תמיכה](./support.md)

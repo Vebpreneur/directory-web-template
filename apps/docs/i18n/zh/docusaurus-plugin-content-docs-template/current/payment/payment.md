@@ -538,10 +538,10 @@ convertNumberToDate(1640995200);
 
 ## 后续步骤
 
-- [Stripe Configuration](./stripe) -- 完整的 Stripe 设置
-- [LemonSqueezy 配置](./lemonsqueezy) -- LemonSqueezy 设置
+- [Stripe Configuration](./stripe.md) -- 完整的 Stripe 设置
+- [LemonSqueezy 配置](./lemonsqueezy.md) -- LemonSqueezy 设置
 - [极性配置](./极性) -- 极性设置
-- [多币种集成](./multi-currency) -- 货币支持
+- [多币种集成](./multi-currency.md) -- 货币支持
 - [支付架构](./ payment-architecture) -- 深入探讨架构
-- [Webhooks](./webhooks) -- Webhook 处理细节
-- [配置指南](./configuration) -- 所有环境变量和选项
+- [Webhooks](./webhooks.md) -- Webhook 处理细节
+- [配置指南](./configuration.md) -- 所有环境变量和选项

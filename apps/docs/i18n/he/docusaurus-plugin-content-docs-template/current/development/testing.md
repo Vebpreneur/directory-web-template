@@ -266,8 +266,8 @@ import Image from 'next/image';
 
 ## השלבים הבאים
 
-- [הגדרה מקומית](./local-setup) - הגדר את סביבת הפיתוח שלך
-- [תיעוד API](./api-documentation) - למד על תיעוד API
+- [הגדרה מקומית](./local-setup.md) - הגדר את סביבת הפיתוח שלך
+- [תיעוד API](./api-documentation.md) - למד על תיעוד API
 - [פריסה](/docs/deployment) - פרוס את האפליקציה
 
 ## משאבים

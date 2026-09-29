@@ -69,5 +69,5 @@ Nenhuma limitação de taxa explícita é aplicada. Este endpoint é leve e adeq
 
 ## Endpoints relacionados
 
-- [Endpoints de Configuração de Funcionalidades](./config-feature-endpoints) — Flags de disponibilidade de funcionalidades (também depende do banco de dados)
-- [Endpoints de Sincronização de Versão](./version-sync-endpoints) — Versão do sistema e status de sincronização
+- [Endpoints de Configuração de Funcionalidades](./config-feature-endpoints.md) — Flags de disponibilidade de funcionalidades (também depende do banco de dados)
+- [Endpoints de Sincronização de Versão](./version-sync-endpoints.md) — Versão do sistema e status de sincronização

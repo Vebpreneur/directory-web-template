@@ -699,8 +699,8 @@ Cross-device testing guidelines and best practices.
 
 ## Next Steps
 
-- [Tech Stack](./tech-stack) - Explore the technology stack
-- [Architecture Overview](./overview) - Understand the architecture
+- [Tech Stack](./tech-stack.md) - Explore the technology stack
+- [Architecture Overview](./overview.md) - Understand the architecture
 
 ## Resources
 

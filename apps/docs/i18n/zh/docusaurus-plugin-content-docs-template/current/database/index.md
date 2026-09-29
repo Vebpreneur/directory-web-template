@@ -116,7 +116,7 @@ const users = await db.select().from(schema.users);
 1. **运行迁移**：Drizzle 的 `migrate()` 函数应用任何待处理的迁移（幂等 - 已应用的迁移将被跳过）
 2. **种子数据**：如果数据库尚未播种，则种子脚本会在运行时提供咨询锁保护，以防止多进程部署中出现竞争条件
 
-这是由`lib/db/initialize.ts` 处理的。有关详细信息，请参阅[迁移指南](./migrations-guide) 和[数据库播种](./seeding)。
+这是由`lib/db/initialize.ts` 处理的。有关详细信息，请参阅[迁移指南](./migrations-guide.md) 和[数据库播种](./seeding.md)。
 
 ## 按键命令
 

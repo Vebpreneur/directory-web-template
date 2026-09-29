@@ -342,8 +342,8 @@ https://your-ngrok-url.ngrok.io/api/polar/webhook
 
 ## الخطوات التالية
 
-- [تكوين الشريط](./stripe) - مزود الدفع البديل
-- [تكوين LemonSqueezy](./lemonsqueezy) - مزود الدفع البديل
+- [تكوين الشريط](./stripe.md) - مزود الدفع البديل
+- [تكوين LemonSqueezy](./lemonsqueezy.md) - مزود الدفع البديل
 - [نظرة عامة على الدفع](/الدفع) - قارن بين موفري خدمات الدفع
 - [متغيرات البيئة](/deployment/environment-variables) - إعداد البيئة بالكامل
 - [النشر](/deployment) - انشر تكامل الدفع الخاص بك

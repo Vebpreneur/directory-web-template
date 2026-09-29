@@ -62,21 +62,21 @@ graph TD
 
 |Каталог/файл|Описание|
 |-----------------|-------------|
-|`lib/analytics/`|PostHog + Sentry Analytics Singleton ([docs](./analytics-module))|
-|`lib/api/`|HTTP-клиенты для браузера и сервера ([docs](./api-client-module))|
-|`lib/auth/`|Аутентификация с помощью NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|Планирование заданий с помощью Trigger.dev/local/no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|Срок жизни кэша и определения тегов ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|Функции аннулирования кэша ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|PostHog + Sentry Analytics Singleton ([docs](./analytics-module.md))|
+|`lib/api/`|HTTP-клиенты для браузера и сервера ([docs](./api-client-module.md))|
+|`lib/auth/`|Аутентификация с помощью NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|Планирование заданий с помощью Trigger.dev/local/no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|Срок жизни кэша и определения тегов ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|Функции аннулирования кэша ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|Служба централизованной настройки со схемами Zod|
 |`lib/config.ts`|Конфигурация сайта (`siteConfig`)|
 |`lib/config-manager.ts`|Менеджер конфигурации среды выполнения|
-|`lib/constants.ts`|Константы приложения ([docs](./constants-reference-module))|
+|`lib/constants.ts`|Константы приложения ([docs](./constants-reference-module.md))|
 |`lib/constants/`|Константы, специфичные для предметной области (платежи, аналитика)|
 |`lib/content.ts`|Загрузка и кэширование контента CMS на основе Git|
-|`lib/db/`|Подключение к базе данных, миграции, заполнение, запросы ([docs](./db-utilities-module))|
-|`lib/editor/`|Компоненты и утилиты редактора форматированного текста TipTap ([docs](./editor-utilities-module))|
-|`lib/guards/`|Управление доступом к функциям на основе плана ([docs](./guards-module))|
+|`lib/db/`|Подключение к базе данных, миграции, заполнение, запросы ([docs](./db-utilities-module.md))|
+|`lib/editor/`|Компоненты и утилиты редактора форматированного текста TipTap ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|Управление доступом к функциям на основе плана ([docs](./guards-module.md))|
 |`lib/helpers.ts`|Сопоставление кода языка с кодом страны|
 |`lib/lib.ts`|Разрешение пути к содержимому, утилиты файловой системы|
 |`lib/logger.ts`|Утилита структурированного журналирования|

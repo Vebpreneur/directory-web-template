@@ -13,7 +13,7 @@ Theme System zapewnia wszechstronną, wielowarstwową infrastrukturę tematyczn�
 
 ## Architektura
 
-System motywów jest nakładany na [Generator kolorów](./color-generator-system) i używany przez `LayoutThemeContext`:
+System motywów jest nakładany na [Generator kolorów](./color-generator-system.md) i używany przez `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Powiązane moduły
 
-- [System generatora kolorów](./color-generator-system) -- Matematyczne podstawy generowania palet
+- [System generatora kolorów](./color-generator-system.md) -- Matematyczne podstawy generowania palet
 - [System kolorów](/template/architecture/color-system) — Omówienie wyższego poziomu systemu kolorów

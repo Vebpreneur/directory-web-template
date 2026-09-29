@@ -182,4 +182,4 @@ function SettingsLink() {
 ## Gerelateerde modules
 
 - [API Client Layer](/template/architecture/api-client-layer) - Zorgt ervoor dat de API-aanroepen worden verbruikt door queryfuncties
-- [Guards System](./guards-system-deep-dive) -- Plangebaseerde toegangscontrole die afhankelijk kan zijn van abonnementsgegevens
+- [Guards System](./guards-system-deep-dive.md) -- Plangebaseerde toegangscontrole die afhankelijk kan zijn van abonnementsgegevens

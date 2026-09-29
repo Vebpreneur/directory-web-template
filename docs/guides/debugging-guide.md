@@ -380,8 +380,8 @@ node scripts/check-env.js
 
 ## Related Pages
 
-- [Logging](/docs/guides/logging) -- structured logging setup
-- [Error Handling](/docs/guides/error-handling) -- error boundary and response patterns
-- [Database Health Check](/docs/guides/database-health-check) -- database connectivity monitoring
-- [Performance Optimization](/docs/guides/performance-optimization) -- identifying and fixing performance issues
-- [Deployment Checklist](/docs/guides/deployment-checklist) -- pre-deployment verification
+- [Logging](./logging.md) -- structured logging setup
+- [Error Handling](./error-handling.md) -- error boundary and response patterns
+- [Database Health Check](./database-health-check.md) -- database connectivity monitoring
+- [Performance Optimization](./performance-optimization.md) -- identifying and fixing performance issues
+- [Deployment Checklist](./deployment-checklist.md) -- pre-deployment verification

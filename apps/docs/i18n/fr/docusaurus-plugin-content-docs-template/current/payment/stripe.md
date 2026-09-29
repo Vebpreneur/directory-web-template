@@ -292,7 +292,7 @@ Required packages (already included in Ever Works):
 
 ## Next Steps
 
-- [LemonSqueezy Configuration](./lemonsqueezy) - Alternative payment provider
+- [LemonSqueezy Configuration](./lemonsqueezy.md) - Alternative payment provider
 - [Environment Variables](/deployment/environment-variables) - Complete environment setup
 - [Deployment](/deployment) - Deploy your payment integration
 

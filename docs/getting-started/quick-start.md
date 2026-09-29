@@ -1,6 +1,6 @@
 # Quick Start
 
-Get your directory website up and running in under 10 minutes! This guide assumes you've already completed the [installation](./installation).
+Get your directory website up and running in under 10 minutes! This guide assumes you've already completed the [installation](./installation.md).
 
 ## Step 1: Basic Configuration
 
@@ -226,8 +226,8 @@ Users can switch between them using the layout toggle.
 
 Now that you have a working site:
 
-1. [Customize your site](../guides/customization)
-2. [Deploy to production](../deployment/overview)
+1. [Customize your site](../guides/customization.md)
+2. [Deploy to production](../deployment/overview.md)
 
 ## Getting Help
 

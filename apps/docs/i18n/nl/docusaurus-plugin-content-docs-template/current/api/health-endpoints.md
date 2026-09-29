@@ -68,5 +68,5 @@ Er wordt geen expliciete snelheidsbeperking toegepast. Dit eindpunt is lichtgewi
 
 ## Gerelateerde eindpunten
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- Vlaggen voor beschikbaarheid van functies (afhankelijk van database)
-- [Version Sync Endpoints](./version-sync-endpoints) -- Systeemversie en synchronisatiestatus
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Vlaggen voor beschikbaarheid van functies (afhankelijk van database)
+- [Version Sync Endpoints](./version-sync-endpoints.md) -- Systeemversie en synchronisatiestatus

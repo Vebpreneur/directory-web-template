@@ -166,4 +166,4 @@ Wyniki są buforowane przez 15 minut (TTL 900 000 ms) z maksymalnym rozmiarem pa
 
 ## Powiązane punkty końcowe
 
-- [Punkty końcowe Lokalizacji](./location-endpoints) -- Wyszukiwanie lokalizacji, miasta, kraje i współrzędne
+- [Punkty końcowe Lokalizacji](./location-endpoints.md) -- Wyszukiwanie lokalizacji, miasta, kraje i współrzędne

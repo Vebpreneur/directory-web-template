@@ -62,21 +62,21 @@ graph TD
 
 |Directory/File|Descrizione|
 |-----------------|-------------|
-|`lib/analytics/`|Singleton di analisi PostHog + Sentry ([docs](./analytics-module))|
-|`lib/api/`|Client HTTP per browser e server ([docs](./api-client-module))|
-|`lib/auth/`|Autenticazione con NextAuth.js + Supabase ([docs](./auth-utilities-module))|
+|`lib/analytics/`|Singleton di analisi PostHog + Sentry ([docs](./analytics-module.md))|
+|`lib/api/`|Client HTTP per browser e server ([docs](./api-client-module.md))|
+|`lib/auth/`|Autenticazione con NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
 |`lib/background-jobs/`|Pianificazione dei lavori con Trigger.dev / local / no-op ([docs](./ background-jobs-module))|
-|`lib/cache-config.ts`|Cache TTL e definizioni dei tag ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|Funzioni di invalidamento della cache ([docs](./cache-invalidation-module))|
+|`lib/cache-config.ts`|Cache TTL e definizioni dei tag ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|Funzioni di invalidamento della cache ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|Servizio di configurazione centralizzata con schemi Zod|
 |`lib/config.ts`|Configurazione del sito (`siteConfig`)|
 |`lib/config-manager.ts`|Gestore della configurazione del runtime|
-|`lib/constants.ts`|Barilotto delle costanti dell'applicazione ([docs](./constants-reference-module))|
+|`lib/constants.ts`|Barilotto delle costanti dell'applicazione ([docs](./constants-reference-module.md))|
 |`lib/constants/`|Costanti specifiche del dominio (pagamento, analisi)|
 |`lib/content.ts`|Caricamento e memorizzazione nella cache dei contenuti CMS basati su Git|
-|`lib/db/`|Connessione al database, migrazioni, seeding, query ([docs](./db-utilities-module))|
-|`lib/editor/`|Componenti e utilità dell'editor di testo RTF TipTap ([docs](./editor-utilities-module))|
-|`lib/guards/`|Controllo dell'accesso alle funzionalità basato sul piano ([docs](./guards-module))|
+|`lib/db/`|Connessione al database, migrazioni, seeding, query ([docs](./db-utilities-module.md))|
+|`lib/editor/`|Componenti e utilità dell'editor di testo RTF TipTap ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|Controllo dell'accesso alle funzionalità basato sul piano ([docs](./guards-module.md))|
 |`lib/helpers.ts`|Mappatura del codice della lingua con il codice del paese|
 |`lib/lib.ts`|Risoluzione del percorso del contenuto, utilità del file system|
 |`lib/logger.ts`|Utilità di registrazione strutturata|

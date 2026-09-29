@@ -167,4 +167,4 @@ function SimpleEditor({ content }: { content: string }) {
 
 ## Related Modules
 
-- [Component Patterns](/template/architecture/component-patterns) -- Editor components that consume these extensions
+- [Component Patterns](./component-patterns.md) -- Editor components that consume these extensions

@@ -62,21 +62,21 @@ graph TD
 
 |Répertoire/Fichier|Descriptif|
 |-----------------|-------------|
-|`lib/analytics/`|Singleton d'analyse PostHog + Sentry ([docs](./analytics-module))|
-|`lib/api/`|Clients HTTP pour navigateur et serveur ([docs](./api-client-module))|
-|`lib/auth/`|Authentification avec NextAuth.js + Supabase ([docs](./auth-utilities-module))|
-|`lib/background-jobs/`|Planification des tâches avec Trigger.dev / local / no-op ([docs](./background-jobs-module))|
-|`lib/cache-config.ts`|Cache TTL et définitions de balises ([docs](./cache-invalidation-module))|
-|`lib/cache-invalidation.ts`|Fonctions d'invalidation du cache ([docs](./cache-invalidation-module))|
+|`lib/analytics/`|Singleton d'analyse PostHog + Sentry ([docs](./analytics-module.md))|
+|`lib/api/`|Clients HTTP pour navigateur et serveur ([docs](./api-client-module.md))|
+|`lib/auth/`|Authentification avec NextAuth.js + Supabase ([docs](./auth-utilities-module.md))|
+|`lib/background-jobs/`|Planification des tâches avec Trigger.dev / local / no-op ([docs](./background-jobs-module.md))|
+|`lib/cache-config.ts`|Cache TTL et définitions de balises ([docs](./cache-invalidation-module.md))|
+|`lib/cache-invalidation.ts`|Fonctions d'invalidation du cache ([docs](./cache-invalidation-module.md))|
 |`lib/config/`|Service de configuration centralisé avec schémas Zod|
 |`lib/config.ts`|Configuration du site (`siteConfig`)|
 |`lib/config-manager.ts`|Gestionnaire de configuration d'exécution|
-|`lib/constants.ts`|Baril de constantes d'application ([docs](./constants-reference-module))|
+|`lib/constants.ts`|Baril de constantes d'application ([docs](./constants-reference-module.md))|
 |`lib/constants/`|Constantes spécifiques au domaine (paiement, analyses)|
 |`lib/content.ts`|Chargement et mise en cache du contenu CMS basé sur Git|
-|`lib/db/`|Connexion à la base de données, migrations, amorçage, requêtes ([docs](./db-utilities-module))|
-|`lib/editor/`|Composants et utilitaires de l'éditeur de texte enrichi TipTap ([docs](./editor-utilities-module))|
-|`lib/guards/`|Contrôle d'accès aux fonctionnalités basé sur le plan ([docs](./guards-module))|
+|`lib/db/`|Connexion à la base de données, migrations, amorçage, requêtes ([docs](./db-utilities-module.md))|
+|`lib/editor/`|Composants et utilitaires de l'éditeur de texte enrichi TipTap ([docs](./editor-utilities-module.md))|
+|`lib/guards/`|Contrôle d'accès aux fonctionnalités basé sur le plan ([docs](./guards-module.md))|
 |`lib/helpers.ts`|Mappage du code de langue avec le code de pays|
 |`lib/lib.ts`|Résolution du chemin du contenu, utilitaires du système de fichiers|
 |`lib/logger.ts`|Utilitaire de journalisation structurée|

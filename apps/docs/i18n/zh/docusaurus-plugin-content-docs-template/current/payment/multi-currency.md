@@ -140,6 +140,6 @@ NEXT_PUBLIC_STRIPE_STANDARD_MONTHLY_PRICE_ID_CAD=price_aaa
 - **Polar**：通过产品配置支持多币种
 
 有关特定于提供商的详细配置，请参阅：
-- [条纹配置](./stripe)
-- [LemonSqueezy 配置](./lemonsqueezy)
+- [条纹配置](./stripe.md)
+- [LemonSqueezy 配置](./lemonsqueezy.md)
 - [极性配置](./极性)

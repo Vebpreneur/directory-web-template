@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## Gerelateerde modules
 
 - [Content Library](/template/architecture/content-library) -- Primaire consument van cachetags en TTL-waarden
-- [Config Manager System](./config-manager-system) -- Gebruikt `CACHE_TAGS.CONFIG` voor het cachen van siteconfiguraties
+- [Config Manager System](./config-manager-system.md) -- Gebruikt `CACHE_TAGS.CONFIG` voor het cachen van siteconfiguraties

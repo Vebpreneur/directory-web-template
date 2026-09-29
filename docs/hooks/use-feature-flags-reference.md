@@ -233,7 +233,7 @@ function RatingStars({ itemId }) {
 
 ## Related Hooks
 
-- [`useFilters`](/template/hooks/use-filters-reference) - Uses feature flags to control filter availability
-- [`useFavorites`](/template/hooks/use-favorites-reference) - Gated by `features.favorites`
-- [`useComments`](/template/hooks/use-comments-reference) - Gated by `features.comments`
-- [`useItemRating`](/template/hooks/use-voting-reference) - Gated by `features.ratings`
+- [`useFilters`](./use-filters-reference.md) - Uses feature flags to control filter availability
+- [`useFavorites`](./use-favorites-reference.md) - Gated by `features.favorites`
+- [`useComments`](./use-comments-reference.md) - Gated by `features.comments`
+- [`useItemRating`](./use-voting-reference.md) - Gated by `features.ratings`

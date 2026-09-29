@@ -137,5 +137,5 @@ NEXT_PUBLIC_STRIPE_STANDARD_MONTHLY_PRICE_ID_CAD=price_aaa
 
 За подробна конфигурация, специфична за доставчика, вижте:
 - [Конфигурация на ивици](./ивици)
-- [Конфигурация на LemonSqueezy](./lemonsqueezy)
-- [Полярна конфигурация](./polar)
+- [Конфигурация на LemonSqueezy](./lemonsqueezy.md)
+- [Полярна конфигурация](./polar.md)

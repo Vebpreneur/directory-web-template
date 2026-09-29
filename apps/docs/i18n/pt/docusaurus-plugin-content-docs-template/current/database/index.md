@@ -116,7 +116,7 @@ Na inicialização do aplicativo (via `instrumentation.ts`), o modelo automatica
 1. **Executa migrações**: a função `migrate()` do Drizzle aplica quaisquer migrações pendentes (idempotente – migrações já aplicadas são ignoradas)
 2. **Sementes de dados**: se o banco de dados não tiver sido propagado, o script de semente será executado com proteção de bloqueio consultivo para evitar condições de corrida em implantações de vários processos
 
-Isso é tratado por `lib/db/initialize.ts`. Consulte o [Guia de Migrações](./migrations-guide) e [Propagação de banco de dados](./seeding) para obter detalhes.
+Isso é tratado por `lib/db/initialize.ts`. Consulte o [Guia de Migrações](./migrations-guide.md) e [Propagação de banco de dados](./seeding.md) para obter detalhes.
 
 ## Comandos principais
 

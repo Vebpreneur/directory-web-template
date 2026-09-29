@@ -699,8 +699,8 @@ Linee guida e best practice per i test cross-device.
 
 ## Passaggi successivi
 
-- [Stack tecnologico](./tech-stack): esplora lo stack tecnologico
-- [Panoramica dell'architettura](./overview) - Comprendere l'architettura
+- [Stack tecnologico](./tech-stack.md): esplora lo stack tecnologico
+- [Panoramica dell'architettura](./overview.md) - Comprendere l'architettura
 
 ## Risorse
 

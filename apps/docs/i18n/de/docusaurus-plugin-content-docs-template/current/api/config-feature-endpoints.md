@@ -68,4 +68,4 @@ Fehlerantworten verwenden `Cache-Control: no-cache`, um das Cachen des degradier
 
 ## Verwandte Endpunkte
 
-- [Health-Endpunkte](./health-endpoints) – Datenbankverbindungs-Gesundheitsprüfung
+- [Health-Endpunkte](./health-endpoints.md) – Datenbankverbindungs-Gesundheitsprüfung

@@ -241,6 +241,6 @@ async getActivityStats(): Promise<ActivityStats> {
 
 ## Related Documentation
 
-- [Engagement Service](/template/services/engagement-services) -- Popularity scoring
-- [Vote Service](/template/services/vote-service) -- Upvote/downvote system
-- [PostHog Service](/template/services/posthog-service) -- External analytics
+- [Engagement Service](./engagement-services.md) -- Popularity scoring
+- [Vote Service](./vote-service.md) -- Upvote/downvote system
+- [PostHog Service](./posthog-service.md) -- External analytics

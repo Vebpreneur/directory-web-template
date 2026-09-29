@@ -43,7 +43,7 @@ settings:
 
 ### Environment Variables
 
-Ensure your payment provider is configured (see [Payment Integration](../payment)).
+Ensure your payment provider is configured (see [Payment Integration](../payment/payment.md)).
 
 ## Admin Management
 

@@ -69,5 +69,5 @@ if (health.status === 'healthy') {
 
 ## נקודות קצה קשורות
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- דגלי זמינות תכונות (תלוי גם במסד נתונים)
-- [Version Sync Endpoints](./version-sync-endpoints) -- גרסת מערכת וסטטוס סנכרון
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- דגלי זמינות תכונות (תלוי גם במסד נתונים)
+- [Version Sync Endpoints](./version-sync-endpoints.md) -- גרסת מערכת וסטטוס סנכרון

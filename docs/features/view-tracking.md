@@ -216,7 +216,7 @@ View tracking operates automatically with no required environment variables. The
 
 ## Related Documentation
 
-- [Dashboard Components](/docs/template/components/dashboard-components) -- View stats display
-- [Shared Card Components](/docs/template/components/shared-card-components) -- Popularity scoring
-- [Admin Analytics](/docs/template/features/admin-analytics) -- Site-wide view metrics
-- [Voting & Comments](/docs/template/features/voting-comments) -- Other engagement features
+- [Dashboard Components](../components/dashboard-components.md) -- View stats display
+- [Shared Card Components](../components/shared-card-components.md) -- Popularity scoring
+- [Admin Analytics](./admin-analytics.md) -- Site-wide view metrics
+- [Voting & Comments](./voting-comments.md) -- Other engagement features

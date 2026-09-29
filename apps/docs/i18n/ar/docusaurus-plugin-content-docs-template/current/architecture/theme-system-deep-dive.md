@@ -13,7 +13,7 @@ sidebar_position: 46
 
 ## الهندسة المعمارية
 
-تم وضع نظام السمات أعلى [Color Generator](./color-generator-system) ويتم استهلاكه بواسطة `LayoutThemeContext`:
+تم وضع نظام السمات أعلى [Color Generator](./color-generator-system.md) ويتم استهلاكه بواسطة `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## الوحدات ذات الصلة
 
-- [نظام مولد الألوان](./color-generator-system)-- الأساس الرياضي لتوليد لوحة الألوان
+- [نظام مولد الألوان](./color-generator-system.md)-- الأساس الرياضي لتوليد لوحة الألوان
 - [نظام الألوان](/template/architecture/color-system) - نظرة عامة على نظام الألوان عالي المستوى

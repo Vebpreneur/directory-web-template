@@ -318,6 +318,6 @@ The `stream: true` option tells the decoder to buffer incomplete multi-byte sequ
 
 ## Related Resources
 
-- [Error Handler Patterns](/template/guides/error-handler-patterns) -- Centralized error handling for API routes
-- [Rate Limiting](/template/guides/rate-limiting) -- Complementary request protection
-- [Email Validation](/template/guides/email-validation) -- Validating parsed request fields
+- [Error Handler Patterns](./error-handler-patterns.md) -- Centralized error handling for API routes
+- [Rate Limiting](./rate-limiting.md) -- Complementary request protection
+- [Email Validation](./email-validation.md) -- Validating parsed request fields

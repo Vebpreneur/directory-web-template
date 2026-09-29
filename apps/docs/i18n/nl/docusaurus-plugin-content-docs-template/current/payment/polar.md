@@ -337,8 +337,8 @@ Vereiste pakketten (reeds inbegrepen in Ever Works):
 
 ## Volgende stappen
 
-- [Stripe-configuratie](./stripe) - Alternatieve betalingsprovider
-- [LemonSqueezy-configuratie](./lemonsqueezy) - Alternatieve betalingsprovider
+- [Stripe-configuratie](./stripe.md) - Alternatieve betalingsprovider
+- [LemonSqueezy-configuratie](./lemonsqueezy.md) - Alternatieve betalingsprovider
 - [Betalingsoverzicht](/betaling) - Betaalaanbieders vergelijken
 - [Omgevingsvariabelen](/deployment/environment-variables) - Volledige omgevingsinstellingen
 - [Implementatie](/deployment) - Implementeer uw betalingsintegratie

@@ -136,6 +136,6 @@ O sistema multimoeda funciona perfeitamente com todos os provedores de pagamento
 **Polar**: suporta várias moedas por meio da configuração do produto
 
 Para obter configuração detalhada específica do provedor, consulte:
-- [Configuração de faixa](./stripe)
-- [Configuração do LemonSqueezy](./lemonsqueezy)
-- [Configuração Polar](./polar)
+- [Configuração de faixa](./stripe.md)
+- [Configuração do LemonSqueezy](./lemonsqueezy.md)
+- [Configuração Polar](./polar.md)
