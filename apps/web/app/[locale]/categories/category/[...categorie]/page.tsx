@@ -37,9 +37,11 @@ export async function generateMetadata({
   const category = decodeURIComponent(rawCategory);
   const page = rawPage ? parseInt(rawPage) : 1;
   const { total, categories } = await getCachedItemsByCategory(category, { lang: locale });
-  // An unknown category is a 404 (the page below does the same). Resolving it
-  // here also keeps its metadata from naming /categories/<unknown>, a 404, as
-  // the canonical.
+  // An unknown category gets the not-found page (the page below does the
+  // same). Resolving it here also keeps its metadata from naming
+  // /categories/<unknown>, a 404, as the canonical. (This route's loading.tsx
+  // streams the response, so Next sends the not-found page, noindex, with
+  // status 200 - see Next's streaming-metadata docs.)
   const matchedCategory = findCategory(categories, category);
   if (!matchedCategory) {
     notFound();
@@ -107,7 +109,8 @@ export default async function CategoryListing({
   // Resolve to a known category ID (handles URL-encoded names with spaces, etc.)
   const slug = slugify(category);
   const matchedCategory = findCategory(categories, category);
-  // Unknown category → a real 404, as on /categories/<id>, not an empty listing.
+  // Unknown category → the not-found page (noindex), as on /categories/<id>,
+  // not an empty listing.
   if (!matchedCategory) {
     notFound();
   }

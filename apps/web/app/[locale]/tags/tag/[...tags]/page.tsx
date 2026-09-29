@@ -31,9 +31,11 @@ export async function generateMetadata({
   const { tags: tagMeta, locale } = await params;
   const [rawTag] = tagMeta;
   const tag = decodeURI(rawTag);
-  // An unknown tag is a 404 (the page below does the same). Resolving it here
-  // also keeps its metadata from naming /tags/<unknown>, a 404, as the
-  // canonical.
+  // An unknown tag gets the not-found page (the page below does the same).
+  // Resolving it here also keeps its metadata from naming /tags/<unknown>, a
+  // 404, as the canonical. (This route's loading.tsx streams the response, so
+  // Next sends the not-found page, noindex, with status 200 - see Next's
+  // streaming-metadata docs.)
   const { tags } = await getCachedItemsByTag(tag, { lang: locale });
   const matchedTag = tags.find(
     (t) => t.id === tag || t.name?.toLowerCase() === tag.toLowerCase()
@@ -94,8 +96,8 @@ export default async function TagListing({
     lang: locale,
   });
 
-  // Unknown tag → a real 404, as on /tags/<tag>, not the full tag grid under
-  // any string (which would also canonicalise to a /tags/<tag> that 404s).
+  // Unknown tag → the not-found page (noindex), as on /tags/<tag>, not the
+  // full tag grid under any string.
   const knownTag = tags.some(
     (t) => t.id === tag || t.name?.toLowerCase() === tag.toLowerCase()
   );
