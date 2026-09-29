@@ -50,6 +50,14 @@ function readDocsUrl(): string {
 }
 const DOCS_URL = readDocsUrl();
 const HAS_DOCS_URL = DOCS_URL !== '';
+
+// Public path where the docs service is mounted. Vercel Services routes this app under /docs/.
+// Standalone/local builds keep the normal site root unless DOCS_BASE_URL is explicitly set.
+const DOCS_BASE_URL = (() => {
+	const raw = (process.env.DOCS_BASE_URL || '/').trim();
+	const normalized = `/${raw.replace(/^\\/+|\\/+$/g, '')}/`;
+	return normalized === '//' ? '/' : normalized;
+})();
 // Docusaurus requires a `url` even when there is no canonical origin. This one is reserved
 // (RFC 2606 .invalid) so it can never resolve, and nothing that reaches a crawler names it.
 const PLACEHOLDER_URL = 'https://docs.example.invalid';
@@ -239,7 +247,7 @@ const config: Config = {
 	noIndex: !HAS_DOCS_URL,
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
-	baseUrl: '/',
+	baseUrl: DOCS_BASE_URL,
 	// Every route is emitted as a directory (foo/index.html) and served at /foo/. Without this,
 	// canonicals, og:url, hreflang and sitemap <loc> used the slash-less /foo, which the nginx
 	// behind the host answers with a 301 to /foo/ - so almost every URL handed to crawlers was
