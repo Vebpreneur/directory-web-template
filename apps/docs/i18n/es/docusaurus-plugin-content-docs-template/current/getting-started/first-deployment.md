@@ -13,7 +13,7 @@ Esta guía te lleva paso a paso por el despliegue de Ever Works en producción p
 
 Antes de desplegar, asegúrate de haber:
 
-- [ ] Completado la [configuración del entorno](./environment-setup)
+- [ ] Completado la [configuración del entorno](./environment-setup.md)
 - [ ] Probado localmente con `pnpm run dev`
 - [ ] Configurado tu repositorio de datos
 - [ ] Configurado al menos un proveedor de autenticación

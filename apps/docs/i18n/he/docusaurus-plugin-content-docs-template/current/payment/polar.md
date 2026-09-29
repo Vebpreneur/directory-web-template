@@ -339,8 +339,8 @@ Polar מציעה אינטגרציה חלקה של GitHub:
 
 ## השלבים הבאים
 
-- [Stripe Configuration](./stripe) - ספק תשלומים חלופי
-- [תצורת LemonSqueezy](./lemonsqueezy) - ספק תשלומים חלופי
+- [Stripe Configuration](./stripe.md) - ספק תשלומים חלופי
+- [תצורת LemonSqueezy](./lemonsqueezy.md) - ספק תשלומים חלופי
 - [סקירת תשלום](/תשלום) - השווה בין ספקי תשלום
 - [משתני סביבה](/deployment/environment-variables) - הגדרת סביבה מלאה
 - [פריסה](/פריסה) - פרוס את שילוב התשלומים שלך

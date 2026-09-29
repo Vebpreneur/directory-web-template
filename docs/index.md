@@ -50,7 +50,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see your site!
 - [Installation Guide](/getting-started/installation) -- Complete setup instructions
 - [Quick Start Guide](/getting-started/quick-start) -- Get up and running in under 10 minutes
 - [Architecture Overview](/architecture/overview) -- Understand the system design
-- [Deployment Guide](/deployment/deployment-introduction) -- Deploy to production
+- [Deployment Guide](./deployment/deployment.md) -- Deploy to production
 
 ## For Contributors & AI Agents
 
@@ -80,7 +80,7 @@ The Template can be used standalone or paired with the **Ever Works Platform** f
 
 ## Need Help?
 
-- Check our [documentation](/docs) for general information
+- Check our [documentation](./index.md) for general information
 - Join our [Discord community](https://discord.gg/ever) for support
 - Visit the [demo site](https://demo.ever.works) to see it in action
 - Contact [support](/support) for technical assistance

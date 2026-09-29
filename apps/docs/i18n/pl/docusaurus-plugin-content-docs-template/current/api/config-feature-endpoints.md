@@ -68,4 +68,4 @@ Odpowiedzi błędów używają `Cache-Control: no-cache`, aby zapobiec buforowan
 
 ## Powiązane punkty końcowe
 
-- [Punkty końcowe Health](./health-endpoints) -- Sprawdzanie kondycji połączenia z bazą danych
+- [Punkty końcowe Health](./health-endpoints.md) -- Sprawdzanie kondycji połączenia z bazą danych

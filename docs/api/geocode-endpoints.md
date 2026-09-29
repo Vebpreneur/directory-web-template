@@ -167,4 +167,4 @@ Results are cached for 15 minutes (TTL 900,000ms) with a maximum cache size of 1
 
 ## Related Endpoints
 
-- [Location Endpoints](./location-endpoints) -- Location search, cities, countries, and coordinates
+- [Location Endpoints](./location-endpoints.md) -- Location search, cities, countries, and coordinates

@@ -333,6 +333,6 @@ serverErrorResponse(error, msg?) // 500
 
 ## Related Documentation
 
-- [Role Service](/template/services/role-service) -- Role management API
-- [User Service](/template/services/user-service) -- User management
-- [Subscription Service](/template/services/subscription-service) -- Plan management
+- [Role Service](./role-service.md) -- Role management API
+- [User Service](./user-service.md) -- User management
+- [Subscription Service](./subscription-service.md) -- Plan management

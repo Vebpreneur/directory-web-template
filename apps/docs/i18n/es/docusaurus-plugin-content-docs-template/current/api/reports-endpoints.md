@@ -286,4 +286,4 @@ Admin resuelve reporte
   → Se envía email de notificación al usuario afectado
 ```
 
-Para detalles completos sobre las acciones de moderación, consulta la [documentación del Sistema de Moderación](./moderation-endpoints).
+Para detalles completos sobre las acciones de moderación, consulta la [documentación del Sistema de Moderación](./moderation-endpoints.md).

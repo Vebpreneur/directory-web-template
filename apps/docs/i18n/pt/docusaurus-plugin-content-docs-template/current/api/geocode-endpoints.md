@@ -167,4 +167,4 @@ Os resultados são armazenados em cache por 15 minutos (TTL de 900.000ms) com ta
 
 ## Documentação relacionada
 
-- [Endpoints de Localização](./location-endpoints) — Pesquisa de localização, cidades, países e coordenadas
+- [Endpoints de Localização](./location-endpoints.md) — Pesquisa de localização, cidades, países e coordenadas

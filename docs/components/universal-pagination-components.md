@@ -98,6 +98,6 @@ The outer container uses responsive horizontal padding: `px-4 sm:px-8 lg:px-16`.
 
 ## Related Components
 
-- [Categories Grid](/template/components/categories-grid-components) - Uses UniversalPagination in standard pagination mode.
-- [Shared Card Components](/template/components/shared-card-components) - Main item listing that integrates UniversalPagination.
-- [Pagination Components](/template/components/pagination-components) - Additional pagination utilities and hooks.
+- [Categories Grid](./categories-grid-components.md) - Uses UniversalPagination in standard pagination mode.
+- [Shared Card Components](./shared-card-components.md) - Main item listing that integrates UniversalPagination.
+- [Pagination Components](./pagination-components.md) - Additional pagination utilities and hooks.

@@ -167,5 +167,5 @@ const rgb = hexToRgb('#3b82f6');
 
 ## Moduli correlati
 
-- [Theme System Deep Dive](./theme-system-deep-dive) -- Utilizza la generazione di tavolozze per temi dinamici
+- [Theme System Deep Dive](./theme-system-deep-dive.md) -- Utilizza la generazione di tavolozze per temi dinamici
 - [Sistema colore](/template/architecture/color-system) -- Documentazione del sistema colore di livello superiore

@@ -149,4 +149,4 @@ Nenhuma limitação de taxa explícita é aplicada a esses endpoints. Itens remo
 
 ## Documentação relacionada
 
-- [Endpoints de Geocodificação](./geocode-endpoints) — Geocodificação direta e inversa (somente administrador)
+- [Endpoints de Geocodificação](./geocode-endpoints.md) — Geocodificação direta e inversa (somente administrador)

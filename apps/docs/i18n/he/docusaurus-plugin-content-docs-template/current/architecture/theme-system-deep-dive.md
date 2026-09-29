@@ -13,7 +13,7 @@ sidebar_position: 46
 
 ## אדריכלות
 
-מערכת העיצוב מונחת על גבי [מחולל הצבע](./color-generator-system) ונצרכת על ידי `LayoutThemeContext`:
+מערכת העיצוב מונחת על גבי [מחולל הצבע](./color-generator-system.md) ונצרכת על ידי `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## מודולים קשורים
 
-- [מערכת מחולל צבע](./color-generator-system) - בסיס מתמטי ליצירת פלטות
+- [מערכת מחולל צבע](./color-generator-system.md) - בסיס מתמטי ליצירת פלטות
 - [מערכת צבע](/template/architecture/color-system) -- סקירה כללית של מערכת צבע ברמה גבוהה יותר

@@ -321,4 +321,4 @@ const response = await fetch("/api/surveys/abc-123/responses", {
 
 ## نقاط النهاية ذات الصلة
 
-- [نقاط نهاية ميزة التكوين](./config-feature-endpoints) - التحقق من تمكين ميزة الاستطلاعات
+- [نقاط نهاية ميزة التكوين](./config-feature-endpoints.md) - التحقق من تمكين ميزة الاستطلاعات

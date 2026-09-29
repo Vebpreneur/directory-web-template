@@ -520,8 +520,8 @@ Ever Works ondersteunt **13+ talen** standaard:
 
 ## Volgende stappen
 
-- [Architectuuroverzicht](./overview) - Begrijp de systeemarchitectuur
-- [Platformfuncties](./features) - Ontdek alle platformfuncties
+- [Architectuuroverzicht](./overview.md) - Begrijp de systeemarchitectuur
+- [Platformfuncties](./features.md) - Ontdek alle platformfuncties
 - [Ontwikkelingsinstellingen](/development/local-setup) - Stel uw omgeving in
 
 ## Hulpbronnen

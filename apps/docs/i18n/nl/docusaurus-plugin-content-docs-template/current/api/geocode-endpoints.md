@@ -166,4 +166,4 @@ Resultaten worden gecached gedurende 15 minuten (TTL 900.000 ms) met een maximal
 
 ## Gerelateerde eindpunten
 
-- [Location Endpoints](./location-endpoints) -- Locatiezoekfunctie, steden, landen en coördinaten
+- [Location Endpoints](./location-endpoints.md) -- Locatiezoekfunctie, steden, landen en coördinaten

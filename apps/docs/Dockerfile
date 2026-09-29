@@ -52,6 +52,22 @@ COPY docs/ ./docs/
 # of the large API docs, which on the ARC RAM-disk runner runs for ~2h and then dies with
 # ENOSPC. `build:en` (docusaurus build --locale en) is a fraction of the size/time and fits.
 # TODO: re-enable full-locale once the docs image builds on a disk-backed runner.
+# DOCS_LOCALES must name exactly the locales this build renders: it stops the pages
+# announcing the 12 unbuilt locales as alternate languages that all point back at the
+# English URL. Drop it (or list every locale) together with `build:en` when the full-locale
+# build comes back.
+ENV DOCS_LOCALES=en
+# The canonical origin of THIS repository's docs and the page its site root redirects to (see
+# DOCS_URL and DOCS_HOME_CANONICAL_PATH in docusaurus.config.ts). They describe the deployment,
+# not the template, so they are build args: k8s-build.yml passes the repository variables of
+# the same names, to the production (:prod) image only. Empty DOCS_URL => a noindex build that
+# names no host (no canonical, hreflang, og:image, breadcrumb structured data or sitemap);
+# empty DOCS_HOME_CANONICAL_PATH => "/". docusaurus.config.ts rejects a malformed value of
+# either, so a typo fails the build instead of shipping canonicals to a wrong URL.
+ARG DOCS_URL=""
+ARG DOCS_HOME_CANONICAL_PATH=""
+ENV DOCS_URL=${DOCS_URL} \
+    DOCS_HOME_CANONICAL_PATH=${DOCS_HOME_CANONICAL_PATH}
 RUN pnpm --filter @ever-works/docs build:en
 
 # ---- runtime: nginx serving the static build ------------------------------

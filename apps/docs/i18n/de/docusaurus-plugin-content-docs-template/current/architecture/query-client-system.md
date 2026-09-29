@@ -182,4 +182,4 @@ function SettingsLink() {
 ## Verwandte Module
 
 - [API-Client-Schicht](/template/architecture/api-client-layer) – Ermöglicht die API-Aufrufe, die von Abfragefunktionen verwendet werden
-- [Guards System](./guards-system-deep-dive) – Planbasierte Zugriffskontrolle, die von Abonnementdaten abhängen kann
+- [Guards System](./guards-system-deep-dive.md) – Planbasierte Zugriffskontrolle, die von Abonnementdaten abhängen kann

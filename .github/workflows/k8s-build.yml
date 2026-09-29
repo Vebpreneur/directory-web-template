@@ -69,8 +69,20 @@ jobs:
           # cache. The Dockerfile already accepts this build-arg and falls back to
           # public npm when it is empty (forks, GitHub-hosted builds), so this is
           # additive. Integrity hashes are still verified by pnpm.
+          #
+          # DOCS_URL / DOCS_HOME_CANONICAL_PATH: the docs image's canonical origin and the page
+          # its site root redirects to (apps/docs/docusaurus.config.ts). They describe ONE
+          # deployment, so they come only from this repository's own Actions variables, which
+          # the platform's template sync does not copy; this file names no host. They reach the
+          # PRODUCTION image only: the :dev and :stage images are served on hosts of their own,
+          # and a dev build naming the production host would make that host an indexable
+          # duplicate whose canonicals point at prod URLs that do not exist yet. Every other
+          # image gets '' and builds noindex, naming no host. The root Dockerfile declares
+          # neither arg and ignores them.
           build-args: |
             VERDACCIO_REGISTRY=${{ vars.VERDACCIO_REGISTRY }}
+            DOCS_URL=${{ steps.t.outputs.tag == 'prod' && vars.DOCS_URL || '' }}
+            DOCS_HOME_CANONICAL_PATH=${{ steps.t.outputs.tag == 'prod' && vars.DOCS_HOME_CANONICAL_PATH || '' }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}${{ matrix.suffix }}:${{ steps.t.outputs.tag }}
             ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}${{ matrix.suffix }}:sha-${{ github.sha }}

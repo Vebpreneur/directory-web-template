@@ -112,4 +112,4 @@ Geen expliciete snelheidsbeperking. Het betrokkenheid-eindpunt beperkt de batchg
 
 ## Gerelateerde eindpunten
 
-- [Configuratiefunctie-eindpunten](./config-feature-endpoints) -- Controleer of beoordelingen/favorieten/reacties-functies zijn ingeschakeld
+- [Configuratiefunctie-eindpunten](./config-feature-endpoints.md) -- Controleer of beoordelingen/favorieten/reacties-functies zijn ingeschakeld

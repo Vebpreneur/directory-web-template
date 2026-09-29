@@ -539,9 +539,9 @@ convertNumberToDate(1640995200);
 ## Volgende stappen
 
 - [Stripe-configuratie] (./stripe) -- Volledige Stripe-installatie
-- [LemonSqueezy-configuratie](./lemonsqueezy) -- LemonSqueezy-installatie
-- [Polaire configuratie](./polar) -- Polaire instelling
-- [Integratie van meerdere valuta](./multi-currency) -- Valuta-ondersteuning
+- [LemonSqueezy-configuratie](./lemonsqueezy.md) -- LemonSqueezy-installatie
+- [Polaire configuratie](./polar.md) -- Polaire instelling
+- [Integratie van meerdere valuta](./multi-currency.md) -- Valuta-ondersteuning
 - [Betaalarchitectuur](./betalingsarchitectuur) -- Duik diep in de architectuur
-- [Webhooks](./webhooks) -- Details over de verwerking van webhooks
-- [Configuratiehandleiding](./configuration) -- Alle omgevingsvariabelen en opties
+- [Webhooks](./webhooks.md) -- Details over de verwerking van webhooks
+- [Configuratiehandleiding](./configuration.md) -- Alle omgevingsvariabelen en opties

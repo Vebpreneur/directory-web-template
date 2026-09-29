@@ -140,6 +140,6 @@ Het multi-valuta systeem werkt naadloos samen met alle betalingsproviders:
 - **Polar**: Ondersteunt multi-valuta via productconfiguratie
 
 Voor gedetailleerde providerspecifieke configuratie, zie:
-- [Stripe Configuratie](./stripe)
-- [LemonSqueezy Configuratie](./lemonsqueezy)
-- [Polar Configuratie](./polar)
+- [Stripe Configuratie](./stripe.md)
+- [LemonSqueezy Configuratie](./lemonsqueezy.md)
+- [Polar Configuratie](./polar.md)

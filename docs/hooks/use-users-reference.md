@@ -391,7 +391,7 @@ All hooks share a private `userApi` object that wraps `serverClient` from `@/lib
 
 ## Related Hooks
 
-- [`useAdminUsers`](/template/hooks/use-admin-users-reference) -- Admin user management with additional admin-specific operations
-- [`useCurrentUser`](/template/hooks/use-current-user-reference) -- Fetches the currently authenticated user (different from admin user listing)
-- [`useUserUtils`](/template/hooks/use-user-utils-reference) -- Derived user properties like display role and online status
-- [`useRoles`](/template/hooks/use-roles-reference) -- Role data used in user management forms
+- [`useAdminUsers`](./use-admin-users-reference.md) -- Admin user management with additional admin-specific operations
+- [`useCurrentUser`](./use-current-user-reference.md) -- Fetches the currently authenticated user (different from admin user listing)
+- [`useUserUtils`](./use-user-utils-reference.md) -- Derived user properties like display role and online status
+- [`useRoles`](./use-roles-reference.md) -- Role data used in user management forms

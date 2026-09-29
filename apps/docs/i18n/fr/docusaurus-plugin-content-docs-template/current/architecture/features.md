@@ -699,8 +699,8 @@ Lignes directrices et bonnes pratiques en matière de tests multi-appareils.
 
 ## Prochaines étapes
 
-- [Tech Stack](./tech-stack) - Explorez la pile technologique
-- [Aperçu de l'architecture](./overview) - Comprendre l'architecture
+- [Tech Stack](./tech-stack.md) - Explorez la pile technologique
+- [Aperçu de l'architecture](./overview.md) - Comprendre l'architecture
 
 ## Ressources
 

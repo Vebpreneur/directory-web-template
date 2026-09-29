@@ -116,7 +116,7 @@ Bij het opstarten van de applicatie (via `instrumentation.ts`), wordt de sjabloo
 1. **Voert migraties uit**: Drizzle's `migrate()` functie past alle lopende migraties toe (idempotent - reeds toegepaste migraties worden overgeslagen)
 2. **Seeds-gegevens**: als de database niet is gezaaid, wordt het Seed-script uitgevoerd met adviserende vergrendelingsbeveiliging om race-omstandigheden te voorkomen bij implementaties met meerdere processen
 
-Dit wordt afgehandeld door `lib/db/initialize.ts`. Zie de [Migrations Guide](./migrations-guide) en [Database Seeding](./seeding) voor meer informatie.
+Dit wordt afgehandeld door `lib/db/initialize.ts`. Zie de [Migrations Guide](./migrations-guide.md) en [Database Seeding](./seeding.md) voor meer informatie.
 
 ## Sleutelopdrachten
 

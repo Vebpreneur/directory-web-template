@@ -433,6 +433,6 @@ scaling:
 
 ## Next Steps
 
-- [Vercel deployment guide](./vercel)
-- [Environment variables setup](./environment-variables)
-- [Monitoring setup](./monitoring)
+- [Vercel deployment guide](./vercel.md)
+- [Environment variables setup](./environment-variables.md)
+- [Monitoring setup](./monitoring.md)

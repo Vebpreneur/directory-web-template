@@ -148,4 +148,4 @@ async function onItemUpdated(slug: string) {
 ## Verwandte Module
 
 - [Inhaltsbibliothek](/template/architecture/content-library) – Hauptkonsument von Cache-Tags und TTL-Werten
-- [Config Manager System](./config-manager-system) – Verwendet `CACHE_TAGS.CONFIG` für die Zwischenspeicherung der Site-Konfiguration
+- [Config Manager System](./config-manager-system.md) – Verwendet `CACHE_TAGS.CONFIG` für die Zwischenspeicherung der Site-Konfiguration

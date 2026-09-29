@@ -266,8 +266,8 @@ try {
 
 ## Next Steps
 
-- [Dynamic Colors](./dynamic-colors) - Learn about the dynamic color system
-- [Customization](./customization) - General customization guide
+- [Dynamic Colors](./dynamic-colors.md) - Learn about the dynamic color system
+- [Customization](./customization.md) - General customization guide
 - [Development](/development/local-setup) - Set up your development environment
 
 ## Resources

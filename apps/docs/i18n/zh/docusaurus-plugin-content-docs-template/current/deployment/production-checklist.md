@@ -513,19 +513,19 @@ psql $DATABASE_URL < backup-YYYYMMDD.sql
 
 成功部署后：
 
-- [监控与分析](./monitoring) – 配置全面监控
-- [环境变量](./environment-variables) – 管理生产密钥
-- [Docker 部署](./docker) – 容器化应用程序
-- [支持](../advanced-guide/support) – 需要时获取帮助
+- [监控与分析](./monitoring.md) – 配置全面监控
+- [环境变量](./environment-variables.md) – 管理生产密钥
+- [Docker 部署](./docker.md) – 容器化应用程序
+- [支持](../advanced-guide/support.md) – 需要时获取帮助
 
 ## 资源
 
 ### 内部文档
 
-- [架构概述](../architecture/overview)
-- [技术栈](../architecture/tech-stack)
-- [API 文档](../development/api-documentation)
-- [监控](./monitoring)
+- [架构概述](../architecture/overview.md)
+- [技术栈](../architecture/tech-stack.md)
+- [API 文档](../development/api-documentation.md)
+- [监控](./monitoring.md)
 
 ### 外部资源
 

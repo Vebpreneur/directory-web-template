@@ -223,4 +223,4 @@ Aucune limitation de débit explicite. Le point de terminaison de détection de 
 
 ## Points de terminaison associés
 
-- [Points de terminaison de fonctionnalités de configuration](./config-feature-endpoints) — Vérifier la disponibilité des fonctionnalités selon le plan
+- [Points de terminaison de fonctionnalités de configuration](./config-feature-endpoints.md) — Vérifier la disponibilité des fonctionnalités selon le plan

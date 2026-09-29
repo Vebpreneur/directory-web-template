@@ -248,7 +248,7 @@ function ApprovedItemsPage() {
 
 ## Related Hooks
 
-- [`useClientItems`](/template/hooks/use-client-items-reference) -- Consumes the `params` object produced by this hook
-- [`useClientItemDetails`](/template/hooks/use-client-item-details-reference) -- Single item detail fetching
-- [`useDebouncedValue`](/template/hooks/use-debounced-value-reference) -- The underlying debounce utility
-- [`useDeletedClientItems`](/template/hooks/use-deleted-client-items-reference) -- Manages soft-deleted items list
+- [`useClientItems`](./use-client-items-reference.md) -- Consumes the `params` object produced by this hook
+- [`useClientItemDetails`](./use-client-item-details-reference.md) -- Single item detail fetching
+- [`useDebouncedValue`](./use-debounced-value-reference.md) -- The underlying debounce utility
+- [`useDeletedClientItems`](./use-deleted-client-items-reference.md) -- Manages soft-deleted items list

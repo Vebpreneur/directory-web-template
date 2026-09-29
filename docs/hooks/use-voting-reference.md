@@ -258,7 +258,7 @@ This ensures the aggregate rating stays current without manual intervention.
 
 ## Related Hooks
 
-- [`useComments`](/template/hooks/use-comments-reference) - Comment system with rating integration
-- [`useCurrentUser`](/template/hooks/use-current-user-reference) - Authentication state for vote eligibility
-- [`useFavorites`](/template/hooks/use-favorites-reference) - Another item engagement mechanism
-- [`useFeatureFlagsWithSimulation`](/template/hooks/use-feature-flags-reference) - Feature flag gating for ratings
+- [`useComments`](./use-comments-reference.md) - Comment system with rating integration
+- [`useCurrentUser`](./use-current-user-reference.md) - Authentication state for vote eligibility
+- [`useFavorites`](./use-favorites-reference.md) - Another item engagement mechanism
+- [`useFeatureFlagsWithSimulation`](./use-feature-flags-reference.md) - Feature flag gating for ratings

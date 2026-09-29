@@ -13,7 +13,7 @@ sidebar_position: 46
 
 ## Архитектура
 
-Система тем накладывается поверх [Color Generator](./color-generator-system) и используется `LayoutThemeContext`:
+Система тем накладывается поверх [Color Generator](./color-generator-system.md) и используется `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews
@@ -249,5 +249,5 @@ const css = generateThemeCss('everworks');
 
 ## Связанные модули
 
-- [Color Generator System](./color-generator-system) — математическая основа для генерации палитр.
+- [Color Generator System](./color-generator-system.md) — математическая основа для генерации палитр.
 - [Цветовая система](/template/architecture/color-system) — обзор системы цвета более высокого уровня.

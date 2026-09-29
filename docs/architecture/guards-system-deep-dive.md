@@ -248,5 +248,5 @@ const requiredPlan = getMinimumPlanForFeature(FEATURES.ADVANCED_ANALYTICS);
 
 ## Related Modules
 
-- [Config Manager System](./config-manager-system) -- Feature flags for database-dependent features
-- [Query Client System](./query-client-system) -- Subscription data fetching that feeds into plan guards
+- [Config Manager System](./config-manager-system.md) -- Feature flags for database-dependent features
+- [Query Client System](./query-client-system.md) -- Subscription data fetching that feeds into plan guards

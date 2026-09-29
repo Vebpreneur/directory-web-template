@@ -164,5 +164,5 @@ if (status.syncInProgress) {
 
 ## נקודות קצה קשורות
 
-- [נקודות קצה בריאות](./health-endpoints) -- בדיקת תקינות קישוריות מסד נתונים
-- [Config Feature Endpoints](./config-feature-endpoints) -- דגלי זמינות תכונות
+- [נקודות קצה בריאות](./health-endpoints.md) -- בדיקת תקינות קישוריות מסד נתונים
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- דגלי זמינות תכונות

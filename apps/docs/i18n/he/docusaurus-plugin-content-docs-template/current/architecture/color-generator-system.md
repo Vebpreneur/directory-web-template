@@ -167,5 +167,5 @@ const rgb = hexToRgb('#3b82f6');
 
 ## מודולים קשורים
 
-- [Theme System Deep Dive](./theme-system-deep-dive) -- צורכת יצירת פלטות לעיצוב נושא דינמי
+- [Theme System Deep Dive](./theme-system-deep-dive.md) -- צורכת יצירת פלטות לעיצוב נושא דינמי
 - [מערכת צבע](/template/architecture/color-system) -- תיעוד מערכת צבע ברמה גבוהה יותר

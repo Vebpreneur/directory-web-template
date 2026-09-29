@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## 相关模块
 
-- [缓存系统](./cache-system) -- 使用`CACHE_TAGS.CONFIG`进行配置缓存
-- [Guards System](./guards-system-deep-dive) -- 消耗计划/功能配置
+- [缓存系统](./cache-system.md) -- 使用`CACHE_TAGS.CONFIG`进行配置缓存
+- [Guards System](./guards-system-deep-dive.md) -- 消耗计划/功能配置
 - [Content Library](/template/architecture/content-library) -- ConfigManager 使用的内容路径解析

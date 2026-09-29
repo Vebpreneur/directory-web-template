@@ -256,8 +256,8 @@ pnpm run clone      # Clone content repository
 
 ## Related Pages
 
-- [Getting Started](/docs/getting-started) -- initial project setup
-- [Configuration](/docs/configuration) -- full environment variable reference
-- [Performance Optimization](/docs/guides/performance-optimization) -- post-deployment optimization
-- [Database Health Check](/docs/guides/database-health-check) -- monitoring database health
-- [How to Add a Cron Job](/docs/guides/how-to-add-a-cron-job) -- configuring scheduled tasks
+- [Getting Started](../getting-started/getting-started.md) -- initial project setup
+- [Configuration](../configuration/environment-reference.md) -- full environment variable reference
+- [Performance Optimization](./performance-optimization.md) -- post-deployment optimization
+- [Database Health Check](./database-health-check.md) -- monitoring database health
+- [How to Add a Cron Job](./how-to-add-a-cron-job.md) -- configuring scheduled tasks

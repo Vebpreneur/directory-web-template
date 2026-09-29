@@ -143,4 +143,4 @@ Każdy dostawca płatności używa własnego mechanizmu weryfikacji podpisu. **N
 
 ## Powiązana dokumentacja
 
-- [Szczegółowe omówienie LemonSqueezy](./lemonsqueezy-deep-dive) -- Szczegółowe informacje o subskrypcjach i webhookach LemonSqueezy
+- [Szczegółowe omówienie LemonSqueezy](./lemonsqueezy-deep-dive.md) -- Szczegółowe informacje o subskrypcjach i webhookach LemonSqueezy

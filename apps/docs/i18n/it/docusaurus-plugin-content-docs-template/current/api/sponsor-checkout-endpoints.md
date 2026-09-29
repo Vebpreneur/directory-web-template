@@ -346,4 +346,4 @@ Nessuna limitazione della velocità esplicita. Gli URL di reindirizzamento negli
 
 ## Endpoint Correlati
 
-- [Endpoint Pagamenti Utente](./user-payment-endpoints) -- Cronologia pagamenti utente e gestione abbonamenti
+- [Endpoint Pagamenti Utente](./user-payment-endpoints.md) -- Cronologia pagamenti utente e gestione abbonamenti

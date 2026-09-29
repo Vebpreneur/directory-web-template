@@ -263,6 +263,6 @@ function ChangesDiff({ changes }: { changes: Record<string, { old: unknown; new:
 
 ## Related Hooks
 
-- [`useClientItems`](/template/hooks/use-client-items-reference) -- Client-side item listing
-- [`useClientItemDetails`](/template/hooks/use-client-item-details-reference) -- Single item details (item being audited)
-- [`useItemCompany`](/template/hooks/use-item-company-reference) -- Company associations may appear in audit history
+- [`useClientItems`](./use-client-items-reference.md) -- Client-side item listing
+- [`useClientItemDetails`](./use-client-item-details-reference.md) -- Single item details (item being audited)
+- [`useItemCompany`](./use-item-company-reference.md) -- Company associations may appear in audit history

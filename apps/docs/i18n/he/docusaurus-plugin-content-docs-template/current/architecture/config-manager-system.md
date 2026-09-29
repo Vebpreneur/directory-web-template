@@ -192,6 +192,6 @@ if (isFeatureEnabled('comments')) {
 
 ## מודולים קשורים
 
-- [מערכת מטמון](./cache-system) -- משתמש ב-`CACHE_TAGS.CONFIG` עבור שמירה במטמון של תצורה
-- [מערכת Guards](./guards-system-deep-dive) -- צורכת תצורת תוכנית/תכונה
+- [מערכת מטמון](./cache-system.md) -- משתמש ב-`CACHE_TAGS.CONFIG` עבור שמירה במטמון של תצורה
+- [מערכת Guards](./guards-system-deep-dive.md) -- צורכת תצורת תוכנית/תכונה
 - [ספריית תוכן](/template/architecture/content-library) -- רזולוציית נתיב תוכן בשימוש על ידי ConfigManager

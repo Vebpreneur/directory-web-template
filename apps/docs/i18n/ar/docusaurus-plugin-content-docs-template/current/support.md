@@ -19,8 +19,8 @@ sidebar_label: "الدعم"
 
 ## التوثيق
 
-- [التثبيت](./getting-started/installation)
-- [البداية السريعة](./getting-started/quick-start)
+- [التثبيت](./getting-started/installation.md)
+- [البداية السريعة](./getting-started/quick-start.md)
 - [البنية](./architecture)
 - [النشر](./deployment)
 

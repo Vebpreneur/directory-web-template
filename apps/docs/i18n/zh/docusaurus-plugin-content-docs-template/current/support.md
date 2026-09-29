@@ -19,8 +19,8 @@ sidebar_label: "支持"
 
 ## 文档
 
-- [安装](./getting-started/installation)
-- [快速入门](./getting-started/quick-start)
+- [安装](./getting-started/installation.md)
+- [快速入门](./getting-started/quick-start.md)
 - [架构](./architecture)
 - [部署](./deployment)
 

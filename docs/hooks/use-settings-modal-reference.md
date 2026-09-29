@@ -152,7 +152,7 @@ Ensure the provider wraps all components that need access to the settings modal 
 
 ## Related Hooks
 
-- [`useLoginModal`](/template/hooks/use-login-modal-reference) -- Similar modal pattern for the login dialog
-- [`useSecuritySettings`](/template/hooks/use-security-settings-reference) -- Security-specific settings management
-- [`useHeaderSettings`](/template/hooks/use-header-settings-reference) -- Header configuration settings
-- [`useFooterSettings`](/template/hooks/use-footer-settings-reference) -- Footer configuration settings
+- [`useLoginModal`](./use-login-modal-reference.md) -- Similar modal pattern for the login dialog
+- [`useSecuritySettings`](./use-security-settings-reference.md) -- Security-specific settings management
+- [`useHeaderSettings`](./use-header-settings-reference.md) -- Header configuration settings
+- [`useFooterSettings`](./use-footer-settings-reference.md) -- Footer configuration settings

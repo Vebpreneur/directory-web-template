@@ -13,7 +13,7 @@ El sistema de temas proporciona una infraestructura temática integral de múlti
 
 ## Arquitectura
 
-El sistema de temas se superpone al [Generador de colores](./color-generator-system) y lo consume `LayoutThemeContext`:
+El sistema de temas se superpone al [Generador de colores](./color-generator-system.md) y lo consume `LayoutThemeContext`:
 
 ```
 themes.tsx                    -- Theme definitions, metadata, previews

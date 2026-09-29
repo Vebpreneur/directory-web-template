@@ -513,19 +513,19 @@ Tieni traccia di queste metriche per garantire la salute della produzione:
 
 Dopo una distribuzione riuscita:
 
-- [Monitoraggio & Analytics](./monitoring) – Configurare un monitoraggio completo
-- [Variabili d'Ambiente](./environment-variables) – Gestire i segreti di produzione
-- [Distribuzione Docker](./docker) – Containerizzare l'applicazione
-- [Supporto](../advanced-guide/support) – Ottenere aiuto quando necessario
+- [Monitoraggio & Analytics](./monitoring.md) – Configurare un monitoraggio completo
+- [Variabili d'Ambiente](./environment-variables.md) – Gestire i segreti di produzione
+- [Distribuzione Docker](./docker.md) – Containerizzare l'applicazione
+- [Supporto](../advanced-guide/support.md) – Ottenere aiuto quando necessario
 
 ## Risorse
 
 ### Documentazione Interna
 
-- [Panoramica dell'Architettura](../architecture/overview)
-- [Tech Stack](../architecture/tech-stack)
-- [Documentazione API](../development/api-documentation)
-- [Monitoraggio](./monitoring)
+- [Panoramica dell'Architettura](../architecture/overview.md)
+- [Tech Stack](../architecture/tech-stack.md)
+- [Documentazione API](../development/api-documentation.md)
+- [Monitoraggio](./monitoring.md)
 
 ### Risorse Esterne
 

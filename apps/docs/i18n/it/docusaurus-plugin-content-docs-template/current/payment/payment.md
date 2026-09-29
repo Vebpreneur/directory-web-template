@@ -538,10 +538,10 @@ convertNumberToDate(1640995200);
 
 ## Passaggi successivi
 
-- [Configurazione Stripe](./stripe) - Completa la configurazione di Stripe
-- [Configurazione LemonSqueezy](./lemonsqueezy) -- Configurazione LemonSqueezy
-- [Configurazione polare](./polar) -- Configurazione polare
-- [Integrazione multivaluta](./multi-currency) -- Supporto valuta
-- [Architettura di pagamento](./payment-architecture) - Approfondimento sull'architettura
-- [Webhooks](./webhooks): dettagli sulla gestione dei webhook
-- [Guida alla configurazione](./configuration) -- Tutte le variabili e le opzioni di ambiente
+- [Configurazione Stripe](./stripe.md) - Completa la configurazione di Stripe
+- [Configurazione LemonSqueezy](./lemonsqueezy.md) -- Configurazione LemonSqueezy
+- [Configurazione polare](./polar.md) -- Configurazione polare
+- [Integrazione multivaluta](./multi-currency.md) -- Supporto valuta
+- [Architettura di pagamento](./payment-architecture.md) - Approfondimento sull'architettura
+- [Webhooks](./webhooks.md): dettagli sulla gestione dei webhook
+- [Guida alla configurazione](./configuration.md) -- Tutte le variabili e le opzioni di ambiente

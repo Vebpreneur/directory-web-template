@@ -69,4 +69,4 @@ if (!features.surveys) {
 
 ## Связанные конечные точки
 
-- [Health Endpoints](./health-endpoints) — проверка работоспособности подключения к базе данных.
+- [Health Endpoints](./health-endpoints.md) — проверка работоспособности подключения к базе данных.

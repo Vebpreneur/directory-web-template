@@ -513,19 +513,19 @@ psql $DATABASE_URL < backup-YYYYMMDD.sql
 
 После успешного развёртывания:
 
-- [Мониторинг и Аналитика](./monitoring) – Настройка комплексного мониторинга
-- [Переменные Окружения](./environment-variables) – Управление продакшен-секретами
-- [Развёртывание Docker](./docker) – Контейнеризация приложения
-- [Поддержка](../advanced-guide/support) – Получение помощи при необходимости
+- [Мониторинг и Аналитика](./monitoring.md) – Настройка комплексного мониторинга
+- [Переменные Окружения](./environment-variables.md) – Управление продакшен-секретами
+- [Развёртывание Docker](./docker.md) – Контейнеризация приложения
+- [Поддержка](../advanced-guide/support.md) – Получение помощи при необходимости
 
 ## Ресурсы
 
 ### Внутренняя Документация
 
-- [Обзор Архитектуры](../architecture/overview)
-- [Технологический Стек](../architecture/tech-stack)
-- [Документация API](../development/api-documentation)
-- [Мониторинг](./monitoring)
+- [Обзор Архитектуры](../architecture/overview.md)
+- [Технологический Стек](../architecture/tech-stack.md)
+- [Документация API](../development/api-documentation.md)
+- [Мониторинг](./monitoring.md)
 
 ### Внешние Ресурсы
 

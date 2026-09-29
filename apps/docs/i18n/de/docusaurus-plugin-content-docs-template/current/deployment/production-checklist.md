@@ -513,19 +513,19 @@ Verfolgen Sie diese Metriken, um die Produktionsgesundheit sicherzustellen:
 
 Nach erfolgreichem Deployment:
 
-- [Überwachung & Analysen](./monitoring) – Umfassendes Monitoring einrichten
-- [Umgebungsvariablen](./environment-variables) – Produktions-Secrets verwalten
-- [Docker-Deployment](./docker) – Anwendung containerisieren
-- [Support](../advanced-guide/support) – Hilfe erhalten, wenn nötig
+- [Überwachung & Analysen](./monitoring.md) – Umfassendes Monitoring einrichten
+- [Umgebungsvariablen](./environment-variables.md) – Produktions-Secrets verwalten
+- [Docker-Deployment](./docker.md) – Anwendung containerisieren
+- [Support](../advanced-guide/support.md) – Hilfe erhalten, wenn nötig
 
 ## Ressourcen
 
 ### Interne Dokumentation
 
-- [Architekturübersicht](../architecture/overview)
-- [Tech-Stack](../architecture/tech-stack)
-- [API-Dokumentation](../development/api-documentation)
-- [Überwachung](./monitoring)
+- [Architekturübersicht](../architecture/overview.md)
+- [Tech-Stack](../architecture/tech-stack.md)
+- [API-Dokumentation](../development/api-documentation.md)
+- [Überwachung](./monitoring.md)
 
 ### Externe Ressourcen
 

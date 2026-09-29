@@ -275,7 +275,7 @@ stripe trigger payment_intent.succeeded
 
 ## השלבים הבאים
 
-- [תצורת LemonSqueezy](./lemonsqueezy) - ספק תשלומים חלופי
+- [תצורת LemonSqueezy](./lemonsqueezy.md) - ספק תשלומים חלופי
 - [משתני סביבה](/deployment/environment-variables) - הגדרת סביבה מלאה
 - [פריסה](/פריסה) - פרוס את שילוב התשלומים שלך
 

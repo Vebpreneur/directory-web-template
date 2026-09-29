@@ -276,7 +276,7 @@ stripe trigger payment_intent.succeeded
 
 ## Следващи стъпки
 
-- [Конфигурация на LemonSqueezy](./lemonsqueezy) - Алтернативен доставчик на плащания
+- [Конфигурация на LemonSqueezy](./lemonsqueezy.md) - Алтернативен доставчик на плащания
 - [Променливи на средата](/deployment/environment-variables) - Пълна настройка на средата
 - [Внедряване](/внедряване) - Внедрете своята интеграция на плащане
 

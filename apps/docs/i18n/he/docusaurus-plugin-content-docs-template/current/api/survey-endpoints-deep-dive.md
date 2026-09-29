@@ -321,4 +321,4 @@ const response = await fetch("/api/surveys/abc-123/responses", {
 
 ## נקודות קצה קשורות
 
-- [Config Feature Endpoints](./config-feature-endpoints) -- בדוק אם תכונת הסקרים מופעלת
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- בדוק אם תכונת הסקרים מופעלת

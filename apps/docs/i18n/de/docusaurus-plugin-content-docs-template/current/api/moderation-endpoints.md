@@ -145,4 +145,4 @@ Alle Aktionen werden in der Tabelle `moderation_history` protokolliert.
 ## Verwandte API-Referenzen
 
 - [Admin-Berichte-Endpunkte](./admin-reports-endpoints) – REST-API für den Berichts-Auflösungsworkflow
-- [Admin-Benutzer-Endpunkte](./admin-users-endpoints) – Direktes Benutzer-Status-Management
+- [Admin-Benutzer-Endpunkte](./admin-users-endpoints.md) – Direktes Benutzer-Status-Management

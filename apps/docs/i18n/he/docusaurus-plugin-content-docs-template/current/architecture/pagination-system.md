@@ -161,5 +161,5 @@ const total = totalPages(items.length, itemsPerPage);
 
 ## מודולים קשורים
 
-- [Config Manager System](./config-manager-system) -- מספק תצורת עימוד בזמן ריצה (`type`, `itemsPerPage`)
+- [Config Manager System](./config-manager-system.md) -- מספק תצורת עימוד בזמן ריצה (`type`, `itemsPerPage`)
 - [ספריית תוכן](/template/architecture/content-library) -- משתמש בעימוד עבור דפי רישום תוכן

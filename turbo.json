@@ -18,6 +18,9 @@
 				"CRON_SECRET",
 				"DATA_REPOSITORY",
 				"DATABASE_*",
+				"DOCS_HOME_CANONICAL_PATH",
+				"DOCS_LOCALES",
+				"DOCS_URL",
 				"EMAIL_*",
 				"GH_*",
 				"GITHUB_*",
@@ -40,6 +43,11 @@
 			],
 			"outputs": [
 				"build/**"
+			],
+			"env": [
+				"DOCS_HOME_CANONICAL_PATH",
+				"DOCS_LOCALES",
+				"DOCS_URL"
 			]
 		},
 		"lint": {

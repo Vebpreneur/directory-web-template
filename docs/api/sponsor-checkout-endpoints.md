@@ -347,4 +347,4 @@ No explicit rate limiting. Redirect URLs in checkout and renewal endpoints are v
 
 ## Related Endpoints
 
-- [User Payment Endpoints](./user-payment-endpoints) -- User payment history and subscription management
+- [User Payment Endpoints](./user-payment-endpoints.md) -- User payment history and subscription management

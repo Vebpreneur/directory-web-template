@@ -699,8 +699,8 @@ sidebar_position: 3
 
 ## 下一步
 
-- [Tech Stack](./tech-stack) - 探索技术堆栈
-- [架构概述](./overview) - 了解架构
+- [Tech Stack](./tech-stack.md) - 探索技术堆栈
+- [架构概述](./overview.md) - 了解架构
 
 ## 资源
 

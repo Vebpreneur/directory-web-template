@@ -321,4 +321,4 @@ const response = await fetch("/api/surveys/abc-123/responses", {
 
 ## Связанные конечные точки
 
-- [Конечные точки функции конфигурации](./config-feature-endpoints) – проверьте, включена ли функция опросов.
+- [Конечные точки функции конфигурации](./config-feature-endpoints.md) – проверьте, включена ли функция опросов.

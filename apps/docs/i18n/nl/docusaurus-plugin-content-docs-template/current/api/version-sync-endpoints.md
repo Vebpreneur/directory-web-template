@@ -163,5 +163,5 @@ Foutreacties bevatten een gestructureerde body met velden `error`, `code`, `time
 
 ## Gerelateerde eindpunten
 
-- [Health Endpoints](./health-endpoints) -- Gezondheidscheck voor databaseconnectiviteit
-- [Config Feature Endpoints](./config-feature-endpoints) -- Vlaggen voor beschikbaarheid van functies
+- [Health Endpoints](./health-endpoints.md) -- Gezondheidscheck voor databaseconnectiviteit
+- [Config Feature Endpoints](./config-feature-endpoints.md) -- Vlaggen voor beschikbaarheid van functies

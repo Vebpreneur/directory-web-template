@@ -347,4 +347,4 @@ export class CustomContentSource implements ContentSource {
 
 ## Nächste Schritte
 
-- [Erkunden Sie den Tech-Stack](./tech-stack) im Detail
+- [Erkunden Sie den Tech-Stack](./tech-stack.md) im Detail

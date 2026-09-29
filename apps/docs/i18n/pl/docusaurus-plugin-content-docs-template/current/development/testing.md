@@ -266,8 +266,8 @@ import Image from 'next/image';
 
 ## Następne Kroki
 
-- [Konfiguracja Lokalna](./local-setup) - Skonfiguruj środowisko deweloperskie
-- [Dokumentacja API](./api-documentation) - Dowiedz się o dokumentacji API
+- [Konfiguracja Lokalna](./local-setup.md) - Skonfiguruj środowisko deweloperskie
+- [Dokumentacja API](./api-documentation.md) - Dowiedz się o dokumentacji API
 - [Wdrożenie](/docs/deployment) - Wdróż swoją aplikację
 
 ## Zasoby

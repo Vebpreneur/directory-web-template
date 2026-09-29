@@ -9,8 +9,8 @@ sidebar_position: 99
 
 ## 2026-09-04
 
-- `spec-050`: added the blog reader surface for generated directory sites — `/blog` listing with configurable pagination and search, `/blog/[slug]` post pages, category and tag archives, `/blog/rss.xml`, sitemap entries and 21-locale strings, all reading `.content/posts/` through the existing `lib/content.ts` pipeline ([spec 050](spec/050-blog-pages/spec.md), EW-25..EW-29).
-- `spec-048` `apps/web/lib/seo/{frontmatter,static-page-metadata}.ts` `apps/web/app/[locale]/{terms-of-service,privacy-policy}`: the two legal routes now build their SEO metadata from the data repository’s Markdown frontmatter (`title` / `description`) through the new `buildStaticPageMetadata()` helper, with the i18n strings kept as the fallback; both routes gain a `loading.tsx`; the `<h1>`, the "last updated" chip and `renderStaticPageMarkdown()` now share one non-empty-string frontmatter reader with the `<head>`; the doubled base URL in the `text/markdown` alternate is fixed here and in `about`, `cookies`, `items/[slug]` and `pages/[slug]`; and the data-repository file layout is documented in the new `docs/guides/static-page-content.md` ([spec 048](spec/048-legal-pages-frontmatter-seo/spec.md), EW-17, PR #1045).
+- `spec-050`: added the blog reader surface for generated directory sites — `/blog` listing with configurable pagination and search, `/blog/[slug]` post pages, category and tag archives, `/blog/rss.xml`, sitemap entries and 21-locale strings, all reading `.content/posts/` through the existing `lib/content.ts` pipeline ([spec 050](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/050-blog-pages/spec.md), EW-25..EW-29).
+- `spec-048` `apps/web/lib/seo/{frontmatter,static-page-metadata}.ts` `apps/web/app/[locale]/{terms-of-service,privacy-policy}`: the two legal routes now build their SEO metadata from the data repository’s Markdown frontmatter (`title` / `description`) through the new `buildStaticPageMetadata()` helper, with the i18n strings kept as the fallback; both routes gain a `loading.tsx`; the `<h1>`, the "last updated" chip and `renderStaticPageMarkdown()` now share one non-empty-string frontmatter reader with the `<head>`; the doubled base URL in the `text/markdown` alternate is fixed here and in `about`, `cookies`, `items/[slug]` and `pages/[slug]`; and the data-repository file layout is documented in the new `docs/guides/static-page-content.md` ([spec 048](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/048-legal-pages-frontmatter-seo/spec.md), EW-17, PR #1045).
 - `spec-047`: the per-page `.md` Markdown mirrors were dead on every URL they
   advertise — the seven route handlers lived in `_`-prefixed folders, which the
   App Router drops from the route table, so the `next.config.ts` rewrite
@@ -21,7 +21,7 @@ sidebar_position: 99
   via a new dependency-free `apps/web/lib/i18n/locales.ts` that
   `lib/constants.ts` re-exports, and unknown category/tag slugs now 404 like
   their HTML pages
-  ([spec 047](spec/047-md-mirror-route-reachability/spec.md), PR #1050).
+  ([spec 047](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/047-md-mirror-route-reachability/spec.md), PR #1050).
 - `apps/web-e2e`: `md-mirror-routes.spec.ts` rewritten from `status < 500` (which
   a 404 satisfied, which is why the breakage above shipped and stayed) to the
   real contract — exactly 200, `text/markdown`, `X-Robots-Tag: noindex`, a body
@@ -55,27 +55,27 @@ sidebar_position: 99
   — so the pathname comparison is the load-bearing assertion. Covers the six
   static info pages, `/pages/<slug>` and a runtime-discovered item detail
   page, across the default and `/fr` locale prefixes (PR #1046).
-- `spec-053`: email two-factor authentication for client accounts — enable/disable card on `/client/settings/security`, hashed six-digit code emailed on every credentials sign-in, 10-minute expiry with resend, 5-failure / 15-minute database-tracked lockout, and OAuth-only accounts refused in the UI and at the API ([spec 053](spec/053-email-two-factor-auth/spec.md), [plan](spec/053-email-two-factor-auth/plan.md), [tasks](spec/053-email-two-factor-auth/tasks.md), Jira EW-135 … EW-142, PR #1048).
+- `spec-053`: email two-factor authentication for client accounts — enable/disable card on `/client/settings/security`, hashed six-digit code emailed on every credentials sign-in, 10-minute expiry with resend, 5-failure / 15-minute database-tracked lockout, and OAuth-only accounts refused in the UI and at the API ([spec 053](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/053-email-two-factor-auth/spec.md), [plan](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/053-email-two-factor-auth/plan.md), [tasks](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/053-email-two-factor-auth/tasks.md), Jira EW-135 … EW-142, PR #1048).
 - `docs/authentication`: added [Email Two-Factor Authentication](authentication/two-factor-auth.md) covering the member flow, the three `TWO_FACTOR_*` env vars, the operator unlock procedure, and the hash-only storage contract (PR #1048).
 - `questions`: added Q-047a — should admin `users` rows get email 2FA too? Default: no, client profiles only. Added Q-047b — should enabling 2FA require a verified email address? Default: allow, and guard only the unrecoverable no-mail-provider case. Added Q-047c — how should a session-free `/api` route resolve the tenant on a host-routed multi-tenant deployment? Resolved: `getTenantId()` falls back to the request's own `Host` when the proxy-injected `x-tenant-domain` is absent, which is what happens on every `/api` route (PR #1048).
 
 ## 2026-09-03
 
-- `spec-049`: added the visitor-facing FAQ page at `/faq` — content from the data repository (`pages/faq.<locale>.md`) with a built-in fallback FAQ, `FAQPage` JSON-LD generated from that content, footer + More-menu entries, sitemap / robots / `llms.txt` / `/faq.md` mirror wiring, i18n keys in all 21 locales, and Playwright coverage ([spec 049](049-faq-page/spec.md), EW-47, PR #1044).
-- `docs/features`: added `faq-page.md` (content contract, question detection, defaults and discovery) and indexed it in the docs sidebar ([spec 049](049-faq-page/spec.md), PR #1044).
-- `docs/features`: `seo.md` documented a `FAQPage` generator that did not exist; `lib/seo/schema.ts` now has one, and the page describes how the content contract drives it ([spec 049](049-faq-page/spec.md), PR #1044).
-- `questions`: added Q-049a — should the FAQ render as an accordion rather than plain prose ([spec 049](049-faq-page/spec.md), PR #1044).
-- `spec-046`: review follow-ups — the Markdown-to-text reduction that feeds the schema now keeps literal `*` and `_` (a page rendering `snake_case` was published as `snakecase`), removes raw HTML with a scanner run to a fixpoint instead of one `String.replace` pass (CodeQL `js/incomplete-multi-character-sanitization`), and `renderStaticPageMarkdown` falls back on an empty body the way the HTML pages already did, so no static page and its `.md` mirror can disagree. Added `apps/web/lib/seo/__tests__/faq-parser.spec.ts` ([spec 049](049-faq-page/spec.md), PR #1044).
-- `spec-046`: further review follow-ups on the same reduction — code spans and fenced blocks are now lifted out before any other rule and restored last (a page rendering `` `_setup_` `` was marked up as `_setup_` losing its underscores), `*` may open and close inside a word as CommonMark specifies while `_` may not, and the emphasis rules run to a fixpoint so nested spans such as `**bold *nested* text**` no longer leave their outer delimiters in the schema ([spec 049](049-faq-page/spec.md), PR #1044).
-- `spec-046`: third review round — `/faq` and the `/faq.md` mirror it advertises now share one emptiness rule (`resolveStaticPageBody`). A `faq.<locale>.md` whose frontmatter is followed by a blank line loads as `content: '\n\n'`, which is truthy, so the page rendered an empty body — losing its `FAQPage` rich result — while the mirror served the built-in FAQ. `/about`, `/cookies`, `/privacy-policy` and `/terms-of-service` resolve through the same helper. Adds `apps/web/lib/seo/__tests__/static-page-body.spec.ts` and an e2e cross-check that every question `/faq` marks up appears in `/faq.md` ([spec 049](049-faq-page/spec.md), PR #1044).
-- `spec-046`: EW-131 — the optional `pricing:` block of `.works/works.yml` is now documented field by field and validated on read: new `docs/configuration/works-yml-pricing.md` + complete `docs/configuration/examples/works-pricing.example.yml`, new `apps/web/lib/config/schemas/works-pricing.schema.ts` called from `getConfig()`, `provider` accepts `stripe`/`lemonsqueezy`/`polar`/`solidgate`/`manual` and `PRO` aliases `STANDARD`; a malformed block is logged per field and falls back to the built-in plans instead of throwing. `provider: manual` is carried through provider resolution rather than erased, so a site that declares it never starts an in-site checkout — distinct from omitting `provider`, which keeps the Stripe default ([spec 046](spec/046-works-yml-pricing-config/spec.md), PR #1043).
-- `docs/payment`: `payment.md` "Configure Pricing Plans" and `configuration/payment-config.md` now point at the full `works.yml` pricing reference and document `provider: manual` + the `PRO` alias ([spec 046](spec/046-works-yml-pricing-config/spec.md), PR #1043).
-- `questions`: added Q-046a (should `provider: manual` render its own pricing surface?) and Q-046b (should a malformed `pricing:` block ever be fatal?), both with chosen defaults ([spec 046](spec/046-works-yml-pricing-config/spec.md), PR #1043).
-- `spec-051`: admin **Billing Issues** queue at `/admin/billing-issues` — payment problems derived from the payment records the site already stores (failed charges, disputed/refund cases, subscriptions stuck pending or expired-while-renewing), with mark-resolved/dismissed and a refund issued through the provider named on the underlying subscription. Adds the `billing_issues` triage table (migration `0040`) and wires the previously caller-less `PaymentProviderInterface.refundPayment` seam; money state stays on `subscriptions` ([spec 051](spec/051-admin-billing-issues/spec.md), Jira EW-116, PR #1049).
-- `spec-052`: admin **Payment Reports** at `/admin/payment-reports` — the stored payment records filtered by date range, plan, provider and status, with roll-ups by currency/plan/provider/status and CSV + XLSX export sharing one filter validator with the JSON view. PDF deliberately not shipped; see Q-052-1 ([spec 052](spec/052-admin-payment-reports/spec.md), Jira EW-117, PR #1049).
+- `spec-049`: added the visitor-facing FAQ page at `/faq` — content from the data repository (`pages/faq.<locale>.md`) with a built-in fallback FAQ, `FAQPage` JSON-LD generated from that content, footer + More-menu entries, sitemap / robots / `llms.txt` / `/faq.md` mirror wiring, i18n keys in all 21 locales, and Playwright coverage ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), EW-47, PR #1044).
+- `docs/features`: added `faq-page.md` (content contract, question detection, defaults and discovery) and indexed it in the docs sidebar ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), PR #1044).
+- `docs/features`: `seo.md` documented a `FAQPage` generator that did not exist; `lib/seo/schema.ts` now has one, and the page describes how the content contract drives it ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), PR #1044).
+- `questions`: added Q-049a — should the FAQ render as an accordion rather than plain prose ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), PR #1044).
+- `spec-046`: review follow-ups — the Markdown-to-text reduction that feeds the schema now keeps literal `*` and `_` (a page rendering `snake_case` was published as `snakecase`), removes raw HTML with a scanner run to a fixpoint instead of one `String.replace` pass (CodeQL `js/incomplete-multi-character-sanitization`), and `renderStaticPageMarkdown` falls back on an empty body the way the HTML pages already did, so no static page and its `.md` mirror can disagree. Added `apps/web/lib/seo/__tests__/faq-parser.spec.ts` ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), PR #1044).
+- `spec-046`: further review follow-ups on the same reduction — code spans and fenced blocks are now lifted out before any other rule and restored last (a page rendering `` `_setup_` `` was marked up as `_setup_` losing its underscores), `*` may open and close inside a word as CommonMark specifies while `_` may not, and the emphasis rules run to a fixpoint so nested spans such as `**bold *nested* text**` no longer leave their outer delimiters in the schema ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), PR #1044).
+- `spec-046`: third review round — `/faq` and the `/faq.md` mirror it advertises now share one emptiness rule (`resolveStaticPageBody`). A `faq.<locale>.md` whose frontmatter is followed by a blank line loads as `content: '\n\n'`, which is truthy, so the page rendered an empty body — losing its `FAQPage` rich result — while the mirror served the built-in FAQ. `/about`, `/cookies`, `/privacy-policy` and `/terms-of-service` resolve through the same helper. Adds `apps/web/lib/seo/__tests__/static-page-body.spec.ts` and an e2e cross-check that every question `/faq` marks up appears in `/faq.md` ([spec 049](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/049-faq-page/spec.md), PR #1044).
+- `spec-046`: EW-131 — the optional `pricing:` block of `.works/works.yml` is now documented field by field and validated on read: new `docs/configuration/works-yml-pricing.md` + complete `docs/configuration/examples/works-pricing.example.yml`, new `apps/web/lib/config/schemas/works-pricing.schema.ts` called from `getConfig()`, `provider` accepts `stripe`/`lemonsqueezy`/`polar`/`solidgate`/`manual` and `PRO` aliases `STANDARD`; a malformed block is logged per field and falls back to the built-in plans instead of throwing. `provider: manual` is carried through provider resolution rather than erased, so a site that declares it never starts an in-site checkout — distinct from omitting `provider`, which keeps the Stripe default ([spec 046](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/046-works-yml-pricing-config/spec.md), PR #1043).
+- `docs/payment`: `payment.md` "Configure Pricing Plans" and `configuration/payment-config.md` now point at the full `works.yml` pricing reference and document `provider: manual` + the `PRO` alias ([spec 046](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/046-works-yml-pricing-config/spec.md), PR #1043).
+- `questions`: added Q-046a (should `provider: manual` render its own pricing surface?) and Q-046b (should a malformed `pricing:` block ever be fatal?), both with chosen defaults ([spec 046](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/046-works-yml-pricing-config/spec.md), PR #1043).
+- `spec-051`: admin **Billing Issues** queue at `/admin/billing-issues` — payment problems derived from the payment records the site already stores (failed charges, disputed/refund cases, subscriptions stuck pending or expired-while-renewing), with mark-resolved/dismissed and a refund issued through the provider named on the underlying subscription. Adds the `billing_issues` triage table (migration `0040`) and wires the previously caller-less `PaymentProviderInterface.refundPayment` seam; money state stays on `subscriptions` ([spec 051](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/051-admin-billing-issues/spec.md), Jira EW-116, PR #1049).
+- `spec-052`: admin **Payment Reports** at `/admin/payment-reports` — the stored payment records filtered by date range, plan, provider and status, with roll-ups by currency/plan/provider/status and CSV + XLSX export sharing one filter validator with the JSON view. PDF deliberately not shipped; see Q-052-1 ([spec 052](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/052-admin-payment-reports/spec.md), Jira EW-117, PR #1049).
 - `spec-051`/`spec-052` review follow-ups (same PR): unit boundaries made explicit and per-currency (`subscriptions.amount*` are MAJOR units, `billing_issues.amount` is minor, provider adapters take major — see the table in spec 051 §9); refunds are claimed atomically via `billing_issues.refund_claimed_at` before any provider call; report roll-ups are grouped by currency; revenue no longer falls back from `amount_paid = 0` to the scheduled amount; an over-cap export is refused rather than truncated; date filters reject calendar-invalid values such as `2026-02-30`.
-- `spec-051`/`spec-052` review round 3 (same PR): both writing POST routes test the RAW body for emptiness instead of a trimmed copy — a whitespace-only payload was reading as "no body supplied", which on `.../refund` meant a full irreversible refund; and `/api/admin/payment-reports` now applies the same strict whole-integer pagination pre-check the billing-issues list uses, so `limit=3.5` is a 400 rather than a 200 carrying a page size nobody asked for ([spec 051](spec/051-admin-billing-issues/spec.md) §9, [spec 052](spec/052-admin-payment-reports/spec.md) §9, PR #1049).
-- `spec-051`/`spec-052` review round 4 (same PR): `POST .../refund` now treats ONLY an absent `amount` key as "refund the whole charge" — `{"amount": null}` and `{"amount": ""}`, the shapes a truncated payload arrives in, were skipping validation and issuing a FULL refund, and `Number()` coercion was turning `true` into a 1-unit partial refund; the failed-payment webhook can now adopt a payment intent onto an issue whose stored reference is NULL (`ne(col, x)` is never true against NULL in SQL, so exactly the issues with no refund target could never gain one); the report export reads one snapshot that is both the file's rows and the input to its summary, so a concurrent payment can no longer truncate the file while the summary counts rows it does not contain; the refund dialog rejects sub-unit precision instead of rounding the typed amount; and the billing-issues queue renders a load failure instead of "No billing issues" ([spec 051](spec/051-admin-billing-issues/spec.md) §9, [spec 052](spec/052-admin-payment-reports/spec.md) §9, PR #1049).
+- `spec-051`/`spec-052` review round 3 (same PR): both writing POST routes test the RAW body for emptiness instead of a trimmed copy — a whitespace-only payload was reading as "no body supplied", which on `.../refund` meant a full irreversible refund; and `/api/admin/payment-reports` now applies the same strict whole-integer pagination pre-check the billing-issues list uses, so `limit=3.5` is a 400 rather than a 200 carrying a page size nobody asked for ([spec 051](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/051-admin-billing-issues/spec.md) §9, [spec 052](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/052-admin-payment-reports/spec.md) §9, PR #1049).
+- `spec-051`/`spec-052` review round 4 (same PR): `POST .../refund` now treats ONLY an absent `amount` key as "refund the whole charge" — `{"amount": null}` and `{"amount": ""}`, the shapes a truncated payload arrives in, were skipping validation and issuing a FULL refund, and `Number()` coercion was turning `true` into a 1-unit partial refund; the failed-payment webhook can now adopt a payment intent onto an issue whose stored reference is NULL (`ne(col, x)` is never true against NULL in SQL, so exactly the issues with no refund target could never gain one); the report export reads one snapshot that is both the file's rows and the input to its summary, so a concurrent payment can no longer truncate the file while the summary counts rows it does not contain; the refund dialog rejects sub-unit precision instead of rounding the typed amount; and the billing-issues queue renders a load failure instead of "No billing issues" ([spec 051](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/051-admin-billing-issues/spec.md) §9, [spec 052](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/052-admin-payment-reports/spec.md) §9, PR #1049).
 - `questions`: added Q-051-1 — should a refund carry a provider-side idempotency key? Default: no, fix it in the payment-provider spec where the adapter interface lives.
 - `questions`: added Q-052-1 — should the payment report also export PDF? Default: CSV + XLSX only, no new dependency.
 - `spec-051`/`spec-052` renumbered from 046/047 (same PR): PR #1043 merged `spec-046` (`works-yml-pricing-config`) into `develop` first, so these two took the next numbers no other open PR claims. Directory names, index rows, `docs/log.md` and `docs/questions.md` ids (Q-051-1, Q-052-1) and every in-code `Spec 04x` comment move together; no behaviour changes.
@@ -83,7 +83,7 @@ sidebar_position: 99
 
 ## 2026-08-25
 
-- `spec-045`: documented and hardened the shared handler/`POST /api/stripe/platform-webhook` path, including HMAC fail-closed coverage, formatted payment amounts, and retry-safe event coordination ([spec 045](spec/045-shared-stripe-webhook-relay/spec.md), PR #1037).
+- `spec-045`: documented and hardened the shared handler/`POST /api/stripe/platform-webhook` path, including HMAC fail-closed coverage, formatted payment amounts, and retry-safe event coordination ([spec 045](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/045-shared-stripe-webhook-relay/spec.md), PR #1037).
 
 A running log of meaningful changes to documentation, specs, and the
 project's living-document set (constitution, agent rules, plans). One
@@ -116,8 +116,8 @@ why** at a higher level than per-commit diffs.
 
 ## 2026-08-22
 
-- spec-042: site identity metadata — `<title>` / meta description / `og:site_name` / WebSite JSON-LD / OG images now resolve from the Work's `.works/works.yml` (`company_name`, `name`, `settings.homepage.hero_*`) via `lib/seo/site-identity.ts` when `NEXT_PUBLIC_SITE_*` are unset ([spec](spec/042-site-identity-metadata/spec.md), #1019)
-- spec-043: `/docs` API reference embed fixed — route-scoped `X-Frame-Options: SAMEORIGIN` + CSP (`frame-ancestors 'self'`, `cdn.jsdelivr.net`) for `/api/reference` in `next.config.ts`; e2e asserts the headers and that the iframe document mounts ([spec](spec/043-docs-api-reference-embed/spec.md))
+- spec-042: site identity metadata — `<title>` / meta description / `og:site_name` / WebSite JSON-LD / OG images now resolve from the Work's `.works/works.yml` (`company_name`, `name`, `settings.homepage.hero_*`) via `lib/seo/site-identity.ts` when `NEXT_PUBLIC_SITE_*` are unset ([spec](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/042-site-identity-metadata/spec.md), #1019)
+- spec-043: `/docs` API reference embed fixed — route-scoped `X-Frame-Options: SAMEORIGIN` + CSP (`frame-ancestors 'self'`, `cdn.jsdelivr.net`) for `/api/reference` in `next.config.ts`; e2e asserts the headers and that the iframe document mounts ([spec](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/043-docs-api-reference-embed/spec.md))
 
 ## 2026-08-22 — Feat: public payment config served at runtime (spec 044)
 
@@ -130,7 +130,7 @@ why** at a higher level than per-commit diffs.
   therefore saw `undefined` even when the server had `STRIPE_SECRET_KEY` et al. —
   every platform-deployed `/pricing` rendered only the FREE card plus a "Payment
   failed: Payment system is not configured" toast on load.
-  ([spec](spec/044-public-payment-config/spec.md))
+  ([spec](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/044-public-payment-config/spec.md))
 - New `GET /api/payment/public-config` (`force-dynamic`, `Cache-Control: no-store`)
   returns `{ stripePublishableKey, dynamicPricing, demo, configuredProviders }`
   from the server's runtime env — public values only, never secrets. Shared pure
@@ -1602,7 +1602,7 @@ prevent the double-fire that originally motivated all of this.
 
 - `spec-027` New spec `docs/spec/027-client-notifications/` (spec + plan +
   tasks) delivering the client-facing surface of
-  [`013-notifications-system`](spec/013-notifications-system/spec.md): header
+  [`013-notifications-system`](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/013-notifications-system/spec.md): header
   bell + dropdown, `/client/notifications` inbox, `/client/notifications/preferences`
   matrix, SSE real-time delivery, and a service-layer `dispatch()` that resolves
   per-user preferences, applies group-key deduplication, and fans out through
@@ -2419,13 +2419,13 @@ desc(featuredItems.featuredAt)` multi-key
   the no-arg baseline; this per-source-file spec
   adds the **query-param surface**), the
   neighbouring auth-gated admin sibling
-  [`admin-featured-items-id-method-spec.md`](admin-featured-items-id-method-spec.md),
+  [`admin-featured-items-id-method-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-featured-items-id-method-spec.md),
   the neighbouring admin listing sibling
-  [`admin-featured-items-create-body-spec.md`](admin-featured-items-create-body-spec.md),
+  [`admin-featured-items-create-body-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-featured-items-create-body-spec.md),
   the neighbouring popularity-scores sibling
-  [`items-popularity-scores-query-spec.md`](items-popularity-scores-query-spec.md),
+  [`items-popularity-scores-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/items-popularity-scores-query-spec.md),
   the neighbouring sponsor-ads sibling
-  [`sponsor-ads-checkout-body-spec.md`](sponsor-ads-checkout-body-spec.md),
+  [`sponsor-ads-checkout-body-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/sponsor-ads-checkout-body-spec.md),
   and the change protocol (update this page in the
   same PR that touches the source spec, update
   `docs/log.md`, run `pnpm tsc --noEmit` in
@@ -2559,12 +2559,12 @@ spec adds the **query-param surface** + the
 **SQL-injection invariance contract** + the
 **canonical-envelope shape assertion**), the
 neighbouring
-[`internal-db-init-query-spec.md`](internal-db-init-query-spec.md)
+[`internal-db-init-query-spec.md`](https://github.com/ever-works/directory-web-template/tree/develop/docs/plugins)
 (documents the related `/api/internal/db-init`
 surface that complements the database-health
 endpoint -- init-time vs probe-time database
 surfaces), the neighbouring
-[`cron-sync-query-spec.md`](cron-sync-query-spec.md)
+[`cron-sync-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/cron-sync-query-spec.md)
 (another zero-argument GET handler that mirrors
 this spec's bare `GET()`signature posture), and
 the change protocol (update this page in the
@@ -2661,24 +2661,24 @@ pinning a tighter`[200, 500]` two-valid-status
                         'Unauthorized. Admin access required.'`AND
                         `body.error !== 'Forbidden'`), the cross-
                         references to the neighbouring per-id sibling
-                        [`admin-clients-clientid-method-spec.md`](admin-clients-clientid-method-spec.md),
+                        [`admin-clients-clientid-method-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-clients-clientid-method-spec.md),
                         the neighbouring bulk sibling
-                        [`admin-clients-bulk-method-spec.md`](admin-clients-bulk-method-spec.md),
+                        [`admin-clients-bulk-method-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-clients-bulk-method-spec.md),
                         the neighbouring create sibling
-                        [`admin-clients-create-body-spec.md`](admin-clients-create-body-spec.md)
+                        [`admin-clients-create-body-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-clients-create-body-spec.md)
                         (the two per-source-file specs together pin
                         both the `POST`body surface and the`GET`
                         query surface on the SAME route file), the
                         shared admin-clients page-object driver
-                        [`admin-clients-page-object.md`](admin-clients-page-object.md),
+                        [`admin-clients-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-clients-page-object.md),
                         the prior per-source-file admin-tree GET
                         smokes
-                        [`admin-roles-query-spec.md`](admin-roles-query-spec.md),
-                        [`admin-roles-active-query-spec.md`](admin-roles-active-query-spec.md),
-                        [`admin-sponsor-ads-query-spec.md`](admin-sponsor-ads-query-spec.md),
-                        [`admin-twenty-crm-config-query-spec.md`](admin-twenty-crm-config-query-spec.md),
-                        [`admin-settings-map-status-query-spec.md`](admin-settings-map-status-query-spec.md),
-                        [`admin-tags-all-query-spec.md`](admin-tags-all-query-spec.md),
+                        [`admin-roles-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-roles-query-spec.md),
+                        [`admin-roles-active-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-roles-active-query-spec.md),
+                        [`admin-sponsor-ads-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-sponsor-ads-query-spec.md),
+                        [`admin-twenty-crm-config-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-twenty-crm-config-query-spec.md),
+                        [`admin-settings-map-status-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-settings-map-status-query-spec.md),
+                        [`admin-tags-all-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-tags-all-query-spec.md),
                         the admin-protected coverage spec
                         [`admin-protected-extra.spec.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/tests/api/admin-protected-extra.spec.ts)
                         (covers this route at the broad `< 500`level;
@@ -3070,7 +3070,7 @@ in to continue.'` longer-message TWO-key 401
                         `apps/web/app/api/auth/change-password/route.ts` --
                         the **bare-baseline companion** to the already-
                         documented
-                        [`auth-change-password-body-spec.md`](plugins/auth-change-password-body-spec.md)
+                        [`auth-change-password-body-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-change-password-body-spec.md)
                         landing page (paired with the rich-permutation
                         `auth-change-password-body.spec.ts`). The body
                         sibling pins the rate-limit-FIRST gate posture, the
@@ -3479,7 +3479,7 @@ fetch response'` (singular) 500-catch helper that
   is distinct from the plural-collection sibling's
   `'Failed to fetch responses'`. Pairs with a new
   per-source-file docs reference at
-  [`docs/plugins/surveys-responses-id-query-spec.md`](plugins/surveys-responses-id-query-spec.md).
+  [`docs/plugins/surveys-responses-id-query-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/surveys-responses-id-query-spec.md).
 - `docs/plugins` Added
   `surveys-id-responses-method-spec.md` — the
   **one-hundred-and-twelfth** per-source-file
@@ -3504,7 +3504,7 @@ fetch response'` (singular) 500-catch helper that
   `itemId` contract (handler IGNORES caller-supplied
   `itemId`), and a `201 Created` success status.
   Pairs with a new per-source-file docs reference at
-  [`docs/plugins/surveys-id-responses-method-spec.md`](plugins/surveys-id-responses-method-spec.md).
+  [`docs/plugins/surveys-id-responses-method-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/surveys-id-responses-method-spec.md).
 - `docs/plugins` Added
   `client-items-import-validate-method-spec.md` —
   the **one-hundred-and-eleventh** per-source-file
@@ -9114,8 +9114,8 @@ array.'` on `!body.rows || !Array.isArray(body.rows)`,
   a malformed-JSON-body invariance walk pinning the
   gate-before-body-parse order). Cross-references to
   the sibling per-spec-file references and to
-  [Spec 010 — E2E Test Coverage](spec/010-e2e-test-coverage/spec.md)
-  and [Spec 009 — Admin Dashboard](spec/009-admin-dashboard/spec.md)
+  [Spec 010 — E2E Test Coverage](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md)
+  and [Spec 009 — Admin Dashboard](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md)
   for the governing specs. With this entry the
   **per-spec-file docs rollout extends to
   12-of-N** and the **`tests/api/` per-spec-file
@@ -9172,8 +9172,8 @@ Bearer` / `X-Api-Key` / `X-Admin-Token` headers;
   / DELETE round-trip to `< 500`; a strict
   envelope-shape assertion). Cross-references to
   the sibling per-spec-file references and to
-  [Spec 010 — E2E Test Coverage](spec/010-e2e-test-coverage/spec.md)
-  and [Spec 009 — Admin Dashboard](spec/009-admin-dashboard/spec.md)
+  [Spec 010 — E2E Test Coverage](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md)
+  and [Spec 009 — Admin Dashboard](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md)
   for the governing specs. With this entry the
   **per-spec-file docs rollout extends to
   11-of-N** and the **`tests/api/` per-spec-file
@@ -9227,8 +9227,8 @@ Bearer` / `X-Api-Key` / `X-Admin-Token` headers;
   collation-sensitivity / leading-trailing-space).
   Cross-references to the sibling per-spec-file
   references and to
-  [Spec 010 — E2E Test Coverage](spec/010-e2e-test-coverage/spec.md)
-  and [Spec 009 — Admin Dashboard](spec/009-admin-dashboard/spec.md)
+  [Spec 010 — E2E Test Coverage](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md)
+  and [Spec 009 — Admin Dashboard](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md)
   for the governing specs. With this entry the
   **per-spec-file docs rollout extends to
   10-of-N** and the **`tests/api/` per-spec-file
@@ -9294,8 +9294,8 @@ Bearer` / `X-Api-Key` / `X-Admin-Token` headers;
   that runs the email validation before the gate
   would surface here. Cross-references to the
   sibling per-spec-file references and to
-  [Spec 010 — E2E Test Coverage](spec/010-e2e-test-coverage/spec.md)
-  and [Spec 009 — Admin Dashboard](spec/009-admin-dashboard/spec.md)
+  [Spec 010 — E2E Test Coverage](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md)
+  and [Spec 009 — Admin Dashboard](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md)
   for the governing specs. With this entry the
   **per-spec-file docs rollout extends to 9-of-N**
   and the **`tests/api/` per-spec-file sub-rollout
@@ -9375,8 +9375,8 @@ Bearer` / `X-Api-Key` / `X-Admin-Token` headers;
   `admin-data-export-page-object.md`,
   `admin-item-form-page-object.md`,
   `admin-items-page-object.md`, and to
-  [Spec 010 — E2E Test Coverage](spec/010-e2e-test-coverage/spec.md)
-  and [Spec 009 — Admin Dashboard](spec/009-admin-dashboard/spec.md)
+  [Spec 010 — E2E Test Coverage](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md)
+  and [Spec 009 — Admin Dashboard](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md)
   for the governing specs. With this entry the
   **per-spec-file docs rollout extends to 8-of-N**
   and the **`tests/api/` per-spec-file sub-rollout
@@ -9450,8 +9450,8 @@ Bearer` / `X-Api-Key` / `X-Admin-Token` headers;
   `admin-sponsor-ads-query-spec.md`,
   `admin-roles-query-spec.md`,
   `admin-roles-page-object.md`, and to
-  [Spec 010 — E2E Test Coverage](spec/010-e2e-test-coverage/spec.md)
-  and [Spec 009 — Admin Dashboard](spec/009-admin-dashboard/spec.md).
+  [Spec 010 — E2E Test Coverage](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md)
+  and [Spec 009 — Admin Dashboard](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md).
   With this entry the per-spec-file docs rollout
   extends to 7-of-N and the `tests/api/` per-spec-
   file sub-rollout extends to 5-of-many, and the
@@ -9591,15 +9591,15 @@ carry an explicit auth() gate?`) — surfaces the
   tree publishes for any file under
   `apps/web-e2e/tests/`, **continuing the per-spec-
   file docs rollout** opened by
-  [`smoke-health-spec.md`](plugins/smoke-health-spec.md)
+  [`smoke-health-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/smoke-health-spec.md)
   and **closing the smoke tree at 2-of-2** (the
   `tests/smoke/` directory has exactly two `*.spec.ts`
   files; both now have docs anchors). Where the
-  sibling [`smoke-health-spec.md`](plugins/smoke-health-spec.md)
+  sibling [`smoke-health-spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/smoke-health-spec.md)
   documents a **data-driven, breadth-first** smoke
   posture (one `test()` per route in a shared
   `PUBLIC_ROUTES` constant from
-  [`e2e-test-data.md`](plugins/e2e-test-data.md),
+  [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md),
   body-visibility-only assertions), this page
   documents the **hand-crafted, depth-first**
   smoke posture — four hand-written `test()`
@@ -9629,7 +9629,7 @@ carry an explicit auth() gate?`) — surfaces the
   accessibility tree, resilience to URL refactor,
   cross-locale coverage with the `locale: 'en-US'`
   use-flag from
-  [`playwright-config.md`](plugins/playwright-config.md));
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md));
   (d) the **why 30-second `expect.toBeVisible({
 timeout: 30_000 })` override** rationale
   (deliberate self-documenting pin against future
@@ -9665,8 +9665,8 @@ timeout: 30_000 })` override** rationale
   at 17-of-17, the public-tree at 14-of-14, the
   client-tree at 6-of-6, plus the `auth/signin`
   and `base.page.ts` roots — see
-  [`base-page-object.md`](plugins/base-page-object.md)
-  and [`signin-page-object.md`](plugins/signin-page-object.md)).
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
+  and [`signin-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/signin-page-object.md)).
   Where the page-object docs rollout documented
   the **driver layer** (the `*.page.ts` files that
   encapsulate per-page Locator and helper APIs),
@@ -9681,16 +9681,16 @@ timeout: 30_000 })` override** rationale
   agnostic posture** — the spec imports the
   runtime test directly from `@playwright/test`
   rather than the project's auth-aware fixture
-  from [`fixtures-index.md`](plugins/fixtures-index.md),
+  from [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md),
   with three load-bearing reasons (session
   agnosticism, independence from
-  [`global-setup.md`](plugins/global-setup.md),
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md),
   and a smaller import graph); (b) a **data-
   driven test generation posture** — a single
   `for (const route of PUBLIC_ROUTES)` loop
   generates one Playwright `test()` per route in
   the shared `PUBLIC_ROUTES` constant from
-  [`e2e-test-data.md`](plugins/e2e-test-data.md);
+  [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md);
   (c) a **`waitUntil: 'domcontentloaded'` trade-
   off** — the second-earliest of Playwright's
   four wait conditions, trading full-page-load
@@ -9810,7 +9810,7 @@ timeout: 30_000 })` override** rationale
   that targets a **derived sub-route** of an existing
   client-tree page (the `/client/submissions/trash`
   route is a child of the `/client/submissions` route
-  the [`client-submissions-page-object.md`](./plugins/client-submissions-page-object.md)
+  the [`client-submissions-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/client-submissions-page-object.md)
   driver covers); (b) a **breadcrumb back-navigation
   Locator** (`backLink`) pinned via the
   `a[href*="/client/submissions"]` substring-attribute
@@ -10008,7 +10008,7 @@ timeout: 30_000 })` override** rationale
   `X-GitHub-Token` variant) / repeated-key
   permutations.
 - `docs/plugins` Added
-  [`client-submissions-page-object.md`](plugins/client-submissions-page-object.md)
+  [`client-submissions-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/client-submissions-page-object.md)
   — the **fourth per-source-file reference** the docs
   tree publishes for any file under
   `apps/web-e2e/page-objects/client/`, paired with
@@ -10315,7 +10315,7 @@ timeout: 30_000 })` override** rationale
   permutations. The sweep mirrors the shape of the
   sibling admin-gated query-smoke specs.
 - `docs/plugins` Added
-  [`client-dashboard-page-object.md`](plugins/client-dashboard-page-object.md) —
+  [`client-dashboard-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/client-dashboard-page-object.md) —
   per-source-file reference for the Playwright e2e
   suite's authenticated-client dashboard driver paired
   with
@@ -10323,7 +10323,7 @@ timeout: 30_000 })` override** rationale
   Opens the **client-tree page-object docs rollout
   (1-of-6)** mirroring the seventeen-file admin-tree
   rollout that completed at
-  [`admin-tags-page-object.md`](plugins/admin-tags-page-object.md).
+  [`admin-tags-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-tags-page-object.md).
   Documents the smallest-possible-surface posture
   (only a `navigate()` method plus three pre-bound
   `Locator` fields — `heading` / `statsGrid` /
@@ -10337,21 +10337,21 @@ timeout: 30_000 })` override** rationale
   greeting-string-tolerant resolver, the `.first()`
   strict-mode-correctness append on every Locator
   field, and the cross-references to
-  [`base-page-object.md`](plugins/base-page-object.md),
-  [`auth-fixture.md`](plugins/auth-fixture.md) (the
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md),
+  [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md) (the
   `clientPage` authenticated-page fixture consuming
-  specs use), [`signin-page-object.md`](plugins/signin-page-object.md)
+  specs use), [`signin-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/signin-page-object.md)
   (the auth-tree driver consuming specs depend on for
   the authenticated `clientPage` fixture's setup
-  precondition), [`admin-dashboard-page-object.md`](plugins/admin-dashboard-page-object.md)
+  precondition), [`admin-dashboard-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-dashboard-page-object.md)
   (the admin-area dashboard sibling concept),
-  [`discover-page-object.md`](plugins/discover-page-object.md)
+  [`discover-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/discover-page-object.md)
   (another smallest-possible-surface page-object
   posture this driver mirrors),
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) (the
-  `include` glob), [`playwright-config.md`](plugins/playwright-config.md)
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) (the
+  `include` glob), [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   (the `baseURL` posture), and
-  [`fixtures-index.md`](plugins/fixtures-index.md).
+  [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md).
   Pinned to the consuming spec at
   [`apps/web-e2e/tests/client/dashboard.spec.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/tests/client/dashboard.spec.ts)
   (three flows: authenticated client can access
@@ -10760,7 +10760,7 @@ null` and the `|| 'en'` default coerces null to a
   discriminator key (distinct from every other
   admin-tree route's envelope). Pinned to the co-
   tenant page-object reference at
-  [`docs/plugins/admin-surveys-page-object.md`](./plugins/admin-surveys-page-object.md)
+  [`docs/plugins/admin-surveys-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-surveys-page-object.md)
   via the `index.md` cross-reference. Sits alongside
   the seventeen prior admin-tree query-smoke specs
   (`admin-categories-query.spec.ts`,
@@ -11211,7 +11211,7 @@ null` and the `|| 'en'` default coerces null to a
   [`apps/web-e2e/page-objects/admin/notifications.page.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/page-objects/admin/notifications.page.ts).
   The notifications driver is the **first** admin-tree
   driver that does NOT extend
-  [`BasePage`](plugins/base-page-object.md) — by design,
+  [`BasePage`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md) — by design,
   because header-chrome dropdowns do not need the
   page-navigation helpers `BasePage` provides. Documents
   the four-`readonly`-Locator-field core surface
@@ -12174,7 +12174,7 @@ Admin access required." }` envelope assertion (the
   `apps/web-e2e/page-objects/admin/`, paired with
   [`apps/web-e2e/page-objects/admin/clients.page.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/page-objects/admin/clients.page.ts)
   and continuing the rollout the
-  [`admin-bulk-actions-page-object.md`](plugins/admin-bulk-actions-page-object.md)
+  [`admin-bulk-actions-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/admin-bulk-actions-page-object.md)
   template established. Documents the full surface for the
   `AdminClientsPage` driver — the two `readonly` Locator
   fields (`heading`, `addClientButton`), the four per-page
@@ -12511,8 +12511,8 @@ Admin access required." }` envelope assertion (the
   change the unauth branch, time-range params do not change
   the unauth branch, `?format=csv` does not introduce a
   content-negotiation bypass) and Accept-header invariance.
-  Closes a gap in [Spec 009](spec/009-admin-dashboard/spec.md)
-  and [Spec 010](spec/010-e2e-test-coverage/spec.md), and
+  Closes a gap in [Spec 009](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/009-admin-dashboard/spec.md)
+  and [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md), and
   complements
   [`protected.spec.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/tests/api/protected.spec.ts)'s
   broad-coverage `< 500` smoke against the same route.
@@ -12589,7 +12589,7 @@ text-red-400`" three-reason analysis; the "Why
   redirect-leak guard (`{ returnUrl: '<attacker.example>' }`
   must NOT echo the attacker URL in the unauth response
   body) and Accept-header invariance. Closes a gap in
-  [Spec 010](spec/010-e2e-test-coverage/spec.md) and
+  [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md) and
   complements
   [`payment-checkouts.spec.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/tests/api/payment-checkouts.spec.ts)'s
   broad-coverage `< 500` smoke against the same route.
@@ -12653,7 +12653,7 @@ text-red-400`" three-reason analysis; the "Why
   item-lookup `?slug=…` / `?itemId=…` keys do not change
   the unauth branch, `?format=geojson` does not introduce
   a content-negotiation bypass) and Accept-header
-  invariance. Closes a gap in [Spec 010](spec/010-e2e-test-coverage/spec.md).
+  invariance. Closes a gap in [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md).
 - `docs/plugins` Added `item-detail-page-object.md` — the
   **per-source-file reference** for the Playwright e2e
   suite's item-detail-page driver paired with
@@ -12716,7 +12716,7 @@ text-red-400`" three-reason analysis; the "Why
   three correlation invariants
   (`syncInProgress`/`lastSyncTime`/`timeSinceLastSync` /
   `timeSinceLastSyncHuman`) and Accept-header invariance.
-  Closes a gap in [Spec 010](spec/010-e2e-test-coverage/spec.md).
+  Closes a gap in [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md).
 - `docs/plugins` Added `language-switcher-page-object.md` — the
   **per-source-file reference** for the Playwright e2e
   suite's header locale-switcher driver paired with
@@ -13302,8 +13302,8 @@ Promise<number>` accessor that returns `window.scrollY`
   that count `button.count() === 1` and audit `aria-label`,
   the listing-page / item-detail-page production-source
   components for the DOM contract,
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) for the
-  `include` glob, [`playwright-config.md`](plugins/playwright-config.md)
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) for the
+  `include` glob, [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   for the `baseURL`) to the fields they touch; the read /
   write surface failure modes table that maps
   production-source / middleware / config drift onto
@@ -13312,16 +13312,16 @@ Promise<number>` accessor that returns `window.scrollY`
   `scroll-to-top.page.ts`-change checklist that ties any
   change to a spec audit (every spec under
   `apps/web-e2e/tests/public/scroll-to-top.spec.ts`), a
-  [`base-page-object.md`](plugins/base-page-object.md)
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   cross-check, a production-source cross-check (the exact
   `aria-label="Scroll to top"` attribute, the
   fixed-position floating shape, the ~300-pixel scroll
   threshold, the React-state-driven visibility flip), an
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) cross-check
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) cross-check
   (the `include: ["./**/*.ts"]` glob), a
-  [`playwright-config.md`](plugins/playwright-config.md)
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   cross-check (the `baseURL` posture), a
-  [`fixtures-index.md`](plugins/fixtures-index.md)
+  [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md)
   cross-check (a future fixture-bound scroll-to-top
   would surface there), dual `pnpm tsc --noEmit` runs
   (e2e + workspace root), a smoke-subset Playwright
@@ -13474,9 +13474,9 @@ list"` / `"List view"` / `"Show as a list"` and the
   future smoke / a11y specs that need the `mapButton`
   field for a feature-gated map-view spec, the
   listing-page production-source component for the DOM
-  contract, [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  contract, [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   for the `include` glob,
-  [`playwright-config.md`](plugins/playwright-config.md)
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   for the `baseURL`, [`features/map-view.md`](features/map-view.md)
   for the map-view feature gate) to the fields they
   touch; the read / write surface failure modes table
@@ -13486,19 +13486,19 @@ list"` / `"List view"` / `"Show as a list"` and the
   `mapButton` half-rendered failures; and the
   `view-toggle.page.ts`-change checklist that ties any
   change to a spec audit, a
-  [`base-page-object.md`](plugins/base-page-object.md)
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   cross-check (if the new shape inherits, document why),
   a production-source cross-check (the `aria-label`
   shape on every button, the `scale-105` Tailwind
   utility-class hook on the active button, the four
   button positions in the toggle row), a
-  [`discover-page-object.md`](plugins/discover-page-object.md)
+  [`discover-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/discover-page-object.md)
   cross-check (the `/discover/[N]` listing-route
   contract the consuming spec relies on), an
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   cross-check, a
-  [`playwright-config.md`](plugins/playwright-config.md)
-  cross-check, a [`fixtures-index.md`](plugins/fixtures-index.md)
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
+  cross-check, a [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md)
   cross-check (a future fixture-bound view-toggle would
   surface there), a [`features/map-view.md`](features/map-view.md)
   cross-check (if a future `selectMap()` method is
@@ -13646,9 +13646,9 @@ list"` / `"List view"` / `"Show as a list"` and the
   spec at `apps/web-e2e/tests/public/search.spec.ts`,
   future smoke / a11y specs that read `getValue()`, the
   production source for the listing's search input,
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) for the
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) for the
   `include` glob,
-  [`playwright-config.md`](plugins/playwright-config.md)
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   for the `baseURL`) to the fields they touch; the
   read / write surface failure modes table that maps
   production-source / middleware / config drift onto
@@ -13656,14 +13656,14 @@ list"` / `"List view"` / `"Show as a list"` and the
   and `clear-button-glyph-misses` failures; and the
   `search-bar.page.ts`-change checklist that ties any
   change to a spec audit, a
-  [`base-page-object.md`](plugins/base-page-object.md)
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   cross-check (if the new shape inherits, document why),
   a production-source cross-check (placeholder substring,
   `×` glyph, React-controlled value), an
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   cross-check, a
-  [`playwright-config.md`](plugins/playwright-config.md)
-  cross-check, a [`fixtures-index.md`](plugins/fixtures-index.md)
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
+  cross-check, a [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md)
   cross-check (a future fixture-bound search bar would
   surface there), dual `pnpm tsc --noEmit` runs (e2e +
   workspace root), a smoke-subset Playwright run
@@ -13725,9 +13725,9 @@ data: string[] }` when the feature is on. The spec
   [`apps/web-e2e/page-objects/public/discover.page.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/page-objects/public/discover.page.ts),
   sitting inside the `public/` page-object subtree
   alongside the fourteen other public-surface page objects.
-  Where [`base-page-object.md`](plugins/base-page-object.md)
+  Where [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   documents the **page-object inheritance root** and
-  [`theme-toggle-page-object.md`](plugins/theme-toggle-page-object.md)
+  [`theme-toggle-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/theme-toggle-page-object.md)
   documents the **suite's theme-switch driver boundary**
   under `apps/web-e2e/page-objects/public/`, this page
   documents the **suite's directory-listing driver
@@ -13801,11 +13801,11 @@ Locator` `page.getByRole('heading', { level: 1 })`
 found`, and `navigate timeout` failures; and the
   `discover.page.ts`-change checklist that ties any
   change to a spec audit, a
-  [`base-page-object.md`](plugins/base-page-object.md)
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   cross-check, a production-source cross-check, an
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
-  cross-check, a [`playwright-config.md`](plugins/playwright-config.md)
-  cross-check, a [`fixtures-index.md`](plugins/fixtures-index.md)
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
+  cross-check, a [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
+  cross-check, a [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md)
   cross-check, dual `pnpm tsc --noEmit` runs, a
   smoke-subset Playwright run, a [`docs/log.md`](log.md)
   entry, a Spec 010 cross-link, and a reviewer pass.
@@ -13870,9 +13870,9 @@ fetch countries'`) must never fire on a clean
   [`apps/web-e2e/page-objects/public/theme-toggle.page.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/page-objects/public/theme-toggle.page.ts),
   sitting inside the `public/` page-object subtree
   alongside the fourteen other public-surface page objects.
-  Where [`base-page-object.md`](plugins/base-page-object.md)
+  Where [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   documents the **page-object inheritance root** and
-  [`signin-page-object.md`](plugins/signin-page-object.md)
+  [`signin-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/signin-page-object.md)
   documents the **suite's sign-in surface boundary** under
   `apps/web-e2e/page-objects/auth/`, this page documents
   the **suite's theme-switch driver boundary** — the
@@ -13941,11 +13941,11 @@ fetch countries'`) must never fire on a clean
   middleware / config drift onto `Locator not found` and
   `isDarkMode()`-returns-false-in-dark-mode failures; and
   the `theme-toggle.page.ts`-change checklist that ties
-  any change to a spec audit, a [`base-page-object.md`](plugins/base-page-object.md)
+  any change to a spec audit, a [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   cross-check, a production-source cross-check, an
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) cross-check,
-  a [`playwright-config.md`](plugins/playwright-config.md)
-  cross-check, a [`fixtures-index.md`](plugins/fixtures-index.md)
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) cross-check,
+  a [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
+  cross-check, a [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md)
   cross-check, dual `pnpm tsc --noEmit` runs, a smoke-subset
   Playwright run, a [`docs/log.md`](log.md) entry, a Spec
   010 cross-link, and a reviewer pass.
@@ -13993,14 +13993,14 @@ fetch countries'`) must never fire on a clean
   suite's sole `auth/`-tree page object paired with
   [`apps/web-e2e/page-objects/auth/signin.page.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/page-objects/auth/signin.page.ts),
   sitting at the root of the `auth/` page-object subtree
-  the same way [`base-page-object.md`](plugins/base-page-object.md)
+  the same way [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md)
   sits at the root of the page-objects tree as a whole,
-  [`fixtures-index.md`](plugins/fixtures-index.md) sits at
+  [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md) sits at
   the root of the fixtures tree, and
-  [`e2e-test-data.md`](plugins/e2e-test-data.md) sits at the
+  [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md) sits at the
   root of the helpers tree. Where `base-page-object.md`
   documents the **page-object inheritance root** and
-  [`auth-fixture.md`](plugins/auth-fixture.md) documents
+  [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md) documents
   the **suite's authenticated-fixture boundary** that turns
   the persisted storage states minted at pre-flight into
   per-test isolated contexts, this page documents the
@@ -14055,15 +14055,15 @@ fetch countries'`) must never fire on a clean
   read / write surface summary that maps every caller to
   the fields they touch; and the `signin.page.ts`-change
   checklist with cross-checks against
-  [`base-page-object.md`](plugins/base-page-object.md), the
+  [`base-page-object.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/base-page-object.md), the
   production sign-in form components under
   `apps/web/components/auth/**` and the route under
   `apps/web/app/[locale]/auth/signin/`,
-  [`auth-fixture.md`](plugins/auth-fixture.md),
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md),
-  [`e2e-package-manifest.md`](plugins/e2e-package-manifest.md),
-  [`playwright-config.md`](plugins/playwright-config.md),
-  and [`global-setup.md`](plugins/global-setup.md). Linked
+  [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md),
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md),
+  [`e2e-package-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-package-manifest.md),
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md),
+  and [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md). Linked
   from `docs/index.md`. Spec 010 cross-link.
 - `apps/web-e2e` Added `tests/api/payments-query.spec.ts` —
   a smoke spec covering the **query-param surface** of the
@@ -14111,9 +14111,9 @@ getCustomerId() → stripe.list()` chain and the same
   every `pnpm tsc --noEmit`, every `pnpm build`, every
   `pnpm test:e2e` run, and every CI `actions/checkout`
   step decide whether to track. Sits at the workspace root
-  the same way [`pnpm-workspace.md`](plugins/pnpm-workspace.md)
+  the same way [`pnpm-workspace.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/pnpm-workspace.md)
   sits at the root for workspace membership and
-  [`turbo-config.md`](plugins/turbo-config.md) sits at the
+  [`turbo-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/turbo-config.md) sits at the
   root for task orchestration. Where `pnpm-workspace.md`
   documents the **workspace-membership boundary** and
   `turbo-config.md` documents the **task-graph boundary**,
@@ -14126,8 +14126,8 @@ getCustomerId() → stripe.list()` chain and the same
   `# turbo`, `# testing` (covering the security-critical
   `**/auth-states/` pattern protecting the persisted
   NextAuth session cookies documented in
-  [`auth-fixture.md`](plugins/auth-fixture.md) and
-  [`global-setup.md`](plugins/global-setup.md)),
+  [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md) and
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md)),
   `# next.js`, `# docusaurus`, `# production`, `# misc`,
   `# debug`, `# env files` (covering the security-critical
   `.env*` glob plus `!.env.example` re-include — the
@@ -14153,12 +14153,12 @@ backups` (three patterns exhaustively covering the
   regression on the `.env*` and `**/auth-states/` blocks);
   the per-section walkthrough table; and the
   `.gitignore`-change checklist with cross-checks against
-  [`auth-fixture.md`](plugins/auth-fixture.md),
-  [`global-setup.md`](plugins/global-setup.md),
-  [`e2e-test-data.md`](plugins/e2e-test-data.md),
-  [`playwright-config.md`](plugins/playwright-config.md),
-  [`workspace-root-manifest.md`](plugins/workspace-root-manifest.md),
-  and [`turbo-config.md`](plugins/turbo-config.md). Linked
+  [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md),
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md),
+  [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md),
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md),
+  [`workspace-root-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/workspace-root-manifest.md),
+  and [`turbo-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/turbo-config.md). Linked
   from `docs/index.md`. Spec 010 cross-link.
 - `apps/web-e2e` Added `tests/api/subscription-query.spec.ts` —
   a smoke spec covering the **query-param surface** of the
@@ -14195,9 +14195,9 @@ backups` (three patterns exhaustively covering the
   [`apps/web-e2e/page-objects/base.page.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/page-objects/base.page.ts),
   the page-object inheritance root sitting at
   `apps/web-e2e/page-objects/base.page.ts` the same way
-  [`fixtures-index.md`](plugins/fixtures-index.md) sits at
+  [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md) sits at
   the root of the fixtures tree and
-  [`e2e-test-data.md`](plugins/e2e-test-data.md) sits at the
+  [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md) sits at the
   root of the helpers tree. Where `fixtures-index.md`
   documents the **directory-level fixture-export boundary**
   and `e2e-test-data.md` documents the **suite's
@@ -14229,11 +14229,11 @@ backups` (three patterns exhaustively covering the
   failure matrix covering every base-class-level mistake;
   the per-line walkthrough table; and the `base.page.ts`-change
   checklist with cross-checks against
-  [`fixtures-index.md`](plugins/fixtures-index.md),
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md),
-  [`e2e-package-manifest.md`](plugins/e2e-package-manifest.md),
-  [`playwright-config.md`](plugins/playwright-config.md),
-  and [`auth-fixture.md`](plugins/auth-fixture.md). Linked
+  [`fixtures-index.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/fixtures-index.md),
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md),
+  [`e2e-package-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-package-manifest.md),
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md),
+  and [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md). Linked
   from `docs/index.md`. Spec 010 cross-link.
 - `apps/web-e2e` Added `tests/api/plan-status-query.spec.ts` —
   a smoke spec covering the **query-param surface** of the
@@ -14261,7 +14261,7 @@ backups` (three patterns exhaustively covering the
   suite's fixtures-directory barrel module paired with
   [`apps/web-e2e/fixtures/index.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/fixtures/index.ts),
   the directory-level public-surface companion to
-  [`auth-fixture.md`](plugins/auth-fixture.md) (which the
+  [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md) (which the
   barrel re-exports from). Documents the single
   `export { test, expect } from './auth.fixture'`
   re-export statement that turns the `fixtures/` directory
@@ -14287,9 +14287,9 @@ backups` (three patterns exhaustively covering the
   lowest-coupling named-re-export shape; the failure matrix
   covering every barrel-level mistake; the per-line
   walkthrough table; and the `index.ts`-change checklist
-  with cross-checks against [`auth-fixture.md`](plugins/auth-fixture.md),
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md), and
-  [`e2e-package-manifest.md`](plugins/e2e-package-manifest.md).
+  with cross-checks against [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md),
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md), and
+  [`e2e-package-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-package-manifest.md).
   Linked from `docs/index.md`. Spec 010 cross-link.
 - `apps/web-e2e` Added `tests/api/geocode-query.spec.ts` —
   a smoke spec covering the **query-param surface** and the
@@ -14314,10 +14314,10 @@ backups` (three patterns exhaustively covering the
   suite's package manifest paired with
   [`apps/web-e2e/package.json`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/package.json),
   the test-only manifest companion to the four runtime-manifest
-  references ([`workspace-root-manifest.md`](plugins/workspace-root-manifest.md),
-  [`runtime-package-manifest.md`](plugins/runtime-package-manifest.md),
-  [`sdk-package-manifest.md`](plugins/sdk-package-manifest.md),
-  [`plugin-demo-package-manifest.md`](plugins/plugin-demo-package-manifest.md)).
+  references ([`workspace-root-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/workspace-root-manifest.md),
+  [`runtime-package-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/runtime-package-manifest.md),
+  [`sdk-package-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/sdk-package-manifest.md),
+  [`plugin-demo-package-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/plugin-demo-package-manifest.md)).
   Where those four document the manifest of a host-app or
   library workspace member, this one documents the manifest of
   a **test-only** workspace member that ships no runtime
@@ -14362,17 +14362,17 @@ backups` (three patterns exhaustively covering the
     the layer that surfaces it; the per-line walkthrough table;
     and the `package.json`-change checklist that ties any field
     change to the appropriate cross-check
-    ([`pnpm-workspace.md`](plugins/pnpm-workspace.md) on `name`
-    change, [`playwright-config.md`](plugins/playwright-config.md)
+    ([`pnpm-workspace.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/pnpm-workspace.md) on `name`
+    change, [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
     on Playwright or dotenv change,
-    [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) on tsconfig or
+    [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) on tsconfig or
     typescript change,
-    [`auth-fixture.md`](plugins/auth-fixture.md) on Playwright
-    major bump, [`e2e-test-data.md`](plugins/e2e-test-data.md)
+    [`auth-fixture.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/auth-fixture.md) on Playwright
+    major bump, [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md)
     on Faker major bump,
-    [`turbo-config.md`](plugins/turbo-config.md) on new
+    [`turbo-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/turbo-config.md) on new
     workspace-spanning script,
-    [`workspace-root-manifest.md`](plugins/workspace-root-manifest.md)
+    [`workspace-root-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/workspace-root-manifest.md)
     on inherited posture divergence), a `pnpm install`
     round-trip, a dual `pnpm tsc --noEmit` gate run, a
     smoke-subset Playwright run, a
@@ -14433,11 +14433,11 @@ null }` with status 200; the `try / catch` block degrades to
   authenticated-context fixture paired with
   [`apps/web-e2e/fixtures/auth.fixture.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/fixtures/auth.fixture.ts),
   the authenticated-fixture companion to
-  [`global-setup.md`](plugins/global-setup.md) (which mints the
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md) (which mints the
   persisted authentication storage states),
-  [`global-teardown.md`](plugins/global-teardown.md) (today a
+  [`global-teardown.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-teardown.md) (today a
   no-op placeholder), and
-  [`e2e-test-data.md`](plugins/e2e-test-data.md) (which
+  [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md) (which
   exports `ADMIN_STATE_FILE` and `CLIENT_STATE_FILE`). Where
   `global-setup.md` documents the **suite's pre-flight
   boundary**, `global-teardown.md` documents the **suite's
@@ -14513,11 +14513,11 @@ type Page, type BrowserContext } from '@playwright/test'`
   false-positive flag) onto the layer that surfaces each one;
   the per-line walkthrough table; and the `auth.fixture.ts`-change
   checklist that ties any fixture change to a
-  [`global-setup.md`](plugins/global-setup.md) cross-check, a
-  [`global-teardown.md`](plugins/global-teardown.md)
-  cross-check, an [`e2e-test-data.md`](plugins/e2e-test-data.md)
-  cross-check, a [`playwright-config.md`](plugins/playwright-config.md)
-  cross-check, an [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md) cross-check, a
+  [`global-teardown.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-teardown.md)
+  cross-check, an [`e2e-test-data.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-test-data.md)
+  cross-check, a [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
+  cross-check, an [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   cross-check, every authenticated spec under
   `apps/web-e2e/tests/admin/` and `apps/web-e2e/tests/client/`
   (they all import `{ test, expect }` from this file), dual
@@ -14587,10 +14587,10 @@ production' }` otherwise). Pins the route's status surface
   central test-data and constants module paired with
   [`apps/web-e2e/helpers/test-data.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/helpers/test-data.ts),
   the shared-data companion to
-  [`global-setup.md`](plugins/global-setup.md) (which destructures
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md) (which destructures
   `TEST_DATA`, `ADMIN_STATE_FILE`, `CLIENT_STATE_FILE`,
   `AUTH_STATE_DIR`, and `REQUIRED_ENV_VARS` from this module) and
-  to [`global-teardown.md`](plugins/global-teardown.md) (which
+  to [`global-teardown.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-teardown.md) (which
   will consume the same constants when the no-op placeholder
   grows into a real cleanup sequence). Where `global-setup.md`
   documents the **suite's pre-flight boundary** and
@@ -14655,13 +14655,13 @@ production' }` otherwise). Pins the route's status surface
   drift) onto the layer that surfaces each one; the per-line
   walkthrough table; and the `test-data.ts`-change checklist
   that ties any export change to a
-  [`global-setup.md`](plugins/global-setup.md) cross-check, a
-  [`global-teardown.md`](plugins/global-teardown.md)
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md) cross-check, a
+  [`global-teardown.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-teardown.md)
   cross-check, a
-  [`playwright-config.md`](plugins/playwright-config.md)
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   cross-check (the `webServer.cwd` resolves the relative paths
   in `ADMIN_STATE_FILE` / `CLIENT_STATE_FILE`), an
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) cross-check, the
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) cross-check, the
   `.gitignore` cross-check (`AUTH_STATE_DIR` must match the
   gitignore entry), the public-routes smoke spec cross-check
   under `apps/web-e2e/tests/public/`, the
@@ -14738,14 +14738,14 @@ production' }` otherwise). Pins the route's status surface
   per-run global teardown paired with
   [`apps/web-e2e/global-teardown.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/global-teardown.ts),
   the post-flight companion to
-  [`global-setup.md`](plugins/global-setup.md) (where the setup
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md) (where the setup
   mints the two persisted authentication storage states by
   driving a real Chromium browser against the host web app's
   `/auth/signin` and `/auth/register` screens, this file
   documents the **post-flight boundary** — what the runner does
   once after the last test, in what order, with what failure
   modes — even when, today, the answer is _nothing_) and wired
-  into [`playwright-config.md`](plugins/playwright-config.md)
+  into [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   via the always-resolved `globalTeardown: path.resolve(__dirname,
 './global-teardown.ts')` field. Documents the at-a-glance
   summary table of every load-bearing element (`async function
@@ -14794,11 +14794,11 @@ Promise<void> | void` Playwright contract against the
   "run timed out" results) onto the layer that surfaces each one;
   the per-line walkthrough table; and the `global-teardown.ts`-change
   checklist that ties any flip back to a
-  [`global-setup.md`](plugins/global-setup.md) cross-check, a
-  [`playwright-config.md`](plugins/playwright-config.md)
+  [`global-setup.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/global-setup.md) cross-check, a
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   cross-check, an
   [`apps/web-e2e/helpers/test-data.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/helpers/test-data.ts)
-  cross-check, an [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  cross-check, an [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   cross-check, dual `pnpm tsc --noEmit` runs (e2e + workspace root),
   a smoke-subset Playwright run that confirms the runner starts
   (no `ENOENT`), exits cleanly (teardown returns within timeout),
@@ -14876,11 +14876,11 @@ existence' }` with `500`). Asserts on `< 600 && >= 200` for
   per-run pre-flight hook paired with
   [`apps/web-e2e/global-setup.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/global-setup.ts),
   the pre-flight companion to
-  [`playwright-config.md`](plugins/playwright-config.md) (where the
+  [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md) (where the
   config locks the suite's runtime boundary, this file locks the
   suite's pre-flight boundary — what the runner does once before
   the first test, in what order, with what failure modes) and the
-  type-checking companion to [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  type-checking companion to [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   (which scopes the type-checker's walk to include this file). Documents
   the ordered pre-flight sequence — `promptForMissingEnv()` first
   (walks `REQUIRED_ENV_VARS = ['SEED_ADMIN_EMAIL',
@@ -14939,7 +14939,7 @@ saved`), the per-flow `try / catch` that closes the browser on
   `ADMIN_STATE_FILE` / `CLIENT_STATE_FILE` constants → path drift
   across files) onto the layer that surfaces each one; the per-line
   walkthrough table; and the `global-setup.ts`-change checklist that
-  ties any flip back to a [`playwright-config.md`](plugins/playwright-config.md)
+  ties any flip back to a [`playwright-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/playwright-config.md)
   cross-check, a [`apps/web-e2e/helpers/test-data.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/helpers/test-data.ts)
   cross-check, dual `pnpm tsc --noEmit` runs (e2e + workspace root),
   a smoke-subset run that proves both auth states land in
@@ -14990,7 +14990,7 @@ saved`), the per-flow `try / catch` that closes the browser on
   runner configuration paired with
   [`apps/web-e2e/playwright.config.ts`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/playwright.config.ts),
   the runtime companion to
-  [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md) (where the tsconfig
+  [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md) (where the tsconfig
   locks the suite's type-checking posture, this file locks the
   suite's runtime behaviour). Documents the at-a-glance summary of
   every load-bearing field (`dotenv.config({ path: '../web/.env.local' })`
@@ -15041,7 +15041,7 @@ __dirname` → `ERR_PNPM_NO_WORKSPACE_FOUND`,
   `stdout: 'ignore'` → silent host-app errors) onto the layer
   that surfaces each one; the per-line walkthrough table; and
   the `playwright.config.ts`-change checklist that ties any flip
-  back to a [`e2e-tsconfig.md`](plugins/e2e-tsconfig.md)
+  back to a [`e2e-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/e2e-tsconfig.md)
   cross-check, a `pnpm tsc --noEmit` run, a smoke-subset run, the
   per-CI-vs-local both-modes verification, a [`docs/log.md`](log.md)
   entry, a Spec 010 cross-link, and a reviewer pass.
@@ -15084,10 +15084,10 @@ __dirname` → `ERR_PNPM_NO_WORKSPACE_FOUND`,
   TypeScript configuration paired with
   [`apps/web-e2e/tsconfig.json`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web-e2e/tsconfig.json),
   sitting one directory below the shared
-  [`@ever-works/tsconfig`](plugins/tsconfig-presets.md) presets the
-  same way [`web-app-tsconfig.md`](plugins/web-app-tsconfig.md) sits
+  [`@ever-works/tsconfig`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/tsconfig-presets.md) presets the
+  same way [`web-app-tsconfig.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/web-app-tsconfig.md) sits
   one directory below those presets for the host web app and
-  [`plugin-tsconfigs.md`](plugins/plugin-tsconfigs.md) sits one
+  [`plugin-tsconfigs.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/plugin-tsconfigs.md) sits one
   directory below them for the three plugin packages. Documents the
   `extends: "@ever-works/tsconfig/playwright.json"` chain that
   inherits the workspace's TypeScript posture (`target: ES2017`,
@@ -15122,7 +15122,7 @@ __dirname` → `ERR_PNPM_NO_WORKSPACE_FOUND`,
 be used with 'composite'` panic, `noEmit: false` flipped → `.js`
   contamination next to every `.ts` file) onto the layer that
   surfaces each one; and the `tsconfig.json`-change checklist that
-  ties any flip back to a [`tsconfig-presets.md`](plugins/tsconfig-presets.md)
+  ties any flip back to a [`tsconfig-presets.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/tsconfig-presets.md)
   cross-check, a [`docs/log.md`](log.md) entry, a Spec 010
   cross-link, the dual `pnpm tsc --noEmit` runs (e2e + workspace
   root), the Playwright smoke run, and a reviewer pass.
@@ -15154,8 +15154,8 @@ be used with 'composite'` panic, `noEmit: false` flipped → `.js`
   TypeScript configuration paired with
   [`apps/web/tsconfig.json`](https://github.com/ever-works/directory-web-template/tree/develop/apps/web/tsconfig.json),
   sitting one directory below the shared
-  [`@ever-works/tsconfig`](plugins/tsconfig-presets.md) presets the
-  same way [`plugin-tsconfigs.md`](plugins/plugin-tsconfigs.md) sits
+  [`@ever-works/tsconfig`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/tsconfig-presets.md) presets the
+  same way [`plugin-tsconfigs.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/plugin-tsconfigs.md) sits
   one directory below those presets for the three plugin packages.
   Documents the `extends: "@ever-works/tsconfig/nextjs.json"` chain
   that locks the workspace-wide TypeScript posture (`target: ES2017`,
@@ -15181,7 +15181,7 @@ be used with 'composite'` panic, `noEmit: false` flipped → `.js`
   typed routes regress, `node_modules` exclude dropped → orders of
   magnitude slower type-check) onto the layer that surfaces each
   one; and the `tsconfig.json`-change checklist that ties any flip
-  back to a [`tsconfig-presets.md`](plugins/tsconfig-presets.md)
+  back to a [`tsconfig-presets.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/tsconfig-presets.md)
   cross-check, a [`docs/log.md`](log.md) entry, a Spec 002
   cross-link, the dual `pnpm tsc --noEmit` runs, and a reviewer pass.
 - `apps/web-e2e` Added a query-param surface smoke spec for
@@ -15213,9 +15213,9 @@ be used with 'composite'` panic, `noEmit: false` flipped → `.js`
   install-time hoisting posture paired with
   [`.npmrc`](https://github.com/ever-works/directory-web-template/tree/develop/.npmrc)
   at the repo root, the fourth root-level config reference after
-  [`pnpm-workspace.md`](plugins/pnpm-workspace.md),
-  [`turbo-config.md`](plugins/turbo-config.md), and
-  [`workspace-root-manifest.md`](plugins/workspace-root-manifest.md).
+  [`pnpm-workspace.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/pnpm-workspace.md),
+  [`turbo-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/turbo-config.md), and
+  [`workspace-root-manifest.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/workspace-root-manifest.md).
   Where `pnpm-workspace.md` documents **which folders become
   workspace members**, `turbo-config.md` documents **what tasks
   those members can run**, and `workspace-root-manifest.md`
@@ -15261,8 +15261,8 @@ be used with 'composite'` panic, `noEmit: false` flipped → `.js`
   workspace-coordination manifest paired with
   [`package.json`](https://github.com/ever-works/directory-web-template/tree/develop/package.json)
   at the repo root, the third root-level config reference after
-  [`pnpm-workspace.md`](plugins/pnpm-workspace.md) and
-  [`turbo-config.md`](plugins/turbo-config.md). Where
+  [`pnpm-workspace.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/pnpm-workspace.md) and
+  [`turbo-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/turbo-config.md). Where
   `pnpm-workspace.md` documents **which folders become workspace
   members** and `turbo-config.md` documents **what tasks those
   members can run**, this page documents the **workspace-coordination
@@ -15367,7 +15367,7 @@ be used with 'composite'` panic, `noEmit: false` flipped → `.js`
   with
   [`turbo.json`](https://github.com/ever-works/directory-web-template/tree/develop/turbo.json)
   at the repo root, the second root-level config reference after
-  [`pnpm-workspace.md`](plugins/pnpm-workspace.md). Where
+  [`pnpm-workspace.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/pnpm-workspace.md). Where
   `pnpm-workspace.md` documents **which folders become workspace
   members**, this page documents **what tasks those members can
   run, in what order, with what inputs**. Documents the at-a-glance
@@ -15478,7 +15478,7 @@ s-maxage=300, stale-while-revalidate=600` on success vs.
   flag — the response reflects the server's view, not the
   client's suggestion).
 - `docs/index.md` Added the
-  [`turbo-config.md`](plugins/turbo-config.md) entry to the
+  [`turbo-config.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/turbo-config.md) entry to the
   monorepo / packages section so the new pipeline reference is
   discoverable from the top-level docs navigation, sitting
   immediately after `pnpm-workspace.md` as the second of the two
@@ -15724,7 +15724,7 @@ timeSinceLastSyncHuman, uptime, timestamp}` always at 200 with
   POST `/api/version/sync` "ignores query parameters" invariant
   that proves the body-only handler does not regress to reading
   the URL. Closes the query-surface gap for these three endpoints
-  in [Spec 010](spec/010-e2e-test-coverage/spec.md).
+  in [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md).
 - `docs/plugins` Added `plugin-tsconfigs.md` — the **per-source-file
   reference** for the three byte-identical `tsconfig.json` files in
   the plugin-system packages, paired with
@@ -15832,7 +15832,7 @@ count}` always at 200; collections: same envelope at 200 or 500
   plus an "identical with and without bogus query parameters"
   invariant for the three endpoints whose handlers do not read
   the request URL. Closes the query-surface gap for these four
-  endpoints in [Spec 010](spec/010-e2e-test-coverage/spec.md).
+  endpoints in [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md).
 - `docs/plugins` Added `plugin-demo-package-manifest.md` — the
   **per-source-file reference** for the demo plugin package
   manifest that pairs with
@@ -16176,7 +16176,7 @@ parameters` assertions pin the contract that the route
   verification step, and Article VIII (No removal) for any name
   that needs to leave the barrel. Cross-link from
   [`docs/index.md`](./index.md) and from
-  [`docs/plugins/packages.md`](./plugins/packages.md) so the new
+  [`docs/plugins/packages.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/packages.md) so the new
   doc is discoverable from both the docs index and the package
   overview alongside the SDK / runtime / demo source links.
 - `e2e/api` Added `items-engagement-query.spec.ts` — the
@@ -16292,7 +16292,7 @@ parameters` assertions pin the contract that the route
   entry, the `pnpm tsc --noEmit` verification step, and Article
   VIII (No removal) for any name that needs to leave the barrel.
   Cross-link from [`docs/index.md`](./index.md) and from
-  [`docs/plugins/packages.md`](./plugins/packages.md) so the new
+  [`docs/plugins/packages.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plugins/packages.md) so the new
   doc is discoverable from both the docs index and the package
   overview alongside the SDK / runtime / demo source links.
 - `e2e/api` Added `sponsor-ads-public.spec.ts` — the
@@ -16952,7 +16952,7 @@ update **this** page in the same change` anti-drift contract.
   only adds the docs/spec scaffolding so future work stops "Article
   V is aspirational" being a true statement.
 - `spec-017` Status flipped from _in-progress_ to **shipped** in
-  the spec index and in [`spec.md`](spec/017-map-view/spec.md). All
+  the spec index and in [`spec.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/017-map-view/spec.md). All
   T-001..T-009 tasks landed in commit `fe808cc3` (`feat: more on
 maps`) on the `develop` branch — sidebar + dedicated `/map`
   route + header nav link + e2e coverage are live. Follow-up
@@ -17133,7 +17133,7 @@ speed-insights}` showcase pages), and
   [`@ever-works/plugin-sdk`](https://github.com/ever-works/directory-web-template/tree/develop/packages/plugin-sdk),
   [`@ever-works/plugin-runtime`](https://github.com/ever-works/directory-web-template/tree/develop/packages/plugin-runtime),
   and [`@ever-works/plugin-demo`](https://github.com/ever-works/directory-web-template/tree/develop/packages/plugin-demo)
-  per [Spec 002 / T-001..T-003](spec/002-plugin-architecture/tasks.md).
+  per [Spec 002 / T-001..T-003](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/002-plugin-architecture/tasks.md).
   All three packages typecheck cleanly. No `apps/web` wire-up yet —
   that lands in Phase B (T-004..T-006).
 - `spec-006`, `spec-007`, `spec-008`, `spec-009`, `spec-011`,
@@ -17143,7 +17143,7 @@ speed-insights}` showcase pages), and
   spec from this run. Each plan documents the existing topology and
   the migration path to the plugin architecture (Spec 002).
 - `apps/web-e2e` Added smoke specs for previously-uncovered surfaces
-  to close gaps in [Spec 010](spec/010-e2e-test-coverage/spec.md):
+  to close gaps in [Spec 010](https://github.com/ever-works/directory-web-template/blob/develop/docs/spec/010-e2e-test-coverage/spec.md):
   `auth/forgot-password.spec.ts`, `auth/new-password.spec.ts`,
   `public/help.spec.ts`, `public/about.spec.ts`,
   `public/comparisons.spec.ts`, `public/sponsor.spec.ts`.
@@ -17206,9 +17206,9 @@ speed-insights}` showcase pages), and
 ## 2026-03-08
 
 - Monorepo conversion design and plan landed in
-  [`docs/plans/2026-03-08-monorepo-conversion.md`](plans/2026-03-08-monorepo-conversion.md)
+  [`docs/plans/2026-03-08-monorepo-conversion.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plans/2026-03-08-monorepo-conversion.md)
   and
-  [`docs/plans/2026-03-08-monorepo-conversion-design.md`](plans/2026-03-08-monorepo-conversion-design.md).
+  [`docs/plans/2026-03-08-monorepo-conversion-design.md`](https://github.com/ever-works/directory-web-template/blob/develop/docs/plans/2026-03-08-monorepo-conversion-design.md).
   These remain the definitive source for that effort and are now
   cross-linked from `docs/spec/001-monorepo-conversion/spec.md`.
 

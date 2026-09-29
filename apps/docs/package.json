@@ -12,6 +12,7 @@
 		"start": "docusaurus start",
 		"build": "docusaurus build",
 		"build:en": "docusaurus build --locale en",
+		"audit:seo": "node scripts/audit-seo.mjs",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",

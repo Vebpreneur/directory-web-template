@@ -179,5 +179,5 @@ const validId = ensureExternalId(user.id, "User");
 
 ## Moduli correlati
 
-- [Config Manager System](./config-manager-system) -- Configurazione dell'integrazione tramite `configService.integrations`
+- [Config Manager System](./config-manager-system.md) -- Configurazione dell'integrazione tramite `configService.integrations`
 - [API Client Layer](/template/architecture/api-client-layer) -- Client HTTP utilizzato dai servizi CRM

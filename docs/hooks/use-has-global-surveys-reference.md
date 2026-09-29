@@ -136,6 +136,6 @@ function HeaderActions() {
 
 ## Related Hooks
 
-- [`useSurveysEnabled`](/template/hooks/use-surveys-enabled-reference) -- Checks whether the surveys feature is enabled
-- [`useCategoriesExists`](/template/hooks/use-categories-exists-reference) -- Checks whether categories exist in the database
-- [`useTagsExists`](/template/hooks/use-tags-exists-reference) -- Checks whether tags exist in the database
+- [`useSurveysEnabled`](./use-surveys-enabled-reference.md) -- Checks whether the surveys feature is enabled
+- [`useCategoriesExists`](./use-categories-exists-reference.md) -- Checks whether categories exist in the database
+- [`useTagsExists`](./use-tags-exists-reference.md) -- Checks whether tags exist in the database

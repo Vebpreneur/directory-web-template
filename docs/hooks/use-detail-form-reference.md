@@ -364,7 +364,7 @@ function LinksSection({ form }) {
 
 ## Related Hooks
 
-- [`useClientItems`](/template/hooks/use-client-items-reference) -- Item listing (form submits create or update items)
-- [`useClientItemDetails`](/template/hooks/use-client-item-details-reference) -- Provides `initialData` when editing
-- [`useClientItemFilters`](/template/hooks/use-client-item-filters-reference) -- Filter state for item lists
-- [`useMultiStepForm`](/template/hooks/use-multi-step-form-reference) -- Generic multi-step form utility
+- [`useClientItems`](./use-client-items-reference.md) -- Item listing (form submits create or update items)
+- [`useClientItemDetails`](./use-client-item-details-reference.md) -- Provides `initialData` when editing
+- [`useClientItemFilters`](./use-client-item-filters-reference.md) -- Filter state for item lists
+- [`useMultiStepForm`](./use-multi-step-form-reference.md) -- Generic multi-step form utility

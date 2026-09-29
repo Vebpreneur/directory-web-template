@@ -150,6 +150,6 @@ The modal content is composed of several select/configuration components:
 
 ## Related Components
 
-- [Context Providers](/template/components/context-providers) - `SettingsModalContext` that powers the `useSettingsModal` hook.
-- [Layout Settings](/template/components/layout-settings-components) - Alternative inline layout controls.
-- [UI Primitives](/template/components/ui-primitives) - `SelectLayout`, `SelectContainerWidth`, `SelectPaginationType` components used inside the modal.
+- [Context Providers](./context-providers.md) - `SettingsModalContext` that powers the `useSettingsModal` hook.
+- [Layout Settings](./layout-settings-components.md) - Alternative inline layout controls.
+- [UI Primitives](./ui-primitives.md) - `SelectLayout`, `SelectContainerWidth`, `SelectPaginationType` components used inside the modal.

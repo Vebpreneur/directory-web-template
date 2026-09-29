@@ -259,7 +259,7 @@ When the database is not configured, these features are automatically disabled.
 
 ## Related Documentation
 
-- [Voting & Comments Overview](/docs/template/features/voting-comments) -- High-level feature overview
-- [Item Detail Components](/docs/template/components/item-detail-components) -- Where votes and comments render
-- [Notification System](/docs/template/features/notification-system) -- Comment-triggered notifications
-- [Dashboard Components](/docs/template/components/dashboard-components) -- Vote and comment analytics
+- [Voting & Comments Overview](./voting-comments.md) -- High-level feature overview
+- [Item Detail Components](../components/item-detail-components.md) -- Where votes and comments render
+- [Notification System](./notification-system.md) -- Comment-triggered notifications
+- [Dashboard Components](../components/dashboard-components.md) -- Vote and comment analytics

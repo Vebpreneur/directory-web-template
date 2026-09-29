@@ -119,4 +119,4 @@ Alle Standort-Endpunkte sind **öffentlich** – keine Authentifizierung erforde
 
 ## Verwandte Endpunkte
 
-- [Geocode-Endpunkte](./geocode-endpoints) – Vorwärts- und Rückwärts-Geocodierung (nur Admin)
+- [Geocode-Endpunkte](./geocode-endpoints.md) – Vorwärts- und Rückwärts-Geocodierung (nur Admin)

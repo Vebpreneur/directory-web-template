@@ -520,8 +520,8 @@ Ever Works prend en charge **plus de 13 langues** :
 
 ## Prochaines étapes
 
-- [Présentation de l'architecture](./overview) - Comprendre l'architecture du système
-- [Fonctionnalités de la plateforme](./features) - Explorez toutes les fonctionnalités de la plateforme
+- [Présentation de l'architecture](./overview.md) - Comprendre l'architecture du système
+- [Fonctionnalités de la plateforme](./features.md) - Explorez toutes les fonctionnalités de la plateforme
 - [Configuration du développement](/development/local-setup) - Configurez votre environnement
 
 ## Ressources
