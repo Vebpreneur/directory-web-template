@@ -159,6 +159,23 @@ const getEnabledSections = (): SitemapSections => {
 	}
 };
 
+/**
+ * getEnabledSections() plus whether the site has any active collection: with
+ * none, `/collections` is an empty listing and is not advertised. Never
+ * throws; unreadable content keeps `/collections` listed (the old behaviour).
+ * getCachedItems() is cached, so generateDynamicRoutes() reuses this read.
+ */
+const getSitemapSections = async (): Promise<SitemapSections> => {
+	const sections = getEnabledSections();
+	try {
+		const { collections } = await getCachedItems();
+		return { ...sections, collections: collections.some((collection) => collection.isActive !== false) };
+	} catch (error) {
+		console.error('Failed to read the collections for the sitemap:', error);
+		return sections;
+	}
+};
+
 /** Unicode control characters, which cannot appear in a real post filename. */
 const CONTROL_CHARACTERS = /\p{Cc}/u;
 
@@ -449,7 +466,7 @@ const generateDynamicRoutes = async (
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	try {
 		const baseUrl = getBaseUrl();
-		const sections = getEnabledSections();
+		const sections = await getSitemapSections();
 
 		const [staticRoutes, paginationRoutes, localeRoutes, dynamicRoutes] = await Promise.all([
 			Promise.resolve(generateStaticRoutes(baseUrl, sections)),

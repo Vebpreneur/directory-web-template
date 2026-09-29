@@ -3,8 +3,10 @@ import { surveyService } from '@/lib/services/survey.service';
 import { Container } from '@/components/ui/container';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
-import { cleanUrl } from '@/lib/utils/url-cleaner';
+import { getBaseUrl } from '@/lib/utils/url-cleaner';
 import { getLocalizedUrl } from '@/lib/seo/hreflang';
+import { surveyCanonicalPath } from '@/lib/seo/survey-urls';
+import { getSurveysEnabled } from '@/lib/utils/settings';
 import type { Locale } from '@/lib/constants';
 
 interface SurveyLayoutProps {
@@ -18,11 +20,17 @@ const getSurvey = cache(async (slug: string) => {
 	return surveyService.getBySlug(slug);
 });
 
-const rawUrl = process.env.NEXT_PUBLIC_CANONICAL_URL?.trim() || process.env.NEXT_PUBLIC_APP_URL?.trim() || 
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://demo.ever.works");
-const appUrl = cleanUrl(rawUrl);
+// Public origin: NEXT_PUBLIC_CANONICAL_URL when pinned (and valid), else the
+// app URL. getBaseUrl() validates both, so a malformed pin cannot make
+// `new URL(appUrl)` below throw.
+const appUrl = getBaseUrl();
 
 export async function generateMetadata({ params }: SurveyLayoutProps): Promise<Metadata> {
+	// Surveys switched off: the layout below 404s.
+	if (!getSurveysEnabled()) {
+		notFound();
+	}
+
 	const { slug, locale } = await params;
 	const survey = await getSurvey(slug);
 
@@ -37,9 +45,11 @@ export async function generateMetadata({ params }: SurveyLayoutProps): Promise<M
 		metadataBase: new URL(appUrl),
 		title: `${survey.title} | Surveys`,
 		description: survey.description || 'Complete this survey',
-		// Own canonical instead of the [locale] layout's homepage canonical.
+		// Own canonical instead of the [locale] layout's homepage canonical:
+		// the survey's one public URL. /surveys/<slug> serves any survey, so an
+		// item survey reached here points at its item's survey page instead.
 		alternates: {
-			canonical: getLocalizedUrl(`/surveys/${slug}`, locale as Locale)
+			canonical: getLocalizedUrl(surveyCanonicalPath(survey), locale as Locale)
 		}
 	};
 }
@@ -48,7 +58,10 @@ export default async function SurveyLayout({
 	children,
 	params,
 }: { children: React.ReactNode; params: SurveyLayoutProps['params'] }) {
-	
+	if (!getSurveysEnabled()) {
+		notFound();
+	}
+
 	const { slug } = await params;
 	const survey = await getSurvey(slug);
 

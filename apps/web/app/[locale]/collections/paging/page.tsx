@@ -3,19 +3,26 @@ import { getCachedItems } from "@/lib/content";
 import { paginateMeta } from "@/lib/paginate";
 import { Collection } from "@/types/collection";
 import type { Metadata } from "next";
-import { getLocalizedUrl } from "@/lib/seo/hreflang";
-import type { Locale } from "@/lib/constants";
+import { generateListingMetadata } from "@/lib/seo/listing-metadata";
 
 // Page 1 of the paging route renders the same listing as /collections, so it
-// canonicalises there. Without this it inherited the [locale] layout's
-// canonical and declared itself a duplicate of the homepage.
+// takes /collections' metadata (collections/page.tsx): canonical, title,
+// description, og:url. Without this it inherited the [locale] layout's
+// canonical and title and declared itself a duplicate of the homepage.
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: { canonical: getLocalizedUrl("/collections", locale as Locale) } };
+  const { collections } = await getCachedItems({ lang: locale });
+  return generateListingMetadata({
+    title: "Collections",
+    path: "/collections",
+    locale,
+    itemCount: collections.filter((c) => c.isActive !== false).length,
+    keywords: ["collections", "curated", "directory", "lists"],
+  });
 }
 
 // Enable ISR with 10 minutes revalidation

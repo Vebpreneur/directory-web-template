@@ -51,6 +51,12 @@ export interface SitemapSections {
 	categories: boolean;
 	/** `settings.tags_enabled` (lib/utils/settings.ts getTagsEnabled). */
 	tags: boolean;
+	/**
+	 * Whether the site has at least one active collection. False drops
+	 * `/collections`, which is then an empty listing. Left out = listed, as
+	 * before this flag existed.
+	 */
+	collections?: boolean;
 }
 
 function isUnder(path: string, section: string): boolean {
@@ -61,11 +67,12 @@ function isUnder(path: string, section: string): boolean {
  * Whether a locale-less path (`/categories`, `/tags/<id>`, ...) may be
  * advertised given which sections the site has enabled. A disabled section's
  * pages answer 404 (the routes call `notFound()`), so the sitemap must not
- * list them.
+ * list them; nor the collections listing of a site that has no collection.
  */
 export function isSitemapPathEnabled(path: string, sections: SitemapSections): boolean {
 	if (!sections.categories && isUnder(path, '/categories')) return false;
 	if (!sections.tags && isUnder(path, '/tags')) return false;
+	if (sections.collections === false && isUnder(path, '/collections')) return false;
 	return true;
 }
 

@@ -3,13 +3,14 @@ export const revalidate = 3600;
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { DocsPageContent } from './docs-page-content';
-import { cleanUrl } from '@/lib/utils/url-cleaner';
+import { getBaseUrl } from '@/lib/utils/url-cleaner';
 import { generateHreflangAlternates, getLocalizedUrl } from '@/lib/seo/hreflang';
 import { Locale } from '@/lib/constants';
 
-const rawUrl = process.env.NEXT_PUBLIC_CANONICAL_URL?.trim() || process.env.NEXT_PUBLIC_APP_URL?.trim() || 
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://demo.ever.works");
-const appUrl = cleanUrl(rawUrl);
+// Public origin: NEXT_PUBLIC_CANONICAL_URL when pinned (and valid), else the
+// app URL. getBaseUrl() validates both, so a malformed pin cannot make
+// `new URL(appUrl)` below throw.
+const appUrl = getBaseUrl();
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

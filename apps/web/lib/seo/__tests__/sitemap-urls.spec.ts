@@ -84,6 +84,19 @@ describe('isSitemapPathEnabled', () => {
 		assert.equal(isSitemapPathEnabled('/categories/dev', sections), true);
 	});
 
+	it('drops /collections and everything under it when the site has no active collection', () => {
+		const sections = { categories: true, tags: true, collections: false };
+		assert.equal(isSitemapPathEnabled('/collections', sections), false);
+		assert.equal(isSitemapPathEnabled('/collections/paging', sections), false);
+		assert.equal(isSitemapPathEnabled('/collections-guide', sections), true);
+		assert.equal(isSitemapPathEnabled('/tags', sections), true);
+	});
+
+	it('keeps /collections when collections exist or were not checked', () => {
+		assert.equal(isSitemapPathEnabled('/collections', { categories: true, tags: true, collections: true }), true);
+		assert.equal(isSitemapPathEnabled('/collections', allOn), true);
+	});
+
 	it('matches whole path segments only', () => {
 		const off = { categories: false, tags: false };
 		assert.equal(isSitemapPathEnabled('/tagsmith', off), true);
