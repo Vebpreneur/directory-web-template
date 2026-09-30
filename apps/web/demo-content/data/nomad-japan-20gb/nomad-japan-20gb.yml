@@ -1,13 +1,14 @@
-name: Nomad Japan — 20 GB
-description: Demo listing for a Japan eSIM plan. 20 GB data, 30-day validity, demo price $26.00.
-source_url: https://www.getnomad.app/
-category: Asia
+name: Shopify Affiliate Program
+description: Official Shopify affiliate program for commerce-focused publishers, educators, creators and experts. Qualified referrals are tracked through Shopify's affiliate platform.
+source_url: https://www.shopify.com/affiliates
+category: Commerce
 tags:
-  - Nomad
-  - 20 GB
-  - 30 days
-  - $26.00
-featured: false
-action: buy
-status: approved
-updated_at: 2026-09-30 20:45
+  - Affiliate
+  - Shopify
+  - Commerce
+  - Impact
+  - Verified 2026-10-01
+featured: true
+action: visit-website
+publisher: Shopify
+updated_at: 2026-10-01 00:44
