@@ -17,6 +17,24 @@ export interface ItemLocationData {
   geocoded_by?: MapProvider; // Track which geocoding provider was used
 }
 
+export type OfferType = 'affiliate' | 'referral' | 'reseller' | 'white-label' | 'partner' | 'supplier';
+
+export interface OfferMetadata {
+  type: OfferType;
+  provider: string;
+  network?: string;
+  commission?: string;
+  recurring?: boolean;
+  cookie_days?: number;
+  markets?: string[];
+  apply_url?: string;
+  tracking_url?: string;
+  api_available?: boolean;
+  mcp_available?: boolean;
+  verified_at?: string;
+  source?: string;
+}
+
 export interface ItemData {
   id: string;
   name: string;
@@ -39,6 +57,7 @@ export interface ItemData {
   action?: 'visit-website' | 'start-survey' | 'buy'; // CTA action type
   showSurveys?: boolean; // Whether to show surveys section (default: true)
   publisher?: string; // Publisher name for display
+  offer?: OfferMetadata; // OfferMesh commercial metadata
   // Location fields
   location?: ItemLocationData;
 }
@@ -57,6 +76,7 @@ export interface CreateItemRequest {
   icon_url?: string;
   status?: 'draft' | 'pending' | 'approved' | 'rejected';
   submitted_by?: string;
+  offer?: OfferMetadata;
   location?: ItemLocationData;
 }
 
