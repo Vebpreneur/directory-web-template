@@ -1,10 +1,10 @@
 pagination:
   type: standard
   itemsPerPage: 12
-company_name: eSIM Directory
+company_name: OfferMesh
 content_table: true
-item_name: eSIM Plan
-items_name: eSIM Plans
+item_name: Offer
+items_name: Offers
 copyright_year: 2026
 auth:
   credentials: true
@@ -31,10 +31,10 @@ settings:
     search_enabled: true
     default_view: classic
     default_sort: popularity
-    hero_badge_text: Global eSIM Directory
-    hero_title: Find the Right
-    hero_title_gradient: eSIM Plan
-    hero_description: Compare eSIM plans by destination, provider, data allowance and validity using the original Ever Works directory experience.
+    hero_badge_text: Commercial Offer Graph
+    hero_title: Discover Commercial
+    hero_title_gradient: Opportunities
+    hero_description: Search verified affiliate, referral, reseller and partner offers from one structured commercial discovery layer.
   footer:
     subscribe_enabled: false
     version_enabled: false
@@ -43,8 +43,8 @@ settings:
 custom_hero:
   enabled: false
 metadata:
-  initial_prompt: Global eSIM Plans
+  initial_prompt: Find commercial offers
 version: 0.2.33
-name: eSIM Directory
-initial_prompt: Global eSIM Plans
+name: OfferMesh
+initial_prompt: Find commercial offers
 deployProvider: vercel
