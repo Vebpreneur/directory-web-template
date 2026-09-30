@@ -24,7 +24,7 @@ import type {
 	PostTerm,
 	PostTermWithCount
 } from '@/types/post';
-import type { ItemLocationData } from '@/lib/types/item';
+import type { ItemLocationData, OfferMetadata } from '@/lib/types/item';
 import { DEFAULT_POSTS_PER_PAGE, MAX_POSTS_PER_PAGE } from '@/lib/blog/constants';
 import { z } from 'zod';
 
@@ -398,6 +398,7 @@ export interface ItemData {
 	action?: 'visit-website' | 'start-survey' | 'buy'; // CTA action type
 	showSurveys?: boolean; // Whether to show surveys section (default: true)
 	publisher?: string; // Publisher name for display
+	offer?: OfferMetadata; // OfferMesh commercial metadata
 	location?: ItemLocationData; // Location data from YAML
 }
 
