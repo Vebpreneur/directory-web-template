@@ -13,3 +13,15 @@ featured: true
 action: visit-website
 publisher: Yesim
 updated_at: 2026-10-01 00:44
+offer:
+  type: affiliate
+  provider: Yesim
+  commission: From 10%
+  recurring: false
+  markets:
+    - Global
+  apply_url: https://yesim.app/affiliate-program/
+  api_available: true
+  mcp_available: false
+  verified_at: "2026-10-01"
+  source: https://yesim.app/affiliate-program/
