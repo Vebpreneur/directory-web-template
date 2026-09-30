@@ -484,6 +484,7 @@ export async function POST(request: NextRequest) {
       featured,
       icon_url,
       status,
+      offer,
       location,
     }: CreateItemRequest = body;
 
@@ -530,6 +531,7 @@ export async function POST(request: NextRequest) {
       icon_url,
       status: status || 'draft',
       submitted_by: session.user.id,
+      offer,
       location,
     }, auditUser);
 
