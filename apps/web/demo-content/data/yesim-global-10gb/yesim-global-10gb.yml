@@ -1,13 +1,14 @@
-name: Yesim Global — 10 GB
-description: Demo listing for a global eSIM plan. 10 GB data, 30-day validity, demo price €34.00.
-source_url: https://yesim.app/
-category: Global
+name: Semrush Affiliate Program
+description: Official Semrush affiliate program for publishers and marketers promoting SEO and AI-search visibility software.
+source_url: https://www.semrush.com/lp/affiliate-program/
+category: SEO & Growth
 tags:
-  - Yesim
-  - 10 GB
-  - 30 days
-  - €34.00
+  - Affiliate
+  - Semrush
+  - SEO
+  - Marketing
+  - Verified 2026-10-01
 featured: false
-action: buy
-status: approved
-updated_at: 2026-09-30 20:45
+action: visit-website
+publisher: Semrush
+updated_at: 2026-10-01 00:44
