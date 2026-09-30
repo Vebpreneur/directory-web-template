@@ -3,33 +3,29 @@ const git = require("isomorphic-git")
 const http = require("isomorphic-git/http/node")
 const fs = require("node:fs")
 const path = require("node:path")
-const os = require('node:os')
 
 loadEnvConfig(process.cwd());
 
 const token = process.env.GH_TOKEN;
-const url = process.env.DATA_REPOSITORY || 'https://github.com/ever-works/awesome-time-tracking-data';
-
-if (!url) {
-  console.warn("Warning: 'DATA_REPOSITORY' environment variable is missing.");
-  console.warn("Content repository will not be cloned. Some content may not be available.");
-  process.exit(0); // Exit gracefully without error
-}
-
+const url = process.env.DATA_REPOSITORY;
 
 function getContentPath() {
-  const contentDir = '.content';
-  // Always use project directory during build to ensure content is included in deployment
-  return path.join(process.cwd(), contentDir);
+  return path.join(process.cwd(), '.content');
 }
 
 const auth = { username: "x-access-token", password: token };
 const dest = getContentPath();
 
-async function main() {
+async function copyDemoContent() {
+  const demoSource = path.join(process.cwd(), 'demo-content');
+  console.log("DATA_REPOSITORY is not set. Using bundled Ever Works eSIM demo content.");
+  await fs.promises.rm(dest, { recursive: true, force: true });
+  await fs.promises.cp(demoSource, dest, { recursive: true });
+}
+
+async function syncRepository() {
   await fs.promises.mkdir(dest, { recursive: true });
 
-  // If already cloned, pull the latest content instead of skipping.
   const gitDir = path.join(dest, '.git');
   if (fs.existsSync(gitDir)) {
     console.log("Content repo already present, pulling latest changes:", dest);
@@ -43,10 +39,7 @@ async function main() {
       singleBranch: true,
     };
 
-    if (token) {
-      pullOptions.onAuth = () => auth;
-    }
-
+    if (token) pullOptions.onAuth = () => auth;
     await git.pull(pullOptions);
     return;
   }
@@ -59,13 +52,18 @@ async function main() {
     url,
     dir: dest,
     singleBranch: true,
-  }
+  };
 
-  if (token) {
-    cloneOptions.onAuth = () => auth;
-  }
-
+  if (token) cloneOptions.onAuth = () => auth;
   await git.clone(cloneOptions);
+}
+
+async function main() {
+  if (!url) {
+    await copyDemoContent();
+    return;
+  }
+  await syncRepository();
 }
 
 main().catch(err => {
