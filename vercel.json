@@ -1,29 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
-    "docs": {
-      "root": "apps/docs",
-      "framework": "docusaurus-2",
-      "buildCommand": "DOCS_BASE_URL=/docs/ pnpm build"
-    },
     "web": {
       "root": "apps/web",
-      "framework": "nextjs"
+      "framework": "nextjs",
+      "buildCommand": "pnpm build"
     }
   },
   "rewrites": [
-    {
-      "source": "/docs",
-      "destination": {
-        "service": "docs"
-      }
-    },
-    {
-      "source": "/docs/(.*)",
-      "destination": {
-        "service": "docs"
-      }
-    },
     {
       "source": "/(.*)",
       "destination": {
