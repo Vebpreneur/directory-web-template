@@ -46,7 +46,8 @@ const isCiBuild = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 't
 const isProductionBuildPhase = process.env.NEXT_PHASE === 'phase-production-build';
 
 if (!runtimeAuthSecret) {
-	if (coreConfig.NODE_ENV === 'production' && !isCiBuild && !isProductionBuildPhase) {
+	const isVercelProduction = process.env.VERCEL_ENV === 'production';
+	if (coreConfig.NODE_ENV === 'production' && isVercelProduction && !isCiBuild && !isProductionBuildPhase) {
 		throw new Error('[auth] AUTH_SECRET must be set in production.');
 	}
 
