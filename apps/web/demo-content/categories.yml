@@ -1,10 +1,10 @@
-- id: europe
-  name: Europe
-- id: asia
-  name: Asia
-- id: north-america
-  name: North America
-- id: middle-east
-  name: Middle East
-- id: global
-  name: Global
+- id: travel-esim
+  name: Travel & eSIM
+- id: commerce
+  name: Commerce
+- id: crm-sales
+  name: CRM & Sales
+- id: seo-growth
+  name: SEO & Growth
+- id: software
+  name: Software
