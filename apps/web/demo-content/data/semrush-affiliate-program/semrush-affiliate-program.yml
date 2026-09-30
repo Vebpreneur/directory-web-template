@@ -12,3 +12,14 @@ featured: false
 action: visit-website
 publisher: Semrush
 updated_at: 2026-10-01 00:44
+offer:
+  type: affiliate
+  provider: Semrush
+  recurring: false
+  markets:
+    - Global
+  apply_url: https://www.semrush.com/lp/affiliate-program/
+  api_available: false
+  mcp_available: false
+  verified_at: "2026-10-01"
+  source: https://www.semrush.com/lp/affiliate-program/
