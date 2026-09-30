@@ -1,13 +1,15 @@
-name: Holafly Europe — Unlimited
-description: Demo listing for a Europe eSIM plan. Unlimited data, 10-day validity, demo price €36.90.
-source_url: https://esim.holafly.com/
-category: Europe
+name: Yesim Affiliate Program
+description: Official Yesim affiliate program for publishers and creators. Yesim advertises commission from 10% on referred purchases and provides links, promo codes and API tools.
+source_url: https://yesim.app/affiliate-program/
+category: Travel & eSIM
 tags:
-  - Holafly
-  - Unlimited
-  - 10 days
-  - €36.90
+  - Affiliate
+  - Yesim
+  - eSIM
+  - 10%+ commission
+  - API tools
+  - Verified 2026-10-01
 featured: true
-action: buy
-status: approved
-updated_at: 2026-09-30 20:45
+action: visit-website
+publisher: Yesim
+updated_at: 2026-10-01 00:44
