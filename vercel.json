@@ -4,7 +4,7 @@
     "web": {
       "root": "apps/web",
       "framework": "nextjs",
-      "buildCommand": "pnpm build:ci"
+      "buildCommand": "pnpm prebuild && pnpm build:ci"
     }
   },
   "rewrites": [
