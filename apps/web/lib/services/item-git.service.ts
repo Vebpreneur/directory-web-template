@@ -164,6 +164,7 @@ export class ItemGitService {
               reviewed_at: item.reviewed_at || item.updated_at || formatDateForYaml(),
               review_notes: item.review_notes,
               deleted_at: item.deleted_at, // Include soft delete timestamp
+              offer: item.offer,
               // Parse location data if present
               location: item.location ? {
                 address: item.location.address,
@@ -245,6 +246,7 @@ export class ItemGitService {
           reviewed_at: item.reviewed_at || item.updated_at || formatDateForYaml(),
           review_notes: item.review_notes,
           deleted_at: item.deleted_at,
+          offer: item.offer,
           collections: Array.isArray(item.collections) ? item.collections : (item.collections ? [item.collections] : []),
           // Parse location data if present
           location: item.location ? {
@@ -324,6 +326,7 @@ export class ItemGitService {
               reviewed_at: item.reviewed_at || item.updated_at || formatDateForYaml(),
               review_notes: item.review_notes,
               deleted_at: item.deleted_at,
+              offer: item.offer,
               location: item.location ? {
                 address: item.location.address,
                 city: item.location.city,
@@ -381,6 +384,7 @@ export class ItemGitService {
       status: data.status || 'draft',
       submitted_by: data.submitted_by || 'anonymous',
       submitted_at: formatDateForYaml(),
+      offer: data.offer,
       location: data.location,
     };
 
@@ -426,6 +430,11 @@ export class ItemGitService {
       // Include deleted_at for soft delete (only if set)
       if (item.deleted_at) {
         itemData.deleted_at = item.deleted_at;
+      }
+
+      // Include OfferMesh commercial metadata if present
+      if (item.offer) {
+        itemData.offer = item.offer;
       }
 
       // Include location data if present
@@ -546,6 +555,7 @@ export class ItemGitService {
       status: data.status || 'draft',
       submitted_by: data.submitted_by || 'anonymous',
       submitted_at: formatDateForYaml(),
+      offer: data.offer,
       location: data.location,
     };
 
