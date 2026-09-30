@@ -8,7 +8,7 @@ const os = require('node:os')
 loadEnvConfig(process.cwd());
 
 const token = process.env.GH_TOKEN;
-const url = process.env.DATA_REPOSITORY;
+const url = process.env.DATA_REPOSITORY || 'https://github.com/ever-works/awesome-time-tracking-data';
 
 if (!url) {
   console.warn("Warning: 'DATA_REPOSITORY' environment variable is missing.");
