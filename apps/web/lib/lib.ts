@@ -84,10 +84,20 @@ function getBundledContentPath(): string {
     return path.join(process.cwd(), '.content');
 }
 
+function getBundledDemoContentPath(): string {
+    return path.join(process.cwd(), 'demo-content');
+}
+
 async function hydrateRuntimeContentFromBundle(runtimeContentPath: string): Promise<boolean> {
     const bundledContentPath = getBundledContentPath();
+    const demoContentPath = getBundledDemoContentPath();
 
-    if (!(await hasUsableContent(bundledContentPath))) {
+    let sourceContentPath = bundledContentPath;
+    if (!(await hasUsableContent(sourceContentPath)) && !process.env.DATA_REPOSITORY) {
+        sourceContentPath = demoContentPath;
+    }
+
+    if (!(await hasUsableContent(sourceContentPath))) {
         return false;
     }
 
@@ -100,7 +110,7 @@ async function hydrateRuntimeContentFromBundle(runtimeContentPath: string): Prom
         console.log('[CONTENT] Hydrating runtime content from bundled deployment artifact...');
         await fs.rm(tempContentPath, { recursive: true, force: true });
         await fs.mkdir(path.dirname(tempContentPath), { recursive: true });
-        await fs.cp(bundledContentPath, tempContentPath, { recursive: true });
+        await fs.cp(sourceContentPath, tempContentPath, { recursive: true });
         await replaceDirectoryAtomically(runtimeContentPath, tempContentPath);
         return await hasUsableContent(runtimeContentPath);
     } catch (error) {
