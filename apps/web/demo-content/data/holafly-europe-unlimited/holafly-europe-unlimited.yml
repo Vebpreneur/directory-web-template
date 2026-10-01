@@ -1,7 +1,7 @@
 name: Holafly Europe — Unlimited
 description: Europe travel eSIM with unlimited data for 10 days. Demo price shown for visual evaluation of the Ever Works card.
 source_url: https://esim.holafly.com/
-icon_url: https://esim.holafly.com/favicon.ico
+icon_url: /provider-icons/holafly.svg
 category: Europe
 tags:
   - Unlimited
