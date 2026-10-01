@@ -173,6 +173,10 @@ export function getAllowedDomains(): { common: string[]; icons: string[] } {
 }
 
 export function isProblematicUrl(url: string) {
+	if (!url) return true;
+	if (url.startsWith('/') && !url.startsWith('//')) return false;
+	if (url.startsWith('data:image/')) return false;
+
 	try {
 		const u = new URL(url);
 		const host = u.hostname.toLowerCase();
