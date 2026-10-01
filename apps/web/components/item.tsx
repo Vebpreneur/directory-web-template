@@ -10,7 +10,7 @@ import { PromoCodeComponent } from './promo-code';
 import { FavoriteButton } from './favorite-button';
 import { useCurrentUser } from '@/hooks/use-current-user';
 import Image from 'next/image';
-import { shouldShowFallback, isProblematicUrl } from '@/lib/utils/image-domains';
+import { shouldShowFallback, isProblematicUrl, getListingIconUrl } from '@/lib/utils/image-domains';
 import { FeaturedBadge } from './featured-items';
 import { useState, memo } from 'react';
 import { createExcerpt } from '@/components/filters/utils/text-utils';
@@ -40,11 +40,12 @@ const Item = memo(function Item(props: ItemProps) {
 	const locale = params?.locale as string | undefined;
 	const { user } = useCurrentUser();
 	const [isNavigating, setIsNavigating] = useState(false);
+	const [iconUrl, setIconUrl] = useState<string | undefined>(() => getListingIconUrl(props.icon_url, props.source_url));
 	const { categoriesEnabled } = useCategoriesEnabled();
 	const { tagsEnabled } = useTagsEnabled();
 	const distance = useItemDistance(props.slug);
 
-	const shouldShowFallbackIcon = shouldShowFallback(props.icon_url || '');
+	const shouldShowFallbackIcon = shouldShowFallback(iconUrl || '');
 
 	const getTagName = (tag: string | Tag): string => {
 		if (typeof tag === 'string') return tag;
@@ -96,12 +97,17 @@ const Item = memo(function Item(props: ItemProps) {
 								<FiFolder className="w-5 h-5 text-gray-400 dark:text-gray-500" />
 							) : (
 								<Image
-									src={props.icon_url!}
+									src={iconUrl!}
 									alt={`${props.name} icon`}
 									className="w-6 h-6 object-contain"
 									width={24}
 									height={24}
-									unoptimized={isProblematicUrl(props.icon_url!)}
+									unoptimized={isProblematicUrl(iconUrl!)}
+									onError={() => {
+										const fallback = getListingIconUrl(undefined, props.source_url);
+										if (fallback && fallback !== iconUrl) setIconUrl(fallback);
+										else setIconUrl(undefined);
+									}}
 								/>
 							)}
 						</div>
@@ -178,7 +184,7 @@ const Item = memo(function Item(props: ItemProps) {
 											<FavoriteButton
 												itemSlug={props.slug}
 												itemName={props.name}
-												itemIconUrl={props.icon_url}
+												itemIconUrl={iconUrl}
 												itemCategory={
 													Array.isArray(props.category)
 														? typeof props.category[0] === 'string'
