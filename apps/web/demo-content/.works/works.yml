@@ -1,10 +1,10 @@
 pagination:
   type: standard
   itemsPerPage: 12
-company_name: OfferMesh
+company_name: eSIM Directory
 content_table: true
-item_name: Offer
-items_name: Offers
+item_name: eSIM Plan
+items_name: eSIM Plans
 copyright_year: 2026
 auth:
   credentials: true
@@ -23,18 +23,18 @@ settings:
     layout_enabled: true
     language_enabled: true
     theme_enabled: true
-    layout_default: home1
+    layout_default: grid
     pagination_default: standard
     theme_default: light
   homepage:
     hero_enabled: true
     search_enabled: true
-    default_view: classic
+    default_view: grid
     default_sort: popularity
-    hero_badge_text: Commercial Offer Graph
-    hero_title: Discover Commercial
-    hero_title_gradient: Opportunities
-    hero_description: Search verified affiliate, referral, reseller and partner offers from one structured commercial discovery layer.
+    hero_badge_text: Global eSIM Directory
+    hero_title: Compare Travel
+    hero_title_gradient: eSIM Plans
+    hero_description: Discover eSIM plans by destination, provider, data allowance and validity.
   footer:
     subscribe_enabled: false
     version_enabled: false
@@ -43,8 +43,8 @@ settings:
 custom_hero:
   enabled: false
 metadata:
-  initial_prompt: Find commercial offers
+  initial_prompt: Compare eSIM plans
 version: 0.2.33
-name: OfferMesh
-initial_prompt: Find commercial offers
+name: eSIM Directory
+initial_prompt: Compare eSIM plans
 deployProvider: vercel
