@@ -1,7 +1,7 @@
 name: Nomad Japan — 20 GB
 description: Japan travel eSIM with 20 GB of data for 30 days. Demo price shown for visual evaluation of the Ever Works card.
 source_url: https://www.getnomad.app/
-icon_url: https://www.getnomad.app/favicon.ico
+icon_url: /provider-icons/nomad.svg
 category: Asia
 tags:
   - 20 GB
