@@ -1,18 +1,19 @@
 'use client';
 
-import { shouldShowFallback } from "@/lib/utils/image-domains";
+import { shouldShowFallback, getListingIconUrl, isProblematicUrl } from "@/lib/utils/image-domains";
 import Image from "next/image";
 import { useState } from "react";
 
 interface ItemIconProps {
   iconUrl?: string;
+  sourceUrl?: string;
   name: string;
 }
 
-export function ItemIcon({ iconUrl, name }: ItemIconProps) {
-  const [imageError, setImageError] = useState(false);
+export function ItemIcon({ iconUrl, sourceUrl, name }: ItemIconProps) {
+  const [resolvedIconUrl, setResolvedIconUrl] = useState<string | undefined>(() => getListingIconUrl(iconUrl, sourceUrl, 128));
 
-  const shouldShowFallbackIcon = imageError || shouldShowFallback(iconUrl || '');
+  const shouldShowFallbackIcon = shouldShowFallback(resolvedIconUrl || '');
   return (
     <div className="shrink-0 w-16 h-16 relative group">
       <div className="w-full h-full bg-white dark:bg-white/5 rounded-2xl overflow-hidden flex items-center justify-center p-3.5 border border-gray-200 dark:border-white/10 shadow-sm transition-all duration-200 hover:shadow-md hover:border-gray-300 dark:hover:border-white/15">
@@ -33,12 +34,17 @@ export function ItemIcon({ iconUrl, name }: ItemIconProps) {
           </svg>
         ) : (
           <Image
-            src={iconUrl!}
+            src={resolvedIconUrl!}
             alt={`${name} icon`}
             width={100}
             height={100}
             className="w-full h-full object-contain transition-transform duration-200 group-hover:scale-105"
-            onError={() => setImageError(true)}
+            unoptimized={isProblematicUrl(resolvedIconUrl!)}
+            onError={() => {
+              const fallback = getListingIconUrl(undefined, sourceUrl, 128);
+              if (fallback && fallback !== resolvedIconUrl) setResolvedIconUrl(fallback);
+              else setResolvedIconUrl(undefined);
+            }}
           />
         )}
       </div>
