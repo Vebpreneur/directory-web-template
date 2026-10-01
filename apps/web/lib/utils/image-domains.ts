@@ -13,7 +13,8 @@ export const COMMON_IMAGE_DOMAINS = [
 	'esim.holafly.com',
 	'saily.com',
 	'www.getnomad.app',
-	'yesim.app'
+	'yesim.app',
+	'www.google.com'
 ];
 
 export const ICON_DOMAINS = [
@@ -213,4 +214,22 @@ export function isValidImageUrl(url: string): boolean {
 export function shouldShowFallback(url: string) {
 	const shouldShowFallback = !url || isProblematicUrl(url);
 	return shouldShowFallback;
+}
+
+/**
+ * Resolve a resilient favicon URL for directory listings.
+ * Prefers an explicit icon_url when it looks usable, otherwise derives
+ * a favicon from the listing source URL via Google's favicon service.
+ */
+export function getListingIconUrl(iconUrl?: string, sourceUrl?: string, size = 64): string | undefined {
+	if (iconUrl && !shouldShowFallback(iconUrl)) return iconUrl;
+	if (!sourceUrl) return iconUrl;
+
+	try {
+		const parsed = new URL(sourceUrl);
+		const origin = `${parsed.protocol}//${parsed.hostname}`;
+		return `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(origin)}&sz=${size}`;
+	} catch {
+		return iconUrl;
+	}
 }
