@@ -8,7 +8,12 @@ export const COMMON_IMAGE_DOMAINS = [
 	'avatars.githubusercontent.com',
 	'platform-lookaside.fbsbx.com',
 	'pbs.twimg.com',
-	'images.unsplash.com'
+	'images.unsplash.com',
+	'www.airalo.com',
+	'esim.holafly.com',
+	'saily.com',
+	'www.getnomad.app',
+	'yesim.app'
 ];
 
 export const ICON_DOMAINS = [
@@ -63,11 +68,18 @@ export function generateImageRemotePatterns() {
 
 	// Add wildcard patterns for common domains
 	[...COMMON_IMAGE_DOMAINS, ...ICON_DOMAINS].forEach((domain) => {
-		patterns.push({
-			protocol: 'https' as const,
-			hostname: `*.${domain}`,
-			pathname: '/**'
-		});
+		patterns.push(
+			{
+				protocol: 'https' as const,
+				hostname: domain,
+				pathname: '/**'
+			},
+			{
+				protocol: 'https' as const,
+				hostname: `*.${domain}`,
+				pathname: '/**'
+			}
+		);
 	});
 
 	return patterns;
